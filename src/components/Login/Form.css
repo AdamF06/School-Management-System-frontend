@@ -1,0 +1,259 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,800");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.login__form {
+  font-family: 'Montserrat', sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: rgba(248, 248, 255, 0.4);
+  -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+          box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  height: 440px;
+  width: 60vw;
+  margin: 100px auto;
+  border-radius: 15px;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.login__form .formContainer {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  -webkit-transition: all 0.6s ease-in-out;
+  transition: all 0.6s ease-in-out;
+}
+
+.login__form .formContainer form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  margin: 30px auto;
+}
+
+.login__form .formContainer form input {
+  background-color: #eee;
+  border: none;
+  padding: 12px 15px;
+  margin: 8px 0;
+  width: 80%;
+}
+
+.login__form .formContainer form ul {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0;
+  width: 150px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 30px auto;
+}
+
+.login__form .formContainer form ul li button {
+  font-size: 18px;
+  height: 36px;
+  width: 36px;
+  border: 1px solid black;
+  border-radius: 50%;
+  text-align: center;
+}
+
+.login__form .formContainer form .act, .login__form .overlay__panel .act {
+  width: 45%;
+  border-radius: 20px;
+  border: 1px solid #FF4B2B;
+  background-color: #FF4B2B;
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 12px 45px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  -webkit-transition: -webkit-transform 80ms ease-in;
+  transition: -webkit-transform 80ms ease-in;
+  transition: transform 80ms ease-in;
+  transition: transform 80ms ease-in, -webkit-transform 80ms ease-in;
+}
+
+.login__form .formContainer form .act:active, .login__form .overlay__panel .act:active {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
+
+.login__form .formContainer form .act:focus, .login__form .overlay__panel .act:focus {
+  outline: none;
+}
+
+.login__form .formContainer form .act__ghost, .login__form .overlay__panel .act__ghost {
+  background-color: transparent;
+  border-color: #FFFFFF;
+}
+
+.login__form .signinContainer {
+  left: 0;
+  width: 50%;
+  z-index: 2;
+}
+
+.login__form .signupContainer {
+  left: 0;
+  width: 50%;
+  opacity: 0;
+  z-index: 1;
+}
+
+.login__form__overlayContainer {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  -webkit-transition: -webkit-transform 0.6s ease-in-out;
+  transition: -webkit-transform 0.6s ease-in-out;
+  transition: transform 0.6s ease-in-out;
+  transition: transform 0.6s ease-in-out, -webkit-transform 0.6s ease-in-out;
+  z-index: 100;
+}
+
+.login__form__overlayContainer .overlay {
+  background: #FF416C;
+  background: -webkit-gradient(linear, left top, right top, from(#FF4B2B), to(#FF416C));
+  background: linear-gradient(to right, #FF4B2B, #FF416C);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 0;
+  color: #FFFFFF;
+  position: relative;
+  left: -100%;
+  height: 100%;
+  width: 200%;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  -webkit-transition: -webkit-transform 0.6s ease-in-out;
+  transition: -webkit-transform 0.6s ease-in-out;
+  transition: transform 0.6s ease-in-out;
+  transition: transform 0.6s ease-in-out, -webkit-transform 0.6s ease-in-out;
+}
+
+.login__form__overlayContainer .overlay__panel {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 0 40px;
+  text-align: center;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  -webkit-transition: -webkit-transform 0.6s ease-in-out;
+  transition: -webkit-transform 0.6s ease-in-out;
+  transition: transform 0.6s ease-in-out;
+  transition: transform 0.6s ease-in-out, -webkit-transform 0.6s ease-in-out;
+}
+
+.login__form__overlayContainer .overlay .overlay__left {
+  -webkit-transform: translateX(-20%);
+          transform: translateX(-20%);
+}
+
+.login__form__overlayContainer .overlay .overlay__right {
+  right: 0;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+.login__form h1 {
+  font-weight: bold;
+  margin: 0;
+}
+
+.login__form p {
+  font-size: 14px;
+  font-weight: 100;
+  line-height: 20px;
+  letter-spacing: 0.5px;
+  margin: 20px 0 30px;
+}
+
+.login__form span {
+  font-size: 12px;
+}
+
+.login__form a {
+  color: #333;
+  font-size: 14px;
+  text-decoration: none;
+  margin: 15px 0;
+}
+
+.right-panel-active .signinContainer {
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  opacity: 0;
+  z-index: 1;
+}
+
+.right-panel-active .login__form__overlayContainer {
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+
+.right-panel-active .login__form__overlayContainer .overlay {
+  -webkit-transform: translateX(50%);
+          transform: translateX(50%);
+}
+
+.right-panel-active .login__form__overlayContainer .overlay__left {
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+}
+
+.right-panel-active .login__form__overlayContainer .overlay__right {
+  -webkit-transform: translateX(20%);
+          transform: translateX(20%);
+}
+
+.right-panel-active .signupContainer {
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  opacity: 1;
+  z-index: 5;
+}
+/*# sourceMappingURL=Form.css.map */

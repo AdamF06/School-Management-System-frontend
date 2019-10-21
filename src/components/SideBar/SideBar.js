@@ -42,9 +42,6 @@ class SideBar extends Component {
                             <li> {Setting} </li>
                         </ul>
                     </div>
-                    <div className="sideBar__main__right">
-                       
-                    </div>
                 </div>
 
                 <div className="sideBar__bot">

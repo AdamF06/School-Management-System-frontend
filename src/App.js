@@ -1,12 +1,11 @@
 import React from 'react';
-import './App.css';
 import SideBar from './components/SideBar/SideBar';
+import Login from './components/Login/Login';
+import './App.css'
 
 function App() {
   return (
-    <>
-      <SideBar/>
-    </>
+    <Login/>
   );
 }
 

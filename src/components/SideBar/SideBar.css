@@ -1,1 +1,126 @@
-/* No CSS *//*# sourceMappingURL=SideBar.css.map */
+.sideBar {
+  position: fixed;
+  width: 210px;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #1F2034;
+}
+
+.sideBar__top {
+  height: 8%;
+}
+
+.sideBar__top form {
+  margin: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.sideBar__top form input {
+  height: 30px;
+  width: 155px;
+  font-size: 1.2rem;
+  text-align: left;
+  background: none;
+  border: none;
+  color: whitesmoke;
+}
+
+.sideBar__top form button {
+  height: 36px;
+  width: 36px;
+  background: none;
+  border: none;
+  margin-right: 20px;
+}
+
+.sideBar__main {
+  height: 82%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.sideBar__main__left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.sideBar__main__left ul {
+  list-style: none;
+  padding: 5px;
+  margin: 0;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 20%;
+  background-color: #1F2034;
+}
+
+.sideBar__main__left ul li {
+  margin: 10px;
+}
+
+.sideBar__main__left ul:first-child {
+  padding: 0px;
+  width: 100%;
+}
+
+.sideBar__main__left ul:first-child li:last-child {
+  width: 100%;
+  padding: 0px;
+  padding-top: 5px;
+  margin: 0px;
+  border-top: 1px solid whitesmoke;
+}
+
+.sideBar__main__left ul:last-child {
+  width: 100%;
+  border-top: 1px solid whitesmoke;
+  padding: 0;
+}
+
+.sideBar__bot {
+  height: 10%;
+  background-color: #1F2034;
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.sideBar__bot__photo {
+  height: 50px;
+  width: 50px;
+  background-color: gray;
+  border-radius: 50%;
+}
+
+.sideBar__bot h3 {
+  color: whitesmoke;
+  margin-left: 10px;
+}
+/*# sourceMappingURL=SideBar.css.map */
