@@ -27,7 +27,8 @@ class Form extends Component {
     render() {
         const {panel} = this.state
         return (
-            <div className={panel==="left"?"login__form":"login__form right-panel-active"} >
+            <div className={`login__form ${panel === "left"? "":"right-panel-active"}`} >
+                
                 <div className="login__form__signup formContainer signupContainer">
                     <form action="#">
                         <h1>Create Account</h1>

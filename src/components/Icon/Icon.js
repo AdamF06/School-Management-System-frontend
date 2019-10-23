@@ -8,8 +8,8 @@ import {
     faBook,
     faRocket,
     faCogs,
-    faChartBar,
     faSearch,
+    faSitemap,
 }from '@fortawesome/free-solid-svg-icons'
 import { 
     faQuestionCircle,
@@ -22,12 +22,12 @@ import {
     faGooglePlusG,
     faInstagram
 }from '@fortawesome/free-brands-svg-icons'
-export const Dash =  <FontAwesomeIcon icon={faTachometerAlt} size="1x" color="white"/>
+export const Dashboard =  <FontAwesomeIcon icon={faTachometerAlt} size="1x" color="white"/>
 export const Group =  <FontAwesomeIcon icon={faUsers} size="1x" color="white"/>
-export const Payment =  <FontAwesomeIcon icon={faMoneyCheckAlt} size="1x" color="white"/>
+export const Sales =  <FontAwesomeIcon icon={faMoneyCheckAlt} size="1x" color="white"/>
 export const Email =  <FontAwesomeIcon icon={faEnvelope} size="1x" color="white"/>
-export const Chart =  <FontAwesomeIcon icon={faChartBar} size="1x" color="white"/>
-export const Book =  <FontAwesomeIcon icon={faBook} size="1x" color="white"/>
+export const Site =  <FontAwesomeIcon icon={faSitemap} size="1x" color="white"/>
+export const Course =  <FontAwesomeIcon icon={faBook} size="1x" color="white"/>
 export const Rocket =  <FontAwesomeIcon icon={faRocket} size="1x" color="white"/>
 export const Question =  <FontAwesomeIcon icon={faQuestionCircle} size="1x" color="white"/>
 export const Setting =  <FontAwesomeIcon icon={faCogs} size="1x" color="white"/>

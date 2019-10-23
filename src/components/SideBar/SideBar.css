@@ -1,7 +1,14 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 .sideBar {
   position: fixed;
   width: 210px;
   height: 100%;
+  top: 0;
+  left: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -9,7 +16,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-color: #1F2034;
+  background: #003060;
 }
 
 .sideBar__top {
@@ -62,11 +69,12 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  width: 100%;
 }
 
 .sideBar__main__left ul {
   list-style: none;
-  padding: 5px;
+  padding: 0;
   margin: 0;
   text-align: center;
   display: -webkit-box;
@@ -76,12 +84,44 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 20%;
-  background-color: #1F2034;
+  width: 100%;
+  background-color: #003060;
 }
 
 .sideBar__main__left ul li {
-  margin: 10px;
+  margin-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  padding-left: 15px;
+}
+
+.sideBar__main__left ul li button {
+  background: none;
+  border: none;
+  height: 30px;
+  width: 30px;
+  text-align: center;
+  padding: 0px;
+  outline: none;
+  padding: 0 auto;
+}
+
+.sideBar__main__left ul li button h2 {
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.sideBar__main__left ul li h2 {
+  font-size: 14px;
+  color: white;
+  margin-left: 15px;
 }
 
 .sideBar__main__left ul:first-child {
@@ -91,21 +131,26 @@
 
 .sideBar__main__left ul:first-child li:last-child {
   width: 100%;
-  padding: 0px;
   padding-top: 5px;
-  margin: 0px;
+  margin: 10px 0px;
   border-top: 1px solid whitesmoke;
 }
 
 .sideBar__main__left ul:last-child {
+  padding: 0px;
   width: 100%;
+}
+
+.sideBar__main__left ul:last-child li:first-child {
+  width: 100%;
+  padding-top: 5px;
+  margin: 10px 0px;
   border-top: 1px solid whitesmoke;
-  padding: 0;
 }
 
 .sideBar__bot {
   height: 10%;
-  background-color: #1F2034;
+  background-color: #003060;
   padding: 10px;
   display: -webkit-box;
   display: -ms-flexbox;

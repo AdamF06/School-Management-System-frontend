@@ -1,23 +1,73 @@
 import React, { Component } from 'react';
 import './SideBar.css';
 import {
-    Dash,
+    Dashboard,
     Group,
-    Payment,
+    Sales,
     Email,
-    Book,
     Rocket,
     Question,
     Setting,
-    Chart,
-    Search
+    Site,
+    Search,
+    Course
 } from '../Icon/Icon'
+import SideBarItems from "./SideBarItems"
+
+const userItems = [
+    {
+        icon: Dashboard,
+        iconName: "Dashboard"
+    },
+    {
+        icon: Group,
+        iconName: "Users"
+    },
+    {
+        icon: Site,
+        iconName: "Site"
+    },
+    {
+        icon: Sales,
+        iconName: "Sales"
+    },
+    {
+        icon: Email,
+        iconName: "Emails"
+    },
+    {
+        icon: Course,
+        iconName: "Courses"
+    },
+]
+const bottomItems = [
+    {
+        icon: Rocket,
+        iconName: "Plan"
+    },
+    {
+        icon: Question,
+        iconName: "Help"
+    },
+    {
+        icon: Setting,
+        iconName: "Setting"
+    },
+]
+
 class SideBar extends Component {
+    constructor() {
+        super()
+        this.state = {
+            user: "student"
+        }
+    }
 
     render() {
-        return (
-            <div className="sideBar">
 
+        return (
+
+            <div className="sideBar">
                 <div className="sideBar__top">
                     <form>
                         <input type="text" placeholder="JR Academy" name="search" />
@@ -28,20 +78,25 @@ class SideBar extends Component {
                 <div className="sideBar__main">
                     <div className="sideBar__main__left">
                         <ul>
-                            <li> {Dash} </li>
-                            <li> {Group} </li>
-                            <li> {Chart} </li>
-                            <li> {Payment} </li>
-                            <li> {Email} </li>
-                            <li> {Book} </li>
+                            {
+                                userItems.map(
+                                    (item, index) =>
+                                        <li key={index}><SideBarItems {...item} /></li>
+                                )
+                            }
                         </ul>
 
                         <ul>
-                            <li> {Rocket} </li>
-                            <li> {Question} </li>
-                            <li> {Setting} </li>
+                            {
+                                bottomItems.map(
+                                    (item, index) =>
+                                        <li key={index}><SideBarItems {...item} /></li>
+                                )
+                            }
                         </ul>
                     </div>
+
+                    <div className="sideBar__main__right"></div>
                 </div>
 
                 <div className="sideBar__bot">

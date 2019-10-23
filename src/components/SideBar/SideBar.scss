@@ -1,12 +1,18 @@
-$sideBarDeep: #1F2034;
-$sideBarMain: #272942;
+$navyBlue:#003060;
+$blue:#055C9D;
+$blueGrotto:#0E86D4;
+*{
+    box-sizing: border-box;
+}
 .sideBar{
     position: fixed;
     width: 210px;
     height: 100%;
+    top:0;
+    left: 0;
     display: flex;
     flex-direction: column;
-    background-color: $sideBarDeep;
+    background: $navyBlue;
 
     &__top {
         height: 8%;
@@ -39,17 +45,44 @@ $sideBarMain: #272942;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            width: 100%;
             ul{
             list-style:none;
-            padding:5px;
+            padding:0;
             margin:0;
             text-align: center;
             display: flex;
             flex-direction: column;
-            width: 20%;
-            background-color: $sideBarDeep;
+            width: 100%;
+            background-color: $navyBlue;
                 li{
-                    margin: 10px;
+                    margin-top: 10px;
+                    display: flex;
+                    align-items: center;
+                    align-content: center;
+                    padding-left: 15px;
+                    button{
+                        background: none;
+                        border: none;
+                        height: 30px;
+                        width: 30px;
+                        text-align: center;
+                        padding: 0px;
+                        outline: none;
+                        padding:0 auto;
+                        
+                        h2{
+                            font-size: 20px;
+                            margin: 0;
+                            padding: 0;
+                        } 
+                        
+                    }
+                    h2{
+                        font-size: 14px;
+                        color:white;
+                        margin-left: 15px;
+                    }
                 }
                 
             }
@@ -59,24 +92,28 @@ $sideBarMain: #272942;
                 width: 100%;
                 li:last-child{
                     width:100%;
-                    padding:0px;
                     padding-top:5px;
-                    margin: 0px;
+                    margin: 10px 0px;
                     border-top:1px solid whitesmoke;
                 }
             }
-            
             ul:last-child{
+                padding: 0px;
                 width: 100%;
-                border-top: 1px solid whitesmoke;
-                padding:0;             
+                li:first-child{
+                    width:100%;
+                    padding-top:5px;
+                    margin: 10px 0px;
+                    border-top:1px solid whitesmoke;
+                }
             }
+
         }
     }
 
     &__bot{
         height: 10%;
-        background-color: $sideBarDeep;
+        background-color: $navyBlue;
         padding: 10px;
         display: flex;
         &__photo{
