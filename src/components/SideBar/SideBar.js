@@ -59,12 +59,23 @@ class SideBar extends Component {
     constructor() {
         super()
         this.state = {
-            user: "student"
+            user: "student",
+            showList:false,
+            triggeredButtom:""
         }
+    }
+    justifyBar =(e)=>{
+        this.setState({
+            showList:!this.state.showList,
+            triggeredButtom:e.target.className
+        })
+        console.log(this.state.triggered)
+        console.log(this.state.triggeredButtom)
+
     }
 
     render() {
-
+        const {showList, triggeredButtom} = this.state
         return (
 
             <div className="sideBar">
@@ -75,22 +86,36 @@ class SideBar extends Component {
                     </form>
                 </div>
 
-                <div className="sideBar__main">
+                <div className={`sideBar__main ${showList? `show-${triggeredButtom}`:""}`}>
                     <div className="sideBar__main__left">
                         <ul>
                             {
                                 userItems.map(
                                     (item, index) =>
-                                        <li key={index}><SideBarItems {...item} /></li>
+                                        <li key={index}
+                                        onClick={this.justifyBar}
+                                        className={item.iconName}
+                                        >
+                                            <button
+                                            ><SideBarItems {...item} />
+                                            </button>                                          
+                                            </li>
                                 )
                             }
                         </ul>
 
                         <ul>
-                            {
+                        {
                                 bottomItems.map(
                                     (item, index) =>
-                                        <li key={index}><SideBarItems {...item} /></li>
+                                        <li key={index}
+                                        onClick={this.justifyBar}
+                                        className={item.iconName}
+                                        >
+                                            <button
+                                            ><SideBarItems {...item} />
+                                            </button>                                          
+                                            </li>
                                 )
                             }
                         </ul>

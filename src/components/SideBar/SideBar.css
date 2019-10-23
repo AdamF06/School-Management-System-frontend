@@ -40,6 +40,7 @@
   text-align: left;
   background: none;
   border: none;
+  outline: none;
   color: whitesmoke;
 }
 
@@ -52,7 +53,7 @@
 }
 
 .sideBar__main {
-  height: 82%;
+  height: 84%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -98,27 +99,41 @@
           align-items: center;
   -ms-flex-line-pack: center;
       align-content: center;
-  padding-left: 15px;
+}
+
+.sideBar__main__left ul li :hover {
+  -webkit-transition: background-color 0.2s linear;
+  transition: background-color 0.2s linear;
+  background-color: #055C9D;
 }
 
 .sideBar__main__left ul li button {
   background: none;
   border: none;
   height: 30px;
-  width: 30px;
+  width: 100%;
   text-align: center;
-  padding: 0px;
   outline: none;
   padding: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
 }
 
-.sideBar__main__left ul li button h2 {
+.sideBar__main__left ul li button h2:first-child {
   font-size: 20px;
-  margin: 0;
+  margin: 0 10px;
   padding: 0;
 }
 
-.sideBar__main__left ul li h2 {
+.sideBar__main__left ul li button h2:last-child {
   font-size: 14px;
   color: white;
   margin-left: 15px;
@@ -139,6 +154,7 @@
 .sideBar__main__left ul:last-child {
   padding: 0px;
   width: 100%;
+  margin-bottom: 10px;
 }
 
 .sideBar__main__left ul:last-child li:first-child {
@@ -149,8 +165,8 @@
 }
 
 .sideBar__bot {
-  height: 10%;
-  background-color: #003060;
+  height: 8%;
+  background-color: #003D7A;
   padding: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -158,14 +174,15 @@
 }
 
 .sideBar__bot__photo {
-  height: 50px;
-  width: 50px;
+  height: 40px;
+  width: 40px;
   background-color: gray;
   border-radius: 50%;
 }
 
 .sideBar__bot h3 {
   color: whitesmoke;
-  margin-left: 10px;
+  margin: 0 10px;
+  text-align: center;
 }
 /*# sourceMappingURL=SideBar.css.map */

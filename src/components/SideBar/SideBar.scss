@@ -1,6 +1,7 @@
 $navyBlue:#003060;
 $blue:#055C9D;
 $blueGrotto:#0E86D4;
+$darkBlue:#003D7A;
 *{
     box-sizing: border-box;
 }
@@ -27,6 +28,7 @@ $blueGrotto:#0E86D4;
                 text-align: left;
                 background: none;
                 border: none;
+                outline: none;
                 color: whitesmoke;
             }
             button{
@@ -39,7 +41,7 @@ $blueGrotto:#0E86D4;
         }
     }
     &__main{
-        height: 82%;
+        height: 84%;
         display: flex;
         &__left{
             display: flex;
@@ -60,29 +62,36 @@ $blueGrotto:#0E86D4;
                     display: flex;
                     align-items: center;
                     align-content: center;
-                    padding-left: 15px;
+                    :hover{
+                        transition:background-color 0.2s linear;
+                        background-color: $blue;
+                    }
                     button{
                         background: none;
                         border: none;
                         height: 30px;
-                        width: 30px;
+                        width: 100%;
                         text-align: center;
-                        padding: 0px;
+                        // margin-left: 15px;
                         outline: none;
                         padding:0 auto;
-                        
-                        h2{
+                        display: flex;
+                        align-items: center;
+                        justify-items: center;
+                        align-items: baseline;
+
+                        h2:first-child{
                             font-size: 20px;
-                            margin: 0;
+                            margin: 0 10px;
                             padding: 0;
                         } 
-                        
+                        h2:last-child{
+                            font-size: 14px;
+                            color:white;
+                            margin-left: 15px;
+                        }
                     }
-                    h2{
-                        font-size: 14px;
-                        color:white;
-                        margin-left: 15px;
-                    }
+
                 }
                 
             }
@@ -100,6 +109,7 @@ $blueGrotto:#0E86D4;
             ul:last-child{
                 padding: 0px;
                 width: 100%;
+                margin-bottom: 10px;
                 li:first-child{
                     width:100%;
                     padding-top:5px;
@@ -112,19 +122,20 @@ $blueGrotto:#0E86D4;
     }
 
     &__bot{
-        height: 10%;
-        background-color: $navyBlue;
+        height: 8%;
+        background-color: $darkBlue;
         padding: 10px;
         display: flex;
         &__photo{
-            height: 50px;
-            width: 50px;
+            height: 40px;
+            width: 40px;
             background-color: gray;
             border-radius: 50%;
         }
         h3{
             color: whitesmoke;
-            margin-left: 10px;
+            margin: 0 10px;
+            text-align: center;
         }
 
     }
