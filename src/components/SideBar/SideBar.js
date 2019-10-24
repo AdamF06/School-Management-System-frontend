@@ -60,22 +60,22 @@ class SideBar extends Component {
         super()
         this.state = {
             user: "student",
-            showList:false,
-            triggeredButtom:""
+            showList: false,
+            triggeredButtom: "",
+            selectedList:""
         }
     }
-    justifyBar =(e)=>{
+    justifyBar = (iconName) => {
         this.setState({
-            showList:!this.state.showList,
-            triggeredButtom:e.target.className
+            showList: !this.state.showList,
+            selectedList: iconName
         })
-        console.log(this.state.triggered)
-        console.log(this.state.triggeredButtom)
-
+        console.log(this.state.showList)
+        console.log(iconName)
     }
 
     render() {
-        const {showList, triggeredButtom} = this.state
+        const { showList, triggeredButtom,selectedList } = this.state
         return (
 
             <div className="sideBar">
@@ -86,42 +86,47 @@ class SideBar extends Component {
                     </form>
                 </div>
 
-                <div className={`sideBar__main ${showList? `show-${triggeredButtom}`:""}`}>
+                <div className={`sideBar__main ${showList ? `show-${selectedList}  sideBar__main-right-active` : ""}`}>
                     <div className="sideBar__main__left">
-                        <ul>
-                            {
-                                userItems.map(
-                                    (item, index) =>
-                                        <li key={index}
-                                        onClick={this.justifyBar}
-                                        className={item.iconName}
-                                        >
-                                            <button
-                                            ><SideBarItems {...item} />
-                                            </button>                                          
-                                            </li>
-                                )
-                            }
-                        </ul>
+                        <ul> {
+                            userItems.map(
+                                (item, index) =>
+                                    <li key={index}>
+                                        <button
+                                            onClick={(e)=>{this.justifyBar(item.iconName)}}>
+                                            <SideBarItems {...item} />
+                                        </button>
+                                    </li>
+                            )
+                        } </ul>
 
-                        <ul>
-                        {
-                                bottomItems.map(
-                                    (item, index) =>
-                                        <li key={index}
-                                        onClick={this.justifyBar}
-                                        className={item.iconName}
-                                        >
-                                            <button
-                                            ><SideBarItems {...item} />
-                                            </button>                                          
-                                            </li>
-                                )
-                            }
-                        </ul>
+                        <ul>{
+                            bottomItems.map(
+                                (item, index) =>
+                                    <li key={index}>
+                                        <button
+                                            // onClick={this.justifyBar(item.iconName)}>
+                                            onClick={(e)=>{this.justifyBar(item.iconName)}}>
+                                            <SideBarItems {...item} />
+                                        </button>
+                                    </li>
+                            )
+                        }</ul>
                     </div>
 
-                    <div className="sideBar__main__right"></div>
+                    <div className={`sideBar__main__right`}>
+                        <ul>
+                            <li>
+                                <h3>im right bar items</h3>
+                            </li>
+                            <li>
+                                <h3>im right bar items</h3>
+                            </li>
+                            <li>
+                                <h3>im right bar items</h3>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
 
                 <div className="sideBar__bot">

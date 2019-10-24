@@ -58,7 +58,10 @@ $darkBlue:#003D7A;
             width: 100%;
             background-color: $navyBlue;
                 li{
-                    margin-top: 10px;
+                    //margin-top: 10px;
+                    height: 40px;
+                    padding-top: 10px;
+                    padding-bottom: 10px;
                     display: flex;
                     align-items: center;
                     align-content: center;
@@ -101,26 +104,46 @@ $darkBlue:#003D7A;
                 width: 100%;
                 li:last-child{
                     width:100%;
-                    padding-top:5px;
-                    margin: 10px 0px;
+                    padding-top:5px;;
                     border-top:1px solid whitesmoke;
+                }
+                li:first-child{
+                    padding-top:0px;
                 }
             }
             ul:last-child{
                 padding: 0px;
                 width: 100%;
-                margin-bottom: 10px;
                 li:first-child{
                     width:100%;
                     padding-top:5px;
-                    margin: 10px 0px;
                     border-top:1px solid whitesmoke;
                 }
+                li:last-child{
+                    padding-bottom: 0px;
+                }
             }
-
+        }
+        &__right{
+            width:160px;
+            height: 100%;
+            display: none;
+        }
+        &-right-active{
+            .sideBar__main__right{
+                display: inline;
+                background: $blue;
+            }
+            .sideBar__main__left{
+                width: 50px;
+                ul li button h2:last-child{
+                    display: none;
+                }
+            }
         }
     }
-
+    
+ 
     &__bot{
         height: 8%;
         background-color: $darkBlue;
@@ -137,6 +160,11 @@ $darkBlue:#003D7A;
             margin: 0 10px;
             text-align: center;
         }
+    }
+}
 
+.sideBar__main .sideBar__right-active{
+    .sideBar__main__right{
+        display: inline;
     }
 }

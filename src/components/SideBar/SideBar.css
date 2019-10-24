@@ -90,7 +90,9 @@
 }
 
 .sideBar__main__left ul li {
-  margin-top: 10px;
+  height: 40px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -147,21 +149,45 @@
 .sideBar__main__left ul:first-child li:last-child {
   width: 100%;
   padding-top: 5px;
-  margin: 10px 0px;
   border-top: 1px solid whitesmoke;
+}
+
+.sideBar__main__left ul:first-child li:first-child {
+  padding-top: 0px;
 }
 
 .sideBar__main__left ul:last-child {
   padding: 0px;
   width: 100%;
-  margin-bottom: 10px;
 }
 
 .sideBar__main__left ul:last-child li:first-child {
   width: 100%;
   padding-top: 5px;
-  margin: 10px 0px;
   border-top: 1px solid whitesmoke;
+}
+
+.sideBar__main__left ul:last-child li:last-child {
+  padding-bottom: 0px;
+}
+
+.sideBar__main__right {
+  width: 160px;
+  height: 100%;
+  display: none;
+}
+
+.sideBar__main-right-active .sideBar__main__right {
+  display: inline;
+  background: #055C9D;
+}
+
+.sideBar__main-right-active .sideBar__main__left {
+  width: 50px;
+}
+
+.sideBar__main-right-active .sideBar__main__left ul li button h2:last-child {
+  display: none;
 }
 
 .sideBar__bot {
@@ -184,5 +210,9 @@
   color: whitesmoke;
   margin: 0 10px;
   text-align: center;
+}
+
+.sideBar__main .sideBar__right-active .sideBar__main__right {
+  display: inline;
 }
 /*# sourceMappingURL=SideBar.css.map */
