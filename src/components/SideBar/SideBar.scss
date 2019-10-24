@@ -58,10 +58,7 @@ $darkBlue:#003D7A;
             width: 100%;
             background-color: $navyBlue;
                 li{
-                    //margin-top: 10px;
-                    height: 40px;
-                    padding-top: 10px;
-                    padding-bottom: 10px;
+                    height: 50px;
                     display: flex;
                     align-items: center;
                     align-content: center;
@@ -72,12 +69,12 @@ $darkBlue:#003D7A;
                     button{
                         background: none;
                         border: none;
-                        height: 30px;
+                        height: 100%;
                         width: 100%;
                         text-align: center;
                         // margin-left: 15px;
                         outline: none;
-                        padding:0 auto;
+                        padding:0;
                         display: flex;
                         align-items: center;
                         justify-items: center;
@@ -85,8 +82,10 @@ $darkBlue:#003D7A;
 
                         h2:first-child{
                             font-size: 20px;
-                            margin: 0 10px;
+                            margin: 10px 10px;
                             padding: 0;
+                            height: 30px;
+                            width: 30px;
                         } 
                         h2:last-child{
                             font-size: 14px;
@@ -104,7 +103,6 @@ $darkBlue:#003D7A;
                 width: 100%;
                 li:last-child{
                     width:100%;
-                    padding-top:5px;;
                     border-top:1px solid whitesmoke;
                 }
                 li:first-child{
@@ -116,7 +114,6 @@ $darkBlue:#003D7A;
                 width: 100%;
                 li:first-child{
                     width:100%;
-                    padding-top:5px;
                     border-top:1px solid whitesmoke;
                 }
                 li:last-child{
@@ -133,12 +130,23 @@ $darkBlue:#003D7A;
             .sideBar__main__right{
                 display: inline;
                 background: $blue;
+                transition: right linear .3s;
             }
             .sideBar__main__left{
                 width: 50px;
                 ul li button h2:last-child{
                     display: none;
                 }
+                ul li button{
+                    padding: 0;
+                    h2{
+                        width: 100%;
+                    }
+                } 
+                ul li .high-light{
+                    background: $blue;   
+                }
+
             }
         }
     }
@@ -161,10 +169,61 @@ $darkBlue:#003D7A;
             text-align: center;
         }
     }
-}
 
-.sideBar__main .sideBar__right-active{
-    .sideBar__main__right{
-        display: inline;
+    .show-Dashboard{
+        .sideBar__main__left{
+            ul li #Dashboard{
+                background-color: $blue;       
+            }
+        }
+    }
+    .show-Users{
+        .sideBar__main__left{
+            ul li #Users{
+                background-color: $blue;       
+            }
+        }
+    }
+    .show-Site{
+        .sideBar__main__left{
+            ul li #Site{
+                background-color: $blue;       
+            }
+        }
+    }
+    .show-Sales{
+        .sideBar__main__left{
+            ul li #Sales{
+                background-color: $blue;       
+            }
+        }
+    }
+    .show-Emails{
+        .sideBar__main__left{
+            ul li #Emails{
+                background-color: $blue;       
+            }
+        }
+    }
+    .show-Plan{
+        .sideBar__main__left{
+            ul li #Plan{
+                background-color: $blue;       
+            }
+        }
+    }
+    .show-Help{
+        .sideBar__main__left{
+            ul li #Dashboard{
+                background-color: $blue;       
+            }
+        }
+    }
+    .show-Setting{
+        .sideBar__main__left{
+            ul li #Setting{
+                background-color: $blue;       
+            }
+        }
     }
 }

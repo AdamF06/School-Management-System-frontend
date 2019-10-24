@@ -90,9 +90,7 @@
 }
 
 .sideBar__main__left ul li {
-  height: 40px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  height: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -112,11 +110,11 @@
 .sideBar__main__left ul li button {
   background: none;
   border: none;
-  height: 30px;
+  height: 100%;
   width: 100%;
   text-align: center;
   outline: none;
-  padding: 0 auto;
+  padding: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -131,8 +129,10 @@
 
 .sideBar__main__left ul li button h2:first-child {
   font-size: 20px;
-  margin: 0 10px;
+  margin: 10px 10px;
   padding: 0;
+  height: 30px;
+  width: 30px;
 }
 
 .sideBar__main__left ul li button h2:last-child {
@@ -148,7 +148,6 @@
 
 .sideBar__main__left ul:first-child li:last-child {
   width: 100%;
-  padding-top: 5px;
   border-top: 1px solid whitesmoke;
 }
 
@@ -163,7 +162,6 @@
 
 .sideBar__main__left ul:last-child li:first-child {
   width: 100%;
-  padding-top: 5px;
   border-top: 1px solid whitesmoke;
 }
 
@@ -180,6 +178,8 @@
 .sideBar__main-right-active .sideBar__main__right {
   display: inline;
   background: #055C9D;
+  -webkit-transition: right linear .3s;
+  transition: right linear .3s;
 }
 
 .sideBar__main-right-active .sideBar__main__left {
@@ -188,6 +188,18 @@
 
 .sideBar__main-right-active .sideBar__main__left ul li button h2:last-child {
   display: none;
+}
+
+.sideBar__main-right-active .sideBar__main__left ul li button {
+  padding: 0;
+}
+
+.sideBar__main-right-active .sideBar__main__left ul li button h2 {
+  width: 100%;
+}
+
+.sideBar__main-right-active .sideBar__main__left ul li .high-light {
+  background: #055C9D;
 }
 
 .sideBar__bot {
@@ -212,7 +224,35 @@
   text-align: center;
 }
 
-.sideBar__main .sideBar__right-active .sideBar__main__right {
-  display: inline;
+.sideBar .show-Dashboard .sideBar__main__left ul li #Dashboard {
+  background-color: #055C9D;
+}
+
+.sideBar .show-Users .sideBar__main__left ul li #Users {
+  background-color: #055C9D;
+}
+
+.sideBar .show-Site .sideBar__main__left ul li #Site {
+  background-color: #055C9D;
+}
+
+.sideBar .show-Sales .sideBar__main__left ul li #Sales {
+  background-color: #055C9D;
+}
+
+.sideBar .show-Emails .sideBar__main__left ul li #Emails {
+  background-color: #055C9D;
+}
+
+.sideBar .show-Plan .sideBar__main__left ul li #Plan {
+  background-color: #055C9D;
+}
+
+.sideBar .show-Help .sideBar__main__left ul li #Dashboard {
+  background-color: #055C9D;
+}
+
+.sideBar .show-Setting .sideBar__main__left ul li #Setting {
+  background-color: #055C9D;
 }
 /*# sourceMappingURL=SideBar.css.map */

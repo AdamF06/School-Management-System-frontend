@@ -61,21 +61,30 @@ class SideBar extends Component {
         this.state = {
             user: "student",
             showList: false,
-            triggeredButtom: "",
-            selectedList:""
+            // triggeredButtom: "",
+            selectedList:"",
         }
     }
     justifyBar = (iconName) => {
-        this.setState({
-            showList: !this.state.showList,
-            selectedList: iconName
-        })
+        const {selectedList} = this.state
+
+        if(selectedList && iconName===selectedList){
+            this.setState({
+                showList:false,
+                selectedList:""
+            })
+        }else{
+            this.setState({
+                showList:true,
+                selectedList:iconName,
+            })
+        }
         console.log(this.state.showList)
         console.log(iconName)
     }
 
     render() {
-        const { showList, triggeredButtom,selectedList } = this.state
+        const { showList,selectedList } = this.state
         return (
 
             <div className="sideBar">
@@ -93,6 +102,7 @@ class SideBar extends Component {
                                 (item, index) =>
                                     <li key={index}>
                                         <button
+                                            id={item.iconName}
                                             onClick={(e)=>{this.justifyBar(item.iconName)}}>
                                             <SideBarItems {...item} />
                                         </button>
@@ -105,6 +115,7 @@ class SideBar extends Component {
                                 (item, index) =>
                                     <li key={index}>
                                         <button
+                                            id={item.iconName}
                                             // onClick={this.justifyBar(item.iconName)}>
                                             onClick={(e)=>{this.justifyBar(item.iconName)}}>
                                             <SideBarItems {...item} />
@@ -114,7 +125,7 @@ class SideBar extends Component {
                         }</ul>
                     </div>
 
-                    <div className={`sideBar__main__right`}>
+                    <div className="sideBar__main__right">
                         <ul>
                             <li>
                                 <h3>im right bar items</h3>
