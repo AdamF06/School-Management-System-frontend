@@ -50,7 +50,7 @@ $hoverColor:linear-gradient(90deg,#ffb369 0,#ff4272);
                         margin: 0;
                     }
                 } 
-                li :hover{
+                li:hover{
                     background: $hoverColor;
                     border-radius: 50%;
                     button{

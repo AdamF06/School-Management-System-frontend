@@ -62,21 +62,22 @@ class SideBar extends Component {
             user: "student",
             showList: false,
             // triggeredButtom: "",
-            selectedList:"",
+            selectedList: "",
         }
     }
     justifyBar = (iconName) => {
-        const {selectedList} = this.state
-
-        if(selectedList && iconName===selectedList){
+        const { selectedList } = this.state
+        if (iconName === "Dashboard") {
+            console.log("no slde bar")
+        } else if (selectedList && iconName === selectedList) {
             this.setState({
-                showList:false,
-                selectedList:""
+                showList: false,
+                selectedList: ""
             })
-        }else{
+        } else {
             this.setState({
-                showList:true,
-                selectedList:iconName,
+                showList: true,
+                selectedList: iconName,
             })
         }
         console.log(this.state.showList)
@@ -84,7 +85,7 @@ class SideBar extends Component {
     }
 
     render() {
-        const { showList,selectedList } = this.state
+        const { showList, selectedList } = this.state
         return (
 
             <div className="sideBar">
@@ -103,7 +104,8 @@ class SideBar extends Component {
                                     <li key={index}>
                                         <button
                                             id={item.iconName}
-                                            onClick={(e)=>{this.justifyBar(item.iconName)}}>
+                                            className={this.state.currentName===index?'active':null}
+                                            onClick={(e) => { this.justifyBar(item.iconName)}}>
                                             <SideBarItems {...item} />
                                         </button>
                                     </li>
@@ -116,8 +118,8 @@ class SideBar extends Component {
                                     <li key={index}>
                                         <button
                                             id={item.iconName}
-                                            // onClick={this.justifyBar(item.iconName)}>
-                                            onClick={(e)=>{this.justifyBar(item.iconName)}}>
+                                            //onClick={this.justifyBar(item.iconName)}>
+                                            onClick={(e) => { this.justifyBar(e, item.iconName) }}>
                                             <SideBarItems {...item} />
                                         </button>
                                     </li>
