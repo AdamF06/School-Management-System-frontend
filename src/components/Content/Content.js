@@ -8,6 +8,7 @@ class Content extends Component {
                 <h1>I'm content</h1>
                 <h2>test, added here</h2>
                 <h2>added from David's branch</h2>
+                <h2>push master tool</h2>
             </div>
         );
     }
