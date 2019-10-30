@@ -6,6 +6,7 @@ class Content extends Component {
         return (
             <div className="content">
                 <h1>I'm content</h1>
+                <h2>rest</h2>
             </div>
         );
     }
