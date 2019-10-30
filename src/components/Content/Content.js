@@ -6,9 +6,7 @@ class Content extends Component {
         return (
             <div className="content">
                 <h1>I'm content</h1>
-                <h2>test, added here</h2>
-                <h2>added from David's branch</h2>
-                <h2>push master tool</h2>
+                <h2>rest</h2>
             </div>
         );
     }
