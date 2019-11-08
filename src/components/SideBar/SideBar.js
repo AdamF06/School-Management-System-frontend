@@ -13,6 +13,7 @@ import {
     Course
 } from '../Icon/Icon'
 import SideBarItems from "./SideBarItems"
+import {Dropdown, ButtonToolbar, DropdownButton} from 'react-bootstrap';
 
 const userItems = [
     {
@@ -92,7 +93,7 @@ class SideBar extends Component {
                 <div className="sideBar__top">
                     <form>
                         <input type="text" placeholder="JR Academy" name="search" />
-                        <button>{Search}</button>
+                        {/* <button>{Search}</button> */}  
                     </form>
                 </div>
 
@@ -127,20 +128,46 @@ class SideBar extends Component {
                         }</ul>
                     </div>
 
-                    <div className="sideBar__main__right">
+                    {/* Users Route */}
+                    {(selectedList==='Users') ? 
+                    (<div className={`${selectedList}` }>
+                    <div  className="sideBar__main__right">
                         <ul>
                             <li>
-                                <h3>im right bar items</h3>
+                                <h3><a href='/profile'>Profile</a></h3>
                             </li>
                             <li>
-                                <h3>im right bar items</h3>
+                                <h3><a href='/changePassword'>Change Password</a></h3>
                             </li>
                             <li>
-                                <h3>im right bar items</h3>
+                                <h3><a>im right bar items</a></h3>
                             </li>
                         </ul>
                     </div>
-                </div>
+                </div>):( <div> </div>
+                )
+                }
+                {/* Site Route */}
+                {(selectedList==='Site') ? 
+                    (<div className={`${selectedList}` }>
+                    <div  className="sideBar__main__right">
+                        <ul>
+                            <li>
+                                <h3><a href='/profile'>Profile</a></h3>
+                            </li>
+                            <li>
+                                <h3><a href='/changePassword'>Change Password</a></h3>
+                            </li>
+                            <li>
+                                <h3><a>im right bar items</a></h3>
+                            </li>
+                        </ul>
+                    </div>
+                </div>):( <div> </div>
+                )
+                }
+                  
+                </div>   
 
                 <div className="sideBar__bot">
                     <div className="sideBar__bot__photo"></div>

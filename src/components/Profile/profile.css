@@ -1,0 +1,121 @@
+.container {
+  position: fixed;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 850px;
+  overflow: hidden;
+  float: left;
+  background: url("https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=197704580,2183715727&fm=26&gp=0.jpg");
+  background-size: 100%;
+}
+.welcome {
+  display: none;
+  padding: 0;
+  margin: 0;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.938);
+  font-size: 1.5rem;
+  line-height: 50px;
+  text-indent: 2rem;
+}
+.portrait_box {
+  float: left;
+  margin-top: 10%;
+  width: 20%;
+}
+.portrait_box span .portrait {
+  margin: auto;
+  height: 160px;
+  width: 160px;
+  background-color: pink;
+  font-size: 1rem;
+  position: relative;
+}
+.portrait_box span a {
+  position: absolute;
+  left: 65px;
+  font-size: 18px;
+}
+a {
+  color: black;
+  padding-left: 4rem;
+}
+.basic_info {
+  border: 10px black;
+  margin-top: 2rem;
+  margin-right: 20%;
+  width: 60%;
+  height: 390px;
+  background-color: #fff;
+  float: right;
+  background-image: url("https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=197704580,2183715727&fm=26&gp=0.jpg");
+  background-size: 100%;
+}
+.basic_info .col {
+  float: left;
+}
+.basic_info .gender {
+  margin-bottom: 1000px;
+}
+.account_info {
+  margin-top: 2rem;
+  margin-right: 20%;
+  width: 60%;
+  height: 320px;
+  background-color: #fff;
+  float: right;
+  background-image: url("https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=197704580,2183715727&fm=26&gp=0.jpg");
+  background-size: 100%;
+}
+p {
+  text-indent: 0.5rem;
+}
+input {
+  margin: 1rem 1rem;
+}
+label {
+  text-align: center;
+  display: inline-block;
+  width: 100px;
+}
+.basic_info button {
+  float: right;
+  margin-right: 2rem;
+}
+.basic_info,
+.account_info {
+  border-radius: 3px;
+}
+.pwd {
+  font-size: 1.2rem;
+}
+.pwd a {
+  padding: 0;
+  text-decoration: none;
+}
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-bottom: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+.changePassword {
+  border: solid 1px;
+  padding: 20px;
+  margin-top: 5%;
+  margin-left: 15%;
+  margin-right: 30%;
+  text-align: center;
+}
+.changePassword label {
+  width: 250px;
+}
+.changePassword .passwordRule {
+  border: 1px solid;
+}
+.changePassword .rule {
+  border: 1px 0 solid;
+}
