@@ -90,9 +90,9 @@ class SideBar extends Component {
 
             <div className="sideBar">
                 <div className="sideBar__top">
-                    <form>
+                    <form className="top__form">
                         <input type="text" placeholder="JR Academy" name="search" />
-                        <button>{Search}</button>
+                        <button className="top__button">{Search}</button>
                     </form>
                 </div>
 
