@@ -121,14 +121,13 @@ $darkBlue:#003D7A;
                 }
             }
         }
-        &__right { 
+        &__right{
             width:160px;
             height: 100%;
             display: none;
         }
         &-right-active{
-            
-            .sideBar__main__right {
+            .sideBar__main__right{
                 display: inline;
                 background: $blue;
                 transition: right linear .3s;

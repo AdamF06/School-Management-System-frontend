@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import './profile.css'
+import '../Common/useritems.css'
 export default class ChangePassword extends Component {
     state = {}
     render() {
         return (
-            <div>
+            <div className="useritems changepassword">
             <meta charSet="UTF-8" />
             <meta name="viewport" content="width=, initial-scale=1.0" />
             <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
