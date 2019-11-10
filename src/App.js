@@ -5,14 +5,15 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 import './App.css'
 // import User from './components/User/User'
 import UserRouter from './components/User/UserRouter';
-
+import CourseRouter from './components/Course/CourseRouter'
 function App() {
   return (
     <>
     <SideBar/>
     {/* <TopBar/> */}
     {/* <Login/> */}
-    <UserRouter/>
+    {/* <UserRouter/> */}
+    <CourseRouter/>
     </>
   );
 }

@@ -1,0 +1,68 @@
+.CourseMenu {
+    height: 100%;
+    width: 100%;
+    margin-left: 210px;
+    border: 1px solid black;
+}
+
+.CourseInfo {
+    display: flex;
+    flex-direction: column;
+    margin-left: 210px;
+}
+  
+.CourseInfo-top {
+    display: flex;
+    align-items: center;
+    margin: 0 24px;
+}
+  
+.CourseInfo-main {  
+    display: flex;
+    align-items: flex-start;
+    margin: 0 24px;  
+}
+  
+.CourseInfo-main-left {
+
+    flex: 1;
+}
+  
+.CourseInfo-main-content {
+    text-align: start;
+    font-size: 1.125rem;
+    line-height: 1.5;
+    font-weight: 300;
+
+    flex: 5;
+}
+
+.CourseOutline {
+    display: flex;
+    flex-direction: column;
+    margin-left: 210px;
+}
+
+.Assignment {
+    display: flex;
+    flex-direction: column;
+    margin-left: 210px;
+}
+
+.Assessment {
+    display: flex;
+    flex-direction: column;
+    margin-left: 210px;
+}
+
+.PlagiarismPolicy {
+    display: flex;
+    flex-direction: column;
+    margin-left: 210px;
+}
+
+.FAQ {
+    display: flex;
+    flex-direction: column;
+    margin-left: 210px;
+}
