@@ -51,6 +51,7 @@
   font-size: 14px;
   color: #fff;
   margin: 0;
+  outline: none;
 }
 
 .login__backGround__nav ul li button h4 {
@@ -65,14 +66,10 @@
   margin: 0;
 }
 
-.login__backGround__nav ul li:hover {
+.login__backGround__nav ul li button:hover {
   background: -webkit-gradient(linear, left top, right top, color-stop(0, #ffb369), to(#ff4272));
   background: linear-gradient(90deg, #ffb369 0, #ff4272);
   border-radius: 50%;
-}
-
-.login__backGround__nav ul li:hover button {
-  background-color: linear-gradient(90deg, #ffb369 0, #ff4272);
 }
 
 .login__content {
