@@ -1,19 +1,23 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import jwt_decode from 'jwt-decode'
+import { connect } from 'react-redux';
 import './Form.css'
 import {
     Gmail,
     Facebook,
     Ins
 } from '../Icon/Icon'
-
-const form = document.getElementById("container")
+import {
+    changeUserStatus,
+    setUserIdentity
+} from '../../actions'
 
 class Form extends Component {
     state = {
         panel: "left",
-        email:'',
-        password:''
+        login_email: '',
+        login_password: '',
     }
 
     switchToSignin() {
@@ -27,21 +31,54 @@ class Form extends Component {
         })
 
     }
-    signIn = (e) => {
-        e.preventDefault()
-        axios({
-            url: 'http://127.0.0.1:8080/students/login',
-            method: 'post',
-            data: {
-                email: "test@qq.com",
-                password: "1234567"
-            }
-        }).then(res => {
-            console.log(res.data)
-            if (res.status === 200) {
-                console.log("success")
-            }
+    handleChange = (e) => {
+        this.setState({
+            [e.target.name]: e.target.value
         })
+    }
+    changeStatus = (identity) => {
+        const currentStatus = this.props.status === 'offline' ? 'signedin' : 'offline';
+        this.props.changeUserStatus({
+            status: currentStatus,
+        })
+        this.props.setUserIdentity({
+            identity
+        })
+        console.log(this.props)
+    }
+    signIn = async (e) => {
+        const { login_email, login_password } = this.state
+        e.preventDefault()
+        try {
+            const studentApi_res = await axios({
+                url: 'http://127.0.0.1:8080/students/login',
+                method: 'post',
+                data: { email: 'test@qq.com', password: '1234567' }
+            })
+
+            if (studentApi_res.status === 200) {
+                console.log("success")
+                const token = jwt_decode(studentApi_res.data.token)
+                console.log(token)
+                this.changeStatus(token.identity)
+            } else {
+                const teacherApi_res = await axios({
+                    url: 'http://127.0.0.1:8080/teachers/login',
+                    method: 'post',
+                    data: { email: login_email, password: login_password }
+                })
+                if (teacherApi_res.status === 200) {
+                    console.log("success")
+                    const token = jwt_decode(teacherApi_res.data.token)
+                    console.log(token)
+                    this.changeStatus(token.identity)
+                }
+            }
+        } catch (err) {
+            if (err){
+                console.log(err)
+            }
+        }
     }
 
     render() {
@@ -74,8 +111,8 @@ class Form extends Component {
                             <li><button className="social">{Ins} </button></li>
                         </ul>
                         <span>or use your account</span>
-                        <input type="email" placeholder="Email" />
-                        <input type="password" placeholder="Password" />
+                        <input type="email" placeholder="Email" name="login_email" onChange={this.handleChange} />
+                        <input type="password" placeholder="Password" name="login_password" onChange={this.handleChange} />
                         <a href="#">Forgot your password?</a>
                         <button className="act" onClick={this.signIn}>Sign In</button>
                     </form>
@@ -104,5 +141,14 @@ class Form extends Component {
         );
     }
 }
-
-export default Form;
+function mapStateToProps(state) {
+    const { user } = state;
+    return {
+        identity: user.identity,
+        status: user.status
+    };
+}
+export default connect(mapStateToProps, {
+    changeUserStatus,
+    setUserIdentity
+})(Form);
