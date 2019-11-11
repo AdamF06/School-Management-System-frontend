@@ -1,13 +1,11 @@
 import React, {Component} from "react";
 import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
+  Link,
 } from "react-router-dom";
 import "../user.css"
 export default class SecondNav extends Component {
-    render(){  
+  
+    render(){ 
     return (
           <div className="content">
               <nav>
