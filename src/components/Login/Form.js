@@ -61,6 +61,9 @@ class Form extends Component {
                 const token = jwt_decode(studentApi_res.data.token)
                 console.log(token)
                 this.changeStatus(token.identity)
+
+                window.location.href='http://localhost:3000/user'
+                
             } else {
                 const teacherApi_res = await axios({
                     url: 'http://127.0.0.1:8080/teachers/login',
