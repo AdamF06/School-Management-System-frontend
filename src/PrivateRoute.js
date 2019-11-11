@@ -4,17 +4,18 @@ import {Route,
         Redirect
 } from'react-router-dom'
 
-function PrivateRoute(props) {
+function PrivateRoute(props) {   
     return (
       <Route
-        // {...rest}
+        // {...rest}       
         render={({ location }) =>
+            
            props.status === 'signedin'? (
             props.children
           ) : (
             <Redirect
               to={{
-                pathname: "/login",
+                pathname: "/",
                 state: { from: location }
               }}
             />

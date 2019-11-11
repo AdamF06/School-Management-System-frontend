@@ -6,14 +6,15 @@ import './App.css'
 import Login from './components/Login/Login';
 import SideBar from './components/SideBar/SideBar';
 import UserRouter from './components/User/UserRouter';
-import PrivateRoute from './PrivateRoute'
+// import PrivateRoute from './PrivateRoute'
 function App() {
   return (
     <>
       <Router>
         <Switch>
           <Route exact path="/"> <Login /></Route>
-          <PrivateRoute path="/user"><SideBar/> <UserRouter /> </PrivateRoute>
+          <Route path ="/user"><SideBar/> <UserRouter /></Route>
+          {/* <PrivateRoute path="/user"><SideBar/> <UserRouter /> </PrivateRoute> */}
           <Route path="*" component={() => "404 NOT FOUND"} />
         </Switch>
       </Router>
