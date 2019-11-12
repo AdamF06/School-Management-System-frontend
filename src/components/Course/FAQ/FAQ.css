@@ -1,0 +1,5 @@
+.FAQ {
+    display: flex;
+    flex-direction: column;
+    margin-left: 210px;
+}
