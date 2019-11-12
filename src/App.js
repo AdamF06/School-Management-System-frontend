@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import './App.css'
 
 import Login from './components/Login/Login';
-import SideBar from './components/SideBar/SideBar';
+import SideBar from './components/PrimaryNav/PrimaryNav';
 import UserRouter from './components/User/UserRouter';
 // import PrivateRoute from './PrivateRoute'
 function App() {
