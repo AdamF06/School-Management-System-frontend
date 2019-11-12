@@ -169,19 +169,6 @@
   padding-bottom: 0px;
 }
 
-.primaryNav__main__right {
-  width: 160px;
-  height: 100%;
-  display: none;
-}
-
-.primaryNav__main-right-active .primaryNav__main__right {
-  display: inline;
-  background: #055C9D;
-  -webkit-transition: right linear .3s;
-  transition: right linear .3s;
-}
-
 .primaryNav__main-right-active .primaryNav__main__left {
   width: 50px;
 }
@@ -222,37 +209,5 @@
   color: whitesmoke;
   margin: 0 10px;
   text-align: center;
-}
-
-.primaryNav .show-Dashboard .primaryNav__main__left ul li #Dashboard {
-  background-color: #055C9D;
-}
-
-.primaryNav .show-Users .primaryNav__main__left ul li #Users {
-  background-color: #055C9D;
-}
-
-.primaryNav .show-Site .primaryNav__main__left ul li #Site {
-  background-color: #055C9D;
-}
-
-.primaryNav .show-Sales .primaryNav__main__left ul li #Sales {
-  background-color: #055C9D;
-}
-
-.primaryNav .show-Emails .primaryNav__main__left ul li #Emails {
-  background-color: #055C9D;
-}
-
-.primaryNav .show-Plan .primaryNav__main__left ul li #Plan {
-  background-color: #055C9D;
-}
-
-.primaryNav .show-Help .primaryNav__main__left ul li #Dashboard {
-  background-color: #055C9D;
-}
-
-.primaryNav .show-Setting .primaryNav__main__left ul li #Setting {
-  background-color: #055C9D;
 }
 /*# sourceMappingURL=PrimaryNav.css.map */

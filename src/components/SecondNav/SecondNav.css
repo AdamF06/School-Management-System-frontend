@@ -1,0 +1,61 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.secondNav {
+  overflow-x: hidden;
+}
+
+.secondNav .--inactive {
+  display: none;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  -webkit-transition: -webkit-transform 0.5s ease-in;
+  transition: -webkit-transform 0.5s ease-in;
+  transition: transform 0.5s ease-in;
+  transition: transform 0.5s ease-in, -webkit-transform 0.5s ease-in;
+}
+
+.secondNav .--active {
+  width: 160px;
+  height: 100%;
+  background: #055C9D;
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+}
+
+.secondNav .--active nav {
+  height: 100%;
+}
+
+.secondNav .--active nav ul {
+  height: 200px;
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.secondNav .--active nav ul li {
+  margin: 20px 10px;
+}
+
+.secondNav .--active nav ul li a {
+  color: whitesmoke;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.secondNav .--active nav ul li a:hover {
+  color: orange;
+}
+/*# sourceMappingURL=SecondNav.css.map */

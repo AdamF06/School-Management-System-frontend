@@ -1,28 +1,24 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import {
   Link,
 } from "react-router-dom";
-import "../user.css"
-export default class SecondNav extends Component {
+export default class UserSecondNav extends Component {
   
-    render(){ 
+  render() {
     return (
-          <div className="content">
-              <nav>
-              <ul>
-                  <li>
-                  <Link to="/user">Home</Link>
-                  </li>
-                  <li>
-                  <Link to="/user/profile">Profile</Link>
-                  </li>
-                  <li>
-                  <Link to="/user/changePassword">ChangePassword</Link>
-                  </li>
-              </ul>
-              </nav>
-
-          </div>
+      <nav>
+      <ul>
+        <li>
+          <Link to="/user">Home</Link>
+        </li>
+        <li>
+          <Link to="/user/profile">Profile</Link>
+        </li>
+        <li>
+          <Link to="/user/changePassword">ChangePassword</Link>
+        </li>
+      </ul>
+      </nav>
     );
   }
 }
