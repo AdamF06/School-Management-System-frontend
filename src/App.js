@@ -12,8 +12,8 @@ function App() {
     <SideBar/>
     {/* <TopBar/> */}
     {/* <Login/> */}
-    {/* <UserRouter/> */}
-    <CourseRouter/>
+    <UserRouter/>
+    <CourseRouter />
     </>
   );
 }
