@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,QAAQ,CAAA;EACJ,MAAM,EAAE,IAAI;EACZ,KAAK,EAAE,IAAI;EACX,WAAW,EAAE,KAAK;EAClB,aAAa,EAAE,eAAe;CACjC",
+    "sources": [
+        "UserRouter.scss"
+    ],
+    "names": [],
+    "file": "UserRouter.css"
+}

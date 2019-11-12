@@ -1,0 +1,31 @@
+.file{
+    .ef-folder-list{
+        overflow: auto;
+        box-sizing: border-box;
+        width:20%;
+        height:100%;
+        display: flex;
+        position: relative;
+    }
+    .ef-directory{
+        width:80%;
+        margin-left: 10px;
+        .list_nav_bar{   
+            span{
+                padding: 15px;
+            }    
+            margin-top:0rem;
+            margin-right:30%;
+            width: 60%;
+            height: 10px;
+            background-color: #fff;
+            background-size: 100%;
+            .file_detail{
+                .li{
+                }
+            }
+        }
+
+    }
+
+}
