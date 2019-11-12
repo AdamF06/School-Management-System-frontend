@@ -1,6 +1,6 @@
 import React from 'react'
 
-const SideBarItems = (args) => {
+const PrimaryNavItems = (args) => {
     const { icon, iconName } = args
     return (
         <>
@@ -9,4 +9,4 @@ const SideBarItems = (args) => {
         </>
     )
 }
-export default SideBarItems;
+export default PrimaryNavItems;
