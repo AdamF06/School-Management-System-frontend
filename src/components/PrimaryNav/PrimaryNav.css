@@ -3,7 +3,7 @@
           box-sizing: border-box;
 }
 
-.sideBar {
+.primaryNav {
   position: fixed;
   width: 210px;
   height: 100%;
@@ -19,11 +19,11 @@
   background: #003060;
 }
 
-.sideBar__top {
+.primaryNav__top {
   height: 8%;
 }
 
-.sideBar__top form {
+.primaryNav__top form {
   margin: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -33,7 +33,7 @@
           justify-content: space-between;
 }
 
-.sideBar__top form input {
+.primaryNav__top form input {
   height: 30px;
   width: 155px;
   font-size: 1.2rem;
@@ -44,7 +44,7 @@
   color: whitesmoke;
 }
 
-.sideBar__top form button {
+.primaryNav__top form button {
   height: 36px;
   width: 36px;
   background: none;
@@ -52,14 +52,14 @@
   margin-right: 20px;
 }
 
-.sideBar__main {
+.primaryNav__main {
   height: 84%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.sideBar__main__left {
+.primaryNav__main__left {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -73,7 +73,7 @@
   width: 100%;
 }
 
-.sideBar__main__left ul {
+.primaryNav__main__left ul {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -89,7 +89,7 @@
   background-color: #003060;
 }
 
-.sideBar__main__left ul li {
+.primaryNav__main__left ul li {
   height: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -101,13 +101,13 @@
       align-content: center;
 }
 
-.sideBar__main__left ul li :hover {
+.primaryNav__main__left ul li :hover {
   -webkit-transition: background-color 0.2s linear;
   transition: background-color 0.2s linear;
   background-color: #055C9D;
 }
 
-.sideBar__main__left ul li button {
+.primaryNav__main__left ul li button {
   background: none;
   border: none;
   height: 100%;
@@ -127,7 +127,7 @@
           align-items: baseline;
 }
 
-.sideBar__main__left ul li button h2:first-child {
+.primaryNav__main__left ul li button h2:first-child {
   font-size: 20px;
   margin: 10px 10px;
   padding: 0;
@@ -135,74 +135,61 @@
   width: 30px;
 }
 
-.sideBar__main__left ul li button h2:last-child {
+.primaryNav__main__left ul li button h2:last-child {
   font-size: 14px;
   color: white;
   margin-left: 15px;
 }
 
-.sideBar__main__left ul:first-child {
+.primaryNav__main__left ul:first-child {
   padding: 0px;
   width: 100%;
 }
 
-.sideBar__main__left ul:first-child li:last-child {
+.primaryNav__main__left ul:first-child li:last-child {
   width: 100%;
   border-top: 1px solid whitesmoke;
 }
 
-.sideBar__main__left ul:first-child li:first-child {
+.primaryNav__main__left ul:first-child li:first-child {
   padding-top: 0px;
 }
 
-.sideBar__main__left ul:last-child {
+.primaryNav__main__left ul:last-child {
   padding: 0px;
   width: 100%;
 }
 
-.sideBar__main__left ul:last-child li:first-child {
+.primaryNav__main__left ul:last-child li:first-child {
   width: 100%;
   border-top: 1px solid whitesmoke;
 }
 
-.sideBar__main__left ul:last-child li:last-child {
+.primaryNav__main__left ul:last-child li:last-child {
   padding-bottom: 0px;
 }
 
-.sideBar__main__right {
-  width: 160px;
-  height: 100%;
-  display: none;
-}
-
-.sideBar__main-right-active .sideBar__main__right {
-  display: inline;
-  background: #055C9D;
-  -webkit-transition: right linear .3s;
-  transition: right linear .3s;
-}
-
-.sideBar__main-right-active .sideBar__main__left {
+.primaryNav__main-right-active .primaryNav__main__left {
   width: 50px;
 }
 
-.sideBar__main-right-active .sideBar__main__left ul li button h2:last-child {
+.primaryNav__main-right-active .primaryNav__main__left ul li button h2:last-child {
   display: none;
 }
 
-.sideBar__main-right-active .sideBar__main__left ul li button {
+.primaryNav__main-right-active .primaryNav__main__left ul li button {
   padding: 0;
 }
 
-.sideBar__main-right-active .sideBar__main__left ul li button h2 {
+.primaryNav__main-right-active .primaryNav__main__left ul li button h2 {
   width: 100%;
 }
 
-.sideBar__main-right-active .sideBar__main__left ul li .high-light {
+.primaryNav__main-right-active .primaryNav__main__left ul li .high-light {
   background: #055C9D;
 }
 
-.sideBar__bot {
+.primaryNav__bot {
   height: 8%;
   background-color: #003D7A;
   padding: 10px;
@@ -211,48 +198,16 @@
   display: flex;
 }
 
-.sideBar__bot__photo {
+.primaryNav__bot__photo {
   height: 40px;
   width: 40px;
   background-color: gray;
   border-radius: 50%;
 }
 
-.sideBar__bot h3 {
+.primaryNav__bot h3 {
   color: whitesmoke;
   margin: 0 10px;
   text-align: center;
 }
-
-.sideBar .show-Dashboard .sideBar__main__left ul li #Dashboard {
-  background-color: #055C9D;
-}
-
-.sideBar .show-Users .sideBar__main__left ul li #Users {
-  background-color: #055C9D;
-}
-
-.sideBar .show-Site .sideBar__main__left ul li #Site {
-  background-color: #055C9D;
-}
-
-.sideBar .show-Sales .sideBar__main__left ul li #Sales {
-  background-color: #055C9D;
-}
-
-.sideBar .show-Emails .sideBar__main__left ul li #Emails {
-  background-color: #055C9D;
-}
-
-.sideBar .show-Plan .sideBar__main__left ul li #Plan {
-  background-color: #055C9D;
-}
-
-.sideBar .show-Help .sideBar__main__left ul li #Dashboard {
-  background-color: #055C9D;
-}
-
-.sideBar .show-Setting .sideBar__main__left ul li #Setting {
-  background-color: #055C9D;
-}
-/*# sourceMappingURL=SideBar.css.map */
+/*# sourceMappingURL=PrimaryNav.css.map */

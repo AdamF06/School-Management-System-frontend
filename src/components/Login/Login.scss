@@ -28,35 +28,34 @@ $hoverColor:linear-gradient(90deg,#ffb369 0,#ff4272);
                 list-style: none;
                 display: flex;
                 justify-content: space-between;
-                li button{
-                    height: 90px;
-                    width: 90px;
-                    border-radius: 50%;
-                    border: none;
-                    text-align: center; 
-                    background-color:$bg;
-                    font-size:14px ;
-                    color: #fff;
-                    margin: 0;
-                  
-                    h4{
-                        font-size:30px ;
+                li{
+                    button{
+                        height: 90px;
+                        width: 90px;
+                        border-radius: 50%;
+                        border: none;
+                        text-align: center; 
+                        background-color:$bg;
+                        font-size:14px ;
                         color: #fff;
                         margin: 0;
-                    }     
-                    h3{
-                        font-size:16px ;
-                        color: #fff;
-                        margin: 0;
+                        outline: none;
+                        h4{
+                            font-size:30px ;
+                            color: #fff;
+                            margin: 0;
+                        }     
+                        h3{
+                            font-size:16px ;
+                            color: #fff;
+                            margin: 0;
+                        }
+                    }
+                    button:hover{
+                        background: $hoverColor;
+                        border-radius: 50%;
                     }
                 } 
-                li:hover{
-                    background: $hoverColor;
-                    border-radius: 50%;
-                    button{
-                        background-color:$hoverColor;
-                    }
-                }
             }
         }  
     }   

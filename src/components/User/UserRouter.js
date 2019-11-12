@@ -4,17 +4,13 @@ import {
     BrowserRouter as Router,
     Switch,
     Route,
-    Link
 } from "react-router-dom";
 import Profile from './Profile/profile';
 import ChangePassword from './ChangePWD/changePassword';
-import SecondNav from './Nav/secondNav'
-
 export default class UserRouter extends Component {
     render() {
         return (
-            <Router>
-                <SecondNav />
+            <>
                 <Switch>
                     <Route path="/user">
                         <Switch>
@@ -29,7 +25,7 @@ export default class UserRouter extends Component {
                         </Switch>
                     </Route>
                 </Switch>
-            </Router>
+            </>
         );
     }
 }
