@@ -52,6 +52,8 @@
                 color:#2D3B45;
                 border-radius: 3px;
                 font-size:0.8rem;
+            }
+            button:hover{
                 box-shadow:1px 1px grey;
             }
             a{  
@@ -80,6 +82,14 @@
         background-size: 100%;
         label{
         }
+        .input_shadow{
+            input{
+            border-radius: 1px;
+            }
+            input:hover{
+                box-shadow: inset 0px 1px 8px rgba(0, 0, 0, 0.2);
+            }
+        }
         .col{
             float:left;
         }
@@ -88,10 +98,13 @@
             button{
                 margin-top:0rem;
                 border:1px solid;
-                background-color: whitesmoke;
-                color:#2D3B45;
+                background-color: orange;
+                color:white;
                 border-radius: 3px;
                 font-size:0.7rem;
+                font-weight: 800;
+            }
+            button:hover{
                 box-shadow:1px 1px grey;
             }
         }
@@ -127,10 +140,15 @@
     }
     .pwd{
         font-size: 1.2rem;
+        margin-left: 5px;
+
         a{
             padding: 0;
             text-decoration: none;
-        }
+        }  
+    }
+    .pwd:hover{
+        box-shadow: 1px 1px;
     }
     
     // ChangePassword Route

@@ -33,31 +33,33 @@ class Profile extends Component {
                 <div className="basic_info">
                   <p className='bold'>Edit your profile here: </p>
                   <hr/>
-                  <div className='col'>
-                    <label>&nbsp;&nbsp;First Name  </label>
-                    <input type="text" id="first_name" defaultValue="get from backend" />
-                    <label>&nbsp;&nbsp;Last Name  </label>
-                    <input type="text" id="Last_name" defaultValue="get from backend" />
-                  </div>
-                  <div className='col'>
-                    <label>&nbsp;&nbsp;Mobile  </label>
-                    <input type="text" id="Mobile" defaultValue="get from backend" />
-                    <label>&nbsp;&nbsp;Age  </label>
-                    <input type="text" id="Age" defaultValue="get from backend" />
-                  </div>
-                  <div className='col'>
-                    <label>&nbsp;&nbsp;Title  </label>
-                    <input type="text" id="Title" defaultValue="get from backend" />
-                    <label>&nbsp;&nbsp;School  </label>
-                    <input type="text" id="School" defaultValue="get from backend" />
-                  </div>
-                  <div className='col'> 
-                    <label>&nbsp;&nbsp;Email  </label>
-                    <input type="text" id="Email" defaultValue="get from backend" size='50'/>
-                  </div>  
-                  <div className='col'>
-                    <label>&nbsp;&nbsp;Address  </label>
-                    <input type="text" id="Address" defaultValue="get from backend" size='50'/>
+                  <div className='input_shadow'>
+                    <div className='col'>
+                      <label>&nbsp;&nbsp;First Name  </label>
+                      <input type="text" id="first_name" defaultValue="get from backend" />
+                      <label>&nbsp;&nbsp;Last Name  </label>
+                      <input type="text" id="Last_name" defaultValue="get from backend" />
+                    </div>
+                    <div className='col'>
+                      <label>&nbsp;&nbsp;Mobile  </label>
+                      <input type="text" id="Mobile" defaultValue="get from backend" />
+                      <label>&nbsp;&nbsp;Age  </label>
+                      <input type="text" id="Age" defaultValue="get from backend" />
+                    </div>
+                    <div className='col'>
+                      <label>&nbsp;&nbsp;Title  </label>
+                      <input type="text" id="Title" defaultValue="get from backend" />
+                      <label>&nbsp;&nbsp;School  </label>
+                      <input type="text" id="School" defaultValue="get from backend" />
+                    </div>
+                    <div className='col'> 
+                      <label>&nbsp;&nbsp;Email  </label>
+                      <input type="text" id="Email" defaultValue="get from backend" size='50'/>
+                    </div>  
+                    <div className='col'>
+                      <label>&nbsp;&nbsp;Address  </label>
+                      <input type="text" id="Address" defaultValue="get from backend" size='50'/>
+                    </div>
                   </div>
                   <div className='col gender'>  
                     <p>Gender  <input id="man" type="radio" defaultChecked="checked" name={1} />Male
