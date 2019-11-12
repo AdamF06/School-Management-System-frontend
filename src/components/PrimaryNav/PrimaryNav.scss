@@ -121,17 +121,7 @@ $darkBlue:#003D7A;
                 }
             }
         }
-        &__right{
-            width:160px;
-            height: 100%;
-            display: none;
-        }
         &-right-active{
-            .primaryNav__main__right{
-                display: inline;
-                background: $blue;
-                transition: right linear .3s;
-            }
             .primaryNav__main__left{
                 width: 50px;
                 ul li button h2:last-child{
@@ -146,7 +136,6 @@ $darkBlue:#003D7A;
                 ul li .high-light{
                     background: $blue;   
                 }
-
             }
         }
     }
@@ -168,62 +157,5 @@ $darkBlue:#003D7A;
             margin: 0 10px;
             text-align: center;
         }
-    }
-
-    .show-Dashboard{
-        .primaryNav__main__left{
-            ul li #Dashboard{
-                background-color: $blue;       
-            }
-        }
-    }
-    .show-Users{
-        .primaryNav__main__left{
-            ul li #Users{
-                background-color: $blue;       
-            }
-        }
-    }
-    .show-Site{
-        .primaryNav__main__left{
-            ul li #Site{
-                background-color: $blue;       
-            }
-        }
-    }
-    .show-Sales{
-        .primaryNav__main__left{
-            ul li #Sales{
-                background-color: $blue;       
-            }
-        }
-    }
-    .show-Emails{
-        .primaryNav__main__left{
-            ul li #Emails{
-                background-color: $blue;       
-            }
-        }
-    }
-    .show-Plan{
-        .primaryNav__main__left{
-            ul li #Plan{
-                background-color: $blue;       
-            }
-        }
-    }
-    .show-Help{
-        .primaryNav__main__left{
-            ul li #Dashboard{
-                background-color: $blue;       
-            }
-        }
-    }
-    .show-Setting{
-        .primaryNav__main__left{
-            ul li #Setting{
-                background-color: $blue;       
-            }
-        }
-    }
+    }    
 }
