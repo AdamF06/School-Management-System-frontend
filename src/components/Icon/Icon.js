@@ -10,6 +10,8 @@ import {
     faCogs,
     faSearch,
     faSitemap,
+    faEllipsisV,
+    faFileAlt,
 }from '@fortawesome/free-solid-svg-icons'
 import { 
     faQuestionCircle,
@@ -37,6 +39,10 @@ export const Chat =  <FontAwesomeIcon icon={faCommentDots} size="1x" color="whit
 export const Facebook =  <FontAwesomeIcon icon={faFacebookF} size="1x" color="black"/>
 export const Gmail =  <FontAwesomeIcon icon={faGooglePlusG} size="1x" color="black"/>
 export const Ins =  <FontAwesomeIcon icon={faInstagram} size="1x" color="black"/>
+export const EllipsisV=  <FontAwesomeIcon icon={faEllipsisV} size="1x" color="white"/>
+export const EllipsisVB=  <FontAwesomeIcon icon={faEllipsisV} size="1x" color="black"/>
+export const File=  <FontAwesomeIcon icon={faFileAlt} size="2x" color="black"/>
+
 
 
 

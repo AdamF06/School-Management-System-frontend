@@ -62,7 +62,7 @@ class Form extends Component {
                 console.log(token)
                 this.changeStatus(token.identity)
 
-                window.location.href='http://localhost:3000/user'
+                window.location.href='http://localhost:3000/dashboard'
                 
             } else {
                 const teacherApi_res = await axios({

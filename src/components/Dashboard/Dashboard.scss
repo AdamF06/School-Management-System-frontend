@@ -1,0 +1,70 @@
+.dashboardContainer{
+    margin-left:210px;
+    .Dashheader{
+        margin: 20px;
+        height: 70px;
+        width: 830px;
+        /* background-color: aqua; */
+        font-size: 1.5rem;
+        word-spacing: 680px;
+        line-height: 70px;
+        border-bottom: 1px solid #000;
+        float: left;
+    }
+    .taskMenu{
+        display: inline-block;
+        height: 300px;
+        width: 300px;
+        background-color: beige;
+    }
+    .todo{
+        width: 220px;
+        height: 35px;
+        line-height: 35px;
+        border-bottom: 1px solid #000;
+        margin-left: 20px;
+        margin-top: 55px;
+        font-weight: bold;
+    }
+    .feedback{
+        width: 220px;
+        height: 35px;
+        line-height: 35px;
+        border-bottom: 1px solid #000;
+        margin-left: 20px;
+        font-weight: bold;
+    }
+    p{
+        margin-left: 20px;
+        font-size: 0.8rem;
+    }
+    button{
+        width: 220px;
+        height: 35px;
+        line-height: 35px;
+        text-align: left;
+    }
+    .card{
+        height: 240px;
+        width: 220px;
+        background-color: bisque;
+        border-radius: 5px;
+        box-shadow:0 2px 20px 0 #babacd;
+        margin-left: 20px;
+        margin-top: -180px;
+    }
+    .sub{
+        height: 120px;
+        background-color: cadetblue;
+        border-radius: 5px 5px 0 0;
+        font-size: 1.3rem;
+        padding: 15px;
+        text-align: right;
+    }
+    .enroll{
+        padding: 15px;
+    }
+    .file{
+        padding: 15px;
+    }
+}

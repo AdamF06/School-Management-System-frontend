@@ -6,6 +6,7 @@ import './App.css'
 import Login from './components/Login/Login';
 import SideBar from './components/PrimaryNav/PrimaryNav';
 import UserRouter from './components/User/UserRouter';
+import Dasboard from './components/Dashboard/Dashboard'
 // import PrivateRoute from './PrivateRoute'
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/"> <Login /></Route>
+          <Route path='/dashboard'> <SideBar/> <Dasboard/> </Route>
           <Route path ="/user"><SideBar/> <UserRouter /></Route>
           {/* <PrivateRoute path="/user"><SideBar/> <UserRouter /> </PrivateRoute> */}
           <Route path="*" component={() => "404 NOT FOUND"} />
