@@ -1,20 +1,31 @@
 import React from 'react';
-import SideBar from './components/SideBar/SideBar';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
-// import Login from './components/Login/Login';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { connect } from 'react-redux';
 import './App.css'
-// import User from './components/User/User'
-import UserRouter from './components/User/UserRouter';
 
+import Login from './components/Login/Login';
+import SideBar from './components/PrimaryNav/PrimaryNav';
+import UserRouter from './components/User/UserRouter';
+// import PrivateRoute from './PrivateRoute'
 function App() {
   return (
     <>
-    <SideBar/>
-    {/* <TopBar/> */}
-    {/* <Login/> */}
-    <UserRouter/>
+      <Router>
+        <Switch>
+          <Route exact path="/"> <Login /></Route>
+          <Route path ="/user"><SideBar/> <UserRouter /></Route>
+          {/* <PrivateRoute path="/user"><SideBar/> <UserRouter /> </PrivateRoute> */}
+          <Route path="*" component={() => "404 NOT FOUND"} />
+        </Switch>
+      </Router>
     </>
   );
 }
-
-export default App;
+function mapStateToProps(state) {
+  const { user } = state;
+  return {
+      identity: user.identity,
+      status: user.status
+  };
+}
+export default connect(mapStateToProps, {})(App);

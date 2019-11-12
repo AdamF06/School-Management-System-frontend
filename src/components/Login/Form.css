@@ -80,6 +80,7 @@
   border: 1px solid black;
   border-radius: 50%;
   text-align: center;
+  outline: none;
 }
 
 .login__form .formContainer form .act, .login__form .overlay__panel .act {
