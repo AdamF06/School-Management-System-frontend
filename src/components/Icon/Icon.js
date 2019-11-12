@@ -49,4 +49,3 @@ export const Ins =  <FontAwesomeIcon icon={faInstagram} size="1x" color="black"/
 
 
 
-

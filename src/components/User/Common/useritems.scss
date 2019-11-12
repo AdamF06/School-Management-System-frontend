@@ -2,19 +2,17 @@
     height: 100%;
     width: 100%;
     margin-left: 210px;
-    border: 1px solid black;
     .container{
-        position:fixed;
         padding: 0;
         margin: 0;
         width: 100%;
         height: 850px;
         overflow: hidden;
-        float: left;
-        background: url('https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=197704580,2183715727&fm=26&gp=0.jpg');
+        // background: url('https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=197704580,2183715727&fm=26&gp=0.jpg');
         background-size: 100%;
-        // max-width: 1050px;
-        // position: fixed;
+        display:flex;
+
+
     }
     
     .welcome{
@@ -27,26 +25,39 @@
         line-height: 50px;
         text-indent: 2rem;
     }
-    .portrait_box{
-        float: left;
-        margin-top:10%;
-        width: 20%;
-        span{
+    .left_col{  
+        overflow: auto;
+        box-sizing: border-box;
+        width:20%;
+        height:100%;
+        display: flex;
+        position: relative;
+        .portrait_box{
+            position: relative;
+            top:50px;
+            margin-left: auto;
+            margin-right: auto;
             .portrait{
-                // margin-top: 10%;
-                // margin-left: 20%;
-                margin:auto;
                 height: 160px;
-                width: 160px;
-                background-color: pink;
+                // width: 160px;
+                background-color:white;
                 font-size: 1rem;
-                position: relative;
-    
+
+            }
+            button{
+                margin-top:0.5rem;
+                border:1px solid;
+                // background: linear-gradient();
+                background-color: whitesmoke;
+                color:#2D3B45;
+                border-radius: 3px;
+                font-size:0.8rem;
+                box-shadow:1px 1px grey;
             }
             a{  
-                position: absolute;
-                left:65px;
                 font-size: 18px;
+                padding:0;
+                margin-left:40px;
             }
         }
     
@@ -56,32 +67,45 @@
         color: black;
         padding-left: 4rem;
     }
-    .basic_info{
-        border:10px black;
+    .right-col{
+        width:70%;
+    .basic_info{       
         margin-top:2rem;
-        margin-right:20%;
+        margin-right:30%;
         width: 60%;
         height: 390px;
         background-color: #fff;
         float: right;
-        background-image: url('https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=197704580,2183715727&fm=26&gp=0.jpg');
+        // background-image: url('https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=197704580,2183715727&fm=26&gp=0.jpg');
         background-size: 100%;
+        label{
+        }
         .col{
             float:left;
         }
         .gender{
             margin-bottom: 1000px;
+            button{
+                margin-top:0rem;
+                border:1px solid;
+                background-color: whitesmoke;
+                color:#2D3B45;
+                border-radius: 3px;
+                font-size:0.7rem;
+                box-shadow:1px 1px grey;
+            }
         }
     }
     .account_info{
-        margin-top: 2rem;
-        margin-right:20%;
+        margin-top: 5rem;
+        margin-right:30%;
         width: 60%;
         height: 320px;
         background-color: #fff;
         float: right;
-        background-image: url('https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=197704580,2183715727&fm=26&gp=0.jpg');
+        // background-image: url('https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=197704580,2183715727&fm=26&gp=0.jpg');
         background-size: 100%;
+    }
     }
     p{
         text-indent: 0.5rem;
@@ -110,21 +134,15 @@
     }
     
     // ChangePassword Route
-    hr{
-        display: block;
-        height: 1px;
-        border: 0;
-        border-bottom: 1px solid #ccc;
-        margin: 1em 0;
-        padding: 0;
-        }
+
     .changePassword{
         border:solid 1px;
         padding: 20px;
         margin-top:5%;
         margin-left: 15%;
-        margin-right: 30%;
+        margin-right: auto;
         text-align: center;
+        height: 80%;
         label {
             width:250px;
         }
@@ -134,6 +152,83 @@
         .rule{
          border:1px 0 solid
         }
+
+    }
+
+    @media (max-width:800px){
+        .changePassword{
+        margin-top:10px;
+        margin-left:10px;
+        }
+    }
+    @media (max-height:800px){
+        .changePassword{
+        margin-top:10px;
+        margin-left:10px;
+        height:550px;
+        }
+    }
+
+    };
+
+    //Text-Style
+    vl{
+        border-left: 1px solid #ccc;
+        height: 100%;
+      }
     
+
+    hr{
+        display: block;
+        height: 1px;
+        border: 0;
+        border-bottom: 1px solid #ccc;
+        margin: 1em 0;
+        padding: 0;
+        }
+
+    .bold{
+        font-weight: 800;
+        color:#13294b
     }
+
+
+    
+  
+@media (max-width: 1252px)  {   //smaller version css
+    .useritems{
+        
+        .right-col{
+            width:70%;
+        .basic_info{       
+            background-size: 100%;
+
+            label{
+                text-align: left;
+            }
+            input{
+                width:60%;
+                margin:8px;
+            }
+        }
+
+       
+        }
+  }
+}
+
+@media (max-width:840px){  //if width is too tight, hide the portrait
+    .useritems{
+        .portrait_box{
+            display:none;
+        }
     }
+}
+@media (min-height:790px){  //if long enough, fixed content, if not then it can be scrolled
+    .useritems{
+        position: fixed;
+        margin-top: 88px;
+        border-top: 1px solid black;
+
+    }
+}

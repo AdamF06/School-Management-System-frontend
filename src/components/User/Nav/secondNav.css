@@ -1,0 +1,11 @@
+.secondNav {
+    width:80%;
+}
+
+
+@media (min-height:790px){
+    .secondNav{
+        position: fixed;
+        margin-bottom:200px;
+    }
+}
