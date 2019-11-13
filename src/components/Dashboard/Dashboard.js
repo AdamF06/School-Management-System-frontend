@@ -16,7 +16,7 @@ class Dashboard extends Component {
             url: 'http://127.0.0.1:8080/students/'+_id,
             method: 'get',
             headers: {
-                Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZGNiNTI5MjYwYzM4NzExNTUzZWZlMzgiLCJzdHVkZW50X0lEIjoiMDAwMDAxIiwiZW1haWwiOiJ0ZXN0QHFxLmNvbSIsImlkZW50aXR5Ijoic3R1ZGVudCIsImZpcnN0X25hbWUiOiJBZGFtIiwiaWF0IjoxNTczNjIwMTU4fQ.jqa87GlFrty-Gm6pXl9VXN_U_YWYDOjYvWJMEmJfSbU"
+                Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZGNiNTI5MjYwYzM4NzExNTUzZWZlMzgiLCJzdHVkZW50X0lEIjoiMDAwMDAxIiwiZW1haWwiOiJ0ZXN0QHFxLmNvbSIsImlkZW50aXR5Ijoic3R1ZGVudCIsImZpcnN0X25hbWUiOiJBZGFtIiwiaWF0IjoxNTczNjMzODA0fQ.M4dYecYhKlpxtf8zh1XjWtga6oNTTQeqNCPZcFjC3ts"
             }
         }) 
         console.log(getStudentApi_res) 

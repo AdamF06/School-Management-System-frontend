@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import axios from 'axios'
-import jwt_decode from 'jwt-decode'
+// import axios from 'axios'
+// import jwt_decode from 'jwt-decode'
 import { connect } from 'react-redux';
 import './Form.css'
 import {
@@ -11,8 +11,10 @@ import {
 import {
     changeStudentStatus,
     setStudentIdentity,
-    getStudentId
+    getStudentId,
+    authenticate,
 } from '../../actions'
+import { withRouter } from "react-router";
 
 class Form extends Component {
     state = {
@@ -57,41 +59,50 @@ class Form extends Component {
         }
         console.log(this.props)
     }
-    signIn = async (e) => {
-        const { login_email, login_password } = this.state
-        e.preventDefault()
-        try {
-            const studentApi_res = await axios({
-                url: 'http://127.0.0.1:8080/students/login',
-                method: 'post',
-                data: { email: 'test@qq.com', password: '1234567' }
-            })
+    
+    // signIn = async (e) => {
+    //     const { login_email, login_password } = this.state
+    //     const { fetchUser } = this.props;
+    //     e.preventDefault()
+    //     try {
+    //         const studentApi_res = fetchUser();
 
-            if (studentApi_res.status === 200) {
-                console.log("success")
-                const token = jwt_decode(studentApi_res.data.token)
-                console.log(token)
-                this.changeStatus(token)
-                window.location.href = 'http://localhost:3000/dashboard'
+    //         if (studentApi_res.status === 200) {
+    //             console.log("success")
+    //             const token = jwt_decode(studentApi_res.data.token)
+    //             console.log(token)
+    //             this.changeStatus(token)
+    //             // window.location.href = 'http://localhost:3000/dashboard'
 
-            } else {
-                const teacherApi_res = await axios({
-                    url: 'http://127.0.0.1:8080/teachers/login',
-                    method: 'post',
-                    data: { email: login_email, password: login_password }
-                })
-                if (teacherApi_res.status === 200) {
-                    console.log("success")
-                    const token = jwt_decode(teacherApi_res.data.token)
-                    console.log(token)
-                    this.changeStatus(token)
-                }
-            }
-        } catch (err) {
-            if (err) {
-                console.log(err)
-            }
-        }
+    //         } else {
+    //             const teacherApi_res = await axios({
+    //                 url: 'http://127.0.0.1:8080/teachers/login',
+    //                 method: 'post',
+    //                 data: { email: login_email, password: login_password }
+    //             })
+    //             if (teacherApi_res.status === 200) {
+    //                 console.log("success")
+    //                 const token = jwt_decode(teacherApi_res.data.token)
+    //                 console.log(token)
+    //                 this.changeStatus(token)
+    //             }
+    //         }
+    //     } catch (err) {
+    //         if (err) {
+    //             console.log(err)
+    //         }
+    //     }
+    
+    // }
+
+    signIn = (e) => {
+        e.preventDefault();
+        console.log('triggered');
+        console.log(this.props);
+        const { authenticate } = this.props;
+        authenticate();
+        const { history } = this.props;
+        history.push('/dashboard');
     }
 
     render() {
@@ -155,7 +166,8 @@ class Form extends Component {
     }
 }
 function mapStateToProps(state) {
-    const { student } = state;
+    const { student, auth } = state;
+    console.log('=======', auth)
     return {
         identity: student.identity,
         status: student.status,
@@ -165,5 +177,6 @@ function mapStateToProps(state) {
 export default connect(mapStateToProps, {
     changeStudentStatus,
     setStudentIdentity,
-    getStudentId
-})(Form);
+    getStudentId,
+    authenticate,
+})(withRouter(Form));
