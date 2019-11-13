@@ -9,8 +9,9 @@ import {
     Ins
 } from '../Icon/Icon'
 import {
-    changeUserStatus,
-    setUserIdentity
+    changeStudentStatus,
+    setStudentIdentity,
+    getStudentId
 } from '../../actions'
 
 class Form extends Component {
@@ -36,14 +37,24 @@ class Form extends Component {
             [e.target.name]: e.target.value
         })
     }
-    changeStatus = (identity) => {
+    //login 
+    changeStatus = (token) => {
         const currentStatus = this.props.status === 'offline' ? 'signedin' : 'offline';
-        this.props.changeUserStatus({
-            status: currentStatus,
-        })
-        this.props.setUserIdentity({
-            identity
-        })
+        const {_id, identity } = token
+        if (identity === 'student') {
+            this.props.changeStudentStatus({
+                status: currentStatus,
+            })
+            this.props.setStudentIdentity({
+                identity
+            })
+            this.props.getStudentId({
+                _id
+            })
+        }else{
+            // console.log('identity wrong')
+            //teacher 
+        }
         console.log(this.props)
     }
     signIn = async (e) => {
@@ -60,10 +71,9 @@ class Form extends Component {
                 console.log("success")
                 const token = jwt_decode(studentApi_res.data.token)
                 console.log(token)
-                this.changeStatus(token.identity)
+                this.changeStatus(token)
+                window.location.href = 'http://localhost:3000/dashboard'
 
-                window.location.href='http://localhost:3000/dashboard'
-                
             } else {
                 const teacherApi_res = await axios({
                     url: 'http://127.0.0.1:8080/teachers/login',
@@ -74,11 +84,11 @@ class Form extends Component {
                     console.log("success")
                     const token = jwt_decode(teacherApi_res.data.token)
                     console.log(token)
-                    this.changeStatus(token.identity)
+                    this.changeStatus(token)
                 }
             }
         } catch (err) {
-            if (err){
+            if (err) {
                 console.log(err)
             }
         }
@@ -145,13 +155,15 @@ class Form extends Component {
     }
 }
 function mapStateToProps(state) {
-    const { user } = state;
+    const { student } = state;
     return {
-        identity: user.identity,
-        status: user.status
+        identity: student.identity,
+        status: student.status,
+        _id:student._id
     };
 }
 export default connect(mapStateToProps, {
-    changeUserStatus,
-    setUserIdentity
+    changeStudentStatus,
+    setStudentIdentity,
+    getStudentId
 })(Form);

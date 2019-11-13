@@ -1,14 +1,18 @@
 const initialState = {
     identity:'',
-    status:'offline'
+    status:'offline',
+    _id:'',
+    course:[]
 }
 
 export const user = (state = initialState, action) => {
     switch (action.type) {
-        case "CHANGE_USER_STATUS":
+        case "CHANGE_STUDENT_STATUS":
             return Object.assign({}, state, { status: action.status });
-        case "SET_USER_IDENTITY":
+        case "SET_STUDENT_IDENTITY":
             return Object.assign({}, state, { identity: action.identity });
+        case "GET_STUDENT_ID":
+            return Object.assign({}, state, { _id: action._id });
         default:
             return state;
     }
