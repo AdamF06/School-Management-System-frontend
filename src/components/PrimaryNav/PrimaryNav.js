@@ -76,6 +76,7 @@ class PrimaryNav extends Component {
                     showSecondNav: false,
                     selectedSecondNav: iconName
                 })
+
             } else {
                 this.setState({
                     showSecondNav: true,
@@ -102,6 +103,16 @@ class PrimaryNav extends Component {
                         selectedSecondNav:iconName
                     })
                 }
+            }
+        }
+        // primary link
+        if (noSecondIcon.indexOf(iconName) > -1){
+            switch (iconName) {
+                case 'Dashboard':
+                    window.location.href='http://localhost:3000/dashboard'
+                    break;           
+                default:
+                    break;
             }
         }
     }

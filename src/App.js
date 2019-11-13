@@ -24,10 +24,11 @@ function App() {
   );
 }
 function mapStateToProps(state) {
-  const { user } = state;
+  const { student } = state;
   return {
-      identity: user.identity,
-      status: user.status
+      _id:student._id,
+      identity: student.identity,
+      status: student.status
   };
 }
 export default connect(mapStateToProps, {})(App);
