@@ -8,11 +8,15 @@ import SideBar from './components/PrimaryNav/PrimaryNav';
 import UserRouter from './components/User/UserRouter';
 import Dasboard from './components/Dashboard/Dashboard'
 import CourseRouter from './components/Course/CourseRouter'
+import { createBrowserHistory } from "history";
+
+const customHistory = createBrowserHistory();
+
 // import PrivateRoute from './PrivateRoute'
 function App() {
   return (
     <>
-      <Router>
+      <Router history={customHistory}>
         <Switch>
           <Route exact path="/"> <Login /></Route>
           <Route path='/dashboard'> <SideBar/> <Dasboard/> </Route>
