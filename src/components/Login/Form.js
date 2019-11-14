@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-// import axios from 'axios'
-// import jwt_decode from 'jwt-decode'
 import { connect } from 'react-redux';
 import './Form.css'
 import {
@@ -9,9 +7,6 @@ import {
     Ins
 } from '../Icon/Icon'
 import {
-    changeStudentStatus,
-    setStudentIdentity,
-    getStudentId,
     authenticate,
 } from '../../actions'
 import { withRouter } from "react-router";
@@ -21,6 +16,7 @@ class Form extends Component {
         panel: "left",
         login_email: '',
         login_password: '',
+        login_success:''
     }
 
     switchToSignin() {
@@ -38,71 +34,26 @@ class Form extends Component {
         this.setState({
             [e.target.name]: e.target.value
         })
-    }
-    //login 
-    changeStatus = (token) => {
-        const currentStatus = this.props.status === 'offline' ? 'signedin' : 'offline';
-        const {_id, identity } = token
-        if (identity === 'student') {
-            this.props.changeStudentStatus({
-                status: currentStatus,
-            })
-            this.props.setStudentIdentity({
-                identity
-            })
-            this.props.getStudentId({
-                _id
-            })
-        }else{
-            // console.log('identity wrong')
-            //teacher 
-        }
-        console.log(this.props)
-    }
-    
-    // signIn = async (e) => {
-    //     const { login_email, login_password } = this.state
-    //     const { fetchUser } = this.props;
-    //     e.preventDefault()
-    //     try {
-    //         const studentApi_res = fetchUser();
-
-    //         if (studentApi_res.status === 200) {
-    //             console.log("success")
-    //             const token = jwt_decode(studentApi_res.data.token)
-    //             console.log(token)
-    //             this.changeStatus(token)
-    //             // window.location.href = 'http://localhost:3000/dashboard'
-
-    //         } else {
-    //             const teacherApi_res = await axios({
-    //                 url: 'http://127.0.0.1:8080/teachers/login',
-    //                 method: 'post',
-    //                 data: { email: login_email, password: login_password }
-    //             })
-    //             if (teacherApi_res.status === 200) {
-    //                 console.log("success")
-    //                 const token = jwt_decode(teacherApi_res.data.token)
-    //                 console.log(token)
-    //                 this.changeStatus(token)
-    //             }
-    //         }
-    //     } catch (err) {
-    //         if (err) {
-    //             console.log(err)
-    //         }
-    //     }
-    
-    // }
+    }  
 
     signIn = (e) => {
         e.preventDefault();
-        console.log('triggered');
-        console.log(this.props);
-        const { authenticate } = this.props;
-        authenticate();
-        const { history } = this.props;
+        const { authenticate} = this.props;
+        const {login_email, login_password} = this.state
+        authenticate(login_email,login_password)
+    }
+    componentWillReceiveProps(nextProps) {
+        console.log(nextProps);
+        const { history, user_status } = this.props;
         history.push('/dashboard');
+
+        if(user_status === "online"){
+        }else{
+            this.setState({
+                login_success:false
+            })
+        }
+ 
     }
 
     render() {
@@ -166,17 +117,11 @@ class Form extends Component {
     }
 }
 function mapStateToProps(state) {
-    const { student, auth } = state;
-    console.log('=======', auth)
+    const { auth } = state;
     return {
-        identity: student.identity,
-        status: student.status,
-        _id:student._id
+        user_identity: auth.user_identity,
+        user_status: auth.user_status,
     };
 }
-export default connect(mapStateToProps, {
-    changeStudentStatus,
-    setStudentIdentity,
-    getStudentId,
-    authenticate,
-})(withRouter(Form));
+
+export default connect(mapStateToProps, {authenticate})(withRouter(Form));
