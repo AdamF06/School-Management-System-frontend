@@ -16,15 +16,12 @@ class Dashboard extends Component {
             url: 'http://127.0.0.1:8080/students/'+_id,
             method: 'get',
             headers: {
-                Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZGNiNTI5MjYwYzM4NzExNTUzZWZlMzgiLCJzdHVkZW50X0lEIjoiMDAwMDAxIiwiZW1haWwiOiJ0ZXN0QHFxLmNvbSIsImlkZW50aXR5Ijoic3R1ZGVudCIsImZpcnN0X25hbWUiOiJBZGFtIiwiaWF0IjoxNTczNjMzODA0fQ.M4dYecYhKlpxtf8zh1XjWtga6oNTTQeqNCPZcFjC3ts"
+                Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZGNiNTI5MjYwYzM4NzExNTUzZWZlMzgiLCJzdHVkZW50X0lEIjoiMDAwMDAxIiwiZW1haWwiOiJ0ZXN0QHFxLmNvbSIsImlkZW50aXR5Ijoic3R1ZGVudCIsImZpcnN0X25hbWUiOiJBZGFtIiwiaWF0IjoxNTczNzA5MzU3fQ.C2KoSCKVyLdV_U_ewaTIeCiPXE03BsVjuSlL1e33tKM"
             }
         }) 
         console.log(getStudentApi_res) 
     }
-    componentDidMount(){
-        console.log(this.props)
-        this.getCourse()
-    }
+
     render() {
         return (
             <div className="dashboardContainer">
@@ -50,11 +47,11 @@ class Dashboard extends Component {
     }
 }
 function mapStateToProps(state) {
-    const { student } = state;
+    const { auth } = state;
+    //console.log("auth from state",auth)
     return {
-        identity: student.identity,
-        status: student.status,
-        _id:student._id
+        user_identity: auth.user_identity,
+        user_status: auth.user_status,
     };
 }
 export default connect(mapStateToProps, {})(Dashboard);

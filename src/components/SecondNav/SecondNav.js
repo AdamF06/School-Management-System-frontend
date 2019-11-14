@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './SecondNav.css'
 import UserSecondNav from '../User/Nav/secondNav'
 import CourseSecondNav from '../Course/Nav/secondNav'
+
 class SecondNav extends Component {  
 
     render() {
@@ -13,7 +14,7 @@ class SecondNav extends Component {
                     <UserSecondNav/>
                 </div>
                 <div className={`courseNav ${selectedSecondNav==='Courses' && showSecondNav? '--active' :'--inactive'}`}>
-                    <CourseSecondNav/>
+                    <CourseSecondNav/> 
                 </div>
             </div>
         );

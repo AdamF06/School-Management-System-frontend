@@ -1,5 +1,7 @@
 export const initialState = {
-  user: {}
+  user_identity: '',
+  user_status: 'offline'
+
 };
 
 const auth = (state = initialState, action) => {
@@ -7,7 +9,8 @@ const auth = (state = initialState, action) => {
     case 'AUTH_SUCCEEDED':
       return {
         ...state,
-        user: action.data
+        user_identity: action.data.identity,
+        user_status: 'online'
       };
     case 'AUTH_FAILED':
       return {
@@ -19,3 +22,4 @@ const auth = (state = initialState, action) => {
 };
 
 export default auth;
+

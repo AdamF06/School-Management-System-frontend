@@ -6,6 +6,7 @@ import {
     Chat
 } from '../Icon/Icon'
 import { Particles } from 'react-particles-js';
+import { connect } from 'react-redux';
 import Form from './Form';
 
 const particlesPrep = {
@@ -63,4 +64,12 @@ class Login extends Component {
     }
 }
 
-export default Login;
+function mapStateToProps(state) {
+    const { auth } = state;
+    return {
+        user_identity: auth.user_identity,
+        user_status: auth.user_status,
+    };
+}
+
+export default connect(mapStateToProps, {})(Login);

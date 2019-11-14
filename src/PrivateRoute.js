@@ -4,15 +4,17 @@ import {Route,
         Redirect
 } from'react-router-dom'
 
-function PrivateRoute(props) {   
+class PrivateRoute extends React.Component {
+  render() {
+    const { children, user_status } = this.props;
+    console.log('========status from private route', this.props);
     return (
       <Route
         // {...rest}       
         render={({ location }) =>
-            
-           props.status === 'signedin'? (
-            props.children
-          ) : (
+             user_status ==="online"? (
+              children
+            ) : (
             <Redirect
               to={{
                 pathname: "/",
@@ -21,15 +23,24 @@ function PrivateRoute(props) {
             />
           )
         }
-      />
-    );
+        />
+    )
   }
+}
+// function PrivateRoute() {
+//     const { children, status } = props;
+//     console.log('========status', status);
+//     return (
+      
+//       />
+//     );
+//   }
   
 function mapStateToProps(state) {
-    const { user } = state;
+    const { auth } = state;
     return {
-        identity: user.identity,
-        status: user.status
+        user_identity: auth.user_identity,
+        user_status: auth.user_status
     };
 }
 export default connect(mapStateToProps, {})(PrivateRoute);
