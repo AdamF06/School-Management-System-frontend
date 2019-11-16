@@ -18,11 +18,12 @@ function App() {
     <>
       <Router history={customHistory}>
         <Switch>
-          <Route exact path="/"> <Login /></Route>
+          {/* <Route exact path="/"> <Login /></Route> */}
+          <Route exact path="/"> <SideBar/> <Dasboard/> </Route>
+
           <PrivateRoute path='/dashboard'> <SideBar/> <Dasboard/> </PrivateRoute>
-          {/* <Route path ="/user"><SideBar/> <UserRouter /></Route> */}
           <Route path ="/course"><SideBar/> <CourseRouter /></Route>
-          <PrivateRoute path="/user">'....test'</PrivateRoute>
+          <PrivateRoute path="/user"><SideBar/> <UserRouter /></PrivateRoute>
           <Route path="*" component={() => "404 NOT FOUND"} />
         </Switch>
       </Router>

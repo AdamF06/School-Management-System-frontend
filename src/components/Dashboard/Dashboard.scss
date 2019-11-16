@@ -1,70 +1,160 @@
+$boarder:#C7CDD1;
+$buttonBackground:#F5F5F5;
+$fontColorMain:#13294b;
+$fontColorSmaill:#2D3B45;
+$linkColor:#98002E;
+$navyBlue:#003060;
+$blue:#055C9D;
+$blueGrotto:#0E86D4;
+$darkBlue:#003D7A;
+
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+$Lato: 'Lato', sans-serif;
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: $Lato;
+}
 .dashboardContainer{
-    margin-left:210px;
-    .Dashheader{
-        margin: 20px;
-        height: 70px;
-        width: 830px;
-        /* background-color: aqua; */
-        font-size: 1.5rem;
-        word-spacing: 680px;
-        line-height: 70px;
-        border-bottom: 1px solid #000;
-        float: left;
+    margin-left:  (210rem/16);
+    padding: 0 1.5rem;
+    .dashboardBody{
+        display: flex;
+        .main{
+            &__header{
+                display: flex;
+                align-items:center;
+                justify-content: space-between;
+                height: (72rem/16);
+                width: (900rem/16);
+                border-bottom: 1px solid $boarder;
+                font-weight: 300;
+                line-height: 1.5;
+                color: $fontColorMain;
+                h1{
+                    font-size: (28.8rem/16);
+                    font-weight: normal;
+                }
+                button{
+                    height:2rem;
+                    width: 2rem;
+                    font-size: 1rem;
+                    border: none;
+                    font-weight: normal;
+                }
+            }
+            &__dashboardContainer{
+                padding: 1rem;
+                .dashboardCard{
+                    height: 16rem;
+                    width: 16rem;
+                    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+                    border-radius: 0.5rem;
+                    &__header{
+                        height: 55%;
+                        background-color: $fontColorMain;
+                        border-top-left-radius: 0.5rem;
+                        border-top-right-radius: 0.5rem;
+                        padding: 2rem 1rem; 
+                        color: whitesmoke;                    
+                    }
+                    &__info{
+                        height: 25%;
+                        font-weight: 300;
+                        padding: 0.5rem 1rem;
+                        h4{
+                            font-size: 0.875rem;
+                            color:$blueGrotto;
+                        }
+                        h3{
+                            color: #6c757c;
+                            margin-top: 0.25rem;
+                            font-size: 1rem;
+                        }
+                        &:hover{
+                            text-decoration: underline;
+                            color: $linkColor;
+                            h3, h4{
+                                color: $linkColor;
+                            }
+                        }
+                    }
+                    &__action{
+                        height: 20%;
+                        padding: 0.5rem 1rem;
+                        button{
+                            border:none;
+                            outline: none;
+                            svg{
+                                font-size: 1.5rem;
+                                color:#2D3B45;
+                                &:hover{
+                                    color: black;
+                                }
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+        .todo{
+            margin-left: 3rem;
+            margin-top: (29rem/16);
+            width: (288rem/16);
+            &__listContainer{
+                padding: 1rem 0;
+                h3{
+                    font-size: 1rem;
+                    color: $fontColorSmaill;
+                    border-bottom: 1px solid $boarder;
+                    padding-bottom: 0.5rem;
+
+                }
+            }
+            &__recentFeedbackContainer{
+                padding: 1rem 0;
+                h3{
+                    font-size: 1rem;
+                    color: $fontColorSmaill;
+                    border-bottom: 1px solid $boarder;
+                    padding-bottom: 0.5rem;
+                }
+            }
+            &__viewGrade{
+                width: 100%;
+                height: 2.8rem;
+                margin-top: 0.75rem;
+                background: $buttonBackground;
+                border-radius: 0.25rem;
+                outline: $linkColor;
+                h4{
+                    font-size: 1rem;
+                }
+            }
+        }
     }
-    .taskMenu{
-        display: inline-block;
-        height: 300px;
-        width: 300px;
-        background-color: beige;
-    }
-    .todo{
-        width: 220px;
-        height: 35px;
-        line-height: 35px;
-        border-bottom: 1px solid #000;
-        margin-left: 20px;
-        margin-top: 55px;
-        font-weight: bold;
-    }
-    .feedback{
-        width: 220px;
-        height: 35px;
-        line-height: 35px;
-        border-bottom: 1px solid #000;
-        margin-left: 20px;
-        font-weight: bold;
-    }
-    p{
-        margin-left: 20px;
-        font-size: 0.8rem;
-    }
-    button{
-        width: 220px;
-        height: 35px;
-        line-height: 35px;
-        text-align: left;
-    }
-    .card{
-        height: 240px;
-        width: 220px;
-        background-color: bisque;
-        border-radius: 5px;
-        box-shadow:0 2px 20px 0 #babacd;
-        margin-left: 20px;
-        margin-top: -180px;
-    }
-    .sub{
-        height: 120px;
-        background-color: cadetblue;
-        border-radius: 5px 5px 0 0;
-        font-size: 1.3rem;
-        padding: 15px;
-        text-align: right;
-    }
-    .enroll{
-        padding: 15px;
-    }
-    .file{
-        padding: 15px;
+    .dashboardFooter{
+        position: fixed;
+        bottom: 0;
+        width: (1300rem/16);  
+        display: flex;
+        justify-content: flex-end;
+        border-top: 1px solid $boarder;
+        padding: 1rem 0;
+        &__container{
+            width: 52%;
+            display: flex;
+            a{
+                color: $fontColorSmaill;
+                margin: 0 1.5rem;
+                text-decoration: none;
+                &:hover{
+                    text-decoration:underline;
+                    color: $linkColor;
+                }
+            }
+        }
     }
 }
