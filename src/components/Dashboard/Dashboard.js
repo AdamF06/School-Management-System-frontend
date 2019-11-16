@@ -5,42 +5,55 @@ import {
     EllipsisVB,
     File
 } from '../Icon/Icon'
-import axios from 'axios';
 import { connect } from 'react-redux';
 
 class Dashboard extends Component {
-    state = {}
-    getCourse = async ()=>{
-        const _id = '5dcb529260c38711553efe38'
-        const getStudentApi_res = await axios({
-            url: 'http://127.0.0.1:8080/students/'+_id,
-            method: 'get',
-            headers: {
-                Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZGNiNTI5MjYwYzM4NzExNTUzZWZlMzgiLCJzdHVkZW50X0lEIjoiMDAwMDAxIiwiZW1haWwiOiJ0ZXN0QHFxLmNvbSIsImlkZW50aXR5Ijoic3R1ZGVudCIsImZpcnN0X25hbWUiOiJBZGFtIiwiaWF0IjoxNTczNzA5MzU3fQ.C2KoSCKVyLdV_U_ewaTIeCiPXE03BsVjuSlL1e33tKM"
-            }
-        }) 
-        console.log(getStudentApi_res) 
-    }
-
     render() {
         return (
             <div className="dashboardContainer">
-                <div className="Dashboard">
-                    <div className="Dashheader">Dashboard {EllipsisVB}</div>
-                </div>
+                <div className="dashboardBody">
+                    <div className="main">
+                        <div className="main__header">
+                            <h1>Dashboard</h1> <button>{EllipsisVB}</button>
+                        </div>
 
-                <div className="taskMenu">
-                    <div className="todo">To Do </div>
-                    <p>Nothing for now</p>
-                    <div className="feedback"> Feedback </div>
-                    <p> Nothing for now </p>
-                    <p> <button href="#"> View Grades </button> </p>
-                </div>
+                        <div className="main__dashboardContainer">
+                            <div className="dashboardCard">
+                                <div className="dashboardCard__header">
+                                    <h2>Some course</h2>                                  
+                                </div>
+                                <div className="dashboardCard__info">
 
-                <div className="card">
-                    <div className="sub"> Sub{EllipsisV} </div>
-                    <div className="enroll">Enrolled Courser</div>
-                    <h3> {File} </h3>
+                                    <h4 className="ellipsis">Some course Some course</h4>
+                                    <h3 className="ellipsis">8th</h3>                               
+                                </div>
+                                <div className="dashboardCard__action">
+                                    <button> {File} </button>   
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <div className="todo">
+                        <div className="todo__listContainer ">
+                            <h3>To Do</h3>
+                            <span>Nothing for now</span>
+                        </div>
+                        <div className="todo__recentFeedbackContainer ">
+                            <h3>Recent Feedback</h3>
+                            <span>Nothing for now</span>
+                        </div>
+                        <button className="todo__viewGrade"> <h4>view Grades</h4> </button>
+                    </div>
+                </div>
+                <div className="dashboardFooter">
+                    <div className="dashboardFooter__container">
+                        <a href="#">Privacy policy</a>
+                        <a href="#">Acceptable Use policy</a>
+                        <a href="#">Facebook</a>
+                        <a href="#">Twitter</a>
+                    </div>
                 </div>
             </div>
         );

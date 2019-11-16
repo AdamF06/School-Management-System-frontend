@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { withRouter } from "react-router";
 import './PrimaryNav.css';
 import {
     Dashboard,
@@ -109,7 +110,8 @@ class PrimaryNav extends Component {
         if (noSecondIcon.indexOf(iconName) > -1){
             switch (iconName) {
                 case 'Dashboard':
-                    window.location.href='http://localhost:3000/dashboard'
+                    const { history } = this.props;
+                    history.push('/dashboard');
                     break;           
                 default:
                     break;
@@ -172,4 +174,4 @@ class PrimaryNav extends Component {
     }
 }
 
-export default PrimaryNav;
+export default (withRouter(PrimaryNav))
