@@ -1,0 +1,19 @@
+$border:#C7CDD1;
+$buttonBackground:#F5F5F5;
+$fontColorMain:#13294b;
+$fontColorSmaill:#2D3B45;
+$linkColor:#98002E;
+$navyBlue:#003060;
+$blue:#055C9D;
+$blueGrotto:#0E86D4;
+$darkBlue:#003D7A;
+
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+$Lato: 'Lato', sans-serif;
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: $Lato;
+    font-weight: normal;
+}

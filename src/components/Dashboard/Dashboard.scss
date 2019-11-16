@@ -1,21 +1,4 @@
-$boarder:#C7CDD1;
-$buttonBackground:#F5F5F5;
-$fontColorMain:#13294b;
-$fontColorSmaill:#2D3B45;
-$linkColor:#98002E;
-$navyBlue:#003060;
-$blue:#055C9D;
-$blueGrotto:#0E86D4;
-$darkBlue:#003D7A;
-
-@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
-$Lato: 'Lato', sans-serif;
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: $Lato;
-}
+@import '../../common/commonScss.scss';
 .dashboardContainer{
     margin-left:  (210rem/16);
     padding: 0 1.5rem;
@@ -28,7 +11,7 @@ $Lato: 'Lato', sans-serif;
                 justify-content: space-between;
                 height: (72rem/16);
                 width: (900rem/16);
-                border-bottom: 1px solid $boarder;
+                border-bottom: 1px solid $border;
                 font-weight: 300;
                 line-height: 1.5;
                 color: $fontColorMain;
@@ -108,7 +91,7 @@ $Lato: 'Lato', sans-serif;
                 h3{
                     font-size: 1rem;
                     color: $fontColorSmaill;
-                    border-bottom: 1px solid $boarder;
+                    border-bottom: 1px solid $border;
                     padding-bottom: 0.5rem;
 
                 }
@@ -118,7 +101,7 @@ $Lato: 'Lato', sans-serif;
                 h3{
                     font-size: 1rem;
                     color: $fontColorSmaill;
-                    border-bottom: 1px solid $boarder;
+                    border-bottom: 1px solid $border;
                     padding-bottom: 0.5rem;
                 }
             }
@@ -141,7 +124,7 @@ $Lato: 'Lato', sans-serif;
         width: (1300rem/16);  
         display: flex;
         justify-content: flex-end;
-        border-top: 1px solid $boarder;
+        border-top: 1px solid $border;
         padding: 1rem 0;
         &__container{
             width: 52%;

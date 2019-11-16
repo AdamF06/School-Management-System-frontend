@@ -1,0 +1,194 @@
+@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+  font-weight: normal;
+}
+
+.courseHomePageContainer {
+  margin-left: 13.125rem;
+  padding: 0 1.5rem;
+}
+
+.courseHomePageContainer .courseHomePage {
+  width: 100%;
+}
+
+.courseHomePageContainer .courseHomePage__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #C7CDD1;
+}
+
+.courseHomePageContainer .courseHomePage__header__menuButton {
+  border: none;
+  outline: none;
+  height: 3rem;
+  width: 3rem;
+  font-size: 1.8rem;
+}
+
+.courseHomePageContainer .courseHomePage__header__menuButton svg {
+  color: #98002E;
+}
+
+.courseHomePageContainer .courseHomePage__header h1 {
+  margin-left: 0.75rem;
+  font-size: 1.125rem;
+}
+
+.courseHomePageContainer .courseHomePage__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 1.5rem 0;
+  width: 100%;
+}
+
+.courseHomePageContainer .courseHomePage__body .courseNav {
+  width: 15%;
+  height: 11.25rem;
+}
+
+.courseHomePageContainer .courseHomePage__body .courseNav ul li {
+  list-style: none;
+  height: 2.25rem;
+  width: 9.75rem;
+  padding: 0.5rem 0.25rem;
+}
+
+.courseHomePageContainer .courseHomePage__body .courseNav ul li a {
+  color: #98002E;
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+.courseHomePageContainer .courseHomePage__body .courseNav ul .li--active {
+  border-left: 2px solid black;
+}
+
+.courseHomePageContainer .courseHomePage__body .courseNav ul .li--active a {
+  color: black;
+  font-weight: bold;
+}
+
+.courseHomePageContainer .courseHomePage__body .main {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.courseHomePageContainer .courseHomePage__body .main__imageConatiner {
+  position: relative;
+  width: 90%;
+  margin: 0 auto;
+  height: 18.75rem;
+  background: #003060;
+  padding: 2rem;
+}
+
+.courseHomePageContainer .courseHomePage__body .main__imageConatiner h2 {
+  color: whitesmoke;
+  margin-top: 2rem;
+  font-size: 2.8rem;
+}
+
+.courseHomePageContainer .courseHomePage__body .main__imageConatiner h3 {
+  color: whitesmoke;
+  font-size: 1.25rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.courseHomePageContainer .courseHomePage__body .main__imageConatiner h3 :first-child {
+  width: 1rem;
+  height: 1rem;
+  border-bottom: 3px solid #98002E;
+  margin-right: 0.25rem;
+}
+
+.courseHomePageContainer .courseHomePage__body .main__section {
+  margin: 6.25rem auto;
+  width: 90%;
+}
+
+.courseHomePageContainer .courseHomePage__body .main__section h2 {
+  font-size: 2.1875rem;
+  color: #13294b;
+}
+
+.courseHomePageContainer .courseHomePage__body .main__section p {
+  margin: 0.78125rem 0;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  color: #13294b;
+  font-weight: 100;
+  text-align: justify;
+}
+
+.courseHomePageContainer .courseHomePage__body .todo {
+  width: 18rem;
+}
+
+.courseHomePageContainer .courseHomePage__body .todo__listContainer {
+  padding: 1rem 0;
+}
+
+.courseHomePageContainer .courseHomePage__body .todo__listContainer h3 {
+  font-size: 1rem;
+  color: #2D3B45;
+  border-bottom: 1px solid #C7CDD1;
+  padding-bottom: 0.5rem;
+}
+
+.courseHomePageContainer .courseHomePage__body .todo__recentFeedbackContainer {
+  padding: 1rem 0;
+}
+
+.courseHomePageContainer .courseHomePage__body .todo__recentFeedbackContainer h3 {
+  font-size: 1rem;
+  color: #2D3B45;
+  border-bottom: 1px solid #C7CDD1;
+  padding-bottom: 0.5rem;
+}
+
+.courseHomePageContainer .footer {
+  bottom: 0;
+  width: 81.25rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  border-top: 1px solid #C7CDD1;
+  padding: 1rem 0;
+}
+
+.courseHomePageContainer .footer__container {
+  width: 52%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.courseHomePageContainer .footer__container a {
+  color: #2D3B45;
+  margin: 0 1.5rem;
+  text-decoration: none;
+}
+
+.courseHomePageContainer .footer__container a:hover {
+  text-decoration: underline;
+  color: #98002E;
+}
+/*# sourceMappingURL=CourseHome.css.map */

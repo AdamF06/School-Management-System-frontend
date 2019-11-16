@@ -1,0 +1,148 @@
+@import '../../../common/commonScss.scss';
+
+.courseHomePageContainer{
+    margin-left: (210rem/16);
+    padding: 0 1.5rem;
+    .courseHomePage{
+        width: 100%;
+        &__header{
+            display: flex;
+            align-items: center;
+            width: 100%;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid $border;
+            &__menuButton{
+                border:none;
+                outline: none;
+                height: 3rem;
+                width: 3rem;
+                font-size: 1.8rem;
+                svg{
+                    color: $linkColor;
+                }
+            }
+            h1{
+                margin-left: 0.75rem;
+                font-size: 1.125rem;
+            }
+        }
+        &__body{   
+            display: flex;    
+            padding: 1.5rem 0;  
+            width: 100%; 
+            .courseNav{
+                width: 15%;
+                height: (180rem/16);
+                ul{
+                    li{
+                        list-style: none;
+                        height: (36rem/16);
+                        width: 9.75rem;
+                        padding: 0.5rem 0.25rem;
+                        a{
+                            color: $linkColor;
+                            font-size: 1rem;
+                            text-decoration: none;
+                        }
+                    }
+                    .li--active{
+                        border-left: 2px solid black;
+                        a{
+                            color: black;
+                            font-weight:bold;
+                        }
+                    }
+                }
+            }
+            .main{
+                width:80%;
+                margin: 0 auto;
+                &__imageConatiner{
+                    position: relative;
+                    width: 90%;
+                    margin: 0 auto;
+                    height: (300rem/16);
+                    background:$navyBlue;
+                    padding:2rem;
+                    h2{
+                        color: whitesmoke;
+                        margin-top: 2rem;
+                        font-size: 2.8rem;
+                    }
+                    h3{
+                        color: whitesmoke;
+                        font-size: 1.25rem;
+                        display: flex;
+                        :first-child{
+                            width: 1rem;
+                            height: 1rem;
+                            border-bottom: 3px solid $linkColor;
+                            margin-right: 0.25rem;
+                        }
+                    }
+                }
+                &__section{
+                    margin: (100rem/16) auto;
+                    width: 90%;
+                    h2{
+                        font-size: (35rem/16);
+                        color: $fontColorMain;
+                    }
+                    p{
+                        margin:(12.5rem/16) 0;
+                        font-size: 1.25rem;
+                        line-height: 1.5;
+                        color: $fontColorMain;
+                        font-weight: 100;
+                        text-align: justify;
+                    }
+                }
+
+            }
+            .todo{
+                width: (288rem/16);
+                &__listContainer{
+                    padding: 1rem 0;
+                    h3{
+                        font-size: 1rem;
+                        color: $fontColorSmaill;
+                        border-bottom: 1px solid $border;
+                        padding-bottom: 0.5rem;
+    
+                    }
+                }
+                &__recentFeedbackContainer{
+                    padding: 1rem 0;
+                    h3{
+                        font-size: 1rem;
+                        color: $fontColorSmaill;
+                        border-bottom: 1px solid $border;
+                        padding-bottom: 0.5rem;
+                    }
+                }
+            }
+        }       
+    }
+
+    .footer{
+        bottom: 0;
+        width: (1300rem/16);    
+        display: flex;
+        justify-content: flex-end;
+        border-top: 1px solid $border;
+        padding: 1rem 0;
+        &__container{
+            width: 52%;
+            display: flex;
+            a{
+                color: $fontColorSmaill;
+                margin: 0 1.5rem;
+                text-decoration: none;
+                &:hover{
+                    text-decoration:underline;
+                    color: $linkColor;
+                }
+            }
+        }
+    }
+}

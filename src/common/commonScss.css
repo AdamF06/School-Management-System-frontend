@@ -1,0 +1,10 @@
+@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+  font-weight: normal;
+}
+/*# sourceMappingURL=commonScss.css.map */

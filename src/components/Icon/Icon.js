@@ -12,6 +12,7 @@ import {
     faSitemap,
     faEllipsisV,
     faFileAlt,
+    faBars,
 }from '@fortawesome/free-solid-svg-icons'
 import { 
     faQuestionCircle,
@@ -42,6 +43,8 @@ export const Ins =  <FontAwesomeIcon icon={faInstagram} size="1x" color="black"/
 export const EllipsisV=  <FontAwesomeIcon icon={faEllipsisV} size="1x" color="white"/>
 export const EllipsisVB=  <FontAwesomeIcon icon={faEllipsisV} size="1x" color="black"/>
 export const File=  <FontAwesomeIcon icon={faFileAlt} size="2x" color="black"/>
+export const Bars=  <FontAwesomeIcon icon={faBars} size="1x" color="black"/>
+
 
 
 
