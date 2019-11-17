@@ -93,6 +93,7 @@
   height: 18.75rem;
   background: #003060;
   padding: 2rem;
+  z-index: -1;
 }
 
 .courseHomePageContainer .courseHomePage__body .main__imageConatiner h2 {

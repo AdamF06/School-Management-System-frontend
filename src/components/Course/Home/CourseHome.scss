@@ -64,6 +64,7 @@
                     height: (300rem/16);
                     background:$navyBlue;
                     padding:2rem;
+                    z-index: -1;
                     h2{
                         color: whitesmoke;
                         margin-top: 2rem;

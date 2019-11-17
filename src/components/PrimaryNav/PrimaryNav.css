@@ -3,7 +3,12 @@
           box-sizing: border-box;
 }
 
-.primaryNav {
+.navConatiner {
+  height: 100%;
+  position: fixed;
+}
+
+.navConatiner .primaryNav {
   position: fixed;
   width: 210px;
   height: 100%;
@@ -17,13 +22,14 @@
       -ms-flex-direction: column;
           flex-direction: column;
   background: #003060;
+  z-index: 6;
 }
 
-.primaryNav__top {
+.navConatiner .primaryNav__top {
   height: 8%;
 }
 
-.primaryNav__top form {
+.navConatiner .primaryNav__top form {
   margin: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -33,7 +39,7 @@
           justify-content: space-between;
 }
 
-.primaryNav__top form input {
+.navConatiner .primaryNav__top form input {
   height: 30px;
   width: 155px;
   font-size: 1.2rem;
@@ -44,7 +50,7 @@
   color: whitesmoke;
 }
 
-.primaryNav__top form button {
+.navConatiner .primaryNav__top form button {
   height: 36px;
   width: 36px;
   background: none;
@@ -52,16 +58,11 @@
   margin-right: 20px;
 }
 
-.primaryNav__main {
+.navConatiner .primaryNav__main {
   height: 84%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-}
-
-.primaryNav__main__left {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -73,7 +74,7 @@
   width: 100%;
 }
 
-.primaryNav__main__left ul {
+.navConatiner .primaryNav__main ul {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -89,7 +90,7 @@
   background-color: #003060;
 }
 
-.primaryNav__main__left ul li {
+.navConatiner .primaryNav__main ul li {
   height: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -101,13 +102,13 @@
       align-content: center;
 }
 
-.primaryNav__main__left ul li :hover {
+.navConatiner .primaryNav__main ul li :hover {
   -webkit-transition: background-color 0.2s linear;
   transition: background-color 0.2s linear;
   background-color: #055C9D;
 }
 
-.primaryNav__main__left ul li button {
+.navConatiner .primaryNav__main ul li button {
   background: none;
   border: none;
   height: 100%;
@@ -127,7 +128,7 @@
           align-items: baseline;
 }
 
-.primaryNav__main__left ul li button h2:first-child {
+.navConatiner .primaryNav__main ul li button h2:first-child {
   font-size: 20px;
   margin: 10px 10px;
   padding: 0;
@@ -135,61 +136,61 @@
   width: 30px;
 }
 
-.primaryNav__main__left ul li button h2:last-child {
+.navConatiner .primaryNav__main ul li button h2:last-child {
   font-size: 14px;
   color: white;
   margin-left: 15px;
 }
 
-.primaryNav__main__left ul:first-child {
+.navConatiner .primaryNav__main ul:first-child {
   padding: 0px;
   width: 100%;
 }
 
-.primaryNav__main__left ul:first-child li:last-child {
+.navConatiner .primaryNav__main ul:first-child li:last-child {
   width: 100%;
   border-top: 1px solid whitesmoke;
 }
 
-.primaryNav__main__left ul:first-child li:first-child {
+.navConatiner .primaryNav__main ul:first-child li:first-child {
   padding-top: 0px;
 }
 
-.primaryNav__main__left ul:last-child {
+.navConatiner .primaryNav__main ul:last-child {
   padding: 0px;
   width: 100%;
 }
 
-.primaryNav__main__left ul:last-child li:first-child {
+.navConatiner .primaryNav__main ul:last-child li:first-child {
   width: 100%;
   border-top: 1px solid whitesmoke;
 }
 
-.primaryNav__main__left ul:last-child li:last-child {
+.navConatiner .primaryNav__main ul:last-child li:last-child {
   padding-bottom: 0px;
 }
 
-.primaryNav__main-right-active .primaryNav__main__left {
+.navConatiner .primaryNav__main--right-active .primaryNav__main__left {
   width: 50px;
 }
 
-.primaryNav__main-right-active .primaryNav__main__left ul li button h2:last-child {
+.navConatiner .primaryNav__main--right-active .primaryNav__main__left ul li button h2:last-child {
   display: none;
 }
 
-.primaryNav__main-right-active .primaryNav__main__left ul li button {
+.navConatiner .primaryNav__main--right-active .primaryNav__main__left ul li button {
   padding: 0;
 }
 
-.primaryNav__main-right-active .primaryNav__main__left ul li button h2 {
+.navConatiner .primaryNav__main--right-active .primaryNav__main__left ul li button h2 {
   width: 100%;
 }
 
-.primaryNav__main-right-active .primaryNav__main__left ul li .high-light {
+.navConatiner .primaryNav__main--right-active .primaryNav__main__left ul li .high-light {
   background: #055C9D;
 }
 
-.primaryNav__bot {
+.navConatiner .primaryNav__bot {
   height: 8%;
   background-color: #003D7A;
   padding: 10px;
@@ -198,14 +199,14 @@
   display: flex;
 }
 
-.primaryNav__bot__photo {
+.navConatiner .primaryNav__bot__photo {
   height: 40px;
   width: 40px;
   background-color: gray;
   border-radius: 50%;
 }
 
-.primaryNav__bot h3 {
+.navConatiner .primaryNav__bot h3 {
   color: whitesmoke;
   margin: 0 10px;
   text-align: center;
