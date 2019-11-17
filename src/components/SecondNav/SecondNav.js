@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './SecondNav.css'
 import UserSecondNav from '../User/Nav/secondNav'
-import CourseSecondNav from '../Course/Nav/secondNav'
+import CourseSecondNav from '../Course/Nav/secondThirdNav'
 
 class SecondNav extends Component {
 

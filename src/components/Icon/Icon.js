@@ -13,6 +13,7 @@ import {
     faEllipsisV,
     faFileAlt,
     faBars,
+    faTimes,
 }from '@fortawesome/free-solid-svg-icons'
 import { 
     faQuestionCircle,
@@ -44,6 +45,8 @@ export const EllipsisV=  <FontAwesomeIcon icon={faEllipsisV} size="1x" color="wh
 export const EllipsisVB=  <FontAwesomeIcon icon={faEllipsisV} size="1x" color="black"/>
 export const File=  <FontAwesomeIcon icon={faFileAlt} size="2x" color="black"/>
 export const Bars=  <FontAwesomeIcon icon={faBars} size="1x" color="black"/>
+export const Quite=  <FontAwesomeIcon icon={faTimes} size="1x" color="black"/>
+
 
 
 

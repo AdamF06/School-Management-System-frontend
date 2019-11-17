@@ -13,6 +13,9 @@ $secondNavWidth:(364rem/16);
         transition: transform 0.5s ease-in;
         border-right: 1px solid black;
         background: white;
+        .--inactive{
+            display: none;
+        }
     }
     .secondNav--active{
         z-index: 5;

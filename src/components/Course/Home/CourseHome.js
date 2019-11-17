@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Bars } from '../../Icon/Icon';
-import CourseSecondNav from '../Nav/secondNav'
+import CourseThirdNav from '../Nav/secondThirdNav'
 import './CourseHome.css';
 
 class CourseHome extends Component {
@@ -16,7 +16,7 @@ class CourseHome extends Component {
                         <h1>Home of 'CourseName'</h1>
                     </div>
                     <div className="courseHomePage__body">
-                        <CourseSecondNav />
+                        <CourseThirdNav />
                         <div className="main">
                             <div className="main__imageConatiner">
                                 <img src={require('../logo.png')} alt="icon img"></img>
