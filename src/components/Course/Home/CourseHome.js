@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Bars } from '../../Icon/Icon';
-import CourseThirdNav from '../Nav/secondThirdNav'
+import CourseThirdNav from '../Nav/CourseThirdNav'
 import './CourseHome.css';
 
 class CourseHome extends Component {

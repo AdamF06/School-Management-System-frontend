@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+  font-weight: normal;
+}
+
+.courseSecondNav {
+  margin: 0 auto;
+  width: 90%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.courseSecondNav__header {
+  height: 5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-bottom: 1px solid #C7CDD1;
+}
+
+.courseSecondNav__header h1 {
+  font-size: 1.375rem;
+  font-weight: bold;
+  color: #2D3B45;
+}
+
+.courseSecondNav__header button {
+  height: 1.75rem;
+  width: 1.75rem;
+  background: none;
+  border: 2px solid #003060;
+  border-radius: 0.25rem;
+  margin-top: 0;
+}
+
+.courseSecondNav__header button svg {
+  text-align: center;
+  font-size: 0.875rem;
+}
+
+.courseSecondNav__linkList ul li {
+  list-style: none;
+  height: 4rem;
+  border-bottom: 1px solid #C7CDD1;
+  padding: 0.5rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.courseSecondNav__linkList ul li a {
+  color: #98002E;
+  text-decoration: none;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.courseSecondNav__linkList ul li a:hover {
+  color: #65001f;
+  text-decoration: underline;
+}
+
+.courseSecondNav__linkList ul li:last-child {
+  border: none;
+}
+
+.courseSecondNav p {
+  margin: 2rem auto;
+  font-size: 1rem;
+  color: #2D3B45;
+}
+/*# sourceMappingURL=CourseSecondNav.css.map */
