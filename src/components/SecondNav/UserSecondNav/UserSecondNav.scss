@@ -13,7 +13,7 @@
         align-items: center;
         border-bottom: 1px solid $border;
         .iconContainer{
-            width: 100%;
+           width: 100%;
             display: flex;
             justify-content: flex-end;
             .icon{
@@ -27,7 +27,7 @@
                     text-align: center;
                     font-size: 0.875rem;
                 }
-            }
+            } 
         }
         &__image{
             height: (70rem/16);

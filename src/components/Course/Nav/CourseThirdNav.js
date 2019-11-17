@@ -18,7 +18,7 @@ export default class CourseThirdNav extends Component {
             <nav className="courseNav">
                 <ul>
                     <li  className={activeNav === 'home' ? 'li--active' : null}>
-                        <Link to="/course"
+                        <Link to="/course/id"
                             id="home"
                             onClick={this.switchNav()}>Home</Link>
                     </li>
