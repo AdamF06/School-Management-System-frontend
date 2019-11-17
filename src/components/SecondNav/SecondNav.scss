@@ -11,7 +11,8 @@ $secondNavWidth:(364rem/16);
         left: (210rem/16);
         transform: translateX(-100%);
         transition: transform 0.2s ease-in;
-        border-right: 1px solid black;
+        // border-right: 1px solid black;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.3);
         background: white;
         .--inactive{
             display: none;
