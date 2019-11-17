@@ -66,19 +66,44 @@ class PrimaryNav extends Component {
             selectedSecondNav: "",
         }
     }
-    justifyBar = (iconName)=>{
-        const secondNavIcon = ['Users','Courses']
-        this.setState({
-            selectedSecondNav:iconName
-        })
-        if(secondNavIcon.indexOf(iconName) > -1){
+    justifyBar = (iconName) => {
+        const secondNavIcon = ['Users', 'Courses']
+        const { selectedSecondNav, showSecondNav } = this.state
+        //none in active
+        if (showSecondNav === false) {
             this.setState({
-                showSecondNav:true
+                selectedSecondNav: iconName
             })
+            //clicked icon has second nav
+            if (secondNavIcon.indexOf(iconName) > -1) {
+                this.setState({
+                    showSecondNav: true
+                })
+            } else {
+                this.setState({
+                    showSecondNav: false
+                })
+            }
         }else{
-            this.setState({
-                showSecondNav:false
-            })
+            //concel itself
+            if(selectedSecondNav===iconName){
+                this.setState({
+                    selectedSecondNav: iconName,
+                    showSecondNav:false
+                })
+            }else{//jump to other icon which has second nav
+                if(secondNavIcon.indexOf(iconName) > -1){
+                    this.setState({
+                        showSecondNav: true,
+                        selectedSecondNav:iconName
+                    })
+                }else{//jump to other icon but hasn't second nav
+                    this.setState({
+                        showSecondNav:false,
+                        selectedSecondNav:iconName
+                    })
+                }
+            }
         }
     }
 
@@ -95,33 +120,33 @@ class PrimaryNav extends Component {
                     </div>
 
                     <div className={`primaryNav__main ${showSecondNav ? 'primaryNav__main--right-active' : ""}`}>
-                            <ul> {
-                                userItems.map(
-                                    (item, index) =>
-                                        <li key={index}>
-                                            <button
-                                                className={item.iconName}
-                                                onClick={(e) => { this.justifyBar(item.iconName) }}>
-                                                <PrimaryNavItems {...item} />
-                                            </button>
-                                        </li>
-                                )
-                            } </ul>
+                        <ul> {
+                            userItems.map(
+                                (item, index) =>
+                                    <li key={index}>
+                                        <button
+                                            className={item.iconName}
+                                            onClick={(e) => { this.justifyBar(item.iconName) }}>
+                                            <PrimaryNavItems {...item} />
+                                        </button>
+                                    </li>
+                            )
+                        } </ul>
 
-                            <ul>{
-                                bottomItems.map(
-                                    (item, index) =>
-                                        <li key={index}>
-                                            <button
-                                                className={item.iconName}
-                                                //onClick={this.justifyBar(item.iconName)}>
-                                                onClick={(e) => { this.justifyBar(e, item.iconName) }}>
-                                                <PrimaryNavItems {...item} />
-                                            </button>
-                                        </li>
-                                )
-                            }</ul>
-                        </div>
+                        <ul>{
+                            bottomItems.map(
+                                (item, index) =>
+                                    <li key={index}>
+                                        <button
+                                            className={item.iconName}
+                                            //onClick={this.justifyBar(item.iconName)}>
+                                            onClick={(e) => { this.justifyBar(e, item.iconName) }}>
+                                            <PrimaryNavItems {...item} />
+                                        </button>
+                                    </li>
+                            )
+                        }</ul>
+                    </div>
 
                     <div className={`primaryNav__bot ${showSecondNav ? 'primaryNav__bot--right-active' : ""}`}>
                         <div className="primaryNav__bot__photo"></div>
