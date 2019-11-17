@@ -66,109 +66,69 @@ class PrimaryNav extends Component {
             selectedSecondNav: "",
         }
     }
-    justifyBar = (iconName) => {
-        const { selectedSecondNav, showSecondNav } = this.state
-        const noSecondIcon = ['Dashboard']
-        //first time load or in clear stage([noSecondIcon] may be selected)
-        if (showSecondNav === false) {
-            //selceted icons have no secondary navbar
-            if (noSecondIcon.indexOf(iconName) > -1) {
-                this.setState({
-                    showSecondNav: false,
-                    selectedSecondNav: iconName
-                })
-
-            } else {
-                this.setState({
-                    showSecondNav: true,
-                    selectedSecondNav: iconName
-                })
-            }
-        } else {//some icon has been activated 
-            //clicked on the same icon 
-            if (selectedSecondNav === iconName){
-                this.setState({
-                    showSecondNav:false,
-                    selectedSecondNav:''
-                })
-            }else{//click on other icon
-                //no secondary navbar
-                if(noSecondIcon.indexOf(iconName) > -1){
-                    this.setState({
-                        showSecondNav: false,
-                        selectedSecondNav: iconName
-                    })
-                }else{//has secondary navbar
-                    this.setState({
-                        showSecondNav:true,
-                        selectedSecondNav:iconName
-                    })
-                }
-            }
-        }
-        // primary link
-        if (noSecondIcon.indexOf(iconName) > -1){
-            switch (iconName) {
-                case 'Dashboard':
-                    const { history } = this.props;
-                    history.push('/dashboard');
-                    break;           
-                default:
-                    break;
-            }
+    justifyBar = (iconName)=>{
+        const secondNavIcon = ['Users','Courses']
+        this.setState({
+            selectedSecondNav:iconName
+        })
+        if(secondNavIcon.indexOf(iconName) > -1){
+            this.setState({
+                showSecondNav:true
+            })
+        }else{
+            this.setState({
+                showSecondNav:false
+            })
         }
     }
 
     render() {
         const { showSecondNav, selectedSecondNav } = this.state
         return (
-
-            <div className="primaryNav">
-                <div className="primaryNav__top">
-                    <form className="top__form">
-                        <input type="text" placeholder="JR Academy" name="search" />
-                        <button className="top__button">{Search}</button>
-                    </form>
-                </div>
-
-                <div className={`primaryNav__main ${showSecondNav ? `show-${selectedSecondNav}  primaryNav__main-right-active` : ""}`}>
-                    <div className="primaryNav__main__left">
-                        <ul> {
-                            userItems.map(
-                                (item, index) =>
-                                    <li key={index}>
-                                        <button
-                                            id={item.iconName}
-                                            className={this.state.currentName === index ? 'active' : null}
-                                            onClick={(e) => { this.justifyBar(item.iconName) }}>
-                                            <PrimaryNavItems {...item} />
-                                        </button>
-                                    </li>
-                            )
-                        } </ul>
-
-                        <ul>{
-                            bottomItems.map(
-                                (item, index) =>
-                                    <li key={index}>
-                                        <button
-                                            id={item.iconName}
-                                            //onClick={this.justifyBar(item.iconName)}>
-                                            onClick={(e) => { this.justifyBar(e, item.iconName) }}>
-                                            <PrimaryNavItems {...item} />
-                                        </button>
-                                    </li>
-                            )
-                        }</ul>
+            <div className="navConatiner">
+                <div className="primaryNav">
+                    <div className={`primaryNav__top ${showSecondNav ? 'primaryNav__top--right-active' : ""}`} >
+                        <form className="top__form">
+                            <input type="text" placeholder="JR Academy" name="search" />
+                            <button className="top__button">{Search}</button>
+                        </form>
                     </div>
 
-                    <SecondNav props={{ selectedSecondNav, showSecondNav }} />
-                </div>
+                    <div className={`primaryNav__main ${showSecondNav ? 'primaryNav__main--right-active' : ""}`}>
+                            <ul> {
+                                userItems.map(
+                                    (item, index) =>
+                                        <li key={index}>
+                                            <button
+                                                className={item.iconName}
+                                                onClick={(e) => { this.justifyBar(item.iconName) }}>
+                                                <PrimaryNavItems {...item} />
+                                            </button>
+                                        </li>
+                                )
+                            } </ul>
 
-                <div className="primaryNav__bot">
-                    <div className="primaryNav__bot__photo"></div>
-                    <h3>JR Academy</h3>
+                            <ul>{
+                                bottomItems.map(
+                                    (item, index) =>
+                                        <li key={index}>
+                                            <button
+                                                className={item.iconName}
+                                                //onClick={this.justifyBar(item.iconName)}>
+                                                onClick={(e) => { this.justifyBar(e, item.iconName) }}>
+                                                <PrimaryNavItems {...item} />
+                                            </button>
+                                        </li>
+                                )
+                            }</ul>
+                        </div>
+
+                    <div className={`primaryNav__bot ${showSecondNav ? 'primaryNav__bot--right-active' : ""}`}>
+                        <div className="primaryNav__bot__photo"></div>
+                        <h3>JR Academy</h3>
+                    </div>
                 </div>
+                <SecondNav props={{ selectedSecondNav, showSecondNav }} />
             </div>
         );
     }
