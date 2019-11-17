@@ -15,6 +15,7 @@ import {
 } from '../Icon/Icon'
 import PrimaryNavItems from "./PrimaryNavItems"
 import SecondNav from '../SecondNav/SecondNav';
+import { fas } from '@fortawesome/free-solid-svg-icons';
 
 const userItems = [
     {
@@ -66,9 +67,21 @@ class PrimaryNav extends Component {
             selectedSecondNav: "",
         }
     }
+    iconToUrl = (iconName)=>{
+        switch (iconName) {
+            case 'Dashboard':
+                return '/dashboard'      
+            default:
+                break;
+        }
+    }
+
     justifyBar = (iconName) => {
         const secondNavIcon = ['Users', 'Courses']
         const { selectedSecondNav, showSecondNav } = this.state
+        const { history } = this.props;
+        const url = this.iconToUrl(iconName)
+
         //none in active
         if (showSecondNav === false) {
             this.setState({
@@ -83,6 +96,8 @@ class PrimaryNav extends Component {
                 this.setState({
                     showSecondNav: false
                 })
+                history.push(url);
+                console.log("URL==========",url)
             }
         }else{
             //concel itself
@@ -102,9 +117,16 @@ class PrimaryNav extends Component {
                         showSecondNav:false,
                         selectedSecondNav:iconName
                     })
+                    history.push(url)
                 }
             }
         }
+    }
+    reset=()=>{
+        this.setState({
+            selectedSecondNav:"",
+            showSecondNav:false
+        })
     }
 
     render() {
@@ -153,7 +175,7 @@ class PrimaryNav extends Component {
                         <h3>JR Academy</h3>
                     </div>
                 </div>
-                <SecondNav props={{ selectedSecondNav, showSecondNav }} />
+                <SecondNav props={{selectedSecondNav, showSecondNav}} />
             </div>
         );
     }
