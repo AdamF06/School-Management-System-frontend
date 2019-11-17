@@ -10,7 +10,7 @@ import Dasboard from './components/Dashboard/Dashboard'
 import CourseHome from './components/Course/Home/CourseHome'
 import { createBrowserHistory } from "history";
 import PrivateRoute from './PrivateRoute'
-import { Course } from './components/Icon/Icon';
+
 const customHistory = createBrowserHistory();
 
 // import PrivateRoute from './PrivateRoute'

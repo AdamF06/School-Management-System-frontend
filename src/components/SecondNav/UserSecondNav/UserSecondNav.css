@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+  font-weight: normal;
+}
+
+.userSecondNav {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.userSecondNav__top {
+  width: 85%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 1px solid #C7CDD1;
+}
+
+.userSecondNav__top .iconContainer {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.userSecondNav__top .iconContainer .icon {
+  height: 1.75rem;
+  width: 1.75rem;
+  background: none;
+  border: 2px solid #003060;
+  border-radius: 0.25rem;
+  margin-top: 1rem;
+}
+
+.userSecondNav__top .iconContainer .icon svg {
+  text-align: center;
+  font-size: 0.875rem;
+}
+
+.userSecondNav__top__image {
+  height: 4.375rem;
+  width: 4.375rem;
+  border: 2px solid #C7CDD1;
+  border-radius: 50%;
+  text-align: center;
+  margin: 0.25rem auto;
+}
+
+.userSecondNav__top__image h3 {
+  margin: 1.375rem auto;
+}
+
+.userSecondNav__top__signout {
+  margin: 1.5rem auto;
+  height: 1.75rem;
+  width: 3.75rem;
+  border-radius: 0.25rem;
+  background: #F5F5F5;
+}
+
+.userSecondNav__body {
+  width: 85%;
+}
+
+.userSecondNav__body ul li {
+  list-style: none;
+  height: 2rem;
+  margin-top: 1rem;
+}
+
+.userSecondNav__body ul li a {
+  color: #98002E;
+  text-decoration: none;
+}
+
+.userSecondNav__body ul li a:hover {
+  color: #65001f;
+  text-decoration: underline;
+}
+/*# sourceMappingURL=UserSecondNav.css.map */
