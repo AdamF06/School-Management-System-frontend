@@ -19,17 +19,10 @@ export default class UserRouter extends Component {
                 <Switch>
                     <Route path="/user">
                         <Switch>
-                            <Route exact path="/user">
-                            </Route>
-                            <Route path="/user/profile">
-                                <Profile />
-                            </Route>
-                            <Route path="/user/changePassword">
-                                <ChangePassword />
-                            </Route>
-                            <Route path="/user/file">
-                                <File />
-                            </Route>
+                            <Route exact path="/user"> </Route>
+                            <Route path="/user/profile"> <Profile /> </Route>
+                            <Route path="/user/changePassword"> <ChangePassword /> </Route>
+                            <Route path="/user/file"> <File /> </Route>
                         </Switch>
                     </Route>
                 </Switch>

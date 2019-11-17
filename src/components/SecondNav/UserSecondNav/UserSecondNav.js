@@ -23,10 +23,10 @@ class UserSecondNav extends Component {
                 <div className="userSecondNav__body">
                     <ul>
                         <li>
-                        <Link to="/user/profile">Profile</Link>
+                        <Link to="/user/profile" >Profile</Link>
                         </li>
                         <li>
-                        <Link to="/course">Change Password</Link>
+                        <Link to="/user/changePassword">Change Password</Link>
                         </li>
                     </ul>
                 </div>
