@@ -29,6 +29,10 @@
   background: white;
 }
 
+.secondNavContainer .secondNav .--inactive {
+  display: none;
+}
+
 .secondNavContainer .secondNav--active {
   z-index: 5;
   height: 100%;

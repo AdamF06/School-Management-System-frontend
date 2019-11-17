@@ -7,7 +7,6 @@ import Login from './components/Login/Login';
 import SideBar from './components/PrimaryNav/PrimaryNav';
 import UserRouter from './components/User/UserRouter';
 import Dasboard from './components/Dashboard/Dashboard'
-import CourseRouter from './components/Course/CourseRouter'
 import CourseHome from './components/Course/Home/CourseHome'
 import { createBrowserHistory } from "history";
 import PrivateRoute from './PrivateRoute'
@@ -24,7 +23,7 @@ function App() {
           <Route exact path="/"> <SideBar/><CourseHome/> </Route>
 
           <PrivateRoute path='/dashboard'> <SideBar/> <Dasboard/> </PrivateRoute>
-          <Route path ="/course"><SideBar/> <CourseRouter /></Route>
+          <Route path ="/course"><SideBar/> <CourseHome/> </Route>
           <PrivateRoute path="/user"><SideBar/> <UserRouter /></PrivateRoute>
           <Route path="*" component={() => "404 NOT FOUND"} />
         </Switch>
