@@ -6,47 +6,41 @@ import {
 } from '../Icon/Icon'
 import { connect } from 'react-redux';
 //import { withRouter } from "react-router";
-import {fetchCourse} from '../../actions'
-// import { fetchCourseApi } from '../../apis/students'
+import { fetchCourse } from '../../actions'
 import * as fc from '../../actions'
-import { bindActionCreators } from '../../../../../Library/Caches/typescript/3.6/node_modules/redux';
-
-const storage = window.localStorage;
+import { bindActionCreators } from 'redux';
 
 class Dashboard extends Component {
     constructor() {
         super()
         this.state = {
-            user_identity: JSON.parse(storage.userInfo).identity
+            course: '',
         }
     }
 
-    try = async (e) => {
-        e.preventDefault();
-        console.log("clicked");
-        // console.log( await fetchCourseApi());
-        fetchCourse()
-        // console.log(this.props)
+    componentWillMount(){
+        const { dispatch } = this.props;
+        const fcq = bindActionCreators(fc.fetchCourseRequested, dispatch)
+        const fcs = bindActionCreators(fc.fetchCourseSucceeded, dispatch)
+        const fcf = bindActionCreators(fc.fetchCourseFailed, dispatch)
+        fetchCourse(fcq, fcs, fcf)()
     }
 
     render() {
-        const {dispatch}=this.props;
-        const fcq = bindActionCreators(fc.fetchCourseRequested,dispatch)
-        const fcs = bindActionCreators(fc.fetchCourseSucceeded,dispatch)
-        const fcf = bindActionCreators(fc.fetchCourseFailed,dispatch)
-
+        console.log(this.props.course.length)
+        
         return (
             <div className="dashboardContainer">
                 <div className="dashboardBody">
                     <div className="main">
                         <div className="main__header">
-                            <h1>Dashboard</h1> <button onClick={fetchCourse(fcq,fcs,fcf)}>{EllipsisVB}</button>
+                            <h1>Dashboard</h1> <button>{EllipsisVB}</button>
                         </div>
 
                         <div className="main__dashboardContainer">
                             <div className="dashboardCard">
                                 <div className="dashboardCard__header">
-                                    <h2>Some course</h2>
+                                    <h2>Some course </h2>
                                 </div>
                                 <div className="dashboardCard__info">
 
@@ -88,7 +82,6 @@ class Dashboard extends Component {
 
 function mapStateToProps(state) {
     const { student } = state;
-    console.log(student)
     return {
         course: student.course,
         err: student.err

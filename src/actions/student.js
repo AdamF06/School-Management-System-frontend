@@ -1,7 +1,4 @@
 import { fetchCourseApi } from '../apis/students'
-import { connect } from 'react-redux';
-import { faChessQueen } from '@fortawesome/free-solid-svg-icons';
-
 
 export const fetchCourse = (fcq,fcs,fcf) => dispatch => {
   // console.log('from fetchCourse');
@@ -11,7 +8,7 @@ export const fetchCourse = (fcq,fcs,fcf) => dispatch => {
     .then(res => {
       console.log('called from student action')
       // dispatch(fetchCourseSucceeded(res))
-      fcs();
+      fcs(res);
     })
     .catch(err =>{
       console.log('falied')
