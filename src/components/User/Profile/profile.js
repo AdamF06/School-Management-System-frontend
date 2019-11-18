@@ -1,87 +1,128 @@
 import React, { Component } from 'react';
-import '../Common/useritems.css';
-// import Port from '../UserRouter';
+import './Profile.css';
+import Items from '../Common/Items'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPortrait, faEdit } from '@fortawesome/free-solid-svg-icons'
-// import {faEdit} from '@fortawesome/free-regular-svg-icons'
-
+import { faPortrait, faEdit, faEnvelope, faIdCard, faPhoneSquare, faSchool, faIdBadge, faMapMarkedAlt } from '@fortawesome/free-solid-svg-icons'
 const Port = <FontAwesomeIcon icon={faPortrait} size="10x" color="grey" />
-const Pencil = <FontAwesomeIcon icon={faEdit} size="1x" color="grey" />
+const Pencil = <FontAwesomeIcon icon={faEdit} size="1x" color="white" />
+const Port_s = <FontAwesomeIcon icon={faPortrait} size="1x" color="grey" />
+const Email = <FontAwesomeIcon icon={faEnvelope} size="1x" color="grey" />
+const Age = <FontAwesomeIcon icon={faIdCard} size="1x" color="grey" />
+const Mobile = <FontAwesomeIcon icon={faPhoneSquare} size="1x" color="grey" />
+const School = <FontAwesomeIcon icon={faSchool} size="1x" color="grey" />
+const Title = <FontAwesomeIcon icon={faIdBadge} size="1x" color="grey" />
+const Address = <FontAwesomeIcon icon={faMapMarkedAlt} size="1x" color="grey" />
+
+const leftItems = [
+  {
+    icon: Port_s,
+    labelName: "First Name"
+  },
+  {
+    icon: Port_s,
+    labelName: "Last Name"
+  },
+  {
+    icon: Mobile,
+    labelName: "Mobile"
+  },
+  {
+    icon: School,
+    labelName: "School"
+  },
+]
+const rightItems = [
+  {
+    icon: Title,
+    labelName: "Title"
+  },
+  {
+    icon: Age,
+    labelName: "Age"
+  },
+  {
+    icon: Email,
+    labelName: "Second Email"
+  },
+]
 
 class Profile extends Component {
-  state = {}
+  state = {
+    savebuttonActive:false
+  }
+
+  toggle=(e)=>{
+    e.preventDefault(); 
+    const current = this.state.savebuttonActive
+    this.setState({
+      savebuttonActive:current?false:true
+    })
+  }
+
   render() {
     return (
-      <div className="useritems profile">
-        <meta charSet="UTF-8" />
-        <meta name="viewport" content="width=, initial-scale=1.0" />
-        <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
-        <title>Document</title>
-        <div className="container">
-          <div className="welcome">Welcome : "XXX", Log on at: (Current time)</div>
-          <div className="left_col">
-            <span className="portrait_box">
-              <div className="portrait" >
-                <i>{Port}</i>
+      <div className='profile'>
+
+        <div className="profile__avatarContainer">
+          <div className='avatar'> {Port} </div>
+          <button className="edit"> <h6>{Pencil}</h6> <h6> Edit Avatar</h6> </button>
+        </div>
+
+        <div className="profile__mainContainer">
+          <div className="main">
+
+            <div className="main__header">
+              <h1>Edit your profile here</h1>
+            </div>
+
+            <div className="main__body">
+              <div className="main__body__left">
+                {leftItems.map(
+                  (item) => <Items {...item} />
+                )}
               </div>
-              {/* <a href="#" className='bold'>Edit</a> */}
-              <button>{Pencil}Edit Your Photo</button>
-            </span>
-          </div>
-          <vl />
-          <div className='right-col'>
-            <div className="basic_info">
-              <p className='bold'>Edit your profile here: </p>
-              <hr />
-              <div className='input_shadow'>
-                <div className='col'>
-                  <label>&nbsp;&nbsp;First Name  </label>
-                  <input type="text" id="first_name" defaultValue="get from backend" />
-                  <label>&nbsp;&nbsp;Last Name  </label>
-                  <input type="text" id="Last_name" defaultValue="get from backend" />
-                </div>
-                <div className='col'>
-                  <label>&nbsp;&nbsp;Mobile  </label>
-                  <input type="text" id="Mobile" defaultValue="get from backend" />
-                  <label>&nbsp;&nbsp;Age  </label>
-                  <input type="text" id="Age" defaultValue="get from backend" />
-                </div>
-                <div className='col'>
-                  <label>&nbsp;&nbsp;Title  </label>
-                  <input type="text" id="Title" defaultValue="get from backend" />
-                  <label>&nbsp;&nbsp;School  </label>
-                  <input type="text" id="School" defaultValue="get from backend" />
-                </div>
-                <div className='col'>
-                  <label>&nbsp;&nbsp;Email  </label>
-                  <input type="text" id="Email" defaultValue="get from backend" size='50' />
-                </div>
-                <div className='col'>
-                  <label>&nbsp;&nbsp;Address  </label>
-                  <input type="text" id="Address" defaultValue="get from backend" size='50' />
-                </div>
-              </div>
-              <div className='col gender'>
-                <p>Gender  <input id="man" type="radio" defaultChecked="checked" name={1} />Male
-                    <input id="woman" type="radio" name={1} />Famle</p>
-                <button>Save</button>
-                <button>Cancel</button>
+
+              <div className="main__body__right">
+
+                {rightItems.map(
+                  (item) => <Items {...item} />
+                )}
               </div>
 
             </div>
-            <div style={{ clear: 'both' }} />
-            <div className="account_info">
-              <p className='bold'>Role: Student</p>
-              <hr />
-              <p>Enrolled in Subject: XXXX, XXXX, XXXX</p>
-              <p>Account Number: xxxxxxxxxxxxxxxxx</p>
-              <p>Consider chnaging password?</p>
-              <button className="pwd"><a href='/user/changePassword'>Change Your Password</a></button>
+            <div className="main__body__item">
+              <div className="item__label">
+                <h2> {Address} </h2>
+                <h2>First Address</h2>
+              </div>
+              <input></input>
+            </div>
+
+            <div className="main__body__item">
+              <div className="item__label">
+                <h2> {Address} </h2>
+                <h2>Second Address</h2>
+              </div>
+              <input></input>
+            </div>
+
+            <div className="main__body__setButton">
+              <button className='editbutton' onClick={this.toggle}>Edit</button>
+              <button className={`savebutton ${this.state.savebuttonActive? '':'--inactive'}`}
+              disabled={!this.state.savebuttonActive}
+              onClick={this.toggle}
+              >Save</button>
             </div>
           </div>
         </div>
-      </div>
 
+        <div className="profile__courseContainer">
+          <h2>Student ID:</h2>
+          <h2>You have enrolled in:</h2>
+          <h2>Your finance:</h2>
+          <button>Change Password</button>
+        </div>
+      </div>
     );
   }
 }

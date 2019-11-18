@@ -1,0 +1,150 @@
+.content-wrapper {
+  margin-left: 220px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: #13294b;
+  margin-top: 88px;
+}
+
+.content-wrapper .profile-pic {
+  float: left;
+  margin-top: 1.5rem;
+  margin-right: 8rem;
+}
+
+.content-wrapper h1, .content-wrapper h2, .content-wrapper h3, .content-wrapper h4, .content-wrapper h5, .content-wrapper h6 {
+  margin: 6px 0;
+  line-height: 1.5;
+}
+
+.content-wrapper h1, .content-wrapper h2 {
+  font-size: 1.8em;
+}
+
+.content-wrapper h3 {
+  font-size: 1.5em;
+}
+
+.content-wrapper p {
+  margin: 1em;
+}
+
+.content-wrapper table {
+  display: table;
+}
+
+.content-wrapper tr {
+  display: table-row;
+}
+
+.content-wrapper td {
+  display: table-cell;
+  width: 50%;
+}
+
+.content-wrapper .profile-table tbody tr {
+  display: table-row;
+  vertical-align: inherit;
+  border-color: inherit;
+}
+
+.content-wrapper .profile-table tbody tr th {
+  display: table-cell;
+  font-weight: bold;
+  vertical-align: inherit;
+  text-align: -internal-center;
+}
+
+.content-wrapper .profile-table tbody tr th label {
+  font-size: 0.875rem;
+}
+
+.content-wrapper .profile-table tbody tr td {
+  display: table-cell;
+}
+
+.content-wrapper .profile-table tbody tr td .main {
+  font-size: 1rem;
+}
+
+.content-wrapper .profile-table tbody tr td .second {
+  font-size: 0.8rem;
+  color: grey;
+}
+
+.content-wrapper .web-services {
+  margin-top: 5rem;
+}
+
+.content-wrapper .web-services p {
+  color: grey;
+}
+
+.content-wrapper .web-services p label {
+  display: inline-block;
+}
+
+.content-wrapper .web-services input[type="checkbox"] {
+  width: auto;
+  margin: 4px 0 0;
+}
+
+.content-wrapper .sub {
+  margin-left: 20px;
+  color: grey;
+}
+
+.content-wrapper .registered-service {
+  width: 100%;
+}
+
+.content-wrapper .approved-integrations .access-token {
+  margin-left: 20px;
+  margin-top: 0.5rem;
+}
+
+.content-wrapper .right-side-wrapper table {
+  margin-left: 20px;
+  width: 80%;
+}
+
+.content-wrapper .right-side-wrapper table tr {
+  border-bottom: 1px solid;
+  height: 40px;
+  margin-top: 1rem;
+}
+
+.content-wrapper .right-side-wrapper table .contact-type {
+  float: right;
+}
+
+.content-wrapper .right-side-wrapper table .plus-email-address {
+  margin: 5px;
+}
+
+.content-wrapper .right-side-wrapper table .plus-contact-method {
+  margin: 5px;
+}
+
+.content-wrapper .right-side-wrapper p {
+  margin: 0;
+}
+
+.content-wrapper .foot {
+  margin-bottom: 5rem;
+}
+
+.content-wrapper .cux-btn {
+  border: 1px solid #c7c7d1;
+  background: #f5f5f5;
+  width: 80%;
+  margin-left: 20px;
+  padding-left: 1rem;
+  text-align: left;
+  margin-top: 1rem;
+}
+
+.content-wrapper .cux-btn:hover {
+  background: #c7cdd1;
+}
+/*# sourceMappingURL=setting.css.map */

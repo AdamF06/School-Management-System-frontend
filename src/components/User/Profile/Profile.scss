@@ -1,0 +1,191 @@
+@import '../../../common/commonScss.scss';
+
+.profile{
+    height: 100%;
+    margin-left: (210rem/16);
+    display: flex;
+    //LEFT
+    &__avatarContainer{
+        height: 100vh;
+        width:20rem;
+        padding: 5rem 5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        border-right: 1px solid $border;
+        .avatar{
+            height: 11rem;
+            width: 11rem;
+            svg{
+                font-size: 11rem;           
+            }
+        }
+        .edit{
+            border-radius: 0.5rem;
+            height: 2.5rem;
+            width: 7rem;
+            margin: 2rem 0;
+            display: flex;
+            justify-content: center;
+            background:$darkBlue;
+            color: whitesmoke;
+            font-size: 1rem;
+            outline: none;
+            svg{
+                color:whitesmoke;
+            }
+            & :hover{
+                background: $blueGrotto;
+            }
+        }
+        .edit:hover{
+            background: $blueGrotto;
+        }
+    }
+    //RIGHT
+    &__mainContainer{
+        margin:1rem;
+        width: 40vw;
+        .main{
+            width: 100%;
+            border-bottom: 1px solid $border;
+            &__header{
+                padding: 1rem;
+                h1{
+                    font-size: 2rem;
+                    color: $fontColorMain;
+                    font-weight: bold;
+                }
+                border-bottom: 1px solid $border;
+            }
+            &__body{
+                padding: 1rem;
+                display: flex;
+                &__left{
+                    width: 50%;
+                    padding: 0 0.25rem;
+                    .item{
+                        height: 4rem;
+                        width: 90%;
+
+                        &__label{
+                            display: flex;
+                            justify-content:start;
+                            h2{
+                                font-size: 1.2rem;
+                                &:last-child{
+                                    margin-left: 0.75rem;
+                                }
+                            }
+                        }
+                        input{
+                            width:100%;
+                            height: 1.5rem;
+                            margin-top:0.5rem;
+                            &:hover{
+                                box-shadow: inset 0px 1px 8px rgba(0, 0, 0, 0.2);
+                            }
+                        }
+                    } 
+                }
+                &__right{
+                    width: 50%;
+                    padding: 0 0.25rem;
+                    .item{
+                        height: 4rem;
+                        width: 90%;
+
+                        &__label{
+                            display: flex;
+                            justify-content:start;
+                            h2{
+                                font-size: 1.2rem;
+                                &:last-child{
+                                    margin-left: 0.75rem;
+                                }
+                            }
+                        }
+                        input{
+                            width:100%;
+                            height: 1.5rem;
+                            margin-top:0.5rem;
+                            &:hover{
+                                box-shadow: inset 0px 1px 8px rgba(0, 0, 0, 0.2);
+                            }
+                        }
+                    } 
+
+                }
+                &__item{
+                    height: 4rem;
+                    width: 90%;
+                    margin-left: 1rem;
+                    .item__label{
+                        display: flex;
+                        justify-content:start;
+                        h2{
+                            font-size: 1.2rem;
+                            &:last-child{
+                                margin-left: 0.75rem;
+                            }
+                        }
+                    }
+                    input{
+                        width:100%;
+                        height: 1.5rem;
+                        margin-top:0.5rem;
+                        &:hover{
+                            box-shadow: inset 0px 1px 8px rgba(0, 0, 0, 0.2);
+                        }
+                    }
+                }
+                &__setButton{
+                    width: 100%;
+                    display: flex;
+                    margin-left: 1rem;
+                    button{
+                        border-radius: 0.5rem;
+                        height: 2.5rem;
+                        width: 7rem;
+                        margin: 2rem 0;
+                        display: flex;
+                        justify-content: center;
+                        background:$darkBlue;
+                        color: whitesmoke;
+                        font-size: 1rem;
+                        outline: none;
+                        &:last-child{
+                            margin-left: 1rem;
+                        }
+                    }
+                    .--inactive{
+                        background: gray;
+                        opacity: 0.8;
+                    }
+                }
+            }
+        }
+    }
+   &__courseContainer{
+       margin:1rem;
+       h2{
+           font-size: 1.2rem;
+           margin-top:2rem;
+           color:$fontColorMain;
+       }
+
+       button{
+        border-radius: 0.5rem;
+        height: 2.5rem;
+        width: 12rem;
+        margin: 2rem 0;
+        display: flex;
+        justify-content: center;
+        background:$darkBlue;
+        color: whitesmoke;
+        font-size: 1rem;
+        outline: none;
+       }
+   }
+}
