@@ -1,0 +1,24 @@
+.topbar {
+    height: 56px;
+    width: 100%;
+    margin-left: 210px;
+    z-index: 10000;
+    position: fixed;
+    top:0;
+    padding-top:0px;
+  }
+  
+  .topbar .float-brand {
+    float: right;
+    width: 10%;
+  }
+  
+  .topbar #color-back {
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+  }
+  
+  .topbar #color-back:hover {
+    color: rgba(255, 255, 255, 0.75);
+  }
+  /*# sourceMappingURL=TopBar.css.map */

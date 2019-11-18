@@ -1,0 +1,144 @@
+.content-wrapper{
+    margin-left: 220px;
+    box-sizing: border-box;
+    color:#13294b;
+    margin-top:88px;
+
+    .profile-pic{
+        // position: relative;
+        float: left;
+        margin-top:1.5rem;
+        margin-right:8rem;
+    }
+    h1,h2,h3,h4,h5,h6{
+        margin:6px 0;
+        line-height: 1.5;
+        
+    }
+    h1,h2{
+        font-size: 1.8em;
+    }
+    h3{
+        font-size: 1.5em;
+    }
+    p{
+        margin:1em
+    }
+    table{
+        display:table;
+    }
+    tr{
+        display:table-row;
+    }
+    td{
+        display: table-cell;
+        width:50%
+    }
+    
+    .profile-table{
+        tbody{
+            tr{
+                display:table-row;
+                vertical-align: inherit;
+                border-color: inherit;
+                th{
+                    display: table-cell;
+                    font-weight: bold;
+                    vertical-align: inherit;
+                    text-align: -internal-center;
+                    label{
+                        font-size: 0.875rem;
+                    }
+                }
+                td{
+                    display: table-cell;
+
+                    .main{
+                        font-size: 1rem;
+                    }
+                    .second{
+                        font-size: 0.8rem;
+                        color:grey;
+                    }
+                }
+            }
+        }
+    }
+    .web-services{
+        margin-top:5rem;
+        p{  
+            color:grey;                          
+            label{
+                display:inline-block;
+            }
+        }
+        input[type="checkbox"]{
+            width:auto;
+            margin: 4px 0 0;
+        }
+    }
+    .sub{
+        margin-left:20px;
+        color:grey;
+    }
+     .registered-service{
+        width:100%;
+         ul{
+         }
+         tr{
+            
+         }
+         td{
+
+         }
+
+     }   
+     .approved-integrations{
+         .access-token{
+            margin-left: 20px;
+            margin-top: 0.5rem;
+            ;
+         }
+     }
+     .right-side-wrapper{
+         table{
+             margin-left: 20px;
+             width:80%;
+             tr{
+                 border-bottom: 1px solid ;
+                 height: 40px;
+                 margin-top:1rem;
+             }
+             .contact-type{
+                 float:right
+             }
+             .plus-email-address{
+                margin:5px;  
+             }
+             .plus-contact-method{
+                 margin:5px;
+             }
+         }
+         p{
+            margin:0
+         }
+     }
+     .foot{
+         margin-bottom: 5rem;
+     }
+     .cux-btn{
+        border:1px solid #c7c7d1;
+        background:#f5f5f5;
+        width:80%;
+        margin-left:20px;
+        padding-left:1rem;
+        text-align: left;
+        margin-top:1rem;
+     }
+     .cux-btn:hover{
+        background:#c7cdd1;;
+
+     }
+
+
+}

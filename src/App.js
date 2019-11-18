@@ -11,6 +11,8 @@ import CourseHome from './components/Course/Home/CourseHome'
 import { createBrowserHistory } from "history";
 import PrivateRoute from './PrivateRoute'
 
+import Profile from './components/User/Profile/Profile'
+import ChangePassword from './components/User/ChangePWD/ChangePassword'
 const customHistory = createBrowserHistory();
 
 // import PrivateRoute from './PrivateRoute'
@@ -19,9 +21,8 @@ function App() {
     <>
       <Router history={customHistory}>
         <Switch>
-          <Route exact path="/"> <Login /></Route>
-          {/* <Route exact path="/"> <SideBar/><CourseHome/> </Route> */}
-          {/* <Route path='/dashboard'> <SideBar/> <Dasboard/> </Route> */}
+          {/* <Route exact path="/"> <Login /></Route> */}
+          <Route exact path="/"> <SideBar /><ChangePassword/> </Route>
 
           <PrivateRoute path='/dashboard'> <SideBar/> <Dasboard/> </PrivateRoute>
           <PrivateRoute path='/course/:id'> <SideBar/> <CourseHome/> </PrivateRoute>        
