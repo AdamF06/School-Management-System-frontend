@@ -11,6 +11,7 @@ import CourseHome from './components/Course/Home/CourseHome'
 import { createBrowserHistory } from "history";
 import PrivateRoute from './PrivateRoute'
 import Setting from './components/Setting/setting'
+
 const customHistory = createBrowserHistory();
 
 function App() {
