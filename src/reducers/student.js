@@ -6,11 +6,11 @@ export const initialState = {
 const student = (state = initialState, action) => {
     switch (action.type) {
         case 'FETCH_SUCCEEDED':
-            // return Object.assign({}, state, { course: 'somecourse' });
-            return {
-                ...state,
-                course:'some course',
-            };
+            return Object.assign({}, state, { course: action.data.data });
+            // return {
+            //     ...state,
+            //     course:action.data,
+            // };
         case 'FETCH_FAILED':
             // return {
             //     ...state,
