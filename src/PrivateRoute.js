@@ -7,7 +7,6 @@ import {Route,
 class PrivateRoute extends React.Component {
   render() {
     const { children, user_status } = this.props;
-    console.log('========status from private route', this.props);
     return (
       <Route
         // {...rest}       

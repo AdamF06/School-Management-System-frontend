@@ -10,24 +10,20 @@ import Dasboard from './components/Dashboard/Dashboard'
 import CourseHome from './components/Course/Home/CourseHome'
 import { createBrowserHistory } from "history";
 import PrivateRoute from './PrivateRoute'
-
-import Profile from './components/User/Profile/Profile'
-import ChangePassword from './components/User/ChangePWD/ChangePassword'
+import Setting from './components/Setting/setting'
 const customHistory = createBrowserHistory();
 
-// import PrivateRoute from './PrivateRoute'
 function App() {
   return (
     <>
       <Router history={customHistory}>
         <Switch>
-          {/* <Route exact path="/"> <Login /></Route> */}
-          <Route exact path="/"> <SideBar /><ChangePassword/> </Route>
-
+          <Route exact path="/"> <Login /></Route>
           <PrivateRoute path='/dashboard'> <SideBar/> <Dasboard/> </PrivateRoute>
           <PrivateRoute path='/course/:id'> <SideBar/> <CourseHome/> </PrivateRoute>        
           <PrivateRoute path="/user"><SideBar/> <UserRouter /></PrivateRoute>
-          
+          <PrivateRoute path="/setting"> <SideBar /><Setting/> </PrivateRoute>
+
           <Route path="*" component={() => "404 NOT FOUND"} />
         </Switch>
       </Router>
