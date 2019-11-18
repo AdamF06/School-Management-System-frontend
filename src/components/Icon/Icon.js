@@ -14,6 +14,9 @@ import {
     faFileAlt,
     faBars,
     faTimes,
+    faAngleDown,
+    faPrint,
+    faClipboardCheck,
 }from '@fortawesome/free-solid-svg-icons'
 import { 
     faQuestionCircle,
@@ -46,7 +49,10 @@ export const EllipsisVB=  <FontAwesomeIcon icon={faEllipsisV} size="1x" color="b
 export const File=  <FontAwesomeIcon icon={faFileAlt} size="2x" color="black"/>
 export const Bars=  <FontAwesomeIcon icon={faBars} size="1x" color="black"/>
 export const Quite=  <FontAwesomeIcon icon={faTimes} size="1x" color="black"/>
-
+export const AngleDown=  <FontAwesomeIcon icon={faAngleDown} size="1x" color="black"/>
+export const RocketB=  <FontAwesomeIcon icon={faRocket} size="1x" color="black"/>
+export const Print=  <FontAwesomeIcon icon={faPrint} size="1x" color="black"/>
+export const ClipboardCheck=  <FontAwesomeIcon icon={faClipboardCheck} size="1x" color="gray"/>
 
 
 
