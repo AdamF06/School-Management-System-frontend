@@ -15,7 +15,6 @@ import {
 } from '../Icon/Icon'
 import PrimaryNavItems from "./PrimaryNavItems"
 import SecondNav from '../SecondNav/SecondNav';
-import { fas } from '@fortawesome/free-solid-svg-icons';
 
 const userItems = [
     {
@@ -67,10 +66,13 @@ class PrimaryNav extends Component {
             selectedSecondNav: "",
         }
     }
-    iconToUrl = (iconName)=>{
+    iconToUrl = (iconName) => {
+        console.log('at inon to url,',iconName)
         switch (iconName) {
             case 'Dashboard':
-                return '/dashboard'      
+                return '/dashboard'
+            case 'Setting':
+                return '/setting'
             default:
                 break;
         }
@@ -97,35 +99,34 @@ class PrimaryNav extends Component {
                     showSecondNav: false
                 })
                 history.push(url);
-                console.log("URL==========",url)
             }
-        }else{
+        } else {
             //concel itself
-            if(selectedSecondNav===iconName){
+            if (selectedSecondNav === iconName) {
                 this.setState({
                     selectedSecondNav: iconName,
-                    showSecondNav:false
+                    showSecondNav: false
                 })
-            }else{//jump to other icon which has second nav
-                if(secondNavIcon.indexOf(iconName) > -1){
+            } else {//jump to other icon which has second nav
+                if (secondNavIcon.indexOf(iconName) > -1) {
                     this.setState({
                         showSecondNav: true,
-                        selectedSecondNav:iconName
+                        selectedSecondNav: iconName
                     })
-                }else{//jump to other icon but hasn't second nav
+                } else {//jump to other icon but hasn't second nav
                     this.setState({
-                        showSecondNav:false,
-                        selectedSecondNav:iconName
+                        showSecondNav: false,
+                        selectedSecondNav: iconName
                     })
                     history.push(url)
                 }
             }
         }
     }
-    reset=()=>{
+    reset = () => {
         this.setState({
-            selectedSecondNav:"",
-            showSecondNav:false
+            selectedSecondNav: "",
+            showSecondNav: false
         })
     }
 
@@ -162,7 +163,7 @@ class PrimaryNav extends Component {
                                         <button
                                             className={item.iconName}
                                             //onClick={this.justifyBar(item.iconName)}>
-                                            onClick={(e) => { this.justifyBar(e, item.iconName) }}>
+                                            onClick={() => { this.justifyBar(item.iconName) }}>
                                             <PrimaryNavItems {...item} />
                                         </button>
                                     </li>
@@ -175,7 +176,7 @@ class PrimaryNav extends Component {
                         <h3>JR Academy</h3>
                     </div>
                 </div>
-                <SecondNav props={{selectedSecondNav, showSecondNav}} />
+                <SecondNav props={{ selectedSecondNav, showSecondNav }} />
             </div>
         );
     }

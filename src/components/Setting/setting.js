@@ -1,123 +1,107 @@
 import React, { Component } from 'react';
 import './setting.css';
-import {Button} from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import Collapsible from './Collapse/Collapse';
 /*import Icon*/
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPortrait, faPlus,faEdit,faFileDownload} from '@fortawesome/free-solid-svg-icons'
+import { faPortrait, faPlus, faEdit, faFileDownload } from '@fortawesome/free-solid-svg-icons'
 const Port = <FontAwesomeIcon icon={faPortrait} size="10x" color="grey" />
 const Plus = <FontAwesomeIcon icon={faPlus} size="1x" color="white" />
 const Pencil = <FontAwesomeIcon icon={faEdit} size="1x" color="grey" />
 const Download = <FontAwesomeIcon icon={faFileDownload} size="1x" color="grey" />
-
-var Flag = document.getElementsByClassName("feature-flag")
-// Flag.addEventListener('click', ()=>{
-//     this.classList.toggle('active'); //add active class to flag
-//     var content = document.getElementsByClassName='feature-detail'
-//     if (content.style.display='block'){
-//         content.style.display='none'
-//     }
-//     else{
-//         content.style.display='block'
-//     }
-// });
-
-
-
 /*import Icon*/
+
 export default class Setting extends Component {
+    render() {
+        return (
+            <div className="overlayer">
+                <div className='container setting content-wrapper'>
+                    <a className='profile-pic'>
+                        {Port}
+                    </a>
+                    <h1 >XXX's Settings</h1>
 
-
-
-  render() {
-    return (
-            <div className='container setting content-wrapper'>
-                <a className='profile-pic'>
-                    {Port}
-                </a>
-                <h1 >XXX's Settings</h1>
-
-                <table className='profile-table'>
-                    <tbody>
-                        <tr>
-                            <th>
-                                <label>Full Name:</label>
-                            </th>
-                            <td>
-                                <span className='main'>XXX OO</span>
-                                <br/>
-                                <span className='second'>This name will be used for grading</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>
-                                <label >Display Name:</label>
-                            </th>
-                            <td>
-                                <span className='main'>XXX OO</span>
-                                <br/>
-                                <span className='second'>People will see this name in discussions, messages and comments</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>
-                                <label>Language:</label>
-                            </th>
-                            <td>
-                                <span className='main'>System Default (English(Australia))</span>
-                                <br/>
-                            </td>
-                        </tr>     
-                        <tr>
-                            <th>
-                                <label>Time Zone:</label>
-                            </th>
-                            <td>
-                                <span className='main'>Sydney</span>
-                                <br/>
-                            </td>
-                        </tr>                                             
-                    </tbody>
-                </table>
-                <div className='web-services'>
-                    {/* <a>Registered Web Service</a> */}
-                    <h2>Web Services</h2>
-                    <p>Canvas can make your life a lot easier by tying itself in with the web tools you already use. Click any of the services in "Other Services" to see what we mean.</p>
-                    <p>
-                     <input type="checkbox" id='show_user_services' ></input>
-                     <label>Let fellow course/group members see which services I've linked to my profile</label>
-                    </p>
-                    <table className='registered-service'>
-                        <tr>
-                            <td>
-                             <h3>Registered Services</h3>
-                                <div className='sub'>
-                                    <ul>No registered Services</ul>
-                                </div>
-                            </td>
-                            <td>
-                             <h3>Other Services</h3>
-                                <div className='sub'>
-                                   <ul> Click any service below to register:</ul>
-                                </div>
-                            </td>
-                        </tr>
+                    <table className='profile-table'>
+                        <tbody>
+                            <tr>
+                                <th>
+                                    <label>Full Name:</label>
+                                </th>
+                                <td>
+                                    <span className='main'>XXX OO</span>
+                                    <br />
+                                    <span className='second'>This name will be used for grading</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <label >Display Name:</label>
+                                </th>
+                                <td>
+                                    <span className='main'>XXX OO</span>
+                                    <br />
+                                    <span className='second'>People will see this name in discussions, messages and comments</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <label>Language:</label>
+                                </th>
+                                <td>
+                                    <span className='main'>System Default (English(Australia))</span>
+                                    <br />
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <label>Time Zone:</label>
+                                </th>
+                                <td>
+                                    <span className='main'>Sydney</span>
+                                    <br />
+                                </td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <div className='approved-integrations'>
-                        <h2>Approved Integrations: </h2>
+                    <div className='web-services'>
+                        {/* <a>Registered Web Service</a> */}
+                        <h2>Web Services</h2>
+                        <p>Canvas can make your life a lot easier by tying itself in with the web tools you already use. Click any of the services in "Other Services" to see what we mean.</p>
+                        <p>
+                            <input type="checkbox" id='show_user_services' ></input>
+                            <label>Let fellow course/group members see which services I've linked to my profile</label>
+                        </p>
+                        <table className='registered-service'>
+                            <tr>
+                                <td>
+                                    <h3>Registered Services</h3>
+                                    <div className='sub'>
+                                        <ul>No registered Services</ul>
+                                    </div>
+                                </td>
+                                <td>
+                                    <h3>Other Services</h3>
+                                    <div className='sub'>
+                                        <ul> Click any service below to register:</ul>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                        <div className='approved-integrations'>
+                            <h2>Approved Integrations: </h2>
                             <div className='sub grey'>   Third-party applications can request permission to access the Canvas site on your behalf. As you begin authorizing applications you will see them listed here.      </div>
                             <div className='access-token '>
                                 <Button variant="primary" className=''>{Plus}New Access Token</Button>
                             </div>
 
-                    </div>    
+                        </div>
                         {/* feature-option */}
                         <h2>Feature Options: </h2>
                         <div className='feature-wrapper'>
                             <div className='user-feature-flag'>
                                 <ul className='feature-flags'>
-                                    <Collapsible/>
-                                </ul>   
+                                    <Collapsible />
+                                </ul>
 
                             </div>
                         </div>
@@ -131,7 +115,7 @@ export default class Setting extends Component {
                                 <table>
                                     <thead>
                                         <tr >
-                                         <th>Email Addresses</th>
+                                            <th>Email Addresses</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -142,9 +126,9 @@ export default class Setting extends Component {
                                         </tr>
                                         <tr>
                                             <td>
-                                            <div className='plus-email-address '>
-                                                <Button variant="secondary" className='' size='sm'>{Plus}Email Address</Button>
-                                            </div>
+                                                <div className='plus-email-address '>
+                                                    <Button variant="secondary" className='' size='sm'>{Plus}Email Address</Button>
+                                                </div>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -153,8 +137,8 @@ export default class Setting extends Component {
                                 <table>
                                     <thead>
                                         <tr >
-                                             <th>Other Contacts</th>
-                                             {/* <th className='contact-type'>Type</th> */}
+                                            <th>Other Contacts</th>
+                                            {/* <th className='contact-type'>Type</th> */}
                                         </tr>
                                     </thead>
                                     <tbody >
@@ -175,28 +159,23 @@ export default class Setting extends Component {
                                     </tfoot> */}
                                 </table>
                                 <div className='foot'>
-                                    <hr/>
+                                    <hr />
                                     <a className='btn cux-btn' href='#'>
-                                       {Pencil} Edit Settings
+                                        {Pencil} Edit Settings
                                     </a>
-                                    <br/>
+                                    <br />
                                     <a className='btn cux-btn' href='#'>
                                         {Download}  Download Submissions
                                     </a>
 
-                                    
+
                                 </div>
                             </aside>
                         </div>
-
-
-
-
-
+                    </div>
                 </div>
             </div>
-
     );
-  }
+    }
 }
 
