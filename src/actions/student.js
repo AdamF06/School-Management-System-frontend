@@ -1,18 +1,29 @@
-export function changeStudentStatus({ status }) {
-    return {
-        type: "CHANGE_STUDENT_STATUS", 
-        status
-    };
-}
-export function setStudentIdentity({ identity }) {
-    return {
-        type: "SET_STUDENT_IDENTITY", 
-        identity
-    };
-}
-export function getStudentId({ _id }) {
-    return {
-        type: "GET_STUDENT_ID", 
-        _id
-    };
-}
+import { fetchCourseApi } from '../apis/students'
+
+export const fetchCourse = () => dispatch => {
+
+  dispatch(fetchCourseRequested());
+  fetchCourseApi()
+    .then(res => {
+      console.log('called from student actions')
+      dispatch(fetchCourseSucceeded(res))
+    })
+    .catch(err =>{
+      console.log('falied')
+       dispatch(fetchCourseFailed(err))
+    });
+};
+
+const fetchCourseRequested = () => ({
+  type: 'FETCH_REQUESTED'
+});
+
+const fetchCourseSucceeded = res => ({
+  type: 'FETCH_SUCCEEDED',
+  data: res
+});
+
+const fetchCourseFailed = err => ({
+  type: 'FETCH_FAILED',
+  data: { err }
+});

@@ -1,37 +1,57 @@
 import React, { Component } from 'react';
 import './Dashboard.css';
 import {
-    EllipsisV,
     EllipsisVB,
     File
 } from '../Icon/Icon'
 import { connect } from 'react-redux';
+//import { withRouter } from "react-router";
+import {fetchCourse} from '../../actions'
+//import { fetchCourseApi } from '../../apis/students'
+
+const storage = window.localStorage;
 
 class Dashboard extends Component {
+
+    constructor() {
+        super()
+        this.state = {
+            user_identity: JSON.parse(storage.userInfo).identity
+        }
+    }
+
+    try = async (e) => {
+        e.preventDefault();
+        console.log("clicked")
+        //console.log( await fetchCourseApi())
+        fetchCourse()
+        console.log(this.props)
+    }
+
     render() {
         return (
             <div className="dashboardContainer">
                 <div className="dashboardBody">
                     <div className="main">
                         <div className="main__header">
-                            <h1>Dashboard</h1> <button>{EllipsisVB}</button>
+                            <h1>Dashboard</h1> <button onClick={this.try}>{EllipsisVB}</button>
                         </div>
 
                         <div className="main__dashboardContainer">
                             <div className="dashboardCard">
                                 <div className="dashboardCard__header">
-                                    <h2>Some course</h2>                                  
+                                    <h2>Some course</h2>
                                 </div>
                                 <div className="dashboardCard__info">
 
                                     <h4 className="ellipsis">Some course Some course</h4>
-                                    <h3 className="ellipsis">8th</h3>                               
+                                    <h3 className="ellipsis">8th</h3>
                                 </div>
                                 <div className="dashboardCard__action">
-                                    <button> {File} </button>   
+                                    <button> {File} </button>
                                 </div>
                             </div>
-                            
+
                         </div>
                     </div>
 
@@ -59,12 +79,14 @@ class Dashboard extends Component {
         );
     }
 }
+
 function mapStateToProps(state) {
-    const { auth } = state;
-    //console.log("auth from state",auth)
+    const { student } = state;
+    console.log(student)
     return {
-        user_identity: auth.user_identity,
-        user_status: auth.user_status,
+        course: student.course,
+        err: student.err
     };
 }
-export default connect(mapStateToProps, {})(Dashboard);
+
+export default connect(mapStateToProps, {fetchCourse})(Dashboard);

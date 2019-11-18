@@ -1,12 +1,18 @@
 import Axios from "axios"
-const url = 'http://127.0.0.1:8080/';
 
-const fetchStudentData = (login_email,login_password) => {
-    //return Axios.post(url, {email: login_email, password: login_password})
-    return Axios.post(url, {email: "test@qq.com", password: '1234567'})
-
+const fetchCourseApi = async () => {
+    const { token, userInfo } = window.localStorage
+    const tokenHeader = {
+        headers: {
+            Authorization: "Bearer " + token
+        }
+    }
+    const _id = JSON.parse(userInfo)._id
+    const url = 'http://127.0.0.1:8080/students/fetchCourse/' + _id;
+    
+    return Axios.get(url, tokenHeader)  
 }
 
 export {
-    fetchStudentData
+    fetchCourseApi
 }
