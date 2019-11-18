@@ -26,14 +26,6 @@ class PrivateRoute extends React.Component {
     )
   }
 }
-// function PrivateRoute() {
-//     const { children, status } = props;
-//     console.log('========status', status);
-//     return (
-      
-//       />
-//     );
-//   }
   
 function mapStateToProps(state) {
     const { auth } = state;

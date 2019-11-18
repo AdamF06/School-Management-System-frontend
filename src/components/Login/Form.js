@@ -43,7 +43,6 @@ class Form extends Component {
         authenticate(login_email,login_password)
     }
     componentWillReceiveProps(nextProps) {
-        console.log(nextProps);
         const { history, user_status } = this.props;
         history.push('/dashboard');
 
