@@ -1,8 +1,13 @@
 import { auth } from '../apis/auth';
 import jwtDecode from 'jwt-decode';
+// import {bindActionCreators} from 'redux'
+
 var storage = window.localStorage;
 
+
 export const authenticate = (login_email,login_password) => dispatch => {
+  // const fcq = bindActionCreators(authenticateRequested, dispatch)
+  // fcq()
   dispatch(authenticateRequested());
   auth(login_email,login_password)
     .then(res => {

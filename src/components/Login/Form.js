@@ -7,7 +7,7 @@ import {
     Ins
 } from '../Icon/Icon'
 import {
-    authenticate,
+    authenticate
 } from '../../actions'
 import { withRouter } from "react-router";
 

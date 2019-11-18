@@ -10,7 +10,8 @@ const fetchCourseApi = async () => {
     const _id = JSON.parse(userInfo)._id
     const url = 'http://127.0.0.1:8080/students/fetchCourse/' + _id;
     
-    return Axios.get(url, tokenHeader)  
+    // return Axios.get(url, tokenHeader)  
+    return (dispatch)=>{Axios.get(url, tokenHeader) }
 }
 
 export {

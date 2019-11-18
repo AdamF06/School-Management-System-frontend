@@ -7,12 +7,13 @@ import {
 import { connect } from 'react-redux';
 //import { withRouter } from "react-router";
 import {fetchCourse} from '../../actions'
-//import { fetchCourseApi } from '../../apis/students'
+// import { fetchCourseApi } from '../../apis/students'
+import * as fc from '../../actions'
+import { bindActionCreators } from '../../../../../Library/Caches/typescript/3.6/node_modules/redux';
 
 const storage = window.localStorage;
 
 class Dashboard extends Component {
-
     constructor() {
         super()
         this.state = {
@@ -22,19 +23,24 @@ class Dashboard extends Component {
 
     try = async (e) => {
         e.preventDefault();
-        console.log("clicked")
-        //console.log( await fetchCourseApi())
+        console.log("clicked");
+        // console.log( await fetchCourseApi());
         fetchCourse()
-        console.log(this.props)
+        // console.log(this.props)
     }
 
     render() {
+        const {dispatch}=this.props;
+        const fcq = bindActionCreators(fc.fetchCourseRequested,dispatch)
+        const fcs = bindActionCreators(fc.fetchCourseSucceeded,dispatch)
+        const fcf = bindActionCreators(fc.fetchCourseFailed,dispatch)
+
         return (
             <div className="dashboardContainer">
                 <div className="dashboardBody">
                     <div className="main">
                         <div className="main__header">
-                            <h1>Dashboard</h1> <button onClick={this.try}>{EllipsisVB}</button>
+                            <h1>Dashboard</h1> <button onClick={fetchCourse(fcq,fcs,fcf)}>{EllipsisVB}</button>
                         </div>
 
                         <div className="main__dashboardContainer">
@@ -89,4 +95,6 @@ function mapStateToProps(state) {
     };
 }
 
-export default connect(mapStateToProps, {fetchCourse})(Dashboard);
+
+// export default connect(mapStateToProps, {fetchCourse})(Dashboard);
+export default connect(mapStateToProps)(Dashboard);
