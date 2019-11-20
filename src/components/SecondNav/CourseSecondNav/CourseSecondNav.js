@@ -18,7 +18,7 @@ class CourseSecondNav extends Component {
                 <div className="courseSecondNav__linkList">
                     <ul>
                         <li>
-                            <Link to="/course/:id">Course 1</Link>
+                            <Link to="/course">Course 1</Link>
                         </li>
                         <li>
                             <Link to="/course/all">All Courses</Link>

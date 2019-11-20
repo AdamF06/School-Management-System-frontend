@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+  font-weight: normal;
+}
+
+.homepage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.homepage .main {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.homepage .main__imageConatiner {
+  position: relative;
+  width: 90%;
+  margin: 0 auto;
+  height: 18.75rem;
+  background: #003060;
+  padding: 2rem;
+  z-index: -1;
+}
+
+.homepage .main__imageConatiner h2 {
+  color: whitesmoke;
+  margin-top: 2rem;
+  font-size: 2.8rem;
+}
+
+.homepage .main__imageConatiner h3 {
+  color: whitesmoke;
+  font-size: 1.25rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.homepage .main__imageConatiner h3 :first-child {
+  width: 1rem;
+  height: 1rem;
+  border-bottom: 3px solid #98002E;
+  margin-right: 0.25rem;
+}
+
+.homepage .main__section {
+  margin: 6.25rem auto;
+  width: 90%;
+}
+
+.homepage .main__section h2 {
+  font-size: 2.1875rem;
+  color: #13294b;
+}
+
+.homepage .main__section p {
+  margin: 0.78125rem 0;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  color: #13294b;
+  font-weight: 100;
+  text-align: justify;
+}
+
+.homepage .todo {
+  width: 18rem;
+}
+
+.homepage .todo__listContainer {
+  padding: 1rem 0;
+}
+
+.homepage .todo__listContainer h3 {
+  font-size: 1rem;
+  color: #2D3B45;
+  border-bottom: 1px solid #C7CDD1;
+  padding-bottom: 0.5rem;
+}
+
+.homepage .todo__recentFeedbackContainer {
+  padding: 1rem 0;
+}
+
+.homepage .todo__recentFeedbackContainer h3 {
+  font-size: 1rem;
+  color: #2D3B45;
+  border-bottom: 1px solid #C7CDD1;
+  padding-bottom: 0.5rem;
+}
+/*# sourceMappingURL=HomePage.css.map */

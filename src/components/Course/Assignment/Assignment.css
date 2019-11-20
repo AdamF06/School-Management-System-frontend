@@ -1,1 +1,196 @@
-/* No CSS *//*# sourceMappingURL=Assignment.css.map */
+@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+  font-weight: normal;
+}
+
+.assignmentContainer {
+  width: 100%;
+}
+
+.assignmentContainer .assignment {
+  width: 100%;
+}
+
+.assignmentContainer .assignment__header {
+  width: 100%;
+}
+
+.assignmentContainer .assignment__header input {
+  height: 2.375rem;
+  width: 13.125rem;
+  font-size: 1rem;
+  color: #2D3B45;
+  text-align: center;
+  border-radius: 0.25rem;
+  border: 1px solid #C7CDD1;
+  outline: none;
+}
+
+.assignmentContainer .assignment__header .input--active {
+  border: 2px solid #13294b;
+  outline: #13294b;
+}
+
+.assignmentContainer .assignment__body {
+  width: 100%;
+  border: 1px solid #C7CDD1;
+  border-top: none;
+  padding: 1rem;
+  background: #F2F2F2;
+}
+
+.assignmentContainer .assignment__body__project :first-child, .assignmentContainer .assignment__body__ass :first-child {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.assignmentContainer .assignment__body__project :first-child button, .assignmentContainer .assignment__body__ass :first-child button {
+  font-size: 1rem;
+  color: #333;
+}
+
+.assignmentContainer .assignment__body__project :first-child h2, .assignmentContainer .assignment__body__ass :first-child h2 {
+  font-size: 1rem;
+  margin-left: 0.25rem;
+  color: #333;
+}
+
+.assignmentContainer .assignment__body__project :first-child h2:hover, .assignmentContainer .assignment__body__ass :first-child h2:hover {
+  text-decoration: underline;
+}
+
+.assignmentContainer .assignment__body__project :first-child .header__left .--select--arrow-close, .assignmentContainer .assignment__body__ass :first-child .header__left .--select--arrow-close {
+  display: none;
+}
+
+.assignmentContainer .assignment__body__project :first-child .header__right, .assignmentContainer .assignment__body__ass :first-child .header__right {
+  border: 1px solid #C7CDD1;
+  border-radius: 0.8rem;
+  text-align: center;
+  padding: 0.15rem 0.35rem;
+}
+
+.assignmentContainer .assignment__body__project :first-child .header__right h3, .assignmentContainer .assignment__body__ass :first-child .header__right h3 {
+  font-size: 0.875rem;
+  color: #333;
+}
+
+.assignmentContainer .assignment__body__ass {
+  border-bottom: 1px dashed #C7CDD1;
+  padding-bottom: 2rem;
+}
+
+.assignmentContainer .assignment__body__ass .ass__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 4.25rem;
+  background: white;
+  border: 1px solid #C7CDD1;
+  margin-top: 1rem;
+  padding: 0  1rem;
+}
+
+.assignmentContainer .assignment__body__ass .ass__list .leftIcon h3 svg {
+  color: #333;
+}
+
+.assignmentContainer .assignment__body__ass .ass__list .rightInfo {
+  margin-left: 1rem;
+  width: 20rem;
+}
+
+.assignmentContainer .assignment__body__ass .ass__list .rightInfo h2 {
+  font-size: 1rem;
+  color: #333;
+  font-weight: bold;
+}
+
+.assignmentContainer .assignment__body__ass .ass__list .rightInfo h4 {
+  margin-top: 0.25rem;
+  font-size: 0.75rem;
+  color: #333;
+}
+
+.assignmentContainer .assignment__body__ass .ass__list .rightInfo:hover {
+  text-decoration: underline;
+}
+
+.assignmentContainer .assignment__body__ass .ass__list:hover {
+  background: #EBF5FF;
+}
+
+.assignmentContainer .assignment__body__ass .ass__list--close {
+  display: none;
+}
+
+.assignmentContainer .assignment__body__project {
+  margin-top: 1.5rem;
+  border-bottom: 1px dashed #C7CDD1;
+  padding-bottom: 2rem;
+}
+
+.assignmentContainer .assignment__body__project .project__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 4.25rem;
+  background: white;
+  border: 1px solid #C7CDD1;
+  margin-top: 1rem;
+  padding: 0  1rem;
+}
+
+.assignmentContainer .assignment__body__project .project__list .leftIcon h3 svg {
+  color: #333;
+}
+
+.assignmentContainer .assignment__body__project .project__list .rightInfo {
+  margin-left: 1rem;
+  width: 20rem;
+}
+
+.assignmentContainer .assignment__body__project .project__list .rightInfo h2 {
+  font-size: 1rem;
+  color: #333;
+  font-weight: bold;
+}
+
+.assignmentContainer .assignment__body__project .project__list .rightInfo h4 {
+  margin-top: 0.25rem;
+  font-size: 0.75rem;
+  color: #333;
+}
+
+.assignmentContainer .assignment__body__project .project__list .rightInfo:hover {
+  text-decoration: underline;
+}
+
+.assignmentContainer .assignment__body__project .project__list:hover {
+  background: #EBF5FF;
+}
+
+.assignmentContainer .assignment__body__project .project__list--close {
+  display: none;
+}
+/*# sourceMappingURL=Assignment.css.map */
