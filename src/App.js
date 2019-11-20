@@ -11,7 +11,7 @@ import CourseHome from './components/Course/Home/CourseHome'
 import { createBrowserHistory } from "history";
 import PrivateRoute from './PrivateRoute'
 import Setting from './components/Setting/setting'
-
+import Sales from './components/Sales/Sales'
 const customHistory = createBrowserHistory();
 
 function App() {
@@ -20,10 +20,13 @@ function App() {
       <Router history={customHistory}>
         <Switch>
           {/* <Route exact path="/"> <Login /></Route> */}
-          <Route exact path="/"> <SideBar /> <CourseHome/>  </Route>
+          <Route exact path="/"> <SideBar /> <CourseHome/> </Route>
+
+          <PrivateRoute exact path="/"> <SideBar /> <CourseHome/>  </PrivateRoute>
           <PrivateRoute path='/dashboard'> <SideBar/> <Dasboard/> </PrivateRoute>
           <PrivateRoute path='/course'> <SideBar/> <CourseHome/> </PrivateRoute>        
           <PrivateRoute path="/user"><SideBar/> <UserRouter /></PrivateRoute>
+          <PrivateRoute path='/sale'> <SideBar/> <Sales/> </PrivateRoute>
           <PrivateRoute path="/setting"> <SideBar /><Setting/> </PrivateRoute>
 
           <Route path="*" component={() => "404 NOT FOUND"} />

@@ -1,0 +1,297 @@
+@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+  font-weight: normal;
+}
+
+.sales {
+  margin-left: 13.125rem;
+  padding: 0 1.5rem;
+}
+
+.sales .header {
+  height: 3.5rem;
+  border-bottom: 1px solid #C7CDD1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.sales .header h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #13294b;
+}
+
+.sales .balance {
+  border-radius: 0.5rem;
+  border: 1px solid #C7CDD1;
+  margin-top: 1.5rem;
+}
+
+.sales .balance__header {
+  height: 2.5rem;
+  background: #333333;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 1rem;
+}
+
+.sales .balance__header h3 {
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.sales .balance__content {
+  height: 6rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.sales .balance__content h2 {
+  font-size: 1.5rem;
+  margin-left: 1rem;
+  font-weight: bold;
+}
+
+.sales .balance__content h4 {
+  margin-left: 1rem;
+  font-size: 0.875rem;
+}
+
+.sales .balance__content h4 svg {
+  font-size: 0.875rem;
+  color: black;
+}
+
+.sales .balance__content h4 span {
+  margin-left: 0.5rem;
+}
+
+.sales .finance {
+  border-radius: 0.5rem;
+  border: 1px solid #C7CDD1;
+  margin-top: 1.5rem;
+}
+
+.sales .finance__header {
+  height: 2.5rem;
+  background: #333333;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 1rem;
+}
+
+.sales .finance__header h3 {
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.sales .finance__content {
+  padding: 1rem;
+}
+
+.sales .finance__content__nav {
+  border-bottom: 1px solid #C7CDD1;
+  height: 3rem;
+  padding: 4px 0;
+}
+
+.sales .finance__content__nav button {
+  height: 100%;
+  margin-right: 1rem;
+  border: none;
+  color: #98002E;
+  font-weight: bold;
+  outline: none;
+}
+
+.sales .finance__content__nav button h5 {
+  font-size: 1rem;
+  padding-left: 0.25rem;
+}
+
+.sales .finance__content__nav .--active h5 {
+  color: black;
+  font-size: 1.25rem;
+  border-left: 2px solid black;
+}
+
+.sales .finance__content__fee {
+  border: 1px solid #C7CDD1;
+  border-radius: 0.5rem;
+  margin: 1rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.sales .finance__content__fee .fee__header {
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  padding: 0 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 2.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  width: 100%;
+  background: #333333;
+}
+
+.sales .finance__content__fee .fee__tableHeader {
+  border-bottom: 1px solid #C7CDD1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.sales .finance__content__fee .fee__tableHeader__right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.sales .finance__content__fee .fee__tableHeader :first-child, .sales .finance__content__fee .fee__tableHeader :last-child {
+  padding: 0.25rem 1rem;
+}
+
+.sales .finance__content__fee .fee__tableHeader :first-child h2, .sales .finance__content__fee .fee__tableHeader :last-child h2 {
+  font-size: 1rem;
+}
+
+.sales .finance__content__fee .fee__itemContainer .item:nth-child(2n) {
+  background: #F2F2F2;
+}
+
+.sales .finance__content__fee .fee__itemContainer .item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.sales .finance__content__fee .fee__itemContainer .item__right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.sales .finance__content__fee .fee__itemContainer .item :first-child, .sales .finance__content__fee .fee__itemContainer .item :last-child {
+  padding: 0.25rem 1rem;
+}
+
+.sales .finance__content__fee .fee__itemContainer .item :first-child h2, .sales .finance__content__fee .fee__itemContainer .item :last-child h2 {
+  font-size: 1rem;
+}
+
+.sales .finance__content__payment {
+  padding: 1rem 0;
+}
+
+.sales .finance__content__payment .bpay {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.sales .finance__content__payment .bpay__right {
+  margin-left: 4rem;
+}
+
+.sales .finance__content__payment .bpay__right img {
+  height: 4.1875rem;
+  width: 2.75rem;
+}
+
+.sales .finance__content__payment .bpay__left {
+  width: 20rem;
+}
+
+.sales .finance__content__payment .bpay__left h3 {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.sales .finance__content__payment .mail {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 1rem;
+}
+
+.sales .finance__content__payment .mail__left {
+  width: 35%;
+}
+
+.sales .finance__content__payment .mail__left h3 {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.sales .finance__content__payment .mail__right {
+  margin-left: 4rem;
+}
+
+.sales .finance__content .--inactive {
+  display: none;
+}
+/*# sourceMappingURL=Sales.css.map */

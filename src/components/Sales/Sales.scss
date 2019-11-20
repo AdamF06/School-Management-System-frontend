@@ -1,0 +1,205 @@
+@import '../../common/commonScss.scss';
+
+.sales{
+    margin-left: (210rem/16);
+    padding: 0 (24rem/16);
+    .header{
+        height:(56rem/16);
+        border-bottom: 1px solid $border;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        h1{
+            font-size: 2rem;
+            font-weight: bold;
+            color: $fontColorMain;
+        }
+    }
+    .balance{
+        border-radius: 0.5rem;
+        border: 1px solid $border;
+        margin-top:1.5rem;
+        &__header{
+            height: (40rem/16);
+            background: #333333;
+            border-top-left-radius: 0.5rem;
+            border-top-right-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            //border-radius: 0.5rem;
+            padding:0 1rem;
+            h3{
+                color: white;
+                font-size: 1rem;
+                font-weight: bold;
+            }
+        }
+        &__content{
+            height: 6rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            h2{
+                font-size: 1.5rem;
+                margin-left: 1rem;
+                font-weight: bold;           
+            }
+            h4{
+                margin-left: 1rem;
+                font-size: 0.875rem;
+                svg{
+                    font-size: 0.875rem;
+                    color: black;
+                }
+                span{
+                    margin-left: 0.5rem;
+                }
+            }
+        }
+    }
+
+    .finance{
+        border-radius: 0.5rem;
+        border: 1px solid $border;
+        margin-top:1.5rem;
+        &__header{
+            height: (40rem/16);
+            background: #333333;
+            border-top-left-radius: 0.5rem;
+            border-top-right-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            //border-radius: 0.5rem;
+            padding:0 1rem;
+            h3{
+                color: white;
+                font-size: 1rem;
+                font-weight: bold;
+            } 
+        }
+        &__content{
+            padding:1rem;
+            &__nav{
+                border-bottom: 1px solid $border;
+                height:3rem;
+                padding: 4px 0;
+                button{
+                    height: 100%;
+                    margin-right:1rem;
+                    border: none;
+                    color: $linkColor;
+                    font-weight: bold;
+                    outline: none;
+                    h5{
+                        font-size: 1rem;
+                        padding-left: 0.25rem;
+                    }
+                }
+                .--active{
+                    h5{
+                        color: black;
+                        font-size: 1.25rem;
+                        border-left: 2px solid black;
+                    }
+                }
+            }
+            &__fee{
+                border: 1px solid $border;
+                border-radius: 0.5rem;
+                margin:1rem 0;
+                display: flex;
+                flex-direction: column;
+                .fee__header{
+                    border-top-left-radius:  0.5rem;
+                    border-top-right-radius: 0.5rem;
+                    padding:0 1rem;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    height: (40rem/16);
+                    font-size: 1rem;
+                    font-weight: bold;
+                    color: white;
+                    width:100%;
+                    background:#333333;
+                }
+                .fee__tableHeader{
+                    border-bottom: 1px solid $border;
+                    display: flex;
+                    justify-content: space-between;
+                    &__right{
+                        display: flex;
+                        justify-content: space-between;  
+                    }
+                    & :first-child, & :last-child{
+                        padding:0.25rem 1rem;
+                        h2{
+                            font-size:1rem;
+                        }
+                    }
+                }
+                .fee__itemContainer{
+                    & .item:nth-child(2n){
+                        background:#F2F2F2 ;
+                    }
+                    .item{
+                        display: flex;
+                        justify-content: space-between;
+                        &__right{
+                            display: flex;
+                            justify-content: space-between;
+                        }
+                        & :first-child, & :last-child{
+                            padding:0.25rem 1rem;
+                            h2{
+                                font-size:1rem;
+                            }
+                        }
+                    }
+                } 
+            }
+            
+            &__payment{
+                padding: 1rem 0;
+                .bpay{
+                    width:100%;
+                    display: flex;
+                    &__right{
+                        margin-left:4rem;
+                        img{
+                            height:(67rem/16);
+                            width: (44rem/16);
+                        }
+                    }
+                    &__left{
+                        width:20rem;
+                        h3{
+                            font-size: 1rem;
+                            font-weight: bold;
+                        }
+                    }
+                }
+                .mail{
+                    width:100%;
+                    display: flex;
+                    margin-top: 1rem;
+
+                    &__left{
+                        width:35%;
+                        h3{
+                            font-size: 1rem;
+                            font-weight: bold;
+                        }
+                    }
+                    &__right{
+                        margin-left:4rem;
+                    }
+                }
+            }
+            .--inactive{
+                display: none;
+            }
+        }
+    }
+}
+

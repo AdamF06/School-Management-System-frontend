@@ -19,6 +19,7 @@ import {
     faClipboardCheck,
     faArrowDown,
     faArrowRight,
+    faPhone,
 }from '@fortawesome/free-solid-svg-icons'
 import { 
     faQuestionCircle,
@@ -57,6 +58,8 @@ export const Print=  <FontAwesomeIcon icon={faPrint} size="1x" color="black"/>
 export const ClipboardCheck=  <FontAwesomeIcon icon={faClipboardCheck} size="1x" color="gray"/>
 export const ArrowRight=  <FontAwesomeIcon icon={faArrowRight} size="1x" color="black"/>
 export const ArrowDown=  <FontAwesomeIcon icon={faArrowDown} size="1x" color="black"/>
+export const Phone=  <FontAwesomeIcon icon={faPhone} size="1x" color="black"/>
+
 
 
 
