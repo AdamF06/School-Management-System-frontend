@@ -17,6 +17,8 @@ import {
     faAngleDown,
     faPrint,
     faClipboardCheck,
+    faArrowDown,
+    faArrowRight,
 }from '@fortawesome/free-solid-svg-icons'
 import { 
     faQuestionCircle,
@@ -53,6 +55,10 @@ export const AngleDown=  <FontAwesomeIcon icon={faAngleDown} size="1x" color="bl
 export const RocketB=  <FontAwesomeIcon icon={faRocket} size="1x" color="black"/>
 export const Print=  <FontAwesomeIcon icon={faPrint} size="1x" color="black"/>
 export const ClipboardCheck=  <FontAwesomeIcon icon={faClipboardCheck} size="1x" color="gray"/>
+export const ArrowRight=  <FontAwesomeIcon icon={faArrowRight} size="1x" color="black"/>
+export const ArrowDown=  <FontAwesomeIcon icon={faArrowDown} size="1x" color="black"/>
+
+
 
 
 

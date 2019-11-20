@@ -3,41 +3,47 @@ import {
     Link,
 } from "react-router-dom";
 export default class CourseThirdNav extends Component {
-    constructor() {
-        super()
-        this.state = {
-            activeNav: "home"
-        }
-    }
-    switchNav = () => {
 
+    state = {
+        activeNav: 'home'
     }
+
+    changeLink = (e) => {
+        e.preventDefault();
+        const id = e.target.id
+        this.props.changePage(id)
+        this.setState({
+            activeNav: id
+        })      
+    }
+
     render() {
-        const {activeNav} = this.state
+        const { activeNav } = this.state
         return (
             <nav className="courseNav">
                 <ul>
-                    <li  className={activeNav === 'home' ? 'li--active' : null}>
+                    <li className={activeNav === 'home' ? 'li--active' : 'li--inactive'} >
                         <Link to="/course/id"
                             id="home"
-                            onClick={this.switchNav()}>Home</Link>
+                            onClick={this.changeLink}
+                        >Home</Link>
                     </li>
-                    <li className={activeNav === 'assignments' ? 'li--active' : null}>
-                        <Link to="/course/assignments"
-                            id="assignments"
-                            onClick={this.switchNav()}
+                    <li className={activeNav === 'assignment' ? 'li--active' : 'li--inactive'}>
+                        <Link to="/course/assignment"
+                            id="assignment"
+                            onClick={this.changeLink}
                         >Assignments</Link>
                     </li>
-                    <li className={activeNav === 'marks' ? 'li--active' : null}>
-                        <Link to="/course/marks"
-                            id="marks"
-                            onClick={this.switchNav()}
+                    <li className={activeNav === 'mark' ? 'li--active' : 'li--inactive'}>
+                        <Link to="/course/mark"
+                            id="mark"
+                            onClick={this.changeLink}
                         >Marks</Link>
                     </li>
-                    <li  className={activeNav === 'modules' ? 'li--active' : null}>
-                        <Link to="/course/modules"
-                            id="modules"
-                            onClick={this.switchNav()}
+                    <li className={activeNav === 'module' ? 'li--active' : 'li--inactive'}>
+                        <Link to="/course/module"
+                            id="module"
+                            onClick={this.changeLink}
                         >Modules</Link>
                     </li>
                 </ul>

@@ -1,11 +1,27 @@
 import React, { Component } from 'react';
 import { Bars } from '../../Icon/Icon';
+import { withRouter } from 'react-router'
 import CourseThirdNav from '../Nav/CourseThirdNav'
 import './CourseHome.css';
-
+import HomePage from '../HomePage/HomePage'
+import Assignment from '../Assignment/Assignment'
 class CourseHome extends Component {
+    constructor() {
+        super()
+        this.state = {
+            displayPage: 'home'
+        }
+    }
+
+    changePage = (name) => {
+        this.setState({
+            displayPage: name
+        })
+    }
 
     render() {
+        const { displayPage } = this.state
+        console.log(displayPage)
         return (
             <div className="courseHomePageContainer">
                 <div className="courseHomePage">
@@ -16,35 +32,20 @@ class CourseHome extends Component {
                         <h1>Home of 'CourseName'</h1>
                     </div>
                     <div className="courseHomePage__body">
-                        <CourseThirdNav />
-                        <div className="main">
-                            <div className="main__imageConatiner">
-                                <img src={require('../logo.png')} alt="icon img"></img>
-                                <h2>Some Course Some Course</h2>
-                                <h3><div></div>8th</h3>
-                            </div>
-                            
-                            <div className="main__section">
-                                <h2>Welcome</h2>
-                                <p> Welcome to a brief introduction to the ACS Professional Year Program
-                                    in partnership with your chosen education provider. This short course
-                                    will introduce you to ACS, outline the benefits of your ACS membership, 
-                                    provide an overview of the Professional Year Program including a summary
-                                    of the key requirements. At the same time it will provide a short practical 
-                                    experience in using the Canvas Learning Management System (LMS).</p>
-                            </div>
+                        <CourseThirdNav changePage={this.changePage} />
+                        <Assignment/>
+                        {/* <div className={`${displayPage === 'home' ? '--acitve' : '--inactive'}`}>
+                            <HomePage />
                         </div>
-
-                        <div className="todo">
-                            <div className="todo__listContainer ">
-                                <h3>To Do</h3>
-                                <span>Nothing for now</span>
-                            </div>
-                            <div className="todo__recentFeedbackContainer ">
-                                <h3>Recent Feedback</h3>
-                                <span>Nothing for now</span>
-                            </div>
+                        <div className={`${displayPage === 'assignment' ? '--acitve' : '--inactive'}`}>
+                            <Assignment/>
                         </div>
+                        <div className={`${displayPage === 'mark' ? '--acitve' : '--inactive'}`}>
+                            mark
+                        </div>
+                        <div className={`${displayPage === 'module' ? '--acitve' : '--inactive'}`}>
+                            module
+                        </div> */}
                     </div>
                 </div>
 
@@ -61,4 +62,4 @@ class CourseHome extends Component {
     }
 }
 
-export default CourseHome;
+export default (withRouter(CourseHome));

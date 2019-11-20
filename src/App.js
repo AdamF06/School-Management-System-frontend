@@ -19,9 +19,10 @@ function App() {
     <>
       <Router history={customHistory}>
         <Switch>
-          <Route exact path="/"> <Login /></Route>
+          {/* <Route exact path="/"> <Login /></Route> */}
+          <Route exact path="/"> <SideBar /> <CourseHome/>  </Route>
           <PrivateRoute path='/dashboard'> <SideBar/> <Dasboard/> </PrivateRoute>
-          <PrivateRoute path='/course/:id'> <SideBar/> <CourseHome/> </PrivateRoute>        
+          <PrivateRoute path='/course'> <SideBar/> <CourseHome/> </PrivateRoute>        
           <PrivateRoute path="/user"><SideBar/> <UserRouter /></PrivateRoute>
           <PrivateRoute path="/setting"> <SideBar /><Setting/> </PrivateRoute>
 
