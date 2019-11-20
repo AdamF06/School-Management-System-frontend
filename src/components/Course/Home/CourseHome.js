@@ -6,6 +6,7 @@ import './CourseHome.css';
 import HomePage from '../HomePage/HomePage'
 import Assignment from '../Assignment/Assignment'
 import Module from '../Module/Module'
+import Mark from "../Mark/Mark"
 class CourseHome extends Component {
     constructor() {
         super()
@@ -33,7 +34,7 @@ class CourseHome extends Component {
                         <h1>Home of 'CourseName'</h1>
                     </div>
                     <div className="courseHomePage__body">
-                        <CourseThirdNav changePage={this.changePage} />
+                        <CourseThirdNav changePage={this.changePage} />                      
                         <div className={`${displayPage === 'home' ? '--acitve' : '--inactive'}`}>
                             <HomePage />
                         </div>
@@ -41,7 +42,7 @@ class CourseHome extends Component {
                             <Assignment />
                         </div>
                         <div className={`${displayPage === 'mark' ? '--acitve' : '--inactive'}`}>
-                            mark
+                            <Mark/>
                         </div>
                         <div className={`${displayPage === 'module' ? '--acitve' : '--inactive'}`}>
                             <Module />
