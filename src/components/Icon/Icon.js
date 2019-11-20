@@ -24,7 +24,8 @@ import {
 import { 
     faQuestionCircle,
     faUser,
-    faCommentDots
+    faCommentDots,
+    faCopy,
  } from '@fortawesome/free-regular-svg-icons'
 
 import {
@@ -59,6 +60,8 @@ export const ClipboardCheck=  <FontAwesomeIcon icon={faClipboardCheck} size="1x"
 export const ArrowRight=  <FontAwesomeIcon icon={faArrowRight} size="1x" color="black"/>
 export const ArrowDown=  <FontAwesomeIcon icon={faArrowDown} size="1x" color="black"/>
 export const Phone=  <FontAwesomeIcon icon={faPhone} size="1x" color="black"/>
+export const Paper=  <FontAwesomeIcon icon={faCopy} size="1x" color="black"/>
+
 
 
 

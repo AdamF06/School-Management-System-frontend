@@ -5,6 +5,7 @@ import CourseThirdNav from '../Nav/CourseThirdNav'
 import './CourseHome.css';
 import HomePage from '../HomePage/HomePage'
 import Assignment from '../Assignment/Assignment'
+import Module from '../Module/Module'
 class CourseHome extends Component {
     constructor() {
         super()
@@ -33,19 +34,18 @@ class CourseHome extends Component {
                     </div>
                     <div className="courseHomePage__body">
                         <CourseThirdNav changePage={this.changePage} />
-                        <Assignment/>
-                        {/* <div className={`${displayPage === 'home' ? '--acitve' : '--inactive'}`}>
+                        <div className={`${displayPage === 'home' ? '--acitve' : '--inactive'}`}>
                             <HomePage />
                         </div>
                         <div className={`${displayPage === 'assignment' ? '--acitve' : '--inactive'}`}>
-                            <Assignment/>
+                            <Assignment />
                         </div>
                         <div className={`${displayPage === 'mark' ? '--acitve' : '--inactive'}`}>
                             mark
                         </div>
                         <div className={`${displayPage === 'module' ? '--acitve' : '--inactive'}`}>
-                            module
-                        </div> */}
+                            <Module />
+                        </div>
                     </div>
                 </div>
 
