@@ -3,6 +3,7 @@
 .courseHomePageContainer{
     margin-left: (210rem/16);
     padding: 0 1.5rem;
+    overflow-x: hidden;
     .courseHomePage{
         width: 100%;
         &__header{
@@ -61,6 +62,7 @@
     }
 
     .footer{
+        margin-top: 15rem;
         bottom: 0;
         width: (1300rem/16);    
         display: flex;
