@@ -67,12 +67,14 @@ class PrimaryNav extends Component {
         }
     }
     iconToUrl = (iconName) => {
-        console.log('at inon to url,',iconName)
+        console.log('at inon to url,', iconName)
         switch (iconName) {
             case 'Dashboard':
                 return '/dashboard'
             case 'Setting':
                 return '/setting'
+            case 'Sales':
+                return '/sale'
             default:
                 break;
         }
