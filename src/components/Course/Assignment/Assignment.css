@@ -75,6 +75,10 @@
   display: none;
 }
 
+.assignmentContainer .assignment__body__project :first-child .header__left .--arrow-close, .assignmentContainer .assignment__body__ass :first-child .header__left .--arrow-close {
+  display: none;
+}
+
 .assignmentContainer .assignment__body__project :first-child .header__right, .assignmentContainer .assignment__body__ass :first-child .header__right {
   border: 1px solid #C7CDD1;
   border-radius: 0.8rem;
@@ -136,7 +140,7 @@
   background: #EBF5FF;
 }
 
-.assignmentContainer .assignment__body__ass .ass__list--close {
+.assignmentContainer .assignment__body__ass .--select--list-close {
   display: none;
 }
 
@@ -190,7 +194,7 @@
   background: #EBF5FF;
 }
 
-.assignmentContainer .assignment__body__project .project__list--close {
+.assignmentContainer .assignment__body__project .--select--list-close {
   display: none;
 }
 /*# sourceMappingURL=Assignment.css.map */

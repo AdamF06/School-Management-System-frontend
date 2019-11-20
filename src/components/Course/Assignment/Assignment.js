@@ -24,6 +24,8 @@ class Assignment extends Component {
         open: true,
         index: -1,
         inputActive: false,
+        assignmentArrow:true,
+        projectArrow:true
 
     }
     selected = (index) => {
@@ -34,7 +36,7 @@ class Assignment extends Component {
         console.log("aaaa", this.state)
     }
     render() {
-        const { open, index } = this.state
+        const { open, index, assignmentArrow, projectArrow } = this.state
         return (
             <div className='assignmentContainer'>
 
@@ -51,11 +53,11 @@ class Assignment extends Component {
                         <div className="assignment__body__ass">
                             <div className="ass__header">
                                 <div className="header__left"
-                                    onClick={() => this.setState({ open: !this.state.open, index: 0 })}
+                                    onClick={() => this.setState({ open: !this.state.open, index: 0,assignmentArrow:!this.state.assignmentArrow })}
                                 >
-                                    <dutton className={`arrow ${(index === 0 || -1) ? '--select' : ''}${open ? '' : '--arrow-close'}`}
+                                    <dutton className={`arrow ${(index === 0 || index === -1) ? '--select' : ''}${assignmentArrow ? '' : '--arrow-close'}`}
                                     >{ArrowDown} </dutton>
-                                    <dutton className={`arrow ${(index === 0 || -1) ? '--select' : ''}${open ? '--arrow-close' : ''}`}
+                                    <dutton className={`arrow ${(index === 0 || index === -1) ? '--select' : ''}${assignmentArrow ? '--arrow-close' : ''}`}
                                     >{ArrowRight} </dutton>
                                     <h2>Assignment</h2>
                                 </div>
@@ -63,7 +65,7 @@ class Assignment extends Component {
                                     <h3>n% of Total</h3>
                                 </div>
                             </div>
-                            <div className={`ass__list ${open ? '' : 'ass__list--close'}`}>
+                            <div className={`ass__list ${(index === 0 || index === -1) ? '--select' : ''}${open ? '' : '--list-close'}`}>
                                 {dummyAss.map(
                                     (item) => <ListItems {...item} />
                                 )}
@@ -72,12 +74,12 @@ class Assignment extends Component {
 
                         <div className="assignment__body__project">
                             <div className="project__header">
-                            <div className="header__left"
-                                    onClick={() => this.setState({ open: !this.state.open, index: 1 })}
+                                <div className="header__left"
+                                    onClick={() => this.setState({ open: !this.state.open, index: 1,projectArrow:!this.state.projectArrow })}
                                 >
-                                    <dutton className={`arrow ${(index === 1 || -1) ? '--select' : ''}${open ? '' : '--arrow-close'}`}
+                                    <dutton className={`arrow ${(index === 1 || index === -1) ? '--select' : ''}${projectArrow ? '' : '--arrow-close'}`}
                                     >{ArrowDown} </dutton>
-                                    <dutton className={`arrow ${(index === 1 || -1) ? '--select' : ''}${open ? '--arrow-close' : ''}`}
+                                    <dutton className={`arrow ${(index === 1 || index === -1) ? '--select' : ''}${projectArrow ? '--arrow-close' : ''}`}
                                     >{ArrowRight} </dutton>
                                     <h2>Project</h2>
                                 </div>
@@ -85,7 +87,7 @@ class Assignment extends Component {
                                     <h3>n% of Total</h3>
                                 </div>
                             </div>
-                            <div className={`project__list ${open ? '' : 'project__list--close'}`}>
+                            <div className={`project__list ${(index === 1 || index === -1) ? '--select' : ''}${open ? '' : '--list-close'}`}>
                                 {dummyProject.map(
                                     (item) => <ListItems {...item} />
                                 )}
