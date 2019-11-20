@@ -1,0 +1,103 @@
+@import '../../../common/commonScss.scss';
+
+.mark{
+    width: 100%;
+    display: flex;
+    &__body{
+        width: 75%;
+        h1{
+            font-size: 1.5rem;
+            color: $fontColorMain;
+        }
+        &__table{
+            margin-top:1rem;
+            width: 90%;
+            .header{
+                border-bottom: 2px solid $border;
+                display: flex;
+                padding: 0.5rem 0;
+                h2{
+                    width: 25%;
+                    padding:0 1rem;
+                    font-size: 1.25rem;
+                    font-weight: bold;
+                    color: $fontColorMain;
+                }
+            }
+            .markitems{
+                margin:0.875rem 0;
+                border-bottom: 2px solid $border;
+                display: flex;
+                align-items: center;
+                padding-bottom: 0.875rem;
+                h3{
+                    font-size: 1rem;
+                    color: $fontColorMain;
+                    width: 25%;
+                    padding:0 1rem;
+
+                    margin:0 auto;
+                }
+                &:last-child{ 
+                    h3{
+                        font-size: 1.5rem;
+                        font-weight: bold;
+                    }
+                    h3:nth-child(2), &:last-child h3:nth-child(3){                  
+                    visibility: hidden;                 
+                    }
+                }
+            }
+        }
+    }
+    &__right{
+        width: 25%;
+        height:(500rem/16);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+
+        h2{
+            font-size: 1rem;
+            color: $fontColorMain;
+        }
+        button{
+            height: (36rem/16);
+            width: (140rem/16);
+            font-size: 1rem;
+            border:1px solid $border;
+            border-radius: 0.25rem;
+            background:  #F2F2F2;
+            color: $fontColorMain;
+        }
+        &__table{
+            margin-top:1rem;
+            width: 100%;
+            .header{
+                border-top:2px solid $border;
+                border-bottom: 2px solid $border;
+                display: flex;
+                justify-content: space-between;
+                padding: 0.5rem 0;
+                h2{
+                    font-size: 1.25rem;
+                    font-weight: bold;
+                    color: $fontColorMain;
+                }
+            }
+            .weightitems{
+                margin:0.875rem 0;
+                border-bottom: 2px solid $border;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding-bottom: 0.875rem;
+                h3{
+                    font-size: 1rem;
+                    color: $fontColorMain;
+                }
+            }
+        }
+    }
+}
