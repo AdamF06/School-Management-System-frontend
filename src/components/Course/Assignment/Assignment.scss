@@ -28,7 +28,7 @@
             border-top: none;
             padding:1rem;
             background: #F2F2F2;;
-            &__project, &__ass{
+            &__project, &__ass{                
                 :first-child{
                     display: flex;
                     justify-content: space-between;
@@ -47,6 +47,9 @@
                     }
                     .header__left{
                         .--select--arrow-close{
+                            display: none;
+                        }
+                        .--arrow-close{
                             display: none;
                         }
                     }
@@ -102,7 +105,7 @@
                         background:#EBF5FF;
                     }
                 }
-                .ass__list--close{
+                .--select--list-close{
                     display: none;
                 }
             }
@@ -148,7 +151,7 @@
                         background:#EBF5FF;
                     }
                 }
-                .project__list--close{
+                .--select--list-close{
                     display: none;
                 }
             }
