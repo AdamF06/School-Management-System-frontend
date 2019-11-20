@@ -1,0 +1,62 @@
+@import "../../../common/commonScss.scss";
+
+.moduleContainer{
+    background:  #F2F2F2;
+    width: 100%;
+    .module{
+        width: 100%;
+        border:1px solid $border;
+        .moduleItem{
+            width: 100%;
+            padding:1rem;
+            border-bottom: 1px dashed $border;
+            .header{
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                &__left{
+                    h1{
+                        font-size: 1.25rem;
+                        color:$fontColorMain;
+                    }
+                }
+                &__right{
+                    border:1px solid $border;
+                    border-radius: 0.85rem;
+                    padding:0.125rem 0.5rem;
+                    h4{
+                        font-size: 0.875rem;
+                        color:$fontColorMain;
+                    }
+                }
+            }
+            .body{
+                margin:1rem 0;
+                padding:1rem;
+                display: flex;
+                border: 1px solid $border;
+                background: white;
+                &:hover{
+                    background:#EBF5FF;
+                }
+                display: flex;
+                align-items: center;
+                &__leftIcon{
+                    h3{
+                        font-size: 0.875rem;
+                    }
+                }
+                &__rightInfo{
+                    margin-left: 1rem;
+                    h2{
+                        font-size: 1rem;
+                        &:hover{
+                            text-decoration: underline;
+                            color:$linkColor;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

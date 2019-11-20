@@ -47,6 +47,10 @@
   font-size: 1.125rem;
 }
 
+.courseHomePageContainer .courseHomePage .courseHomePage__body {
+  width: 100%;
+}
+
 .courseHomePageContainer .courseHomePage__body {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -82,8 +86,13 @@
   font-weight: bold;
 }
 
+.courseHomePageContainer .courseHomePage__body .--acitve {
+  width: 100%;
+}
+
 .courseHomePageContainer .courseHomePage__body .--inactive {
   display: none;
+  width: 100%;
 }
 
 .courseHomePageContainer .footer {
