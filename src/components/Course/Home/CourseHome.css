@@ -11,6 +11,7 @@
 .courseHomePageContainer {
   margin-left: 13.125rem;
   padding: 0 1.5rem;
+  overflow-x: hidden;
 }
 
 .courseHomePageContainer .courseHomePage {
@@ -86,6 +87,7 @@
 }
 
 .courseHomePageContainer .footer {
+  margin-top: 15rem;
   bottom: 0;
   width: 81.25rem;
   display: -webkit-box;
