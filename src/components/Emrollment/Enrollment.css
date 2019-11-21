@@ -1,0 +1,226 @@
+@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+  font-weight: normal;
+}
+
+.enrollment {
+  margin-left: 13.125rem;
+  padding: 0 1rem;
+  overflow-x: hidden;
+}
+
+.enrollment .header {
+  padding: 1rem;
+  border-bottom: 1px solid #C7CDD1;
+}
+
+.enrollment .header h3 {
+  font-size: 1,5rem;
+  font-weight: bold;
+  color: #13294b;
+}
+
+.enrollment .body {
+  padding: 1rem;
+}
+
+.enrollment .body__topbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 4rem;
+  width: 100%;
+  margin-top: 0.5rem;
+  border-bottom: 1px solid #C7CDD1;
+}
+
+.enrollment .body__topbar img {
+  height: 3.75rem;
+  width: 3.75rem;
+}
+
+.enrollment .body__topbar__category {
+  margin-left: 1.5rem;
+  height: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 6.875rem;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.enrollment .body__topbar__category svg {
+  font-size: 0.875rem;
+  color: #505763;
+}
+
+.enrollment .body__topbar__category h4 {
+  font-size: 1rem;
+  color: #505763;
+}
+
+.enrollment .body__topbar__category:hover {
+  background: #F2F2F2;
+  border-radius: 0.25rem;
+  border: 1px solid #C7CDD1;
+}
+
+.enrollment .body__topbar__search {
+  width: 28rem;
+  height: 70%;
+  margin-left: 1.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 1rem;
+  background: #F2F2F2;
+  border-radius: 0.25rem;
+}
+
+.enrollment .body__topbar__search button {
+  border: none;
+  background: none;
+  outline: none;
+}
+
+.enrollment .body__topbar__search button svg {
+  color: #98002E;
+  font-size: 0.875rem;
+}
+
+.enrollment .body__topbar__search input {
+  height: 100%;
+  width: 93%;
+  border: none;
+  font-size: 1rem;
+  color: #505763;
+  outline: none;
+  background: #F2F2F2;
+}
+
+.enrollment .body .dropList {
+  position: absolute;
+  width: 17.5rem;
+  background: white;
+  margin-left: 5.25rem;
+  margin-top: -0.75rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  padding: 1rem 0;
+}
+
+.enrollment .body .dropList .dropitems {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 1.5rem;
+  padding: 0.5rem 1rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.enrollment .body .dropList .dropitems .left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.enrollment .body .dropList .dropitems .left h4 {
+  font-size: 1rem;
+  color: #505763;
+}
+
+.enrollment .body .dropList .dropitems .left h4 svg {
+  font-size: 1rem;
+  color: #505763;
+}
+
+.enrollment .body .dropList .dropitems .left h4:nth-child(2) {
+  margin-left: 0.875rem;
+}
+
+.enrollment .body .dropList .dropitems .right h4 {
+  font-size: 1rem;
+  color: #505763;
+}
+
+.enrollment .body .dropList .dropitems:hover {
+  background: #F2F2F2;
+}
+
+.enrollment .body .--hide {
+  display: none;
+}
+
+.enrollment .body__content .courseitems {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0.5rem 1rem;
+}
+
+.enrollment .body__content .courseitems .left h2 {
+  font-size: 1.5rem;
+}
+
+.enrollment .body__content .courseitems .left h2:hover {
+  text-decoration: underline;
+  color: #65001f;
+}
+
+.enrollment .body__content .courseitems .right {
+  width: 25%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.enrollment .body__content .courseitems .right h4 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.enrollment .body__content .courseitems:nth-child(2n) {
+  background: #F2F2F2;
+}
+/*# sourceMappingURL=Enrollment.css.map */

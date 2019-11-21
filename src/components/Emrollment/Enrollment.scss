@@ -1,0 +1,160 @@
+@import "../../common/commonScss.scss";
+
+.enrollment{
+    margin-left: (210rem/16);
+    padding:0 1rem;
+    overflow-x: hidden;
+    .header{
+        padding: 1rem;
+        h3{
+            font-size: 1,5rem;
+            font-weight: bold;
+            color:$fontColorMain;
+        }
+        border-bottom: 1px solid $border;
+
+    }
+    .body{
+        padding:1rem;
+        &__topbar{
+            display: flex;
+            align-items: center;
+            height: 4rem;
+            width: 100%;
+            margin-top: 0.5rem;
+            border-bottom: 1px solid $border;
+            img{
+                height: (60rem/16);
+                width: (60rem/16);
+            }
+            &__category{
+                margin-left: 1.5rem;
+                height: 70%;
+                display: flex;
+                align-items: center;               
+                width: (110rem/16);
+                justify-content: space-around;
+                svg{
+                    font-size: 0.875rem;
+                    color: #505763;
+                }
+                h4{
+                    font-size: 1rem;
+                    color: #505763;
+                }
+                &:hover{
+                    background:  #F2F2F2;
+                    border-radius: 0.25rem;
+                    border:1px solid $border;
+                }
+            }
+            &__search{
+                width: 28rem;
+                height: 70%;
+                margin-left: 1.5rem;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding:0 1rem;
+                background:  #F2F2F2;
+                border-radius: 0.25rem;
+                button{
+                    border: none;
+                    background: none;
+                    outline: none;
+                    svg{
+                        color:$linkColor;
+                        font-size: 0.875rem;
+                    }
+                }
+                input{
+                    height: 100%;
+                    width: 93%;
+                    border: none;
+                    font-size: 1rem;
+                    color: #505763;
+                    outline: none;
+                    background:  #F2F2F2;
+
+                }
+
+            }
+        }
+        .dropList{
+            position: absolute;
+            width: (280rem/16);
+            background:white;
+            margin-left:(84rem/16);
+            margin-top:(-12rem/16);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+            padding:1rem 0;
+            .dropitems{
+                width: 100%;
+                display: flex;
+                align-items: center;
+                height: 1.5rem;
+                padding:0.5rem 1rem;
+                justify-content: space-between;
+                .left{
+                    display: flex;
+                    h4{
+                        font-size: 1rem;
+                        color: #505763;                   
+                        svg{
+                            font-size: 1rem;
+                            color: #505763;
+                        }
+                        &:nth-child(2){
+                            margin-left: 0.875rem;
+                        }
+    
+                    }
+                }
+                .right{
+                    h4{
+                        font-size: 1rem;
+                        color: #505763; 
+                    }
+                }
+                &:hover{
+                    background:  #F2F2F2;
+                }
+            }
+        }
+        .--hide{
+            display: none;
+        }
+
+        &__content{
+            .courseitems{
+                display: flex;
+                justify-content: space-between;
+                padding:0.5rem 1rem;
+                .left{
+                    h2{
+                        font-size: 1.5rem;
+                        &:hover{
+                            text-decoration: underline;
+                            color: $linkHoverColor;
+                        }
+                    }
+                }
+                .right{
+                    width:25%;
+                    display: flex;
+                    justify-content: space-between;
+                    h4{
+                        display: flex;
+                    }
+                }
+                &:nth-child(2n){
+                    background: #F2F2F2;
+                }
+            }
+
+        }
+    }
+}
