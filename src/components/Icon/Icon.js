@@ -20,12 +20,18 @@ import {
     faArrowDown,
     faArrowRight,
     faPhone,
+    faTh,
+    faDatabase,
+    faLaptopCode,
+    faChevronRight,
+    faStar,
 }from '@fortawesome/free-solid-svg-icons'
 import { 
     faQuestionCircle,
     faUser,
     faCommentDots,
     faCopy,
+    faWindowRestore,
  } from '@fortawesome/free-regular-svg-icons'
 
 import {
@@ -61,6 +67,18 @@ export const ArrowRight=  <FontAwesomeIcon icon={faArrowRight} size="1x" color="
 export const ArrowDown=  <FontAwesomeIcon icon={faArrowDown} size="1x" color="black"/>
 export const Phone=  <FontAwesomeIcon icon={faPhone} size="1x" color="black"/>
 export const Paper=  <FontAwesomeIcon icon={faCopy} size="1x" color="black"/>
+export const Category=  <FontAwesomeIcon icon={faTh} size="1x" color="black"/>
+export const WebDev=  <FontAwesomeIcon icon={faWindowRestore} size="1x" color="black"/>
+export const SoftwareEng=  <FontAwesomeIcon icon={faLaptopCode} size="1x" color="black"/>
+export const DataScience=  <FontAwesomeIcon icon={faDatabase} size="1x" color="black"/>
+export const Right=  <FontAwesomeIcon icon={faChevronRight} size="1x" color="black"/>
+export const Star=  <FontAwesomeIcon icon={faStar} size="1x" color="gold"/>
+
+
+
+
+
+
 
 
 

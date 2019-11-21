@@ -27,7 +27,7 @@ const userItems = [
     },
     {
         icon: Site,
-        iconName: "Site"
+        iconName: "Enrollment"
     },
     {
         icon: Sales,
@@ -75,6 +75,8 @@ class PrimaryNav extends Component {
                 return '/setting'
             case 'Sales':
                 return '/sale'
+            case 'Enrollment':
+                return '/enroll'
             default:
                 break;
         }
