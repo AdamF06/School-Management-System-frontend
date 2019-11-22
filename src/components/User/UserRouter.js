@@ -4,8 +4,8 @@ import {
     Switch,
     Route,
 } from "react-router-dom";
-import Profile from './Profile/Profile';
-import ChangePassword from './ChangePWD/ChangePassword';
+import Profile from './Profile/profile';
+import ChangePassword from './ChangePWD/changePassword';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faPortrait} from '@fortawesome/free-solid-svg-icons'
