@@ -13,6 +13,7 @@ import PrivateRoute from './PrivateRoute'
 import Setting from './components/Setting/setting'
 import Sales from './components/Sales/Sales'
 import Enrollment from './components/Emrollment/Enrollment'
+import Dashboard from './components/Dashboard/Dashboard';
 const customHistory = createBrowserHistory();
 
 function App() {
@@ -21,11 +22,11 @@ function App() {
       <Router history={customHistory}>
         <Switch>
           {/* <Route exact path="/"> <Login /></Route> */}
-          <Route exact path="/"> <SideBar/><Enrollment/> </Route>
+          <Route exact path="/"> <SideBar/><Dashboard/> </Route>
               
           <PrivateRoute path='/dashboard'> <SideBar/> <Dasboard/> </PrivateRoute>
           <PrivateRoute path='/course'> <SideBar/> <CourseHome/> </PrivateRoute>
-          <PrivateRoute path='/enroll'> <SideBar/>  </PrivateRoute>
+          <PrivateRoute path='/enroll'> <SideBar/> <Enrollment/>  </PrivateRoute>
 
           <PrivateRoute path="/user"><SideBar/> <UserRouter /></PrivateRoute>
           <PrivateRoute path='/sale'> <SideBar/> <Sales/> </PrivateRoute>

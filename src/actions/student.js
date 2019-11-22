@@ -1,20 +1,10 @@
 import { fetchCourseApi } from '../apis/students'
 
 export const fetchCourse = (fcq,fcs,fcf) => dispatch => {
-  // console.log('from fetchCourse');
-  // dispatch(fetchCourseRequested());
-  fcq();
+  dispatch(fetchCourseRequested())
   fetchCourseApi()
-    .then(res => {
-      console.log('called from student action')
-      // dispatch(fetchCourseSucceeded(res))
-      fcs(res);
-    })
-    .catch(err =>{
-      console.log('falied')
-      //  dispatch(fetchCourseFailed(err))
-      fcf();
-    });
+    .then(res => dispatch(fetchCourseSucceeded(res)))
+    .catch(err => dispatch(fetchCourseFailed(err)))
 };
 
 export const fetchCourseRequested = () => ({

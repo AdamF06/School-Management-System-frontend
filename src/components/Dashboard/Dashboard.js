@@ -2,33 +2,21 @@ import React, { Component } from 'react';
 import './Dashboard.css';
 import {
     EllipsisVB,
-    File
 } from '../Icon/Icon'
 import { connect } from 'react-redux';
-//import { withRouter } from "react-router";
 import { fetchCourse } from '../../actions'
-import * as fc from '../../actions'
-import { bindActionCreators } from 'redux';
+import DashboardCard from './DashboardCard'
 
 class Dashboard extends Component {
-    constructor() {
-        super()
-        this.state = {
-            course: '',
-        }
-    }
 
     componentWillMount(){
-        const { dispatch } = this.props;
-        const fcq = bindActionCreators(fc.fetchCourseRequested, dispatch)
-        const fcs = bindActionCreators(fc.fetchCourseSucceeded, dispatch)
-        const fcf = bindActionCreators(fc.fetchCourseFailed, dispatch)
-        fetchCourse(fcq, fcs, fcf)()
+        const {fetchCourse} = this.props
+        fetchCourse()
     }
 
     render() {
-        console.log(this.props.course.length)
-        
+        const {course}  = this.props
+        console.log(course)
         return (
             <div className="dashboardContainer">
                 <div className="dashboardBody">
@@ -38,19 +26,10 @@ class Dashboard extends Component {
                         </div>
 
                         <div className="main__dashboardContainer">
-                            <div className="dashboardCard">
-                                <div className="dashboardCard__header">
-                                    <h2>Some course </h2>
-                                </div>
-                                <div className="dashboardCard__info">
 
-                                    <h4 className="ellipsis">Some course Some course</h4>
-                                    <h3 className="ellipsis">8th</h3>
-                                </div>
-                                <div className="dashboardCard__action">
-                                    <button> {File} </button>
-                                </div>
-                            </div>
+                            {
+                                course.map((item,index)=><DashboardCard key={index} {...item}/> )
+                            }
 
                         </div>
                     </div>
@@ -87,7 +66,5 @@ function mapStateToProps(state) {
         err: student.err
     };
 }
+export default connect(mapStateToProps, {fetchCourse})(Dashboard);
 
-
-// export default connect(mapStateToProps, {fetchCourse})(Dashboard);
-export default connect(mapStateToProps)(Dashboard);
