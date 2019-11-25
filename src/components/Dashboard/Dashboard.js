@@ -9,7 +9,7 @@ import DashboardCard from './DashboardCard'
 
 class Dashboard extends Component {
 
-    componentWillMount(){
+    componentDidMount(){
         const {fetchCourse} = this.props
         fetchCourse()
     }
@@ -17,6 +17,7 @@ class Dashboard extends Component {
     render() {
         const {course}  = this.props
         console.log(course)
+
         return (
             <div className="dashboardContainer">
                 <div className="dashboardBody">

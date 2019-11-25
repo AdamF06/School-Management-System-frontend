@@ -40,19 +40,22 @@ class Form extends Component {
         e.preventDefault();
         const { authenticate} = this.props;
         const {login_email, login_password} = this.state
-        authenticate(login_email,login_password)
+        authenticate(login_email,login_password)         
     }
-    componentWillReceiveProps(nextProps) {
-        const { history, user_status } = this.props;
-        history.push('/dashboard');
 
-        if(user_status === "online"){
-        }else{
-            this.setState({
-                login_success:false
-            })
+
+    componentWillReceiveProps(nextProps) {
+        if(nextProps){
+            const { history, user_status } = this.props;
+            history.push('/dashboard');
+    
+            if(user_status === "online"){
+            }else{
+                this.setState({
+                    login_success:false
+                })
+            }
         }
- 
     }
 
     render() {
