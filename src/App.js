@@ -6,7 +6,6 @@ import './App.css'
 import Login from './components/Login/Login';
 import SideBar from './components/PrimaryNav/PrimaryNav';
 import UserRouter from './components/User/UserRouter';
-import Dasboard from './components/Dashboard/Dashboard'
 import CourseHome from './components/Course/Home/CourseHome'
 import { createBrowserHistory } from "history";
 import PrivateRoute from './PrivateRoute'
@@ -14,6 +13,7 @@ import Setting from './components/Setting/setting'
 import Sales from './components/Sales/Sales'
 import Enrollment from './components/Emrollment/Enrollment'
 import Dashboard from './components/Dashboard/Dashboard';
+
 const customHistory = createBrowserHistory();
 
 function App() {
@@ -21,10 +21,10 @@ function App() {
     <>
       <Router history={customHistory}>
         <Switch>
-          {/* <Route exact path="/"> <Login /></Route> */}
-          <Route exact path="/"> <SideBar/><Dashboard/> </Route>
+          <Route exact path="/"> <Login /></Route>
+          {/* <Route exact path="/"> <SideBar/><Dashboard/> </Route> */}
               
-          <PrivateRoute path='/dashboard'> <SideBar/> <Dasboard/> </PrivateRoute>
+          <PrivateRoute path='/dashboard'> <SideBar/> <Dashboard/> </PrivateRoute>
           <PrivateRoute path='/course'> <SideBar/> <CourseHome/> </PrivateRoute>
           <PrivateRoute path='/enroll'> <SideBar/> <Enrollment/>  </PrivateRoute>
 
