@@ -27,7 +27,7 @@ class Module extends Component {
             <div className="moduleContainer">
                 <div className="module">
                     {
-                        dummyModules.map((item)=> <ModuleItems {...item} />)
+                        dummyModules.map((item, index)=> <ModuleItems {...item} key={index} />)
                     }
                 </div>
             </div>

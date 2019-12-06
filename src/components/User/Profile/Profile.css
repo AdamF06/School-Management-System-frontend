@@ -8,6 +8,41 @@
   font-weight: normal;
 }
 
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  border-top: 1px solid #C7CDD1;
+  padding: 1rem 0;
+}
+
+.footer__container {
+  width: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-right: 14rem;
+}
+
+.footer__container a {
+  color: #2D3B45;
+  margin: 0 1.5rem;
+  text-decoration: none;
+}
+
+.footer__container a:hover {
+  text-decoration: underline;
+  color: #98002E;
+}
+
 .profile {
   height: 100%;
   margin-left: 13.125rem;

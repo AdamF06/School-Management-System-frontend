@@ -1,7 +1,7 @@
 import './UserRouter.css'
 import React, { Component } from "react";
 import {
-    Switch,
+    // Switch,
     Route,
 } from "react-router-dom";
 import Profile from './Profile/profile';
@@ -15,16 +15,16 @@ export default class UserRouter extends Component {
     render() {
         return (
             <>
-                <Switch>
+                {/* <Switch>
                     <Route path="/user">
                         <Switch>
-                            <Route exact path="/user"> </Route>
+                            <Route exact path="/user"> </Route> */}
                             <Route path="/user/profile"> <Profile /> </Route>
                             <Route path="/user/changePassword"> <ChangePassword /> </Route>
                             {/* <Route path="/user/file"> <File /> </Route> */}
-                        </Switch>
+                        {/* </Switch>
                     </Route>
-                </Switch>
+                </Switch> */}
             </>
         );
     }

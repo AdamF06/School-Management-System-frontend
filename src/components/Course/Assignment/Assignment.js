@@ -50,24 +50,24 @@ class Assignment extends Component {
                     </div>
 
                     <div className="assignment__body">
-                        <div className="assignment__body__ass">
-                            <div className="ass__header">
+                        <div className="assignment__body__assignments">
+                            <div className="assignments__header">
                                 <div className="header__left"
                                     onClick={() => this.setState({ open: !this.state.open, index: 0,assignmentArrow:!this.state.assignmentArrow })}
                                 >
-                                    <dutton className={`arrow ${(index === 0 || index === -1) ? '--select' : ''}${assignmentArrow ? '' : '--arrow-close'}`}
-                                    >{ArrowDown} </dutton>
-                                    <dutton className={`arrow ${(index === 0 || index === -1) ? '--select' : ''}${assignmentArrow ? '--arrow-close' : ''}`}
-                                    >{ArrowRight} </dutton>
+                                    <button className={`arrow ${(index === 0 || index === -1) ? '--select' : ''}${assignmentArrow ? '' : '--arrow-close'}`}
+                                    >{ArrowDown} </button>
+                                    <button className={`arrow ${(index === 0 || index === -1) ? '--select' : ''}${assignmentArrow ? '--arrow-close' : ''}`}
+                                    >{ArrowRight} </button>
                                     <h2>Assignment</h2>
                                 </div>
                                 <div className="header__right">
                                     <h3>n% of Total</h3>
                                 </div>
                             </div>
-                            <div className={`ass__list ${(index === 0 || index === -1) ? '--select' : ''}${open ? '' : '--list-close'}`}>
+                            <div className={`assignments__list ${(index === 0 || index === -1) ? '--select' : ''}${open ? '' : '--list-close'}`}>
                                 {dummyAss.map(
-                                    (item) => <ListItems {...item} />
+                                    (item, index) => <ListItems {...item} key={index}/>
                                 )}
                             </div>
                         </div>
@@ -77,10 +77,10 @@ class Assignment extends Component {
                                 <div className="header__left"
                                     onClick={() => this.setState({ open: !this.state.open, index: 1,projectArrow:!this.state.projectArrow })}
                                 >
-                                    <dutton className={`arrow ${(index === 1 || index === -1) ? '--select' : ''}${projectArrow ? '' : '--arrow-close'}`}
-                                    >{ArrowDown} </dutton>
-                                    <dutton className={`arrow ${(index === 1 || index === -1) ? '--select' : ''}${projectArrow ? '--arrow-close' : ''}`}
-                                    >{ArrowRight} </dutton>
+                                    <button className={`arrow ${(index === 1 || index === -1) ? '--select' : ''}${projectArrow ? '' : '--arrow-close'}`}
+                                    >{ArrowDown} </button>
+                                    <button className={`arrow ${(index === 1 || index === -1) ? '--select' : ''}${projectArrow ? '--arrow-close' : ''}`}
+                                    >{ArrowRight} </button>
                                     <h2>Project</h2>
                                 </div>
                                 <div className="header__right">
@@ -89,7 +89,7 @@ class Assignment extends Component {
                             </div>
                             <div className={`project__list ${(index === 1 || index === -1) ? '--select' : ''}${open ? '' : '--list-close'}`}>
                                 {dummyProject.map(
-                                    (item) => <ListItems {...item} />
+                                    (item, index) => <ListItems {...item} key={index} />
                                 )}
                             </div>
                         </div>

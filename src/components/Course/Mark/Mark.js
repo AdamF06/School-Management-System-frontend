@@ -54,8 +54,8 @@ class Mark extends Component {
                             <h2>Out of</h2>
                         </div>
 
-                        {dummyMark.map((item) =>
-                            <div className='markitems'>
+                        {dummyMark.map((item,index) =>
+                            <div className='markitems' key={index}>
                                 <MarkItems {...item} />
                             </div>
                         )}
@@ -73,8 +73,8 @@ class Mark extends Component {
                             <h2>Weight</h2>
                         </div>
 
-                        {dummyWeight.map((item) =>
-                            <div className='weightitems'>
+                        {dummyWeight.map((item,index) =>
+                            <div className='weightitems' key={index}>
                                 <WeightItems {...item} />
                             </div>
                         )}
