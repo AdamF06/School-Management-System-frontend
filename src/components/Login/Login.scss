@@ -1,91 +1,101 @@
-$bg:rgba(248,248,255,0.4);
-$hoverColor:linear-gradient(90deg,#ffb369 0,#ff4272);
+$bg        :rgba(248, 248, 255, 0.4);
+$hoverColor:linear-gradient(90deg, #ffb369 0, #ff4272);
 
-.login{
-    display: flex;
-    overflow: hidden;
-    height: 100%;
+.login {
+    display        : flex;
+    overflow       : hidden;
+    height         : 100%;
     justify-content: space-between;
 
-    &__backGround{ 
-        width: 100vw;
-        height: 100vh;
-        background-image: url('./bg.jpg'); 
-        background-size: 100% 100%; 
-        img{
+    &__backGround {
+        width           : 100vw;
+        height          : 100vh;
+        background-image: url('./bg.jpg');
+        background-size : 100% 100%;
+
+        img {
             position: absolute;
-            top :50px;
-            left: 50px;
+            top     : 50px;
+            left    : 50px;
         }
-        &__nav{
+
+        &__nav {
             position: absolute;
-            top: 80vh;
-            width: 100vw;
-            ul{ 
-                margin: 0 auto;
-                width: 40vw;
-                padding:0;
-                list-style: none;
-                display: flex;
+            top     : 80vh;
+            width   : 100vw;
+
+            ul {
+                margin         : 0 auto;
+                width          : 40vw;
+                padding        : 0;
+                list-style     : none;
+                display        : flex;
                 justify-content: space-between;
-                li{
-                    button{
-                        height: 90px;
-                        width: 90px;
-                        border-radius: 50%;
-                        border: none;
-                        text-align: center; 
-                        background-color:$bg;
-                        font-size:14px ;
-                        color: #fff;
-                        margin: 0;
-                        outline: none;
-                        h4{
-                            font-size:30px ;
-                            color: #fff;
-                            margin: 0;
-                        }     
-                        h3{
-                            font-size:16px ;
-                            color: #fff;
-                            margin: 0;
+
+                li {
+                    button {
+                        height          : 90px;
+                        width           : 90px;
+                        border-radius   : 50%;
+                        border          : none;
+                        text-align      : center;
+                        background-color: $bg;
+                        font-size       : 14px;
+                        color           : #fff;
+                        margin          : 0;
+                        outline         : none;
+
+                        h4 {
+                            font-size: 30px;
+                            color    : #fff;
+                            margin   : 0;
+                        }
+
+                        h3 {
+                            font-size: 16px;
+                            color    : #fff;
+                            margin   : 0;
                         }
                     }
-                    button:hover{
-                        background: $hoverColor;
+
+                    button:hover {
+                        background   : $hoverColor;
                         border-radius: 50%;
                     }
-                } 
+                }
             }
-        }  
-    }   
+        }
+    }
 
-    &__content{
-        position: absolute;
-        top:10vh;
-        left:0;
-        right: 0;
-        margin:auto;
-        height: 440px;
-        width: 60vw;
-        padding: 10px;
+    &__content {
+        position        : absolute;
+        top             : 10vh;
+        left            : 0;
+        right           : 0;
+        margin          : auto;
+        height          : 440px;
+        width           : 60vw;
+        padding         : 10px;
         background-color: $bg;
-        border-radius: 15px;
-        form{
-            display: flex;
+        border-radius   : 15px;
+
+        form {
+            display       : flex;
             flex-direction: column;
-            align-content: center;
-            align-items: center;
-            height: 100%;
-            font-size: 18px;
-            margin-top: 80px;
-            input{
-                margin-top:50px;
-                height: 40px;
-                width: 80%;
+            align-content : center;
+            align-items   : center;
+            height        : 100%;
+            font-size     : 18px;
+            margin-top    : 80px;
+
+            input {
+                margin-top: 50px;
+                height    : 40px;
+                width     : 80%;
             }
-            button{
-                margin-top:50px;
+
+            button {
+                margin-top: 50px;
             }
         }
     }

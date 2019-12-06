@@ -1,31 +1,37 @@
 @import '../../common/commonScss.scss';
 $secondNavWidth:(364rem/16);
-.secondNavContainer{
+
+.secondNavContainer {
     height: 100%;
-    width: (210rem/16);
-    .secondNav{
-        z-index: 5;
-        height: 100%;
-        width: $secondNavWidth;
-        position: fixed;
-        left: (210rem/16);
-        transform: translateX(-100%);
-        transition: transform 0.2s ease-in;
+    width : (210rem/16);
+
+    .secondNav {
+        top            : 0;
+        z-index        : 5;
+        height         : 100%;
+        width          : $secondNavWidth;
+        position       : fixed;
+        left           : (210rem/16);
+        transform      : translateX(-100%);
+        transition     : transform 0.2s ease-in;
         // border-right: 1px solid black;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-        background: white;
-        .--inactive{
+        box-shadow     : 0 2px 5px rgba(0, 0, 0, 0.3);
+        background     : white;
+
+        .--inactive {
             display: none;
         }
-        .--active{
+
+        .--active {
             width: 100%;
         }
     }
-    .secondNav--active{
-        z-index: 5;
-        height: 100%;
-        width: $secondNavWidth;
+
+    .secondNav--active {
+        z-index  : 5;
+        height   : 100%;
+        width    : $secondNavWidth;
         transform: translateX(0px);
-        display: flex;
+        display  : flex;
     }
 }
