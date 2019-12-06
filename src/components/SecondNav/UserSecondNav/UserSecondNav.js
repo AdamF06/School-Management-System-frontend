@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 import { Quite } from '../../Icon/Icon';
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import './UserSecondNav.css'
 class UserSecondNav extends Component {
     state = {}
     render() {
+        const { reset } = this.props
         return (
             <div className="userSecondNav">
                 <div className="userSecondNav__top">
                     <div className="iconContainer">
-                        <button className="icon">
+                        <button className="icon" onClick={reset}>
                             {Quite}
                         </button>
                     </div>
@@ -23,10 +24,10 @@ class UserSecondNav extends Component {
                 <div className="userSecondNav__body">
                     <ul>
                         <li>
-                        <Link to="/user/profile" >Profile</Link>
+                            <Link to="/user/profile" onClick={reset}>Profile</Link>
                         </li>
                         <li>
-                        <Link to="/user/changePassword">Change Password</Link>
+                            <Link to="/user/changePassword" onClick={reset}>Change Password</Link>
                         </li>
                     </ul>
                 </div>

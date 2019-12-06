@@ -1,27 +1,28 @@
 import React, { Component } from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Quite } from '../../Icon/Icon';
 import './CourseSecondNav.css'
 
 class CourseSecondNav extends Component {
 
     render() {
+        const { reset } = this.props
         return (
             <div className="courseSecondNav">
                 <div className="courseSecondNav__header">
                     <h1>Courses</h1>
-                    
-                    <button>
+
+                    <button onClick={reset}>
                         {Quite}
                     </button>
                 </div>
                 <div className="courseSecondNav__linkList">
                     <ul>
                         <li>
-                            <Link to="/course">Course 1</Link>
+                            <Link to="/course" onClick={reset}>Course 1</Link>
                         </li>
                         <li>
-                            <Link to="/course/all">All Courses</Link>
+                            <Link to="/course/all" onClick={reset}>All Courses</Link>
                         </li>
                     </ul>
                 </div>
