@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux'
 import { Link } from 'react-router-dom';
 import { Quite } from '../../Icon/Icon';
 import './CourseSecondNav.css'
@@ -7,6 +8,7 @@ class CourseSecondNav extends Component {
 
     render() {
         const { reset } = this.props
+        console.log(this.props.course)
         return (
             <div className="courseSecondNav">
                 <div className="courseSecondNav__header">
@@ -18,12 +20,18 @@ class CourseSecondNav extends Component {
                 </div>
                 <div className="courseSecondNav__linkList">
                     <ul>
-                        <li>
-                            <Link to="/course" onClick={reset}>Course 1</Link>
-                        </li>
-                        <li>
-                            <Link to="/course/all" onClick={reset}>All Courses</Link>
-                        </li>
+                        {
+                            this.props.course.map((item, index) =>
+                                <li key={index}>
+                                    <Link 
+                                    to={`/course/${item.course_ID}`}
+                                    onClick={reset}
+                                    >
+                                        {item.course_name}
+                                    </Link>
+                                </li>
+                            )
+                        }
                     </ul>
                 </div>
                 <p>
@@ -35,4 +43,10 @@ class CourseSecondNav extends Component {
     }
 }
 
-export default CourseSecondNav;
+function mapStateToProps(state) {
+    const { student } = state;
+    return {
+        course: student.course,
+    };
+}
+export default connect(mapStateToProps)(CourseSecondNav);
