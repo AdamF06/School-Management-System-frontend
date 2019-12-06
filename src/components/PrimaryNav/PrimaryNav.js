@@ -180,7 +180,11 @@ class PrimaryNav extends Component {
                         <h3>JR Academy</h3>
                     </div>
                 </div>
-                <SecondNav props={{ selectedSecondNav, showSecondNav }} />
+                <SecondNav
+                    selectedSecondNav={selectedSecondNav}
+                    showSecondNav={showSecondNav}
+                    reset={this.reset}
+                />
             </div>
         );
     }
