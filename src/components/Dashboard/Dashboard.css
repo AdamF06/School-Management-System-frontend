@@ -19,7 +19,12 @@
   display: flex;
 }
 
+.dashboardContainer .dashboardBody .main {
+  width: 80%;
+}
+
 .dashboardContainer .dashboardBody .main__header {
+  width: 90%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -30,7 +35,6 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
   height: 4.5rem;
-  width: 56.25rem;
   border-bottom: 1px solid #C7CDD1;
   font-weight: 300;
   line-height: 1.5;
@@ -52,6 +56,9 @@
 
 .dashboardContainer .dashboardBody .main__dashboardContainer {
   padding: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .dashboardContainer .dashboardBody .main__dashboardContainer .dashboardCard {
@@ -60,6 +67,7 @@
   -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
           box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   border-radius: 0.5rem;
+  margin: 1rem;
 }
 
 .dashboardContainer .dashboardBody .main__dashboardContainer .dashboardCard__header {
@@ -93,7 +101,8 @@
   color: #98002E;
 }
 
-.dashboardContainer .dashboardBody .main__dashboardContainer .dashboardCard__info:hover h3, .dashboardContainer .dashboardBody .main__dashboardContainer .dashboardCard__info:hover h4 {
+.dashboardContainer .dashboardBody .main__dashboardContainer .dashboardCard__info:hover h3,
+.dashboardContainer .dashboardBody .main__dashboardContainer .dashboardCard__info:hover h4 {
   color: #98002E;
 }
 
@@ -117,7 +126,7 @@
 }
 
 .dashboardContainer .dashboardBody .todo {
-  margin-left: 3rem;
+  margin-right: 2rem;
   margin-top: 1.8125rem;
   width: 18rem;
 }
@@ -160,7 +169,7 @@
 .dashboardContainer .dashboardFooter {
   position: fixed;
   bottom: 0;
-  width: 81.25rem;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -172,10 +181,13 @@
 }
 
 .dashboardContainer .dashboardFooter__container {
-  width: 52%;
+  width: 40%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-right: 14rem;
 }
 
 .dashboardContainer .dashboardFooter__container a {
