@@ -96,7 +96,11 @@
   display: flex;
 }
 
-.dashboardContainer .dashboardBody .main__dashboardContainer .dashboardCard {
+.dashboardContainer .dashboardBody .main__dashboardContainer a {
+  text-decoration: none;
+}
+
+.dashboardContainer .dashboardBody .main__dashboardContainer a .dashboardCard {
   height: 16rem;
   width: 16rem;
   -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
@@ -105,7 +109,7 @@
   margin: 1rem;
 }
 
-.dashboardContainer .dashboardBody .main__dashboardContainer .dashboardCard__header {
+.dashboardContainer .dashboardBody .main__dashboardContainer a .dashboardCard__header {
   height: 55%;
   background-color: #13294b;
   border-top-left-radius: 0.5rem;
@@ -114,49 +118,49 @@
   color: whitesmoke;
 }
 
-.dashboardContainer .dashboardBody .main__dashboardContainer .dashboardCard__info {
+.dashboardContainer .dashboardBody .main__dashboardContainer a .dashboardCard__info {
   height: 25%;
   font-weight: 300;
   padding: 0.5rem 1rem;
 }
 
-.dashboardContainer .dashboardBody .main__dashboardContainer .dashboardCard__info h4 {
+.dashboardContainer .dashboardBody .main__dashboardContainer a .dashboardCard__info h4 {
   font-size: 0.875rem;
   color: #0E86D4;
 }
 
-.dashboardContainer .dashboardBody .main__dashboardContainer .dashboardCard__info h3 {
+.dashboardContainer .dashboardBody .main__dashboardContainer a .dashboardCard__info h3 {
   color: #6c757c;
   margin-top: 0.25rem;
   font-size: 1rem;
 }
 
-.dashboardContainer .dashboardBody .main__dashboardContainer .dashboardCard__info:hover {
+.dashboardContainer .dashboardBody .main__dashboardContainer a .dashboardCard__info:hover {
   text-decoration: underline;
   color: #98002E;
 }
 
-.dashboardContainer .dashboardBody .main__dashboardContainer .dashboardCard__info:hover h3,
-.dashboardContainer .dashboardBody .main__dashboardContainer .dashboardCard__info:hover h4 {
+.dashboardContainer .dashboardBody .main__dashboardContainer a .dashboardCard__info:hover h3,
+.dashboardContainer .dashboardBody .main__dashboardContainer a .dashboardCard__info:hover h4 {
   color: #98002E;
 }
 
-.dashboardContainer .dashboardBody .main__dashboardContainer .dashboardCard__action {
+.dashboardContainer .dashboardBody .main__dashboardContainer a .dashboardCard__action {
   height: 20%;
   padding: 0.5rem 1rem;
 }
 
-.dashboardContainer .dashboardBody .main__dashboardContainer .dashboardCard__action button {
+.dashboardContainer .dashboardBody .main__dashboardContainer a .dashboardCard__action button {
   border: none;
   outline: none;
 }
 
-.dashboardContainer .dashboardBody .main__dashboardContainer .dashboardCard__action button svg {
+.dashboardContainer .dashboardBody .main__dashboardContainer a .dashboardCard__action button svg {
   font-size: 1.5rem;
   color: #2D3B45;
 }
 
-.dashboardContainer .dashboardBody .main__dashboardContainer .dashboardCard__action button svg:hover {
+.dashboardContainer .dashboardBody .main__dashboardContainer a .dashboardCard__action button svg:hover {
   color: black;
 }
 

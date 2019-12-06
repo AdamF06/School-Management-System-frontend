@@ -151,7 +151,7 @@
   display: flex;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
-          justify-content: start;
+          justify-content: flex-start;
 }
 
 .profile__mainContainer .main__body__left .item__label h2 {
@@ -189,7 +189,7 @@
   display: flex;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
-          justify-content: start;
+          justify-content: flex-start;
 }
 
 .profile__mainContainer .main__body__right .item__label h2 {
@@ -223,7 +223,7 @@
   display: flex;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
-          justify-content: start;
+          justify-content: flex-start;
 }
 
 .profile__mainContainer .main__body__item .item__label h2 {

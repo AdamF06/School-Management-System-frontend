@@ -2,23 +2,21 @@ import React, { Component } from 'react';
 import './setting.css';
 import { Button } from 'react-bootstrap';
 import Collapsible from './Collapse/Collapse';
-/*import Icon*/
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPortrait, faPlus, faEdit, faFileDownload } from '@fortawesome/free-solid-svg-icons'
 const Port = <FontAwesomeIcon icon={faPortrait} size="10x" color="grey" />
 const Plus = <FontAwesomeIcon icon={faPlus} size="1x" color="white" />
 const Pencil = <FontAwesomeIcon icon={faEdit} size="1x" color="grey" />
 const Download = <FontAwesomeIcon icon={faFileDownload} size="1x" color="grey" />
-/*import Icon*/
 
 export default class Setting extends Component {
     render() {
         return (
             <div className="overlayer">
                 <div className='container setting content-wrapper'>
-                    <a className='profile-pic'>
+                    <div className='profile-pic'>
                         {Port}
-                    </a>
+                    </div>
                     <h1 >XXX's Settings</h1>
 
                     <table className='profile-table'>
@@ -64,7 +62,6 @@ export default class Setting extends Component {
                         </tbody>
                     </table>
                     <div className='web-services'>
-                        {/* <a>Registered Web Service</a> */}
                         <h2>Web Services</h2>
                         <p>Canvas can make your life a lot easier by tying itself in with the web tools you already use. Click any of the services in "Other Services" to see what we mean.</p>
                         <p>
@@ -93,9 +90,7 @@ export default class Setting extends Component {
                             <div className='access-token '>
                                 <Button variant="primary" className=''>{Plus}New Access Token</Button>
                             </div>
-
                         </div>
-                        {/* feature-option */}
                         <h2>Feature Options: </h2>
                         <div className='feature-wrapper'>
                             <div className='user-feature-flag'>
@@ -105,13 +100,9 @@ export default class Setting extends Component {
 
                             </div>
                         </div>
-
-
-                        {/* Ways to Contact */}
                         <div className='right-side-wrapper'>
                             <aside className='right-side'>
                                 <h2>Ways to Contact</h2>
-                                {/* email */}
                                 <table>
                                     <thead>
                                         <tr >
@@ -133,12 +124,10 @@ export default class Setting extends Component {
                                         </tr>
                                     </tbody>
                                 </table>
-                                {/* Contact */}
                                 <table>
                                     <thead>
                                         <tr >
                                             <th>Other Contacts</th>
-                                            {/* <th className='contact-type'>Type</th> */}
                                         </tr>
                                     </thead>
                                     <tbody >
@@ -150,23 +139,17 @@ export default class Setting extends Component {
                                             </td>
                                         </tr>
                                     </tbody>
-                                    {/* <tfoot>
-                                        <tr>
-                                            <td>
 
-                                            </td>
-                                        </tr>
-                                    </tfoot> */}
                                 </table>
                                 <div className='foot'>
                                     <hr />
-                                    <a className='btn cux-btn' href='#'>
+                                    <button className='btn cux-btn' href='#'>
                                         {Pencil} Edit Settings
-                                    </a>
+                                    </button>
                                     <br />
-                                    <a className='btn cux-btn' href='#'>
+                                    <button className='btn cux-btn' href='#'>
                                         {Download}  Download Submissions
-                                    </a>
+                                    </button>
 
 
                                 </div>
