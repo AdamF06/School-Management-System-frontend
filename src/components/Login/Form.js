@@ -16,7 +16,7 @@ class Form extends Component {
         panel: "left",
         login_email: '',
         login_password: '',
-        login_success:''
+        login_success: ''
     }
 
     switchToSignin() {
@@ -34,25 +34,24 @@ class Form extends Component {
         this.setState({
             [e.target.name]: e.target.value
         })
-    }  
+    }
 
     signIn = (e) => {
         e.preventDefault();
-        const { authenticate} = this.props;
-        const {login_email, login_password} = this.state
-        authenticate(login_email,login_password)         
+        const { authenticate } = this.props;
+        const { login_email, login_password } = this.state
+        authenticate(login_email, login_password)
     }
 
-
     componentWillReceiveProps(nextProps) {
-        if(nextProps){
+        if (nextProps) {
             const { history, user_status } = this.props;
             history.push('/dashboard');
-    
-            if(user_status === "online"){
-            }else{
+
+            if (user_status === "online") {
+            } else {
                 this.setState({
-                    login_success:false
+                    login_success: false
                 })
             }
         }
@@ -126,4 +125,4 @@ function mapStateToProps(state) {
     };
 }
 
-export default connect(mapStateToProps, {authenticate})(withRouter(Form));
+export default connect(mapStateToProps, { authenticate })(withRouter(Form));
