@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import './Dashboard.css';
 import {
     EllipsisVB,
@@ -9,13 +10,13 @@ import DashboardCard from './DashboardCard'
 
 class Dashboard extends Component {
 
-    componentDidMount(){
-        const {fetchCourse} = this.props
+    componentDidMount() {
+        const { fetchCourse } = this.props
         fetchCourse()
     }
 
     render() {
-        const {course}  = this.props
+        const { course } = this.props
         console.log(course)
 
         return (
@@ -25,13 +26,14 @@ class Dashboard extends Component {
                         <div className="main__header">
                             <h1>Dashboard</h1> <button>{EllipsisVB}</button>
                         </div>
-
                         <div className="main__dashboardContainer">
-
                             {
-                                course.map((item,index)=><DashboardCard key={index} {...item}/> )
+                                course.map((item, index) =>
+                                    <Link to={`/course/${item.course_ID}`} key={index}>
+                                        <DashboardCard  {...item} />
+                                    </Link>
+                                )
                             }
-
                         </div>
                     </div>
 
@@ -47,8 +49,8 @@ class Dashboard extends Component {
                         <button className="todo__viewGrade"> <h4>view Grades</h4> </button>
                     </div>
                 </div>
-                <div className="dashboardFooter">
-                    <div className="dashboardFooter__container">
+                <div className="footer">
+                    <div className="footer__container">
                         <a href="#">Privacy policy</a>
                         <a href="#">Acceptable Use policy</a>
                         <a href="#">Facebook</a>
@@ -67,5 +69,5 @@ function mapStateToProps(state) {
         err: student.err
     };
 }
-export default connect(mapStateToProps, {fetchCourse})(Dashboard);
+export default connect(mapStateToProps, { fetchCourse })(Dashboard);
 

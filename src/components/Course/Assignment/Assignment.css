@@ -8,6 +8,41 @@
   font-weight: normal;
 }
 
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  border-top: 1px solid #C7CDD1;
+  padding: 1rem 0;
+}
+
+.footer__container {
+  width: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-right: 14rem;
+}
+
+.footer__container a {
+  color: #2D3B45;
+  margin: 0 1.5rem;
+  text-decoration: none;
+}
+
+.footer__container a:hover {
+  text-decoration: underline;
+  color: #98002E;
+}
+
 .assignmentContainer {
   width: 100%;
 }
@@ -44,7 +79,7 @@
   background: #F2F2F2;
 }
 
-.assignmentContainer .assignment__body__project :first-child, .assignmentContainer .assignment__body__ass :first-child {
+.assignmentContainer .assignment__body__project :first-child, .assignmentContainer .assignment__body__assignments :first-child {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -56,47 +91,49 @@
           align-items: center;
 }
 
-.assignmentContainer .assignment__body__project :first-child button, .assignmentContainer .assignment__body__ass :first-child button {
+.assignmentContainer .assignment__body__project :first-child .header__left button, .assignmentContainer .assignment__body__assignments :first-child .header__left button {
+  background: none;
+  border: none;
   font-size: 1rem;
   color: #333;
 }
 
-.assignmentContainer .assignment__body__project :first-child h2, .assignmentContainer .assignment__body__ass :first-child h2 {
+.assignmentContainer .assignment__body__project :first-child .header__left h2, .assignmentContainer .assignment__body__assignments :first-child .header__left h2 {
   font-size: 1rem;
   margin-left: 0.25rem;
   color: #333;
 }
 
-.assignmentContainer .assignment__body__project :first-child h2:hover, .assignmentContainer .assignment__body__ass :first-child h2:hover {
+.assignmentContainer .assignment__body__project :first-child .header__left h2:hover, .assignmentContainer .assignment__body__assignments :first-child .header__left h2:hover {
   text-decoration: underline;
 }
 
-.assignmentContainer .assignment__body__project :first-child .header__left .--select--arrow-close, .assignmentContainer .assignment__body__ass :first-child .header__left .--select--arrow-close {
+.assignmentContainer .assignment__body__project :first-child .header__left .--select--arrow-close, .assignmentContainer .assignment__body__assignments :first-child .header__left .--select--arrow-close {
   display: none;
 }
 
-.assignmentContainer .assignment__body__project :first-child .header__left .--arrow-close, .assignmentContainer .assignment__body__ass :first-child .header__left .--arrow-close {
+.assignmentContainer .assignment__body__project :first-child .header__left .--arrow-close, .assignmentContainer .assignment__body__assignments :first-child .header__left .--arrow-close {
   display: none;
 }
 
-.assignmentContainer .assignment__body__project :first-child .header__right, .assignmentContainer .assignment__body__ass :first-child .header__right {
+.assignmentContainer .assignment__body__project :first-child .header__right, .assignmentContainer .assignment__body__assignments :first-child .header__right {
   border: 1px solid #C7CDD1;
   border-radius: 0.8rem;
   text-align: center;
   padding: 0.15rem 0.35rem;
 }
 
-.assignmentContainer .assignment__body__project :first-child .header__right h3, .assignmentContainer .assignment__body__ass :first-child .header__right h3 {
+.assignmentContainer .assignment__body__project :first-child .header__right h3, .assignmentContainer .assignment__body__assignments :first-child .header__right h3 {
   font-size: 0.875rem;
   color: #333;
 }
 
-.assignmentContainer .assignment__body__ass {
+.assignmentContainer .assignment__body__assignments {
   border-bottom: 1px dashed #C7CDD1;
   padding-bottom: 2rem;
 }
 
-.assignmentContainer .assignment__body__ass .ass__list {
+.assignmentContainer .assignment__body__assignments .assignments__list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -108,39 +145,39 @@
   background: white;
   border: 1px solid #C7CDD1;
   margin-top: 1rem;
-  padding: 0  1rem;
+  padding: 0 1rem;
 }
 
-.assignmentContainer .assignment__body__ass .ass__list .leftIcon h3 svg {
+.assignmentContainer .assignment__body__assignments .assignments__list .leftIcon h3 svg {
   color: #333;
 }
 
-.assignmentContainer .assignment__body__ass .ass__list .rightInfo {
+.assignmentContainer .assignment__body__assignments .assignments__list .rightInfo {
   margin-left: 1rem;
   width: 20rem;
 }
 
-.assignmentContainer .assignment__body__ass .ass__list .rightInfo h2 {
+.assignmentContainer .assignment__body__assignments .assignments__list .rightInfo h2 {
   font-size: 1rem;
   color: #333;
   font-weight: bold;
 }
 
-.assignmentContainer .assignment__body__ass .ass__list .rightInfo h4 {
+.assignmentContainer .assignment__body__assignments .assignments__list .rightInfo h4 {
   margin-top: 0.25rem;
   font-size: 0.75rem;
   color: #333;
 }
 
-.assignmentContainer .assignment__body__ass .ass__list .rightInfo:hover {
+.assignmentContainer .assignment__body__assignments .assignments__list .rightInfo:hover {
   text-decoration: underline;
 }
 
-.assignmentContainer .assignment__body__ass .ass__list:hover {
+.assignmentContainer .assignment__body__assignments .assignments__list:hover {
   background: #EBF5FF;
 }
 
-.assignmentContainer .assignment__body__ass .--select--list-close {
+.assignmentContainer .assignment__body__assignments .--select--list-close {
   display: none;
 }
 
@@ -162,7 +199,7 @@
   background: white;
   border: 1px solid #C7CDD1;
   margin-top: 1rem;
-  padding: 0  1rem;
+  padding: 0 1rem;
 }
 
 .assignmentContainer .assignment__body__project .project__list .leftIcon h3 svg {
