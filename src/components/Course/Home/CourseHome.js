@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Bars } from '../../Icon/Icon';
-import { withRouter } from 'react-router'
-import { Route, Link } from 'react-router-dom'
+import { connect } from 'react-redux';
+import { Route } from 'react-router-dom'
 import CourseThirdNav from '../Nav/CourseThirdNav'
 import './CourseHome.css';
 import HomePage from '../HomePage/HomePage'
@@ -24,7 +24,7 @@ class CourseHome extends Component {
 
     render() {
         const { displayPage } = this.state
-        const id = this.props.location.pathname.split("/").pop()
+        const id = this.props.id
         return (
             <div className="courseHomePageContainer">
                 <div className="courseHomePage">
@@ -35,16 +35,21 @@ class CourseHome extends Component {
                         <h1> <span>  {id} > </span> <span> {displayPage} </span> </h1>
                     </div>
                     <div className="courseHomePage__body">
-                        <CourseThirdNav changePage={this.changePage} id = {id}/>
-                        <Route exact path="/course/:id"> <HomePage/> </Route>
-                        <Route path="/course/:id/mark"> <Mark/> </Route>
-                        <Route path="/course/:id/assignment"> <Assignment/> </Route>
-                        <Route path="/course/:id/module"> <Module/> </Route>
+                        <CourseThirdNav changePage={this.changePage} id={id} />
+                        <Route exact path="/course/:id"> <HomePage /> </Route>
+                        <Route path="/course/:id/mark"> <Mark /> </Route>
+                        <Route path="/course/:id/assignment"> <Assignment /> </Route>
+                        <Route path="/course/:id/module"> <Module /> </Route>
                     </div>
                 </div>
             </div>
         );
     }
 }
-
-export default (withRouter(CourseHome));
+function mapStateToProps(state) {
+    const { courseid } = state;
+    return {
+        id: courseid.id
+    };
+}
+export default connect(mapStateToProps)(CourseHome)
