@@ -5,7 +5,10 @@ import {
     EllipsisVB,
 } from '../Icon/Icon'
 import { connect } from 'react-redux';
-import { fetchCourse } from '../../actions'
+import {
+    fetchCourse,
+    setCurrentCourseId
+} from '../../actions'
 import DashboardCard from './DashboardCard'
 
 class Dashboard extends Component {
@@ -13,6 +16,9 @@ class Dashboard extends Component {
     componentDidMount() {
         const { fetchCourse } = this.props
         fetchCourse()
+    }
+    setId = (id) => {
+        this.props.setCurrentCourseId({id})
     }
 
     render() {
@@ -29,7 +35,9 @@ class Dashboard extends Component {
                         <div className="main__dashboardContainer">
                             {
                                 course.map((item, index) =>
-                                    <Link to={`/course/${item.course_ID}`} key={index}>
+                                    <Link to={`/course/${item.course_ID}`}
+                                        onClick={() => { this.setId(item.course_ID) }}
+                                        key={index}>
                                         <DashboardCard  {...item} />
                                     </Link>
                                 )
@@ -66,8 +74,11 @@ function mapStateToProps(state) {
     const { student } = state;
     return {
         course: student.course,
-        err: student.err
+        err: student.err,
     };
 }
-export default connect(mapStateToProps, { fetchCourse })(Dashboard);
+export default connect(mapStateToProps, {
+    fetchCourse,
+    setCurrentCourseId
+})(Dashboard);
 

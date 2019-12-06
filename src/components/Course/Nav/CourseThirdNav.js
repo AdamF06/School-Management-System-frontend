@@ -23,7 +23,7 @@ export default class CourseThirdNav extends Component {
             <nav className="courseNav">
                 <ul>
                     <li className={activeNav === 'home' ? 'li--active' : 'li--inactive'} >
-                        <Link to="/course/id"
+                        <Link to={`/course/${id}`}
                             id="home"
                             onClick={this.changeLink}
                         >Home</Link>
@@ -36,6 +36,7 @@ export default class CourseThirdNav extends Component {
                     </li>
                     <li className={activeNav === 'mark' ? 'li--active' : 'li--inactive'}>
                         <Link to={`/course/${id}/mark`}
+                            id="mark"
                             onClick={this.changeLink}
                         >Marks</Link>
                     </li>

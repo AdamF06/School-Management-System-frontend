@@ -13,7 +13,6 @@ import Setting from './components/Setting/setting'
 import Sales from './components/Sales/Sales'
 import Enrollment from './components/Emrollment/Enrollment'
 import Dashboard from './components/Dashboard/Dashboard';
-import CourseRouter from './components/Course/CourseRouter';
 
 const customHistory = createBrowserHistory();
 
