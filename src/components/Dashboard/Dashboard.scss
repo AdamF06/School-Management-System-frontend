@@ -39,68 +39,73 @@
                 padding: 1rem;
                 display: flex;
 
-                .dashboardCard {
-                    height       : 16rem;
-                    width        : 16rem;
-                    box-shadow   : 0 2px 5px rgba(0, 0, 0, 0.3);
-                    border-radius: 0.5rem;
-                    margin       : 1rem;
+                a {
+                    text-decoration: none;
 
-                    &__header {
-                        height                 : 55%;
-                        background-color       : $fontColorMain;
-                        border-top-left-radius : 0.5rem;
-                        border-top-right-radius: 0.5rem;
-                        padding                : 2rem 1rem;
-                        color                  : whitesmoke;
-                    }
+                    .dashboardCard {
+                        height       : 16rem;
+                        width        : 16rem;
+                        box-shadow   : 0 2px 5px rgba(0, 0, 0, 0.3);
+                        border-radius: 0.5rem;
+                        margin       : 1rem;
 
-                    &__info {
-                        height     : 25%;
-                        font-weight: 300;
-                        padding    : 0.5rem 1rem;
-
-                        h4 {
-                            font-size: 0.875rem;
-                            color    : $blueGrotto;
+                        &__header {
+                            height                 : 55%;
+                            background-color       : $fontColorMain;
+                            border-top-left-radius : 0.5rem;
+                            border-top-right-radius: 0.5rem;
+                            padding                : 2rem 1rem;
+                            color                  : whitesmoke;
                         }
 
-                        h3 {
-                            color     : #6c757c;
-                            margin-top: 0.25rem;
-                            font-size : 1rem;
-                        }
+                        &__info {
+                            height     : 25%;
+                            font-weight: 300;
+                            padding    : 0.5rem 1rem;
 
-                        &:hover {
-                            text-decoration: underline;
-                            color          : $linkColor;
-
-                            h3,
                             h4 {
-                                color: $linkColor;
+                                font-size: 0.875rem;
+                                color    : $blueGrotto;
+                            }
+
+                            h3 {
+                                color     : #6c757c;
+                                margin-top: 0.25rem;
+                                font-size : 1rem;
+                            }
+
+                            &:hover {
+                                text-decoration: underline;
+                                color          : $linkColor;
+
+                                h3,
+                                h4 {
+                                    color: $linkColor;
+                                }
                             }
                         }
-                    }
 
-                    &__action {
-                        height : 20%;
-                        padding: 0.5rem 1rem;
+                        &__action {
+                            height : 20%;
+                            padding: 0.5rem 1rem;
 
-                        button {
-                            border : none;
-                            outline: none;
+                            button {
+                                border : none;
+                                outline: none;
 
-                            svg {
-                                font-size: 1.5rem;
-                                color    : #2D3B45;
+                                svg {
+                                    font-size: 1.5rem;
+                                    color    : #2D3B45;
 
-                                &:hover {
-                                    color: black;
+                                    &:hover {
+                                        color: black;
+                                    }
                                 }
                             }
                         }
                     }
                 }
+
             }
         }
 

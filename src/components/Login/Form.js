@@ -90,7 +90,7 @@ class Form extends Component {
                         <span>or use your account</span>
                         <input type="email" placeholder="Email" name="login_email" onChange={this.handleChange} />
                         <input type="password" placeholder="Password" name="login_password" onChange={this.handleChange} />
-                        <a href="#">Forgot your password?</a>
+                        <p >Forgot your password?</p>
                         <button className="act" onClick={this.signIn}>Sign In</button>
                     </form>
                 </div>

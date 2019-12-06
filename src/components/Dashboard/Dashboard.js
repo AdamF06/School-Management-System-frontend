@@ -59,10 +59,10 @@ class Dashboard extends Component {
                 </div>
                 <div className="footer">
                     <div className="footer__container">
-                        <a href="#">Privacy policy</a>
-                        <a href="#">Acceptable Use policy</a>
-                        <a href="#">Facebook</a>
-                        <a href="#">Twitter</a>
+                        <a href="www.google.com">Privacy policy</a>
+                        <a href="www.google.com">Acceptable Use policy</a>
+                        <a href="www.google.com">Facebook</a>
+                        <a href="www.google.com">Twitter</a>
                     </div>
                 </div>
             </div>
