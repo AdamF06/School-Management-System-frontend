@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Bars } from '../../Icon/Icon';
 import { withRouter } from 'react-router'
-import { Route, Redirect } from 'react-router-dom'
+import { Route, Link } from 'react-router-dom'
 import CourseThirdNav from '../Nav/CourseThirdNav'
 import './CourseHome.css';
 import HomePage from '../HomePage/HomePage'
@@ -24,8 +24,7 @@ class CourseHome extends Component {
 
     render() {
         const { displayPage } = this.state
-        const { id } = this.props.match.params
-
+        const id = this.props.location.pathname.split("/").pop()
         return (
             <div className="courseHomePageContainer">
                 <div className="courseHomePage">
@@ -36,21 +35,11 @@ class CourseHome extends Component {
                         <h1> <span>  {id} > </span> <span> {displayPage} </span> </h1>
                     </div>
                     <div className="courseHomePage__body">
-                        <CourseThirdNav changePage={this.changePage} />
-                        {/* <Route to="/course/home">  </Route> */}
-
-                        <div className={`${displayPage === 'home' ? '--acitve' : '--inactive'}`}>
-                            <HomePage />
-                        </div>
-                        <div className={`${displayPage === 'assignment' ? '--acitve' : '--inactive'}`}>
-                            <Assignment />
-                        </div>
-                        <div className={`${displayPage === 'mark' ? '--acitve' : '--inactive'}`}>
-                            <Mark />
-                        </div>
-                        <div className={`${displayPage === 'module' ? '--acitve' : '--inactive'}`}>
-                            <Module />
-                        </div>
+                        <CourseThirdNav changePage={this.changePage} id = {id}/>
+                        <Route exact path="/course/:id"> <HomePage/> </Route>
+                        <Route path="/course/:id/mark"> <Mark/> </Route>
+                        <Route path="/course/:id/assignment"> <Assignment/> </Route>
+                        <Route path="/course/:id/module"> <Module/> </Route>
                     </div>
                 </div>
             </div>
