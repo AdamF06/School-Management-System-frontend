@@ -153,10 +153,10 @@
 
 .enrollment .body .dropList {
   position: absolute;
+  margin-top: -1px;
   width: 17.5rem;
   background: white;
   margin-left: 5.25rem;
-  margin-top: -0.75rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -171,6 +171,32 @@
           box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   padding: 1rem 0;
   z-index: 4;
+  border: 1px solid #C7CDD1;
+}
+
+.enrollment .body .dropList-head {
+  position: relative;
+  background: none;
+  width: 17.5rem;
+  height: 1rem;
+  top: -1.625rem;
+}
+
+.enrollment .body .dropList-head span {
+  position: absolute;
+  left: 1.625rem;
+}
+
+.enrollment .body .dropList-head .upper {
+  top: -2px;
+  z-index: 5;
+  color: #C7CDD1;
+}
+
+.enrollment .body .dropList-head .lower {
+  top: -1px;
+  color: white;
+  z-index: 6;
 }
 
 .enrollment .body .dropList .dropitems {
@@ -183,6 +209,7 @@
           align-items: center;
   height: 1.5rem;
   padding: 0.5rem 1rem;
+  margin: 0.25rem 0;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
