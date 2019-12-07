@@ -1,156 +1,228 @@
 @import "../../common/commonScss.scss";
 
-.enrollment{
+.enrollment {
     margin-left: (210rem/16);
-    padding:0 1rem;
-    overflow-x: hidden;
-    .header{
+    padding    : 0 1rem;
+    overflow-x : hidden;
+
+    .header {
         padding: 1rem;
-        h3{
-            font-size: 1,5rem;
+
+        h3 {
+            font-size  : 1, 5rem;
             font-weight: bold;
-            color:$fontColorMain;
+            color      : $fontColorMain;
         }
+
         border-bottom: 1px solid $border;
 
     }
-    .body{
-        padding:1rem;
-        &__topbar{
-            display: flex;
-            align-items: center;
-            height: 4rem;
-            width: 100%;
-            margin-top: 0.5rem;
+
+    .body {
+        padding: 1rem;
+
+        &__topbar {
+            display      : flex;
+            align-items  : center;
+            height       : 4rem;
+            width        : 100%;
+            margin-top   : 0.5rem;
             border-bottom: 1px solid $border;
-            img{
+
+            img {
                 height: (60rem/16);
-                width: (60rem/16);
+                width : (60rem/16);
             }
-            &__category{
-                margin-left: 1.5rem;
-                height: 70%;
-                display: flex;
-                align-items: center;               
-                width: (110rem/16);
+
+            &__category {
+                margin-left    : 1.5rem;
+                height         : 70%;
+                display        : flex;
+                align-items    : center;
+                width          : (110rem/16);
                 justify-content: space-around;
-                svg{
+
+                svg {
                     font-size: 0.875rem;
-                    color: #505763;
+                    color    : #505763;
                 }
-                h4{
+
+                h4 {
                     font-size: 1rem;
-                    color: #505763;
+                    color    : #505763;
                 }
-                &:hover{
-                    background:  #F2F2F2;
+
+                &:hover {
+                    background   : #F2F2F2;
                     border-radius: 0.25rem;
-                    border:1px solid $border;
+                    border       : 1px solid $border;
                 }
             }
-            &__search{
-                width: 28rem;
-                height: 70%;
-                margin-left: 1.5rem;
-                display: flex;
-                align-items: center;
+
+            &__search {
+                width          : 28rem;
+                height         : 70%;
+                margin-left    : 1.5rem;
+                display        : flex;
+                align-items    : center;
                 justify-content: space-between;
-                padding:0 1rem;
-                background:  #F2F2F2;
-                border-radius: 0.25rem;
-                button{
-                    border: none;
+                padding        : 0 1rem;
+                background     : #F2F2F2;
+                border-radius  : 0.25rem;
+
+                button {
+                    border    : none;
                     background: none;
-                    outline: none;
-                    svg{
-                        color:$linkColor;
+                    outline   : none;
+
+                    svg {
+                        color    : $linkColor;
                         font-size: 0.875rem;
                     }
                 }
-                input{
-                    height: 100%;
-                    width: 93%;
-                    border: none;
-                    font-size: 1rem;
-                    color: #505763;
-                    outline: none;
-                    background:  #F2F2F2;
+
+                input {
+                    height    : 100%;
+                    width     : 93%;
+                    border    : none;
+                    font-size : 1rem;
+                    color     : #505763;
+                    outline   : none;
+                    background: #F2F2F2;
 
                 }
 
             }
         }
-        .dropList{
-            position: absolute;
-            width: (280rem/16);
-            background:white;
-            margin-left:(84rem/16);
-            margin-top:(-12rem/16);
-            display: flex;
+
+        .dropList {
+            position      : absolute;
+            width         : (280rem/16);
+            background    : white;
+            margin-left   : (84rem/16);
+            margin-top    : (-12rem/16);
+            display       : flex;
             flex-direction: column;
-            align-items: flex-start;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-            padding:1rem 0;
-            .dropitems{
-                width: 100%;
-                display: flex;
-                align-items: center;
-                height: 1.5rem;
-                padding:0.5rem 1rem;
+            align-items   : flex-start;
+            box-shadow    : 0 2px 5px rgba(0, 0, 0, 0.3);
+            padding       : 1rem 0;
+            z-index: 4;
+            .dropitems {
+                width          : 100%;
+                display        : flex;
+                align-items    : center;
+                height         : 1.5rem;
+                padding        : 0.5rem 1rem;
                 justify-content: space-between;
-                .left{
+
+                .left {
                     display: flex;
-                    h4{
+
+                    h4 {
                         font-size: 1rem;
-                        color: #505763;                   
-                        svg{
+                        color    : #505763;
+
+                        svg {
                             font-size: 1rem;
-                            color: #505763;
+                            color    : #505763;
                         }
-                        &:nth-child(2){
+
+                        &:nth-child(2) {
                             margin-left: 0.875rem;
                         }
-    
+
                     }
                 }
-                .right{
-                    h4{
+
+                .right {
+                    h4 {
                         font-size: 1rem;
-                        color: #505763; 
+                        color    : #505763;
                     }
                 }
-                &:hover{
-                    background:  #F2F2F2;
+
+                &:hover {
+                    background: #F2F2F2;
                 }
             }
         }
-        .--hide{
+
+        .--hide {
             display: none;
         }
 
-        &__content{
-            .courseitems{
-                display: flex;
+        .scrolling {
+            margin     : 2rem auto;
+            height     : 12.5rem;
+            width      : 95%;
+            border     : 1px solid $border;
+            overflow   : hidden;
+            position   : relative;
+            display    : flex;
+            align-items: center;
+
+            &__list {
+                display  : flex;
+                position : absolute;
+                animation: scrolling 24s linear infinite;
+                overflow : hidden;
+
+                .card {
+                    margin       : 0 1.5rem;
+                    height       : 10rem;
+                    width        : 22rem;
+                    border       : 1px solid $border;
+                    border-radius: 0.625rem;
+                    &:hover{
+                        color: red;
+                    }
+                }
+
+                &:hover {
+                    animation-play-state: paused;
+                }
+            }
+
+
+            @keyframes scrolling {
+                from {
+                    transform: translate(0, 0);
+                }
+
+                to {
+                    transform: translate(-50%, 0);
+                }
+            }
+        }
+
+        &__content {
+            .courseitems {
+                display        : flex;
                 justify-content: space-between;
-                padding:0.5rem 1rem;
-                .left{
-                    h2{
+                padding        : 0.5rem 1rem;
+
+                .left {
+                    h2 {
                         font-size: 1.5rem;
-                        &:hover{
+
+                        &:hover {
                             text-decoration: underline;
-                            color: $linkHoverColor;
+                            color          : $linkHoverColor;
                         }
                     }
                 }
-                .right{
-                    width:25%;
-                    display: flex;
+
+                .right {
+                    width          : 25%;
+                    display        : flex;
                     justify-content: space-between;
-                    h4{
+
+                    h4 {
                         display: flex;
                     }
                 }
-                &:nth-child(2n){
+
+                &:nth-child(2n) {
                     background: #F2F2F2;
                 }
             }

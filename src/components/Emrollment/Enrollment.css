@@ -55,7 +55,7 @@
 }
 
 .enrollment .header h3 {
-  font-size: 1,5rem;
+  font-size: 1, 5rem;
   font-weight: bold;
   color: #13294b;
 }
@@ -170,6 +170,7 @@
   -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
           box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   padding: 1rem 0;
+  z-index: 4;
 }
 
 .enrollment .body .dropList .dropitems {
@@ -218,6 +219,70 @@
 
 .enrollment .body .--hide {
   display: none;
+}
+
+.enrollment .body .scrolling {
+  margin: 2rem auto;
+  height: 12.5rem;
+  width: 95%;
+  border: 1px solid #C7CDD1;
+  overflow: hidden;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.enrollment .body .scrolling__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  -webkit-animation: scrolling 24s linear infinite;
+          animation: scrolling 24s linear infinite;
+  overflow: hidden;
+}
+
+.enrollment .body .scrolling__list .card {
+  margin: 0 1.5rem;
+  height: 10rem;
+  width: 22rem;
+  border: 1px solid #C7CDD1;
+  border-radius: 0.625rem;
+}
+
+.enrollment .body .scrolling__list .card:hover {
+  color: red;
+}
+
+.enrollment .body .scrolling__list:hover {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+
+@-webkit-keyframes scrolling {
+  from {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+  to {
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+  }
+}
+
+@keyframes scrolling {
+  from {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+  to {
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+  }
 }
 
 .enrollment .body__content .courseitems {
