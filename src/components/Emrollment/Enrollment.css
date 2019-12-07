@@ -248,19 +248,18 @@
   display: none;
 }
 
+.enrollment .body .title {
+  font-size: 1, 5rem;
+  font-weight: 300;
+  color: #13294b;
+}
+
 .enrollment .body .scrolling {
   margin: 2rem auto;
   height: 12.5rem;
   width: 95%;
-  border: 1px solid #C7CDD1;
   overflow: hidden;
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
 .enrollment .body .scrolling__list {
@@ -268,21 +267,35 @@
   display: -ms-flexbox;
   display: flex;
   position: absolute;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-animation: scrolling 24s linear infinite;
           animation: scrolling 24s linear infinite;
   overflow: hidden;
+  height: 100%;
 }
 
 .enrollment .body .scrolling__list .card {
   margin: 0 1.5rem;
   height: 10rem;
   width: 22rem;
-  border: 1px solid #C7CDD1;
+  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   border-radius: 0.625rem;
+  background: url(./course-sample.jpg) rgba(0, 71, 171, 0.2);
+  background-size: cover;
+  background-blend-mode: multiply;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
 }
 
 .enrollment .body .scrolling__list .card:hover {
-  color: red;
+  margin-top: -10px;
+  -webkit-box-shadow: 0 3px 15px 3px rgba(51, 51, 51, 0.5);
+          box-shadow: 0 3px 15px 3px rgba(51, 51, 51, 0.5);
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
 }
 
 .enrollment .body .scrolling__list:hover {

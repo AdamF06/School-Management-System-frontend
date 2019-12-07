@@ -108,14 +108,16 @@ class Enrollment extends Component {
                             )
                         }
                     </div>
-
                     <div className="scrolling">
                         <div className='scrolling__list'>
-                            <div className="card"> 1 </div>
-                            <div className="card"> 2 </div>
-                            <div className="card"> 3 </div>
-                            <div className="card"> 4 </div>
-                            <div className="card"> 5 </div>
+                            <CourseCard/>
+                            <CourseCard/>
+                            <CourseCard/>
+                            <CourseCard/>
+                            <CourseCard/>
+                            <CourseCard/>
+                            <CourseCard/>
+
                         </div>
                     </div>
 
