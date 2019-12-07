@@ -91,7 +91,6 @@
                     background: #F2F2F2;
 
                 }
-
             }
         }
 
@@ -116,7 +115,6 @@
                 height    : 1rem;
                 top       : -1.625rem;
 
-                // border: 1px solid red;
                 span {
                     position: absolute;
                     left    : 1.625rem;
@@ -181,31 +179,42 @@
             display: none;
         }
 
+        .title {
+            font-size  : 1, 5rem;
+            font-weight: 300;
+            color      : $fontColorMain;
+        }
+
         .scrolling {
-            margin     : 2rem auto;
-            height     : 12.5rem;
-            width      : 95%;
-            border     : 1px solid $border;
-            overflow   : hidden;
-            position   : relative;
-            display    : flex;
-            align-items: center;
+            margin  : 2rem auto;
+            height  : 12.5rem;
+            width   : 95%;
+            overflow: hidden;
+            position: relative;
 
             &__list {
-                display  : flex;
-                position : absolute;
-                animation: scrolling 24s linear infinite;
-                overflow : hidden;
+                display    : flex;
+                position   : absolute;
+                align-items: center;
+                animation  : scrolling 24s linear infinite;
+                overflow   : hidden;
+                height     : 100%;
 
                 .card {
-                    margin       : 0 1.5rem;
-                    height       : 10rem;
-                    width        : 22rem;
-                    border       : 1px solid $border;
-                    border-radius: 0.625rem;
+                    margin               : 0 1.5rem;
+                    height               : 10rem;
+                    width                : 22rem;
+                    box-shadow           : 0 2px 5px rgba(0, 0, 0, 0.2);
+                    border-radius        : 0.625rem;
+                    background           : url(./course-sample.jpg) rgba(0, 71, 171, .2);
+                    background-size      : cover;
+                    background-blend-mode: multiply;
+                    transition: all .2s ease-in-out;
 
                     &:hover {
-                        color: red;
+                        margin-top: -10px;
+                        box-shadow: 0 3px 15px 3px rgba(51, 51, 51, 0.5);
+                        transition: all .2s ease-in-out;
                     }
                 }
 
