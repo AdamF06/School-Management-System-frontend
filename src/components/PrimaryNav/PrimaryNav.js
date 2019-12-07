@@ -67,7 +67,6 @@ class PrimaryNav extends Component {
         }
     }
     iconToUrl = (iconName) => {
-        console.log('at inon to url,', iconName)
         switch (iconName) {
             case 'Dashboard':
                 return '/dashboard'

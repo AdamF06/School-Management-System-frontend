@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { Link} from "react-router-dom"
+import { withRouter } from "react-router";
+
 import './Enrollment.css'
 import EnrollItems from './EnrollItems'
 import DropItems from './DropItems'
@@ -89,10 +92,10 @@ class Enrollment extends Component {
                             {Category}
                             <h4>Categories</h4>
                         </div>
-                        <from className='body__topbar__search'>
+                        <form className='body__topbar__search'>
                             <input type="text" placeholder="Find a course" name="search" />
                             <button className="top__button">{Search}</button>
-                        </from>
+                        </form>
                     </div>
                     <div className={`dropList ${dropList ? '' : "--hide"}`}
                         onMouseOver={() => this.setState({ dropList: true })}
@@ -110,21 +113,20 @@ class Enrollment extends Component {
                     </div>
                     <div className="scrolling">
                         <div className='scrolling__list'>
-                            <CourseCard/>
-                            <CourseCard/>
-                            <CourseCard/>
-                            <CourseCard/>
-                            <CourseCard/>
-                            <CourseCard/>
-                            <CourseCard/>
-
+                            <Link to="/detail/123"> <CourseCard/> </Link>
+                            <Link to="/detail/123"> <CourseCard/> </Link>
+                            <Link to="/detail/123"> <CourseCard/> </Link>
+                            <Link to="/detail/123"> <CourseCard/> </Link>
+                            <Link to="/detail/123"> <CourseCard/> </Link>
+                            <Link to="/detail/123"> <CourseCard/> </Link>
+                            <Link to="/detail/123"> <CourseCard/> </Link>
                         </div>
                     </div>
 
                     <div className="body__content">
                         {
                             dummyCourse.map(
-                                (item, index) => <EnrollItems {...item} key={index} />
+                                (item, index) => <EnrollItems {...item} key = {index} />
                             )
                         }
                     </div>
@@ -135,4 +137,4 @@ class Enrollment extends Component {
     }
 }
 
-export default Enrollment;
+export default  (withRouter(Enrollment));

@@ -13,6 +13,7 @@ import Setting from './components/Setting/setting'
 import Sales from './components/Sales/Sales'
 import Enrollment from './components/Emrollment/Enrollment'
 import Dashboard from './components/Dashboard/Dashboard';
+import CourseIntro from './components/DetailPages/CourseIntro'
 
 const customHistory = createBrowserHistory();
 
@@ -21,17 +22,14 @@ function App() {
     <>
       <Router history={customHistory}>
         <Switch>
-          <Route exact path="/"> <Login /></Route>
-          {/* <Route exact path="/"> <SideBar/><Dashboard/> </Route> */}
-              
+          <Route exact path="/"> <Login /></Route>             
           <PrivateRoute path='/dashboard'> <SideBar/> <Dashboard/> </PrivateRoute>
           <PrivateRoute path='/course/:id'> <SideBar/> <CourseHome/> </PrivateRoute>
           <PrivateRoute path='/enroll'> <SideBar/> <Enrollment/>  </PrivateRoute>
-
+          <PrivateRoute path='/detail/:id'> <SideBar/> <CourseIntro/>  </PrivateRoute>
           <PrivateRoute path="/user"><SideBar/> <UserRouter /></PrivateRoute>
           <PrivateRoute path='/sale'> <SideBar/> <Sales/> </PrivateRoute>
           <PrivateRoute path="/setting"> <SideBar /><Setting/> </PrivateRoute>
-
           <Route path="*" component={() => "404 NOT FOUND"} />
         </Switch>
       </Router>

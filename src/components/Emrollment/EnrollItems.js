@@ -6,7 +6,7 @@ const EnrollItems = (args) => {
     const stars = []
 
     for (let i = 0; i < starPt; i++) {
-        stars.push(<div>{Star}</div>)
+        stars.push(<div key={i}>{Star}</div>)
     }
 
     return (
