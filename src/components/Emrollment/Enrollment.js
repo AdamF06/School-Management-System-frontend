@@ -98,6 +98,10 @@ class Enrollment extends Component {
                         onMouseOver={() => this.setState({ dropList: true })}
                         onMouseLeave={() => this.setState({ dropList: false })}
                     >
+                        <div className="dropList-head">
+                            <span className='upper'>◆</span>
+                            <span className='lower'>◆</span>
+                        </div>
                         {
                             dummyDropList.map(
                                 (item, index) => <DropItems {...item} key={index} />
@@ -107,11 +111,11 @@ class Enrollment extends Component {
 
                     <div className="scrolling">
                         <div className='scrolling__list'>
-                            <div className = "card"> 1 </div>
-                            <div className = "card"> 2 </div>
-                            <div className = "card"> 3 </div>
-                            <div className = "card"> 4 </div>
-                            <div className = "card"> 5 </div>
+                            <div className="card"> 1 </div>
+                            <div className="card"> 2 </div>
+                            <div className="card"> 3 </div>
+                            <div className="card"> 4 </div>
+                            <div className="card"> 5 </div>
                         </div>
                     </div>
 
