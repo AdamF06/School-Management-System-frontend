@@ -298,8 +298,91 @@
             }
         }
     }
-    .time{
-        
+
+    .time {
+        white-space: nowrap;
+        overflow-x : hidden;
+        width: 80%;
+        margin: 0 auto;
+        ol {
+            font-size : 0;
+            padding   : 7rem 0;
+            transition: all 1s;
+            height: 100px;
+
+            li {
+                position       : relative;
+                display        : inline-block;
+                list-style-type: none;
+                width          : 160px;
+                height         : 3px;
+                background     : #fff;
+                background     : $navyBlue;
+
+                div {
+                    position   : absolute;
+                    left       : calc(100% + 7px);
+                    width      : 12rem;
+                    padding    : 15px;
+                    font-size  : 1rem;
+                    white-space: normal;
+                    color      : black;
+                    background : white;
+                    box-shadow : 0 2px 5px rgba(0, 0, 0, 0.3);
+                    &::before{
+                        content     : '';
+                        position    : absolute;
+                        top         : 100%;
+                        left        : 0;
+                        width       : 0;
+                        height      : 0;
+                        border-style: solid;
+                    }
+                    
+                }
+            }
+
+            li:last-child {
+                width: 280px;
+            }
+
+            li:not(:first-child) {
+                margin-left: 14px;
+            }
+
+            li:not(:last-child)::after {
+                content      : '';
+                position     : absolute;
+                top          : 50%;
+                left         : calc(100% + 1px);
+                bottom       : 0;
+                width        : 12px;
+                height       : 12px;
+                transform    : translateY(-50%);
+                border-radius: 50%;
+                background   : $blueGrotto;
+            }
+
+            li:nth-child(odd) div {
+                top      : -16px;
+                transform: translateY(-100%);
+                &::before{
+                    top         : 100%;
+                    border-width: 8px 8px 0 0;
+                    border-color: white transparent transparent transparent;
+                }
+            }
+
+            li:nth-child(even) div {
+                top: calc(100% + 16px);
+
+                &::before {
+                    top         : -8px;
+                    border-width: 8px 0 0 8px;
+                    border-color: transparent transparent transparent white;
+                }
+            }
+        }
     }
 
 }

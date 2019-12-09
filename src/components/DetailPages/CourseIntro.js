@@ -147,21 +147,22 @@ class CourseIntro extends Component {
                     <ol>
                         <li>
                             <div>
-                                <time>1934</time> At vero eos et accusamus
+                                <time>1st Jan, 2020</time>
+                                <p>Class Start</p> 
                             </div>
                         </li>
                         <li>
                             <div>
-                                <time>1937</time> Proin quam 
+                                <time>1st Mar, 2020</time> 
+                                <p>Class end, internship Start </p>
                             </div>
                         </li>
                         <li>
                             <div>
-                                <time>1940</time> Proin iaculis, nibh eget efficitur
+                                <time>1st May, 2020</time> 
+                                <p>Get your offer! </p>                   
                             </div>
                         </li>
-
-                        <li></li>
                         <li></li>
                     </ol>
                 </section>
