@@ -2,20 +2,24 @@
 
 .courseIntro {
     margin-left: 13.2rem;
-    &-title{
-        display: block;
+
+    &-title {
+        display   : block;
         text-align: center;
-        font-size: 1.875rem;
-        color: rgba(0, 0, 0, 0.1);
-        margin: 1rem auto;
-        width: 100%;
-        h4{
-            color: $fontColorSmaill;
+        font-size : 1.875rem;
+        color     : rgba(0, 0, 0, 0.1);
+        margin    : 1rem auto;
+        width     : 100%;
+        margin    : 4rem 0 0 1rem;
+
+        h4 {
+            color    : $fontColorSmaill;
             font-size: 1.5rem;
-            position: relative;
-            top:-1.25rem;
+            position : relative;
+            top      : -1.25rem;
         }
     }
+
     &-header {
         display      : flex;
         width        : 100%;
@@ -41,23 +45,26 @@
             margin   : 1.5rem 0.25rem;
         }
     }
+
     &-overview {
         display        : flex;
         justify-content: space-around;
         width          : 70%;
         padding        : 2rem;
-        margin: 0 auto;
+        margin         : 0 auto;
+
         &__left {
-            height         : 16rem;
-            width          : 42rem;
-            display        : flex;
-            flex-direction : column;
-            justify-content: space-around;
-            align-items    : center;
+            height               : 16rem;
+            width                : 42rem;
+            display              : flex;
+            flex-direction       : column;
+            justify-content      : space-around;
+            align-items          : center;
             border-radius        : 1rem;
             background           : url(../Emrollment/course-sample.jpg) rgba(0, 71, 171, .3);
             background-size      : cover;
             background-blend-mode: multiply;
+
             h1 {
                 font-size: 2.5rem;
                 color    : white;
@@ -78,22 +85,221 @@
                 outline      : none;
 
                 &:hover {
-                    border       : 1px solid $blueGrotto;
-                    color        : $blueGrotto;
+                    border: 1px solid $blueGrotto;
+                    color : $blueGrotto;
                 }
             }
         }
     }
-    .overview{
-        display: flex;
+
+    .overview {
+        display        : flex;
         justify-content: space-between;
-        width: 70%;
-        margin:1rem auto;
-        &__card{
-            border-left: 1px dashed $border;
-            &:first-child{
-                border:none
+        width          : 80%;
+        margin         : 1rem auto;
+
+        &__card {
+            width         : 25%;
+            border-left   : 1px dashed $border;
+            display       : flex;
+            flex-direction: column;
+            align-items   : center;
+            text-align    : center;
+            padding       : 0 1rem;
+
+            &:first-child {
+                border: none
+            }
+
+            i svg {
+                font-size: 3.25rem;
+                color    : $blueGrotto;
+            }
+
+            h3 {
+                font-size  : 1rem;
+                margin     : 1rem 0;
+                font-weight: bold;
+            }
+
+            h6 {
+                color: $border;
+            }
+
+            .--black {
+                color      : black;
+                line-height: 1.75;
             }
         }
     }
+
+    .syllabus {
+        display        : flex;
+        flex-direction : column;
+        justify-content: space-between;
+        width          : 80%;
+        margin         : 1rem auto;
+
+        >button {
+            height         : 3.5rem;
+            width          : 100%;
+            border         : 2px solid $navyBlue;
+            border-radius  : 0.5rem;
+            display        : flex;
+            padding        : 0 1rem;
+            justify-content: space-between;
+            color          : $navyBlue;
+            outline        : none;
+            margin         : 1rem 0;
+
+            i svg {
+                color: $navyBlue;
+            }
+
+            &:hover {
+                border: 2px solid $blueGrotto;
+                color : $blueGrotto;
+
+                i svg {
+                    color: $blueGrotto;
+                }
+            }
+        }
+
+        .skills {
+            display   : flex;
+            flex-wrap : wrap;
+            width     : 100%;
+            height    : 200px;
+            position  : relative;
+            margin    : 1rem;
+            overflow  : hidden;
+            transition: 0.2s ease-out;
+
+            &--hide {
+                height    : 0px;
+                list-style: none;
+                transition: 0.2s ease-out;
+            }
+
+            li {
+                display: block;
+                height : 60px;
+                width  : 60px;
+                margin : 0.25rem 1rem;
+            }
+
+            & :nth-child(1) {
+                background     : url(../../icons/html.png);
+                background-size: cover;
+            }
+
+            & :nth-child(2) {
+                background     : url(../../icons/javascript.png);
+                background-size: cover;
+            }
+
+            & :nth-child(3) {
+                background     : url(../../icons/css.png);
+                background-size: cover;
+            }
+
+            & :nth-child(4) {
+                background     : url(../../icons/sass.png);
+                background-size: cover;
+            }
+
+            & :nth-child(5) {
+                background     : url(../../icons/flexbox.png);
+                background-size: cover;
+            }
+
+            & :nth-child(6) {
+                background     : url(../../icons/bootstrap.png);
+                background-size: cover;
+            }
+
+            & :nth-child(7) {
+                background     : url(../../icons/es6.png);
+                background-size: cover;
+            }
+
+            & :nth-child(8) {
+                background     : url(../../icons/ts.png);
+                background-size: cover;
+            }
+
+            & :nth-child(9) {
+                background     : url(../../icons/react.png);
+                background-size: cover;
+            }
+
+            & :nth-child(10) {
+                background     : url(../../icons/redux.png);
+                background-size: cover;
+            }
+
+            & :nth-child(11) {
+                background     : url(../../icons/redux-saga.png);
+                background-size: cover;
+            }
+
+            & :nth-child(12) {
+                background     : url(../../icons/database-theory.png);
+                background-size: cover;
+            }
+        }
+
+        .course-content,
+        .course-content--hide {
+            display        : flex;
+            justify-content: space-between;
+            padding        : 1rem;
+            height         : 13rem;
+            transition     : 0.2s ease-out;
+
+            .card {
+                height    : 12.5rem;
+                width     : 48%;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+                padding   : 1rem;
+
+                &__title {
+                    display        : flex;
+                    justify-content: space-between;
+                    color          : $blueGrotto;
+                    font-size      : 0.8rem;
+                    margin-bottom  : 1rem;
+                }
+
+                &__download {
+                    height    : 2rem;
+                    width     : 100%;
+                    margin-top: 0.5rem;
+                    text-align: left;
+                    border    : none;
+                    border-top: 1px dashed $navyBlue;
+                    color     : $border;
+
+                    &:hover {
+                        color: $blueGrotto;
+                    }
+                }
+            }
+        }
+
+        .course-content--hide {
+            height    : 0px;
+            transition: 0.2s ease-out;
+
+            .card {
+                opacity: 0;
+                height : 0px;
+            }
+        }
+    }
+    .time{
+        
+    }
+
 }

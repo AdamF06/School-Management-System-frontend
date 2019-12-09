@@ -54,6 +54,7 @@
   color: rgba(0, 0, 0, 0.1);
   margin: 1rem auto;
   width: 100%;
+  margin: 4rem 0 0 1rem;
 }
 
 .courseIntro-title h4 {
@@ -155,15 +156,245 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: 70%;
+  width: 80%;
   margin: 1rem auto;
 }
 
 .courseIntro .overview__card {
+  width: 25%;
   border-left: 1px dashed #C7CDD1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  padding: 0 1rem;
 }
 
 .courseIntro .overview__card:first-child {
   border: none;
+}
+
+.courseIntro .overview__card i svg {
+  font-size: 3.25rem;
+  color: #0E86D4;
+}
+
+.courseIntro .overview__card h3 {
+  font-size: 1rem;
+  margin: 1rem 0;
+  font-weight: bold;
+}
+
+.courseIntro .overview__card h6 {
+  color: #C7CDD1;
+}
+
+.courseIntro .overview__card .--black {
+  color: black;
+  line-height: 1.75;
+}
+
+.courseIntro .syllabus {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 80%;
+  margin: 1rem auto;
+}
+
+.courseIntro .syllabus > button {
+  height: 3.5rem;
+  width: 100%;
+  border: 2px solid #003060;
+  border-radius: 0.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 1rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  color: #003060;
+  outline: none;
+  margin: 1rem 0;
+}
+
+.courseIntro .syllabus > button i svg {
+  color: #003060;
+}
+
+.courseIntro .syllabus > button:hover {
+  border: 2px solid #0E86D4;
+  color: #0E86D4;
+}
+
+.courseIntro .syllabus > button:hover i svg {
+  color: #0E86D4;
+}
+
+.courseIntro .syllabus .skills {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+  height: 200px;
+  position: relative;
+  margin: 1rem;
+  overflow: hidden;
+  -webkit-transition: 0.2s ease-out;
+  transition: 0.2s ease-out;
+}
+
+.courseIntro .syllabus .skills--hide {
+  height: 0px;
+  list-style: none;
+  -webkit-transition: 0.2s ease-out;
+  transition: 0.2s ease-out;
+}
+
+.courseIntro .syllabus .skills li {
+  display: block;
+  height: 60px;
+  width: 60px;
+  margin: 0.25rem 1rem;
+}
+
+.courseIntro .syllabus .skills :nth-child(1) {
+  background: url(../../icons/html.png);
+  background-size: cover;
+}
+
+.courseIntro .syllabus .skills :nth-child(2) {
+  background: url(../../icons/javascript.png);
+  background-size: cover;
+}
+
+.courseIntro .syllabus .skills :nth-child(3) {
+  background: url(../../icons/css.png);
+  background-size: cover;
+}
+
+.courseIntro .syllabus .skills :nth-child(4) {
+  background: url(../../icons/sass.png);
+  background-size: cover;
+}
+
+.courseIntro .syllabus .skills :nth-child(5) {
+  background: url(../../icons/flexbox.png);
+  background-size: cover;
+}
+
+.courseIntro .syllabus .skills :nth-child(6) {
+  background: url(../../icons/bootstrap.png);
+  background-size: cover;
+}
+
+.courseIntro .syllabus .skills :nth-child(7) {
+  background: url(../../icons/es6.png);
+  background-size: cover;
+}
+
+.courseIntro .syllabus .skills :nth-child(8) {
+  background: url(../../icons/ts.png);
+  background-size: cover;
+}
+
+.courseIntro .syllabus .skills :nth-child(9) {
+  background: url(../../icons/react.png);
+  background-size: cover;
+}
+
+.courseIntro .syllabus .skills :nth-child(10) {
+  background: url(../../icons/redux.png);
+  background-size: cover;
+}
+
+.courseIntro .syllabus .skills :nth-child(11) {
+  background: url(../../icons/redux-saga.png);
+  background-size: cover;
+}
+
+.courseIntro .syllabus .skills :nth-child(12) {
+  background: url(../../icons/database-theory.png);
+  background-size: cover;
+}
+
+.courseIntro .syllabus .course-content,
+.courseIntro .syllabus .course-content--hide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 1rem;
+  height: 13rem;
+  -webkit-transition: 0.2s ease-out;
+  transition: 0.2s ease-out;
+}
+
+.courseIntro .syllabus .course-content .card,
+.courseIntro .syllabus .course-content--hide .card {
+  height: 12.5rem;
+  width: 48%;
+  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+}
+
+.courseIntro .syllabus .course-content .card__title,
+.courseIntro .syllabus .course-content--hide .card__title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  color: #0E86D4;
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.courseIntro .syllabus .course-content .card__download,
+.courseIntro .syllabus .course-content--hide .card__download {
+  height: 2rem;
+  width: 100%;
+  margin-top: 0.5rem;
+  text-align: left;
+  border: none;
+  border-top: 1px dashed #003060;
+  color: #C7CDD1;
+}
+
+.courseIntro .syllabus .course-content .card__download:hover,
+.courseIntro .syllabus .course-content--hide .card__download:hover {
+  color: #0E86D4;
+}
+
+.courseIntro .syllabus .course-content--hide {
+  height: 0px;
+  -webkit-transition: 0.2s ease-out;
+  transition: 0.2s ease-out;
+}
+
+.courseIntro .syllabus .course-content--hide .card {
+  opacity: 0;
+  height: 0px;
 }
 /*# sourceMappingURL=CourseIntro.css.map */
