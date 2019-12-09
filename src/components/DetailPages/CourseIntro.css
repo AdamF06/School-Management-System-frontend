@@ -397,4 +397,96 @@
   opacity: 0;
   height: 0px;
 }
+
+.courseIntro .time {
+  white-space: nowrap;
+  overflow-x: hidden;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.courseIntro .time ol {
+  font-size: 0;
+  padding: 7rem 0;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  height: 100px;
+}
+
+.courseIntro .time ol li {
+  position: relative;
+  display: inline-block;
+  list-style-type: none;
+  width: 160px;
+  height: 3px;
+  background: #fff;
+  background: #003060;
+}
+
+.courseIntro .time ol li div {
+  position: absolute;
+  left: calc(100% + 7px);
+  width: 12rem;
+  padding: 15px;
+  font-size: 1rem;
+  white-space: normal;
+  color: black;
+  background: white;
+  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.courseIntro .time ol li div::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+.courseIntro .time ol li:last-child {
+  width: 280px;
+}
+
+.courseIntro .time ol li:not(:first-child) {
+  margin-left: 14px;
+}
+
+.courseIntro .time ol li:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: calc(100% + 1px);
+  bottom: 0;
+  width: 12px;
+  height: 12px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  border-radius: 50%;
+  background: #0E86D4;
+}
+
+.courseIntro .time ol li:nth-child(odd) div {
+  top: -16px;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+}
+
+.courseIntro .time ol li:nth-child(odd) div::before {
+  top: 100%;
+  border-width: 8px 8px 0 0;
+  border-color: white transparent transparent transparent;
+}
+
+.courseIntro .time ol li:nth-child(even) div {
+  top: calc(100% + 16px);
+}
+
+.courseIntro .time ol li:nth-child(even) div::before {
+  top: -8px;
+  border-width: 8px 0 0 8px;
+  border-color: transparent transparent transparent white;
+}
 /*# sourceMappingURL=CourseIntro.css.map */
