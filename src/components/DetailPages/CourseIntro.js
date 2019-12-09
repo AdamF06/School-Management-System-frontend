@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom'
-import { Icon, Timeline } from 'antd'
+import { Icon } from 'antd'
 import './CourseIntro.css'
 
 class CourseIntro extends Component {
@@ -42,7 +42,13 @@ class CourseIntro extends Component {
                         <button>Join Now</button>
                     </div>
                 </section>
-                <div className='courseIntro-nav'></div>
+                {/* <div className='courseIntro-nav'>
+                    <button>Overview</button>
+                    <button>Syllabus</button>
+                    <button>Time</button>
+                    <button>Teacher</button>
+
+                </div> */}
                 <div className="courseIntro-title">
                     <h3>Course Overview</h3>
                     <h4>Course Overview</h4>
@@ -148,19 +154,19 @@ class CourseIntro extends Component {
                         <li>
                             <div>
                                 <time>1st Jan, 2020</time>
-                                <p>Class Start</p> 
+                                <p>Class Start</p>
                             </div>
                         </li>
                         <li>
                             <div>
-                                <time>1st Mar, 2020</time> 
+                                <time>1st Mar, 2020</time>
                                 <p>Class end, internship Start </p>
                             </div>
                         </li>
                         <li>
                             <div>
-                                <time>1st May, 2020</time> 
-                                <p>Get your offer! </p>                   
+                                <time>1st May, 2020</time>
+                                <p>Get your offer! </p>
                             </div>
                         </li>
                         <li></li>
@@ -169,10 +175,102 @@ class CourseIntro extends Component {
                 <div className="courseIntro-title">
                     <h3>Course Teachers</h3>
                     <h4>Course Teachers</h4>
-                </div>
+                </div>            
                 <section className='teacher'>
-                    <h1> teacher </h1>
-                </section>
+                    <div className="teacher-card">
+                        <div className="teacher-card__avatar">
+                            <img src={require('../Emrollment/JRIcon.png')} alt="icon img"></img>
+
+                        </div>
+                        <div className="teacher-card__name">
+                            Some Teacher
+                        </div>
+                        <div className="teacher-card__title">
+                            P8
+                        </div>
+                        <div className="teacher-card__bio">
+                            xxxxxxxxxxx xxxxxxxxxxx
+                            xxxxxxxxxxx xxxxxxxxxxx
+                            xxxxxxxxxxx xxxxxxxxxxx
+                            xxxxxxxxxxx xxxxxxxxxxx
+                        </div>
+                        <div className="teacher-card__company">
+                            <ol>
+                                <li></li>
+                                <li></li>
+                            </ol>
+                        </div>
+                        <div className="teacher-card__tag">
+                            <ol>
+                                <li>Big God</li>
+                                <li>Old Driver</li>
+                                <li>Tech lead</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div className="teacher-card">
+                        <div className="teacher-card__avatar">
+                            <img src={require('../Emrollment/JRIcon.png')} alt="icon img"></img>
+
+                        </div>
+                        <div className="teacher-card__name">
+                            Some Teacher
+                        </div>
+                        <div className="teacher-card__title">
+                            P8
+                        </div>
+                        <div className="teacher-card__bio">
+                            xxxxxxxxxxx xxxxxxxxxxx
+                            xxxxxxxxxxx xxxxxxxxxxx
+                            xxxxxxxxxxx xxxxxxxxxxx
+                            xxxxxxxxxxx xxxxxxxxxxx
+                        </div>
+                        <div className="teacher-card__company">
+                            <ol>
+                                <li></li>
+                                <li></li>
+                            </ol>
+                        </div>
+                        <div className="teacher-card__tag">
+                            <ol>
+                                <li>Big God</li>
+                                <li>Old Driver</li>
+                                <li>Tech lead</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div className="teacher-card">
+                        <div className="teacher-card__avatar">
+                            <img src={require('../Emrollment/JRIcon.png')} alt="icon img"></img>
+
+                        </div>
+                        <div className="teacher-card__name">
+                            Some Teacher
+                        </div>
+                        <div className="teacher-card__title">
+                            P8
+                        </div>
+                        <div className="teacher-card__bio">
+                            xxxxxxxxxxx xxxxxxxxxxx
+                            xxxxxxxxxxx xxxxxxxxxxx
+                            xxxxxxxxxxx xxxxxxxxxxx
+                            xxxxxxxxxxx xxxxxxxxxxx
+                        </div>
+                        <div className="teacher-card__company">
+                            <ol>
+                                <li></li>
+                                <li></li>
+                            </ol>
+                        </div>
+                        <div className="teacher-card__tag">
+                            <ol>
+                                <li>Big God</li>
+                                <li>Old Driver</li>
+                                <li>Tech lead</li>
+                            </ol>
+                        </div>
+                    </div>
+                </section>          
             </div>
         );
     }
