@@ -92,6 +92,20 @@
         }
     }
 
+    &-nav{
+        width:70%;
+        margin:1rem auto;
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px dashed $border;
+        padding:0 5rem;
+        >button{
+            border:none;
+            font-size: 1rem;
+            color:$navyBlue;
+        }
+    }
+
     .overview {
         display        : flex;
         justify-content: space-between;
@@ -302,13 +316,14 @@
     .time {
         white-space: nowrap;
         overflow-x : hidden;
-        width: 80%;
-        margin: 0 auto;
+        width      : 80%;
+        margin     : 0 auto;
+
         ol {
             font-size : 0;
             padding   : 7rem 0;
             transition: all 1s;
-            height: 100px;
+            height    : 100px;
 
             li {
                 position       : relative;
@@ -329,7 +344,8 @@
                     color      : black;
                     background : white;
                     box-shadow : 0 2px 5px rgba(0, 0, 0, 0.3);
-                    &::before{
+
+                    &::before {
                         content     : '';
                         position    : absolute;
                         top         : 100%;
@@ -338,7 +354,7 @@
                         height      : 0;
                         border-style: solid;
                     }
-                    
+
                 }
             }
 
@@ -366,7 +382,8 @@
             li:nth-child(odd) div {
                 top      : -16px;
                 transform: translateY(-100%);
-                &::before{
+
+                &::before {
                     top         : 100%;
                     border-width: 8px 8px 0 0;
                     border-color: white transparent transparent transparent;
@@ -385,4 +402,112 @@
         }
     }
 
+    .teacher {
+        width : 80%;
+        margin: 0 auto 10rem;
+        display: flex;
+        &-card {
+            display         : flex;
+            flex-direction  : column;
+            align-items     : center;
+            border-top      : 1px solid $navyBlue;
+            height          : 24rem;
+            width           : 16rem;
+            text-align      : center;
+            position        : relative;
+            background-color: #fff;
+            margin          : 100px auto 0;
+            box-shadow      : 5px 5px 25px 0px rgba(46, 61, 73, 0.2);
+            border-radius   : 5px;
+
+            &__avatar {
+                width          : 97px;
+                height         : 97px;
+                border         : 1.5px dashed $navyBlue;
+                border-radius  : 50%;
+                overflow       : hidden;
+                background     : white;
+                display        : flex;
+                align-items    : center;
+                justify-content: center;
+                margin         : 0 auto;
+                position       : relative;
+                top            : -50px;
+
+                img {
+                    height       : 85px;
+                    width        : 85px;
+                    border-radius: 50%;
+                }
+            }
+
+            &__name {
+                margin-top: -20px;
+                color     : $navyBlue;
+                font-size : 18px;
+            }
+
+            &__title {
+                margin-top: 5px;
+                color     : rgba(0, 0, 0, 0.85);
+                font-size : 14px;
+            }
+
+            &__bio {
+                height     : 85px;
+                width      : 200px;
+                margin     : 15px auto 0 auto;
+                line-height: 1.29;
+                font-size  : 14px;
+                font-weight: 300;
+                text-align : justify;
+                display    : inline-block;
+                color      : rgba(0, 0, 0, 0.5);
+            }
+
+            &__company {
+                width : 100%;
+                margin: 1rem;
+
+                ol {
+                    display        : flex;
+                    width          : 100%;
+                    justify-content: space-around;
+                }
+
+                li {
+                    height    : 1.5rem;
+                    width     : 3.5rem;
+                    list-style: none;
+
+                    &:nth-child(1) {
+                        background     : url(../../icons/alibaba.png);
+                        background-size: 100% 100%;
+                    }
+
+                    &:nth-child(2) {
+                        background     : url(../../icons/qinghua.png);
+                        background-size: 100% 100%;
+                        ;
+                    }
+                }
+            }
+
+            &__tag {
+                width : 90%;
+                margin: 1rem;
+
+                ol {
+                    display        : flex;
+                    width          : 100%;
+                    justify-content: space-around;
+
+                    li {
+                        list-style: none;
+                        color:$blueGrotto;
+                    }
+                }
+            }
+        }
+    }
 }

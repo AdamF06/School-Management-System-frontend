@@ -149,6 +149,25 @@
   color: #0E86D4;
 }
 
+.courseIntro-nav {
+  width: 70%;
+  margin: 1rem auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-bottom: 1px dashed #C7CDD1;
+  padding: 0 5rem;
+}
+
+.courseIntro-nav > button {
+  border: none;
+  font-size: 1rem;
+  color: #003060;
+}
+
 .courseIntro .overview {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -488,5 +507,136 @@
   top: -8px;
   border-width: 8px 0 0 8px;
   border-color: transparent transparent transparent white;
+}
+
+.courseIntro .teacher {
+  width: 80%;
+  margin: 0 auto 10rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.courseIntro .teacher-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-top: 1px solid #003060;
+  height: 24rem;
+  width: 16rem;
+  text-align: center;
+  position: relative;
+  background-color: #fff;
+  margin: 100px auto 0;
+  -webkit-box-shadow: 5px 5px 25px 0px rgba(46, 61, 73, 0.2);
+          box-shadow: 5px 5px 25px 0px rgba(46, 61, 73, 0.2);
+  border-radius: 5px;
+}
+
+.courseIntro .teacher-card__avatar {
+  width: 97px;
+  height: 97px;
+  border: 1.5px dashed #003060;
+  border-radius: 50%;
+  overflow: hidden;
+  background: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 auto;
+  position: relative;
+  top: -50px;
+}
+
+.courseIntro .teacher-card__avatar img {
+  height: 85px;
+  width: 85px;
+  border-radius: 50%;
+}
+
+.courseIntro .teacher-card__name {
+  margin-top: -20px;
+  color: #003060;
+  font-size: 18px;
+}
+
+.courseIntro .teacher-card__title {
+  margin-top: 5px;
+  color: rgba(0, 0, 0, 0.85);
+  font-size: 14px;
+}
+
+.courseIntro .teacher-card__bio {
+  height: 85px;
+  width: 200px;
+  margin: 15px auto 0 auto;
+  line-height: 1.29;
+  font-size: 14px;
+  font-weight: 300;
+  text-align: justify;
+  display: inline-block;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.courseIntro .teacher-card__company {
+  width: 100%;
+  margin: 1rem;
+}
+
+.courseIntro .teacher-card__company ol {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.courseIntro .teacher-card__company li {
+  height: 1.5rem;
+  width: 3.5rem;
+  list-style: none;
+}
+
+.courseIntro .teacher-card__company li:nth-child(1) {
+  background: url(../../icons/alibaba.png);
+  background-size: 100% 100%;
+}
+
+.courseIntro .teacher-card__company li:nth-child(2) {
+  background: url(../../icons/qinghua.png);
+  background-size: 100% 100%;
+}
+
+.courseIntro .teacher-card__tag {
+  width: 90%;
+  margin: 1rem;
+}
+
+.courseIntro .teacher-card__tag ol {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.courseIntro .teacher-card__tag ol li {
+  list-style: none;
+  color: #0E86D4;
 }
 /*# sourceMappingURL=CourseIntro.css.map */
