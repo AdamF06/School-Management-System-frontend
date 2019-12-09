@@ -46,4 +46,124 @@
 .courseIntro {
   margin-left: 13.2rem;
 }
+
+.courseIntro-title {
+  display: block;
+  text-align: center;
+  font-size: 1.875rem;
+  color: rgba(0, 0, 0, 0.1);
+  margin: 1rem auto;
+  width: 100%;
+}
+
+.courseIntro-title h4 {
+  color: #2D3B45;
+  font-size: 1.5rem;
+  position: relative;
+  top: -1.25rem;
+}
+
+.courseIntro-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 4rem;
+  border-bottom: 1px solid #C7CDD1;
+  padding: 0 1rem;
+}
+
+.courseIntro-header a {
+  text-decoration: none;
+}
+
+.courseIntro-header a:hover {
+  color: #98002E;
+  text-decoration: underline;
+}
+
+.courseIntro-header h4,
+.courseIntro-header a,
+.courseIntro-header span {
+  display: inline-block;
+  font-size: 0.875rem;
+  color: #2D3B45;
+  margin: 1.5rem 0.25rem;
+}
+
+.courseIntro-overview {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 70%;
+  padding: 2rem;
+  margin: 0 auto;
+}
+
+.courseIntro-overview__left {
+  height: 16rem;
+  width: 42rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 1rem;
+  background: url(../Emrollment/course-sample.jpg) rgba(0, 71, 171, 0.3);
+  background-size: cover;
+  background-blend-mode: multiply;
+}
+
+.courseIntro-overview__left h1 {
+  font-size: 2.5rem;
+  color: white;
+}
+
+.courseIntro-overview__left h3 {
+  font-size: 1rem;
+  color: white;
+}
+
+.courseIntro-overview__left button {
+  height: 1.875rem;
+  width: 6.25rem;
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+  border-radius: 1.25rem;
+  outline: none;
+}
+
+.courseIntro-overview__left button:hover {
+  border: 1px solid #0E86D4;
+  color: #0E86D4;
+}
+
+.courseIntro .overview {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 70%;
+  margin: 1rem auto;
+}
+
+.courseIntro .overview__card {
+  border-left: 1px dashed #C7CDD1;
+}
+
+.courseIntro .overview__card:first-child {
+  border: none;
+}
 /*# sourceMappingURL=CourseIntro.css.map */
