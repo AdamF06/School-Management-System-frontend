@@ -1,15 +1,28 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom'
-
+import { Icon, Timeline } from 'antd'
 import './CourseIntro.css'
 
 class CourseIntro extends Component {
-    state = {}
+    state = {
+        hideSkill: false,
+        hideContent: false
+    }
 
     componentDidMount() {
 
     }
 
+    hideSkill = () => {
+        this.setState({
+            hideSkill: !this.state.hideSkill
+        })
+    }
+    hideContent = () => {
+        this.setState({
+            hideContent: !this.state.hideContent
+        })
+    }
     render() {
         const id = this.props.location.pathname.split('/').pop()
         console.log(id)
@@ -36,16 +49,37 @@ class CourseIntro extends Component {
                 </div>
                 <section className="overview">
                     <div className="overview__card">
-                        <h3>Head Level</h3>
+                        <Icon type="bulb" />
+                        <h3>Hard Level</h3>
+                        <h6>Primary</h6>
+                        <h6 className='--black'>Mid</h6>
+                        <h6>Advance</h6>
                     </div>
                     <div className="overview__card">
+                        <Icon type="book" />
                         <h3>Preposition Knowledge</h3>
+                        <h6 className='--black'>
+                            HTML CSS JS xxxxxxxx,
+                            xxxxxxxxxx,
+                            xxxxxxxxxxx
+                        </h6>
                     </div>
                     <div className="overview__card">
+                        <Icon type="schedule" />
                         <h3>Curriculum</h3>
+                        <h6 className='--black'>
+                            Three monthes class,
+                            (90Hours/30 Classes),
+                            + two monthes internship
+                        </h6>
+
                     </div>
                     <div className="overview__card">
+                        <Icon type="dollar" />
                         <h3>Tuition</h3>
+                        <h6 className='--black'>On-line Class: $3,000</h6>
+                        <h6 className='--black'>Off-line Class: $5,000</h6>
+                        <h6 className='--black'>Internship: $2,000</h6>
                     </div>
                 </section>
                 <div className="courseIntro-title">
@@ -53,16 +87,83 @@ class CourseIntro extends Component {
                     <h4>Course Syllabus</h4>
                 </div>
                 <section className="syllabus">
-                    <h1>大纲</h1>
-                    <h3>你将掌握的技能</h3>
-                    <h3>课程内容</h3>
+                    <button
+                        onClick={this.hideSkill}
+                    >Skills you will gain
+                        <Icon type="plus-circle" />
+                    </button>
+                    <ul className={`skills${this.state.hideSkill ? "--hide" : ""}`}>
+                        <li></li><li></li>
+                        <li></li><li></li>
+                        <li></li><li></li>
+                        <li></li><li></li>
+                        <li></li><li></li>
+                        <li></li><li></li>
+                    </ul>
+                    <button
+                        onClick={this.hideContent}
+                    >Course Content
+                        <Icon type="plus-circle" />
+                    </button>
+
+                    <div className={`course-content${this.state.hideContent ? "--hide" : ""}`}>
+                        <div className='card'>
+                            <div className="card__title">
+                                <h2>Web Full Stack classes</h2>
+                                <h2>Time table</h2>
+                            </div>
+                            <h3>Some contents</h3>
+                            <h3>xxxx xxxx xxxx xxxx</h3>
+                            <h3>xxxx xxxx xxxx xxxx</h3>
+                            <h3>xxxx xxxx xxxx xxxx</h3>
+                            <button className="card__download">
+                                Download time table
+                            <Icon type="vertical-align-bottom" />
+                            </button>
+                        </div>
+
+                        <div className='card'>
+                            <div className="card__title">
+                                <h2>Internship</h2>
+                                <h2>Time table</h2>
+                            </div>
+                            <h3>Some contents</h3>
+                            <h3>xxxx xxxx xxxx xxxx</h3>
+                            <h3>xxxx xxxx xxxx xxxx</h3>
+                            <h3>xxxx xxxx xxxx xxxx</h3>
+                            <button className="card__download">
+                                Download time table
+                            <Icon type="vertical-align-bottom" />
+                            </button>
+                        </div>
+                    </div>
                 </section>
+
                 <div className="courseIntro-title">
                     <h3>Course Opening time</h3>
                     <h4>Course Opening time</h4>
                 </div>
                 <section className="time">
-                    <h3> 开课时间 & 地点</h3>
+                    <ol>
+                        <li>
+                            <div>
+                                <time>1934</time> At vero eos et accusamus
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <time>1937</time> Proin quam 
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <time>1940</time> Proin iaculis, nibh eget efficitur
+                            </div>
+                        </li>
+
+                        <li></li>
+                        <li></li>
+                    </ol>
                 </section>
                 <div className="courseIntro-title">
                     <h3>Course Teachers</h3>
