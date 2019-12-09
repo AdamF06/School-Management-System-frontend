@@ -26,7 +26,7 @@ function App() {
           <PrivateRoute path='/dashboard'> <SideBar/> <Dashboard/> </PrivateRoute>
           <PrivateRoute path='/course/:id'> <SideBar/> <CourseHome/> </PrivateRoute>
           <PrivateRoute path='/enroll'> <SideBar/> <Enrollment/>  </PrivateRoute>
-          <PrivateRoute path='/detail/:id'> <SideBar/> <CourseIntro/>  </PrivateRoute>
+          <PrivateRoute path='/detail/:id'> <SideBar/> <CourseIntro/> </PrivateRoute>
           <PrivateRoute path="/user"><SideBar/> <UserRouter /></PrivateRoute>
           <PrivateRoute path='/sale'> <SideBar/> <Sales/> </PrivateRoute>
           <PrivateRoute path="/setting"> <SideBar /><Setting/> </PrivateRoute>
