@@ -39,7 +39,7 @@ class CourseIntro extends Component {
         const id = this.props.location.pathname.split('/').pop()
         console.log(id)
         return (
-            <div className="courseIntro">
+            <div className={`courseIntro ${this.state.isDialogOpen?"courseIntro--lock":""}`}>
                 <div className="courseIntro-header">
                     <Link to="/dashboard">Home</Link>
                     <span> > </span>

@@ -168,11 +168,24 @@
   color: #003060;
 }
 
-.courseIntro-dialog .dialog {
+.courseIntro-dialog .container {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  top: 0;
+}
+
+.courseIntro-dialog .container .dialog {
+  top: -400px;
+  -webkit-animation: drop 0.5s ease forwards;
+          animation: drop 0.5s ease forwards;
+  position: relative;
+  margin: 6.25rem auto;
+  left: -13.125rem;
   width: 30rem;
   height: 12rem;
   border: 1px solid #C7CDD1;
-  margin: 0 auto;
   padding: 1rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -184,9 +197,10 @@
   -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
           box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   border-radius: 0.5rem;
+  background: white;
 }
 
-.courseIntro-dialog .dialog__button-container {
+.courseIntro-dialog .container .dialog__button-container {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -196,25 +210,29 @@
           justify-content: flex-end;
 }
 
-.courseIntro-dialog .dialog__button-container > button {
+.courseIntro-dialog .container .dialog__button-container > button {
   border: none;
-  position: relative;
-  top: -28px;
-  right: -28px;
   outline: none;
   cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: none;
 }
 
-.courseIntro-dialog .dialog__button-container > button i svg {
+.courseIntro-dialog .container .dialog__button-container > button i svg {
   color: #98002E;
   font-size: 1.5rem;
 }
 
-.courseIntro-dialog .dialog h3 {
+.courseIntro-dialog .container .dialog h3 {
   color: #0E86D4;
 }
 
-.courseIntro-dialog .dialog .confirm {
+.courseIntro-dialog .container .dialog .confirm {
   width: 6rem;
   height: 2rem;
   color: #055C9D;
@@ -224,6 +242,36 @@
   cursor: pointer;
   margin: 1rem 0;
   font-size: 1rem;
+}
+
+@-webkit-keyframes drop {
+  0% {
+    opacity: 0;
+  }
+  70% {
+    -webkit-transform: translateY(450px);
+            transform: translateY(450px);
+  }
+  100% {
+    -webkit-transform: translateY(400px);
+            transform: translateY(400px);
+    opacity: 1;
+  }
+}
+
+@keyframes drop {
+  0% {
+    opacity: 0;
+  }
+  70% {
+    -webkit-transform: translateY(450px);
+            transform: translateY(450px);
+  }
+  100% {
+    -webkit-transform: translateY(400px);
+            transform: translateY(400px);
+    opacity: 1;
+  }
 }
 
 .courseIntro .overview {
