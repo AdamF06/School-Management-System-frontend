@@ -37,7 +37,6 @@ class CourseIntro extends Component {
     }
     render() {
         const id = this.props.location.pathname.split('/').pop()
-        console.log(id)
         return (
             <div className={`courseIntro ${this.state.isDialogOpen?"courseIntro--lock":""}`}>
                 <div className="courseIntro-header">
