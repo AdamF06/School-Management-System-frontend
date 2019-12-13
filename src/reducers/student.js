@@ -1,6 +1,7 @@
 export const initialState = {
-    course:[],
-    err:''
+    info:{},
+    course: [],
+    err: ''
 };
 
 const student = (state = initialState, action) => {
@@ -8,9 +9,18 @@ const student = (state = initialState, action) => {
         case 'FETCH_SUCCEEDED':
             return {
                 ...state,
-                course:action.data.data,
+                course: action.data.data,
             };
         case 'FETCH_FAILED':
+            return {
+                ...state,
+            };
+        case 'FETCH_STUDENT_SUCCEEDED':
+            return {
+                ...state,
+                info: action.data.data,
+            };
+        case 'FETCH_STUDENT_FAILED':
             return {
                 ...state,
             };

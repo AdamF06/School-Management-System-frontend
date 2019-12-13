@@ -59,7 +59,10 @@ class Profile extends Component {
     })
   }
 
+  componentDidMount(){}
   render() {
+    console.log(window.localStorage)
+    const {student_ID} = window.localStorage.userInfo
     return (
       <div className='profile'>
 
@@ -78,14 +81,14 @@ class Profile extends Component {
             <div className="main__body">
               <div className="main__body__left">
                 {leftItems.map(
-                  (item) => <Items {...item} />
+                  (item, index) => <Items {...item} key = {index}/>
                 )}
               </div>
 
               <div className="main__body__right">
 
                 {rightItems.map(
-                  (item) => <Items {...item} />
+                  (item, index) => <Items {...item} key = {index} />
                 )}
               </div>
 
