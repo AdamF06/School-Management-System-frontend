@@ -6,7 +6,6 @@ import {
 } from '../Icon/Icon'
 import { connect } from 'react-redux';
 import {
-    fetchCourse,
     setCurrentCourseId,
     getStudent
 } from '../../actions'
@@ -15,18 +14,16 @@ import DashboardCard from './DashboardCard'
 class Dashboard extends Component {
 
     componentDidMount() {
-        const { fetchCourse, getStudent } = this.props
+        const { getStudent } = this.props
         getStudent()        
-        fetchCourse()
     }
     setId = (id) => {
         this.props.setCurrentCourseId({id})
     }
 
     render() {
-        const { course,info,testCourse } = this.props
+        const { course,info } = this.props
         console.log(course,info)
-        console.log(testCourse)
         return (
             <div className="dashboardContainer">
                 <div className="dashboardBody">
@@ -36,7 +33,7 @@ class Dashboard extends Component {
                         </div>
                         <div className="main__dashboardContainer">
                             {
-                                testCourse.map((item, index) =>
+                                course.map((item, index) =>
                                     <Link to={`/course/${item.course_ID}`}
                                         onClick={() => { this.setId(item.course_ID) }}
                                         key={index}>
@@ -78,11 +75,9 @@ function mapStateToProps(state) {
         info:student.info,
         course: student.course,
         err: student.err,
-        testCourse:student.testCourse
     };
 }
 export default connect(mapStateToProps, {
-    fetchCourse,
     setCurrentCourseId,
     getStudent
 })(Dashboard);
