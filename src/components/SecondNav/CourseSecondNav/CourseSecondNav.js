@@ -8,7 +8,7 @@ class CourseSecondNav extends Component {
 
     render() {
         const { reset } = this.props
-        console.log(this.props.course)
+        // console.log(this.props.course)
         return (
             <div className="courseSecondNav">
                 <div className="courseSecondNav__header">
