@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './Profile.css';
 import Items from '../Common/Items'
-import {updateStudent} from '../../../actions'
+import { updateStudent } from '../../../actions'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPortrait, faEdit, faPhoneSquare, faSchool, faIdBadge, faMapMarkedAlt } from '@fortawesome/free-solid-svg-icons'
 const Port = <FontAwesomeIcon icon={faPortrait} size="10x" color="grey" />
@@ -15,9 +15,16 @@ const Address = <FontAwesomeIcon icon={faMapMarkedAlt} size="1x" color="grey" />
 
 class Profile extends Component {
   state = {
-    editActive: false
+    editActive: false,
+    field: {}
   }
   save = () => {
+    const { field } = this.state
+    Object.keys(field).forEach(
+      key=> {if(!field[key]){field[key]=this.props.info[key]}}
+    )
+
+    console.log(field)
     this.setState({
       editActive: false
     })
@@ -25,6 +32,11 @@ class Profile extends Component {
   changing = () => {
     this.setState({
       editActive: true
+    })
+  }
+  addField = (key, data) => {
+    this.setState({
+      field: Object.assign({}, this.state.field, { [key]: data })
     })
   }
   render() {
@@ -45,38 +57,42 @@ class Profile extends Component {
       {
         icon: Port_s,
         labelName: "First Name",
+        name: "first_name",
         placeHolder: first_name
 
       },
       {
         icon: Port_s,
         labelName: "Last Name",
+        name: "last_name",
         placeHolder: last_name
 
       },
       {
         icon: Mobile,
         labelName: "Mobile",
+        name: "mobile_number",
         placeHolder: mobile_number
 
       },
       {
         icon: School,
         labelName: "School",
+        name: "school",
         placeHolder: school
       },
       {
         icon: Title,
         labelName: "Title",
+        name: "title",
         placeHolder: title
       },
     ]
 
     let courseName = course.map((item) => item.course_name)
     let finace = course.map((item) => item.paied).reduce((accumulator, currentValue) => accumulator + currentValue)
-    this.props.updateStudent({"mobile_number":1111})
+    //this.props.updateStudent({"mobile_number":1111})
     return (
-
       <div className='profile'>
         <div className="profile__avatarContainer">
           <div className='avatar'> {Port} </div>
@@ -97,7 +113,9 @@ class Profile extends Component {
                     <Items
                       {...item}
                       key={index}
+                      name={item.name}
                       changing={this.changing}
+                      addField={this.addField}
                     />
                 )}
               </div>

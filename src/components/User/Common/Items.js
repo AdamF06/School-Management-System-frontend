@@ -1,19 +1,28 @@
-import React from 'react'
+import React, { Component } from 'react';
 
-const Items = (args) => {
-    const { icon, labelName, placeHolder, changing } = args
-
-    return (
-        <div className="item">
-            <input
-                placeholder={placeHolder}
-                onChange={changing}
-            ></input>
-            <div className="item__label">
-                <h2>{icon}</h2>
-                <h2>{labelName}</h2>
+class Items extends Component {
+    state = {}
+    itemInput = (e) => {
+        const {addField,changing} = this.props
+        addField(e.target.name,e.target.value)
+        changing()
+    }
+    render() {
+        const { icon, labelName, placeHolder, name } = this.props
+        return (
+            <div className="item">
+                <input
+                    name={name}
+                    placeholder={placeHolder}
+                    onChange={ (e)=>{this.itemInput(e)}}
+                ></input>
+                <div className="item__label">
+                    <h2>{icon}</h2>
+                    <h2>{labelName}</h2>
+                </div>
             </div>
-        </div>
-    )
+        );
+    }
 }
+
 export default Items;
