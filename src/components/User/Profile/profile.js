@@ -23,8 +23,7 @@ class Profile extends Component {
     Object.keys(field).forEach(
       key=> {if(!field[key]){field[key]=this.props.info[key]}}
     )
-
-    console.log(field)
+    this.props.updateStudent(field)
     this.setState({
       editActive: false
     })
