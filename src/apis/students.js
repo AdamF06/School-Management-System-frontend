@@ -11,6 +11,14 @@ const getStudentApi = async () =>{
     return Axios.get(url, tokenHeader) 
 }
 
+const updateStudentApi = (data)=>{
+    const { userInfo } = window.localStorage
+    const _id = JSON.parse(userInfo)._id
+    const url = 'http://127.0.0.1:8080/students/' + _id; 
+    return Axios.put(url,data)
+}
+
 export {
-    getStudentApi
+    getStudentApi,
+    updateStudentApi
 }
