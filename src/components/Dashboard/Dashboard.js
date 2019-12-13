@@ -7,24 +7,26 @@ import {
 import { connect } from 'react-redux';
 import {
     fetchCourse,
-    setCurrentCourseId
+    setCurrentCourseId,
+    getStudent
 } from '../../actions'
 import DashboardCard from './DashboardCard'
 
 class Dashboard extends Component {
 
     componentDidMount() {
-        const { fetchCourse } = this.props
+        const { fetchCourse, getStudent } = this.props
         fetchCourse()
+        getStudent()
     }
     setId = (id) => {
         this.props.setCurrentCourseId({id})
     }
 
     render() {
-        const { course } = this.props
-        console.log(course)
-
+        const { course,info } = this.props
+        //console.log(course)
+        console.log(info)
         return (
             <div className="dashboardContainer">
                 <div className="dashboardBody">
@@ -59,10 +61,10 @@ class Dashboard extends Component {
                 </div>
                 <div className="footer">
                     <div className="footer__container">
-                        <a href="www.google.com">Privacy policy</a>
-                        <a href="www.google.com">Acceptable Use policy</a>
-                        <a href="www.google.com">Facebook</a>
-                        <a href="www.google.com">Twitter</a>
+                        <a href="/">Privacy policy</a>
+                        <a href="/">Acceptable Use policy</a>
+                        <a href="/">Facebook</a>
+                        <a href="/">Twitter</a>
                     </div>
                 </div>
             </div>
@@ -73,12 +75,14 @@ class Dashboard extends Component {
 function mapStateToProps(state) {
     const { student } = state;
     return {
+        info:student.info,
         course: student.course,
         err: student.err,
     };
 }
 export default connect(mapStateToProps, {
     fetchCourse,
-    setCurrentCourseId
+    setCurrentCourseId,
+    getStudent
 })(Dashboard);
 
