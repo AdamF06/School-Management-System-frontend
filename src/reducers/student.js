@@ -1,5 +1,5 @@
 export const initialState = {
-    info:{},
+    info: {},
     course: [],
     err: ''
 };
@@ -10,7 +10,7 @@ const student = (state = initialState, action) => {
             return {
                 ...state,
                 info: action.data.data,
-                course:action.data.data.course
+                course: action.data.data.course
             };
         case 'FETCH_STUDENT_FAILED':
             return {
