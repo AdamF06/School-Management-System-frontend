@@ -12,12 +12,16 @@ import {
 import { withRouter } from "react-router";
 
 class Form extends Component {
-    state = {
-        panel: "left",
-        login_email: '',
-        login_password: '',
-        login_success: ''
+    constructor(props) {
+        super(props)
+        this.state = {
+            panel: "left",
+            login_email: '',
+            login_password: '',
+            login_success: ''
+        }
     }
+
 
     switchToSignin() {
         this.setState({
@@ -57,11 +61,19 @@ class Form extends Component {
         }
     }
 
+    // how to fix this? 'Mixmun update'
+    // componentDidMount(){
+    //     const {history}= this.props
+    //     if(window.localStorage.token){
+    //         history.push('/dashboard');
+    //     }
+    // }
+
     render() {
         const { panel } = this.state
+
         return (
             <div className={`login__form ${panel === "left" ? "" : "right-panel-active"}`} >
-
                 <div className="login__form__signup formContainer signupContainer">
                     <form action="#">
                         <h1>Create Account</h1>

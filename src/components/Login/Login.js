@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
+import { Particles } from 'react-particles-js';
+import { connect } from 'react-redux';
 import './Login.css'
 import {
     Rocket,
     Group,
     Chat
 } from '../Icon/Icon'
-import { Particles } from 'react-particles-js';
-import { connect } from 'react-redux';
 import Form from './Form';
 
 const particlesPrep = {
