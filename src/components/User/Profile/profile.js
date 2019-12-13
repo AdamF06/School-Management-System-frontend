@@ -101,7 +101,7 @@ class Profile extends Component {
               </div>
             </div>
             <div className="main__body__item">
-              <input placeholder={address_1}></input>
+              <input placeholder={address_1} onChange={this.changing}></input>
               <div className="item__label">
                 <h2> {Address} </h2>
                 <h2>First Address</h2>
@@ -109,7 +109,7 @@ class Profile extends Component {
             </div>
 
             <div className="main__body__item">
-              <input placeholder={address_2}></input>
+              <input placeholder={address_2} onChange={this.changing}></input>
               <div className="item__label">
                 <h2> {Address} </h2>
                 <h2>Second Address</h2>
