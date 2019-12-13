@@ -16,17 +16,17 @@ class Dashboard extends Component {
 
     componentDidMount() {
         const { fetchCourse, getStudent } = this.props
+        getStudent()        
         fetchCourse()
-        getStudent()
     }
     setId = (id) => {
         this.props.setCurrentCourseId({id})
     }
 
     render() {
-        const { course,info } = this.props
-        //console.log(course)
-        console.log(info)
+        const { course,info,testCourse } = this.props
+        console.log(course,info)
+        console.log(testCourse)
         return (
             <div className="dashboardContainer">
                 <div className="dashboardBody">
@@ -36,7 +36,7 @@ class Dashboard extends Component {
                         </div>
                         <div className="main__dashboardContainer">
                             {
-                                course.map((item, index) =>
+                                testCourse.map((item, index) =>
                                     <Link to={`/course/${item.course_ID}`}
                                         onClick={() => { this.setId(item.course_ID) }}
                                         key={index}>
@@ -78,6 +78,7 @@ function mapStateToProps(state) {
         info:student.info,
         course: student.course,
         err: student.err,
+        testCourse:student.testCourse
     };
 }
 export default connect(mapStateToProps, {
