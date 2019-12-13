@@ -141,7 +141,7 @@
 }
 
 .profile__mainContainer .main__body__left .item {
-  height: 4rem;
+  height: 5rem;
   width: 90%;
 }
 
@@ -164,55 +164,13 @@
 
 .profile__mainContainer .main__body__left .item input {
   width: 100%;
-  height: 1.5rem;
+  height: 2rem;
   margin-top: 0.5rem;
-}
-
-.profile__mainContainer .main__body__left .item input:hover {
-  -webkit-box-shadow: inset 0px 1px 8px rgba(0, 0, 0, 0.2);
-          box-shadow: inset 0px 1px 8px rgba(0, 0, 0, 0.2);
-}
-
-.profile__mainContainer .main__body__right {
-  width: 50%;
-  padding: 0 0.25rem;
-}
-
-.profile__mainContainer .main__body__right .item {
-  height: 4rem;
-  width: 90%;
-}
-
-.profile__mainContainer .main__body__right .item__label {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-}
-
-.profile__mainContainer .main__body__right .item__label h2 {
-  font-size: 1.2rem;
-}
-
-.profile__mainContainer .main__body__right .item__label h2:last-child {
-  margin-left: 0.75rem;
-}
-
-.profile__mainContainer .main__body__right .item input {
-  width: 100%;
-  height: 1.5rem;
-  margin-top: 0.5rem;
-}
-
-.profile__mainContainer .main__body__right .item input:hover {
-  -webkit-box-shadow: inset 0px 1px 8px rgba(0, 0, 0, 0.2);
-          box-shadow: inset 0px 1px 8px rgba(0, 0, 0, 0.2);
+  padding: 0.25rem;
 }
 
 .profile__mainContainer .main__body__item {
-  height: 4rem;
+  height: 5rem;
   width: 90%;
   margin-left: 1rem;
 }
@@ -236,13 +194,8 @@
 
 .profile__mainContainer .main__body__item input {
   width: 100%;
-  height: 1.5rem;
+  height: 2rem;
   margin-top: 0.5rem;
-}
-
-.profile__mainContainer .main__body__item input:hover {
-  -webkit-box-shadow: inset 0px 1px 8px rgba(0, 0, 0, 0.2);
-          box-shadow: inset 0px 1px 8px rgba(0, 0, 0, 0.2);
 }
 
 .profile__mainContainer .main__body__setButton {
@@ -280,13 +233,33 @@
 }
 
 .profile__courseContainer {
-  margin: 1rem;
+  margin: 1rem 0 0 4rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .profile__courseContainer h2 {
   font-size: 1.2rem;
   margin-top: 2rem;
   color: #13294b;
+}
+
+.profile__courseContainer h2 > span {
+  color: #98002E;
+}
+
+.profile__courseContainer ul {
+  border-top: 1px dashed #C7CDD1;
+  border-bottom: 1px dashed #C7CDD1;
+  margin: 1rem 0;
+}
+
+.profile__courseContainer ul li {
+  list-style: none;
+  margin: 0.5rem;
+  font-size: 0.875rem;
+  color: #0E86D4;
 }
 
 .profile__courseContainer button {
