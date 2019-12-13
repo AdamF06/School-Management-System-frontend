@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './Profile.css';
 import Items from '../Common/Items'
+import {updateStudent} from '../../../actions'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPortrait, faEdit, faPhoneSquare, faSchool, faIdBadge, faMapMarkedAlt } from '@fortawesome/free-solid-svg-icons'
 const Port = <FontAwesomeIcon icon={faPortrait} size="10x" color="grey" />
@@ -73,6 +74,7 @@ class Profile extends Component {
 
     let courseName = course.map((item) => item.course_name)
     let finace = course.map((item) => item.paied).reduce((accumulator, currentValue) => accumulator + currentValue)
+    this.props.updateStudent({"mobile_number":1111})
     return (
 
       <div className='profile'>
@@ -149,4 +151,6 @@ function mapStateToProps(state) {
     _id: student._id
   };
 }
-export default connect(mapStateToProps, {})(Profile);
+export default connect(mapStateToProps, {
+  updateStudent
+})(Profile);

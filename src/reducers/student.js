@@ -16,6 +16,16 @@ const student = (state = initialState, action) => {
             return {
                 ...state,
             };
+        case 'UPDATE_STUDENT_SUCCEEDED':
+            return {
+                ...state,
+                info: action.data.data,
+                course: action.data.data.course
+            };
+        case 'UPDATE_STUDENT_FAILED':
+            return {
+                ...state,
+            };
         default:
             return state;
     }
