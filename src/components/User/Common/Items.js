@@ -1,14 +1,18 @@
 import React from 'react'
 
 const Items = (args) => {
-    const { icon, labelName,placeHolder } = args
+    const { icon, labelName, placeHolder, changing } = args
+
     return (
         <div className="item">
+            <input
+                placeholder={placeHolder}
+                onChange={changing}
+            ></input>
             <div className="item__label">
                 <h2>{icon}</h2>
                 <h2>{labelName}</h2>
             </div>
-            <input placeholder={placeHolder}></input>
         </div>
     )
 }

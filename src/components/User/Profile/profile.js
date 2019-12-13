@@ -4,7 +4,6 @@ import './Profile.css';
 import Items from '../Common/Items'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPortrait, faEdit, faPhoneSquare, faSchool, faIdBadge, faMapMarkedAlt } from '@fortawesome/free-solid-svg-icons'
-
 const Port = <FontAwesomeIcon icon={faPortrait} size="10x" color="grey" />
 const Pencil = <FontAwesomeIcon icon={faEdit} size="1x" color="white" />
 const Port_s = <FontAwesomeIcon icon={faPortrait} size="1x" color="grey" />
@@ -15,17 +14,18 @@ const Address = <FontAwesomeIcon icon={faMapMarkedAlt} size="1x" color="grey" />
 
 class Profile extends Component {
   state = {
-    savebuttonActive: false
+    editActive: false
   }
-
-  toggle = (e) => {
-    e.preventDefault();
-    const current = this.state.savebuttonActive
+  save = () => {
     this.setState({
-      savebuttonActive: current ? false : true
+      editActive: false
     })
   }
-
+  changing = () => {
+    this.setState({
+      editActive: true
+    })
+  }
   render() {
     const {
       first_name,
@@ -91,31 +91,34 @@ class Profile extends Component {
             <div className="main__body">
               <div className="main__body__left">
                 {infoItems.map(
-                  (item, index) => <Items {...item} key={index} />
+                  (item, index) =>
+                    <Items
+                      {...item}
+                      key={index}
+                      changing={this.changing}
+                    />
                 )}
               </div>
             </div>
             <div className="main__body__item">
+              <input placeholder={address_1}></input>
               <div className="item__label">
                 <h2> {Address} </h2>
                 <h2>First Address</h2>
               </div>
-              <input placeholder={address_1}></input>
             </div>
 
             <div className="main__body__item">
+              <input placeholder={address_2}></input>
               <div className="item__label">
                 <h2> {Address} </h2>
                 <h2>Second Address</h2>
               </div>
-              <input placeholder={address_2}></input>
             </div>
 
             <div className="main__body__setButton">
-              <button className='editbutton' onClick={this.toggle}>Edit</button>
-              <button className={`savebutton ${this.state.savebuttonActive ? '' : '--inactive'}`}
-                disabled={!this.state.savebuttonActive}
-                onClick={this.toggle}
+              <button className={`savebutton ${this.state.editActive ? '' : '--inactive'}`}
+                onClick={this.save}
               >Save</button>
             </div>
           </div>
