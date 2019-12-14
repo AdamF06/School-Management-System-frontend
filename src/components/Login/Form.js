@@ -60,7 +60,6 @@ class Form extends Component {
             }
         }
     }
-
     // how to fix this? 'Mixmun update'
     // componentDidMount(){
     //     const {history}= this.props
@@ -68,10 +67,8 @@ class Form extends Component {
     //         history.push('/dashboard');
     //     }
     // }
-
     render() {
         const { panel } = this.state
-
         return (
             <div className={`login__form ${panel === "left" ? "" : "right-panel-active"}`} >
                 <div className="login__form__signup formContainer signupContainer">

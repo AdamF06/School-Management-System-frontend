@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Particles } from 'react-particles-js';
 import { connect } from 'react-redux';
+import { withRouter } from "react-router";
 import './Login.css'
 import {
     Rocket,
@@ -29,11 +30,27 @@ const particlesPrep = {
 }
 
 class Login extends Component {
+
+    constructor(props) {
+        super(props)
+        this.state = {}
+    }
+
+    // componentDidMount() {
+    //    this.ckeckStatus()
+    // }
+    // ckeckStatus=()=>{
+    //     if (window.localStorage.token) {
+    //     const { history } = this.props
+    //     history.push('/dashboard');
+    //     }
+    // }
+
     render() {
         return (
             <div className="login">
                 <div className="login__backGround">
-                <Particles height="100vh" prams={particlesPrep}/>
+                    <Particles height="100vh" prams={particlesPrep} />
                     <img src={require('./logo.png')} alt="icon img"></img>
                     <div className="login__backGround__nav">
                         <ul>
@@ -58,7 +75,7 @@ class Login extends Component {
                         </ul>
                     </div>
                 </div>
-                <Form/>
+                <Form />
             </div>
         );
     }
@@ -72,4 +89,4 @@ function mapStateToProps(state) {
     };
 }
 
-export default connect(mapStateToProps, {})(Login);
+export default connect(mapStateToProps, {})(withRouter(Login));
