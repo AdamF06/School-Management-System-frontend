@@ -2,12 +2,14 @@ import React, { Component } from 'react';
 import { Bars } from '../../Icon/Icon';
 import { connect } from 'react-redux';
 import { Route } from 'react-router-dom'
+import { getCourse } from '../../../actions'
 import CourseThirdNav from '../Nav/CourseThirdNav'
 import './CourseHome.css';
 import HomePage from '../HomePage/HomePage'
 import Assignment from '../Assignment/Assignment'
 import Module from '../Module/Module'
 import Mark from "../Mark/Mark"
+import ModuleDetail from '../Module/ModuleDetail'
 class CourseHome extends Component {
     constructor() {
         super()
@@ -22,9 +24,15 @@ class CourseHome extends Component {
         })
     }
 
+    componentDidMount() {
+        const { id, getCourse } = this.props
+        getCourse(id)
+    }
+
     render() {
         const { displayPage } = this.state
         const id = this.props.id
+        console.log(this.props.course)
         return (
             <div className="courseHomePageContainer">
                 <div className="courseHomePage">
@@ -38,8 +46,15 @@ class CourseHome extends Component {
                         <CourseThirdNav changePage={this.changePage} id={id} />
                         <Route exact path="/course/:id"> <HomePage /> </Route>
                         <Route path="/course/:id/mark"> <Mark /> </Route>
-                        <Route path="/course/:id/assignment"> <Assignment /> </Route>
-                        <Route path="/course/:id/module"> <Module /> </Route>
+                        <Route exact path="/course/:id/assignment"> <Assignment /> </Route>
+                        <Route exact path="/course/:id/module">
+                            <Module
+                                id={id}
+                                module={this.props.course.module}
+                            />
+                        </Route>
+                        <Route path="/course/:id/module/:id"> <ModuleDetail /> </Route>
+
                     </div>
                 </div>
             </div>
@@ -47,9 +62,12 @@ class CourseHome extends Component {
     }
 }
 function mapStateToProps(state) {
-    const { courseid } = state;
+    const { courseid, course } = state;
     return {
-        id: courseid.id
+        id: courseid.id,
+        course: course.data
     };
 }
-export default connect(mapStateToProps)(CourseHome)
+export default connect(mapStateToProps, {
+    getCourse
+})(CourseHome)
