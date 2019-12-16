@@ -27,13 +27,7 @@ const student = (state = initialState, action) => {
             return {
                 ...state,
             };
-        case 'UPLOAD_STUDENT_AVATAR_SUCCEEDED':
-            const avatarKey = action.data.data.key.split("/").pop()
-            // console.log('success',avatarKey)
-            return {
-                ...state,
-                avatarKey  
-            };
+
         case 'UPLOAD_STUDENT_AVATAR__FAILED':
             console.log('filed')
             return {
