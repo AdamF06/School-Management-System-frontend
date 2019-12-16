@@ -1,6 +1,7 @@
 export const initialState = {
     info: {},
     course: [],
+    avatarKey:'',
     err: ''
 };
 
@@ -27,11 +28,14 @@ const student = (state = initialState, action) => {
                 ...state,
             };
         case 'UPLOAD_STUDENT_AVATAR_SUCCEEDED':
-            console.log('success',action.data.data)
+            const avatarKey = action.data.data.key.split("/").pop()
+            // console.log('success',avatarKey)
             return {
                 ...state,
+                avatarKey  
             };
         case 'UPLOAD_STUDENT_AVATAR__FAILED':
+            console.log('filed')
             return {
                 ...state,
             };
