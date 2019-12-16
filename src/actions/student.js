@@ -51,17 +51,12 @@ export const updateStudentFailed = err => ({
 export const uploadStudentAvatar = (avatar) => dispatch => {
   dispatch(uploadStudentAvatarRequested())
   uploadAvatar(avatar)
-    .then(res => dispatch(uploadStudentAvatarSucceeded(res)))
+    .then(res =>dispatch(updateStudent({avatar:res.data.key.split("/").pop()})))
     .catch(err => dispatch(uploadStudentAvatarFailed(err)))
 };
 
 export const uploadStudentAvatarRequested = () => ({
   type: 'UPLOAD_STUDENT_AVATAR_REQUESTED'
-});
-
-export const uploadStudentAvatarSucceeded = res => ({
-  type: 'UPLOAD_STUDENT_AVATAR_SUCCEEDED',
-  data: res
 });
 
 export const uploadStudentAvatarFailed = err => ({
