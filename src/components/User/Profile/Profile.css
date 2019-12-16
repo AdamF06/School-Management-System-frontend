@@ -69,13 +69,33 @@
   border-right: 1px solid #C7CDD1;
 }
 
-.profile__avatarContainer .avatar {
-  height: 11rem;
-  width: 11rem;
+.profile__avatarContainer label {
+  position: relative;
 }
 
-.profile__avatarContainer .avatar svg {
-  font-size: 11rem;
+.profile__avatarContainer label input {
+  position: absolute;
+  opacity: 0;
+  height: 7rem;
+  width: 7rem;
+  left: 0;
+}
+
+.profile__avatarContainer label .avatar {
+  height: 7rem;
+  width: 7rem;
+  border: 1px solid #C7CDD1;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.profile__avatarContainer label .avatar svg {
+  height: 100%;
+  width: 100%;
+}
+
+.profile__avatarContainer label .avatar:hover {
+  border: 1px solid #0E86D4;
 }
 
 .profile__avatarContainer .edit {

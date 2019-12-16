@@ -16,14 +16,43 @@
         text-align    : center;
         border-right  : 1px solid $border;
 
-        .avatar {
-            height: 11rem;
-            width : 11rem;
+        label {
+            position: relative;
 
-            svg {
-                font-size: 11rem;
+            input {
+                position: absolute;
+                opacity : 0;
+                height  : 7rem;
+                width   : 7rem;
+                left    : 0;
+            }
+
+            .avatar {
+                height       : 7rem;
+                width        : 7rem;
+                border       : 1px solid $border;
+                border-radius: 50%;
+                overflow     : hidden;
+
+                svg {
+                    height: 100%;
+                    width : 100%;
+                }
+
+                &:hover {
+                    border: 1px solid $blueGrotto;
+                }
             }
         }
+
+        // .avatar {
+        //     height       : 8rem;
+        //     width        : 8rem;
+        //     border       :2px solid $border;
+        //     border-radius: 50%;
+        //     overflow     : hidden;
+
+        // }
 
         .edit {
             border-radius  : 0.5rem;
@@ -135,9 +164,9 @@
                 }
 
                 &__item {
-                    height: 3.5rem;
-                    width : 90%;
-                    margin: 1.25rem;
+                    height  : 3.5rem;
+                    width   : 90%;
+                    margin  : 1.25rem;
                     position: relative;
                     overflow: hidden;
 

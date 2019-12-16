@@ -25,6 +25,12 @@ import {
     faLaptopCode,
     faChevronRight,
     faStar,
+    faPortrait,
+     faEdit,
+      faPhoneSquare,
+       faSchool, 
+       faIdBadge, 
+       faMapMarkedAlt
 }from '@fortawesome/free-solid-svg-icons'
 import { 
     faQuestionCircle,
@@ -74,8 +80,13 @@ export const DataScience=  <FontAwesomeIcon icon={faDatabase} size="1x" color="b
 export const Right=  <FontAwesomeIcon icon={faChevronRight} size="1x" color="black"/>
 export const Star=  <FontAwesomeIcon icon={faStar} size="1x" color="gold"/>
 
-
-
+export const Port = <FontAwesomeIcon icon={faPortrait} size="10x" color="grey" />
+export const Pencil = <FontAwesomeIcon icon={faEdit} size="1x" color="white" />
+export const Port_s = <FontAwesomeIcon icon={faPortrait} size="1x" color="grey" />
+export const Mobile = <FontAwesomeIcon icon={faPhoneSquare} size="1x" color="grey" />
+export const School = <FontAwesomeIcon icon={faSchool} size="1x" color="grey" />
+export const Title = <FontAwesomeIcon icon={faIdBadge} size="1x" color="grey" />
+export const Address = <FontAwesomeIcon icon={faMapMarkedAlt} size="1x" color="grey" />
 
 
 

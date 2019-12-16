@@ -26,6 +26,15 @@ const student = (state = initialState, action) => {
             return {
                 ...state,
             };
+        case 'UPLOAD_STUDENT_AVATAR_SUCCEEDED':
+            console.log('success',action.data.data)
+            return {
+                ...state,
+            };
+        case 'UPLOAD_STUDENT_AVATAR__FAILED':
+            return {
+                ...state,
+            };
         default:
             return state;
     }

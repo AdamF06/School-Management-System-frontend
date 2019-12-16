@@ -2,16 +2,19 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './Profile.css';
 import Items from '../Common/Items'
-import { updateStudent } from '../../../actions'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPortrait, faEdit, faPhoneSquare, faSchool, faIdBadge, faMapMarkedAlt } from '@fortawesome/free-solid-svg-icons'
-const Port = <FontAwesomeIcon icon={faPortrait} size="10x" color="grey" />
-const Pencil = <FontAwesomeIcon icon={faEdit} size="1x" color="white" />
-const Port_s = <FontAwesomeIcon icon={faPortrait} size="1x" color="grey" />
-const Mobile = <FontAwesomeIcon icon={faPhoneSquare} size="1x" color="grey" />
-const School = <FontAwesomeIcon icon={faSchool} size="1x" color="grey" />
-const Title = <FontAwesomeIcon icon={faIdBadge} size="1x" color="grey" />
-const Address = <FontAwesomeIcon icon={faMapMarkedAlt} size="1x" color="grey" />
+import {
+  updateStudent,
+  uploadStudentAvatar
+} from '../../../actions'
+
+import {
+  Port_s,
+  Mobile,
+  School,
+  Title,
+  Address
+} from '../../Icon/Icon'
+import { Icon } from 'antd'
 
 class Profile extends Component {
   state = {
@@ -21,7 +24,7 @@ class Profile extends Component {
   save = () => {
     const { field } = this.state
     Object.keys(field).forEach(
-      key=> {if(!field[key]){field[key]=this.props.info[key]}}
+      key => { if (!field[key]) { field[key] = this.props.info[key] } }
     )
     this.props.updateStudent(field)
     this.setState({
@@ -38,6 +41,17 @@ class Profile extends Component {
       field: Object.assign({}, this.state.field, { [key]: data })
     })
   }
+  uploadAvatar = (e) => {
+    e.preventDefault()
+    let fd = new FormData()
+    const avatar = e.target.files[0]
+    
+    fd.append('path','avatar')
+    fd.append('user',this.props.info.student_ID)
+    fd.append('fileName', avatar.name)
+    fd.append('avatar', avatar)
+    this.props.uploadStudentAvatar(fd)
+  }
   render() {
     const {
       first_name,
@@ -45,7 +59,6 @@ class Profile extends Component {
       student_ID,
       address_1,
       address_2,
-      avatar,
       title,
       course,
       school,
@@ -90,12 +103,19 @@ class Profile extends Component {
 
     let courseName = course.map((item) => item.course_name)
     let finace = course.map((item) => item.paied).reduce((accumulator, currentValue) => accumulator + currentValue)
-    //this.props.updateStudent({"mobile_number":1111})
+    let { avatar } = this.props.info
+    avatar = avatar ? avatar : (<Icon type="user" />)
     return (
       <div className='profile'>
         <div className="profile__avatarContainer">
-          <div className='avatar'> {Port} </div>
-          <button className="edit"> <h6>{Pencil}</h6> <h6> Edit Avatar</h6> </button>
+          <label>
+            <input
+              onChange={(e) => { this.uploadAvatar(e) }}
+              type="file"
+              name="avatar"
+              accept="image/gif,image/jpeg,image/x-png" />
+            <div className="avatar">{avatar}</div>
+          </label>
         </div>
 
         <div className="profile__mainContainer">
@@ -155,7 +175,7 @@ class Profile extends Component {
           </ul>
           <h2>Your finance: <span>${finace}</span></h2>
           <h2>Need to be paied</h2>
-          <button>Change Password</button>
+          {/* <button>Change Password</button> */}
         </div>
       </div>
     );
@@ -169,5 +189,6 @@ function mapStateToProps(state) {
   };
 }
 export default connect(mapStateToProps, {
-  updateStudent
+  updateStudent,
+  uploadStudentAvatar
 })(Profile);
