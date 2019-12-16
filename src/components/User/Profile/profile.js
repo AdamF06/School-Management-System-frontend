@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Axios from "axios"
 import './Profile.css';
 import Items from '../Common/Items'
 import {
@@ -17,10 +18,15 @@ import {
 import { Icon } from 'antd'
 
 class Profile extends Component {
-  state = {
-    editActive: false,
-    field: {}
+  constructor(props) {
+    super(props)
+    this.state = {
+      editActive: false,
+      field: {},
+      avatar: this.props.info.avatar
+    }
   }
+
   save = () => {
     const { field } = this.state
     Object.keys(field).forEach(
@@ -45,13 +51,27 @@ class Profile extends Component {
     e.preventDefault()
     let fd = new FormData()
     const avatar = e.target.files[0]
-    
-    fd.append('path','avatar')
-    fd.append('user',this.props.info.student_ID)
+
+    fd.append('path', 'avatar')
+    fd.append('user', this.props.info.student_ID)
     fd.append('fileName', avatar.name)
     fd.append('avatar', avatar)
     this.props.uploadStudentAvatar(fd)
   }
+  componentDidMount() {
+    this.downloadAvatar()
+  }
+
+  downloadAvatar = () => {
+    const url = 'http://127.0.0.1:8080/download/' + this.state.avatar + "?path=/avatar";
+    Axios.get(url).then((res) => {
+      this.setState({
+        avatar: <img src={res.data.url} alt="avatar"></img>
+      })
+    })
+      .catch((err) => { console.log(err) })
+  }
+
   render() {
     const {
       first_name,
@@ -103,8 +123,9 @@ class Profile extends Component {
 
     let courseName = course.map((item) => item.course_name)
     let finace = course.map((item) => item.paied).reduce((accumulator, currentValue) => accumulator + currentValue)
-    let { avatar } = this.props.info
-    avatar = avatar ? avatar : (<Icon type="user" />)
+    // let { avatar } = this.props.info
+    // avatar = avatar ? avatar : (<Icon type="user" />)
+    const { avatar } = this.state
     return (
       <div className='profile'>
         <div className="profile__avatarContainer">
@@ -114,7 +135,11 @@ class Profile extends Component {
               type="file"
               name="avatar"
               accept="image/gif,image/jpeg,image/x-png" />
-            <div className="avatar">{avatar}</div>
+            <div className="avatar">
+              {
+                avatar ? avatar : (<Icon type="user" />)
+              }
+            </div>
           </label>
         </div>
 
