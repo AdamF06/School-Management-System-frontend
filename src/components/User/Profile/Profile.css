@@ -94,7 +94,12 @@
   width: 100%;
 }
 
-.profile__avatarContainer label .avatar:hover {
+.profile__avatarContainer label .avatar img {
+  height: 100%;
+  width: 100%;
+}
+
+.profile__avatarContainer label:hover .avatar {
   border: 1px solid #0E86D4;
 }
 
