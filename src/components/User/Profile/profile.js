@@ -185,7 +185,8 @@ function mapStateToProps(state) {
   const { student } = state;
   return {
     info: student.info,
-    _id: student._id
+    _id: student._id,
+    avatarKey: student.avatarKey
   };
 }
 export default connect(mapStateToProps, {
