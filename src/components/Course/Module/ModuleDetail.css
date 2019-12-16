@@ -44,6 +44,62 @@
 }
 
 .module-detail {
-  margin-left: 13.125rem;
+  padding: 1rem;
+}
+
+.module-detail .header {
+  height: 13rem;
+  width: 100%;
+  background: #003060;
+  padding: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.module-detail .header h1 {
+  color: white;
+  font-size: 3rem;
+}
+
+.module-detail .header::after {
+  content: "";
+  background-image: url(../../../icons/JRIcon.png);
+  height: 6rem;
+  width: 6rem;
+  background-size: 100% 100%;
+}
+
+.module-detail .subtitle .wrapper {
+  font-size: 1.8rem;
+  color: rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 40%;
+  margin: 2rem 1rem 1rem 1rem;
+}
+
+.module-detail .subtitle .wrapper h2:last-child {
+  color: #003D7A;
+  font-size: 1.9rem;
+  position: relative;
+  top: -1.5rem;
+}
+
+.module-detail .description p {
+  font-size: 1.5rem;
+  line-height: 1.7;
+  text-align: justify;
+  font-weight: 200;
+  color: #2D3B45;
+}
+
+.module-detail .video {
+  margin: 2rem auto;
 }
 /*# sourceMappingURL=ModuleDetail.css.map */
