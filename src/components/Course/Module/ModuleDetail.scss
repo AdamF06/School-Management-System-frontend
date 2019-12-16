@@ -1,5 +1,53 @@
 @import "../../../common/commonScss.scss";
 
 .module-detail{
-    margin-left: (210rem/16);
+    padding :1rem;
+    .header{
+        height: 13rem;
+        width: 100%;
+        background:$navyBlue;
+        padding:2rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        h1{
+            color: white;
+            font-size: 3rem;
+        }
+        &::after{
+            content: "";
+            background-image: url(../../../icons/JRIcon.png);
+            height: 6rem;
+            width: 6rem;
+            background-size: 100% 100%;
+        }
+    }
+    .subtitle{
+        .wrapper{
+            font-size : 1.8rem;
+            color     : rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 40%;
+            margin: 2rem 1rem 1rem 1rem;
+            h2:last-child {
+                color    :$darkBlue;
+                font-size: 1.9rem;
+                position : relative;
+                top      : -1.5rem;
+            }
+        }
+
+    }
+    .description{
+        p{
+            font-size: 1.5rem;
+            line-height: 1.7;
+            text-align: justify;
+            font-weight: 200;
+            color: $fontColorSmaill;
+        }
+    } 
+    .video{
+        margin: 2rem auto;
+    }
 }
