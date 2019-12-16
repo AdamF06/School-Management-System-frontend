@@ -2,7 +2,7 @@ import {
   getStudentApi,
   updateStudentApi
 } from '../apis/students'
-
+import {uploadAvatar} from '../apis/tools'
 //fetch student info
 export const getStudent = () => dispatch => {
   dispatch(fetchStudentRequested())
@@ -24,6 +24,7 @@ export const fetchStudentFailed = err => ({
   type: 'FETCH_STUDENT_FAILED',
   data: { err }
 });
+
 //update student basic info
 export const updateStudent = (field) => dispatch => {
   dispatch(updateStudentRequested())
@@ -43,5 +44,27 @@ export const updateStudentSucceeded = res => ({
 
 export const updateStudentFailed = err => ({
   type: 'UPDATE_STUDENT_FAILED',
+  data: { err }
+});
+
+//upload avatar
+export const uploadStudentAvatar = (avatar) => dispatch => {
+  dispatch(uploadStudentAvatarRequested())
+  uploadAvatar(avatar)
+    .then(res => dispatch(uploadStudentAvatarSucceeded(res)))
+    .catch(err => dispatch(uploadStudentAvatarFailed(err)))
+};
+
+export const uploadStudentAvatarRequested = () => ({
+  type: 'UPLOAD_STUDENT_AVATAR_REQUESTED'
+});
+
+export const uploadStudentAvatarSucceeded = res => ({
+  type: 'UPLOAD_STUDENT_AVATAR_SUCCEEDED',
+  data: res
+});
+
+export const uploadStudentAvatarFailed = err => ({
+  type: 'UPLOAD_STUDENT_AVATAR_FAILED',
   data: { err }
 });
