@@ -22,7 +22,7 @@
       -ms-flex-direction: column;
           flex-direction: column;
   background: #003060;
-  z-index: 6;
+  z-index: 10;
 }
 
 .navConatiner .primaryNav__top {

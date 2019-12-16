@@ -119,4 +119,8 @@
   text-decoration: underline;
   color: #98002E;
 }
+
+.moduleContainer a {
+  text-decoration: none;
+}
 /*# sourceMappingURL=Module.css.map */

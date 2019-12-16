@@ -211,7 +211,6 @@ function mapStateToProps(state) {
   return {
     info: student.info,
     _id: student._id,
-    avatarKey: student.avatarKey
   };
 }
 export default connect(mapStateToProps, {

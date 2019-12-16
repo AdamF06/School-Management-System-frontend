@@ -2,15 +2,17 @@ import React from 'react';
 import { Paper } from '../../Icon/Icon';
 
 const ListItems = (args) => {
-    const { name, date } = args
+    let { module_name, start_date } = args
+    start_date = start_date.split('T').shift()
+    console.log(start_date)
     return (
         <div className='moduleItem'>
             <div className="header">
                 <div className="header__left">
-                    <h1>{name}</h1>
+                    <h1>{module_name}</h1>
                 </div>
                 <div className="header__right">
-                    <h4>{date}</h4>
+                    <h4>{start_date}</h4>
                 </div>
             </div>
             <div className="body">
@@ -18,7 +20,7 @@ const ListItems = (args) => {
                     <h3>{Paper}</h3>
                 </div>
                 <div className='body__rightInfo'>
-                    <h2> {name} </h2>
+                    <h2> {module_name} </h2>
                 </div>
             </div>
         </div>
