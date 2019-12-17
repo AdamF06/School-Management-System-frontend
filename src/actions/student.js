@@ -4,7 +4,6 @@ import {
 } from '../apis/students'
 import { uploadAvatar, uploadFiles } from '../apis/tools'
 import { updateCourse } from '../actions'
-import { updateCourseApi } from '../apis/course';
 //fetch student info
 export const getStudent = () => dispatch => {
   dispatch(fetchStudentRequested())
@@ -104,7 +103,9 @@ export const enroll = (enrolled, courses, student_data, _id) => dispatch => {
   if (has) {
     dispatch(enrollFailed("You allready have this course!"))
   } else {
+    enrolled.paied = enrolled.tution
     courses.push(enrolled)
+    console.log(courses)
     updateStudentApi({ course: courses })
       .then(res => dispatch(enrollSucceeded(res)))
       .catch(err => dispatch(enrollFailed(err)))
