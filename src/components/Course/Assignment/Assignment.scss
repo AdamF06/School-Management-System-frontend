@@ -35,6 +35,9 @@
 
             &__project,
             &__assignments {
+                a{
+                    text-decoration: none;
+                }
                 :first-child {
                     display        : flex;
                     justify-content: space-between;
@@ -94,7 +97,7 @@
                     border     : 1px solid $border;
                     margin-top : 1rem;
                     padding    : 0 1rem;
-
+                    justify-content: flex-start;
                     .leftIcon {
                         h3 {
                             svg {
@@ -106,11 +109,11 @@
                     .rightInfo {
                         margin-left: 1rem;
                         width      : 20rem;
-
                         h2 {
                             font-size  : 1rem;
                             color      : $fontColorNotice;
                             font-weight: bold;
+                            
                         }
 
                         h4 {
@@ -129,7 +132,7 @@
                     }
                 }
 
-                .--select--list-close {
+                .--listclose {
                     display: none;
                 }
             }
@@ -148,7 +151,7 @@
                     border     : 1px solid $border;
                     margin-top : 1rem;
                     padding    : 0 1rem;
-
+                    justify-content: flex-start;
                     .leftIcon {
                         h3 {
                             svg {
@@ -183,7 +186,7 @@
                     }
                 }
 
-                .--select--list-close {
+                .--listclose {
                     display: none;
                 }
             }
