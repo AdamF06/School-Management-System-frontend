@@ -369,6 +369,27 @@
   }
 }
 
+.courseIntro-dialog .container .dialog .failure {
+  padding: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.courseIntro-dialog .container .dialog .failure p {
+  font-size: 1.5rem;
+}
+
+.courseIntro-dialog .container .dialog .failure svg {
+  margin: 0.25rem 1rem;
+  font-size: 1.5rem;
+  color: orange;
+}
+
 .courseIntro .overview {
   display: -webkit-box;
   display: -ms-flexbox;

@@ -8,7 +8,7 @@ class Initial extends Component {
                 <h3>COMP003</h3>
                 <h3> Full Stack Developing </h3>
                 <button className="confirm" 
-                onClick={this.props.success}
+                onClick={this.props.load}
                 >Confirm</button>
             </>
         );
