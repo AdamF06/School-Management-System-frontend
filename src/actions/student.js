@@ -1,8 +1,8 @@
-import { 
+import {
   getStudentApi,
   updateStudentApi
 } from '../apis/students'
-import {uploadAvatar, uploadFiles} from '../apis/tools'
+import { uploadAvatar, uploadFiles } from '../apis/tools'
 //fetch student info
 export const getStudent = () => dispatch => {
   dispatch(fetchStudentRequested())
@@ -51,7 +51,7 @@ export const updateStudentFailed = err => ({
 export const uploadStudentAvatar = (avatar) => dispatch => {
   dispatch(uploadStudentAvatarRequested())
   uploadAvatar(avatar)
-    .then(res =>dispatch(updateStudent({avatar:res.data.key.split("/").pop()})))
+    .then(res => dispatch(updateStudent({ avatar: res.data.key.split("/").pop() })))
     .catch(err => dispatch(uploadStudentAvatarFailed(err)))
 };
 
@@ -65,17 +65,25 @@ export const uploadStudentAvatarFailed = err => ({
 });
 
 //upload assignment 
-export const uploadStudentAssignment = (files,id,type,no) => dispatch => {
+export const uploadStudentAssignment = (files, id, type, no, old_assignment) => dispatch => {
   dispatch(uploadStudentAssignmentRequested())
   uploadFiles(files)
-    .then(res =>dispatch(
-      updateStudent(
-      {
-        assignment:{
-          name:id+type+no,
-          key:res.data.key.split("/").pop()
+    .then(res => {
+      const name = id + type + no
+      const assignment ={name,key: res.data.key.split("/").pop() }
+      old_assignment.push(assignment)
+      let new_assignment = []
+      old_assignment.forEach((item)=>{
+        if(item.name!==name){
+          new_assignment.push(item)
         }
-    })))
+      })
+      new_assignment.push(assignment)
+
+      console.log(new_assignment,"at action")
+      dispatch(updateStudent({assignment:new_assignment}))
+    }
+    )
     .catch(err => dispatch(uploadStudentAssignmentFailed(err)))
 };
 
