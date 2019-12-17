@@ -79,6 +79,10 @@
   background: #F2F2F2;
 }
 
+.assignmentContainer .assignment__body__project a, .assignmentContainer .assignment__body__assignments a {
+  text-decoration: none;
+}
+
 .assignmentContainer .assignment__body__project :first-child, .assignmentContainer .assignment__body__assignments :first-child {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -146,6 +150,9 @@
   border: 1px solid #C7CDD1;
   margin-top: 1rem;
   padding: 0 1rem;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 }
 
 .assignmentContainer .assignment__body__assignments .assignments__list .leftIcon h3 svg {
@@ -177,7 +184,7 @@
   background: #EBF5FF;
 }
 
-.assignmentContainer .assignment__body__assignments .--select--list-close {
+.assignmentContainer .assignment__body__assignments .--listclose {
   display: none;
 }
 
@@ -200,6 +207,9 @@
   border: 1px solid #C7CDD1;
   margin-top: 1rem;
   padding: 0 1rem;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 }
 
 .assignmentContainer .assignment__body__project .project__list .leftIcon h3 svg {
@@ -231,7 +241,7 @@
   background: #EBF5FF;
 }
 
-.assignmentContainer .assignment__body__project .--select--list-close {
+.assignmentContainer .assignment__body__project .--listclose {
   display: none;
 }
 /*# sourceMappingURL=Assignment.css.map */

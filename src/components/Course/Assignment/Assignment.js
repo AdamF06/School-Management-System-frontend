@@ -4,28 +4,17 @@ import {
     ArrowRight,
     ArrowDown,
 } from '../../Icon/Icon'
+import { Link } from 'react-router-dom'
 import ListItems from '../ListItems/ListItems'
-
-const dummyAss = [
-    {
-        name: 'Assignment_1',
-        point: "-/10Pt"
-    }
-]
-const dummyProject = [
-    {
-        name: 'Project_1',
-        point: "-/40Pt"
-    }
-]
 
 class Assignment extends Component {
     state = {
-        open: true,
         index: -1,
         inputActive: false,
-        assignmentArrow:true,
-        projectArrow:true
+        assignmentArrow: true,
+        projectArrow: true,
+        assignmentList: true,
+        projectList: true
 
     }
     selected = (index) => {
@@ -36,7 +25,9 @@ class Assignment extends Component {
         console.log("aaaa", this.state)
     }
     render() {
-        const { open, index, assignmentArrow, projectArrow } = this.state
+        const { index, assignmentArrow, projectArrow, assignmentList, projectList } = this.state
+        const { id, project, assignment } = this.props
+        console.log(id, project, assignment)
         return (
             <div className='assignmentContainer'>
 
@@ -53,7 +44,11 @@ class Assignment extends Component {
                         <div className="assignment__body__assignments">
                             <div className="assignments__header">
                                 <div className="header__left"
-                                    onClick={() => this.setState({ open: !this.state.open, index: 0,assignmentArrow:!this.state.assignmentArrow })}
+                                    onClick={() => this.setState({
+                                        index: 0,
+                                        assignmentArrow: !this.state.assignmentArrow,
+                                        assignmentList: !this.state.assignmentList
+                                    })}
                                 >
                                     <button className={`arrow ${(index === 0 || index === -1) ? '--select' : ''}${assignmentArrow ? '' : '--arrow-close'}`}
                                     >{ArrowDown} </button>
@@ -65,17 +60,26 @@ class Assignment extends Component {
                                     <h3>n% of Total</h3>
                                 </div>
                             </div>
-                            <div className={`assignments__list ${(index === 0 || index === -1) ? '--select' : ''}${open ? '' : '--list-close'}`}>
-                                {dummyAss.map(
-                                    (item, index) => <ListItems {...item} key={index}/>
-                                )}
-                            </div>
+                            {
+                                assignment.map((item, index) =>
+                                    <Link key={index} to="/">
+                                        <div className={`assignments__list ${assignmentList ? '' : '--listclose'}`}>
+                                            <ListItems {...item} />
+                                        </div>
+                                    </Link>
+                                )
+                            }
+
                         </div>
 
                         <div className="assignment__body__project">
                             <div className="project__header">
                                 <div className="header__left"
-                                    onClick={() => this.setState({ open: !this.state.open, index: 1,projectArrow:!this.state.projectArrow })}
+                                    onClick={() => this.setState({
+                                        index: 1,
+                                        projectArrow: !this.state.projectArrow,
+                                        projectList: !this.state.projectList
+                                    })}
                                 >
                                     <button className={`arrow ${(index === 1 || index === -1) ? '--select' : ''}${projectArrow ? '' : '--arrow-close'}`}
                                     >{ArrowDown} </button>
@@ -87,11 +91,15 @@ class Assignment extends Component {
                                     <h3>n% of Total</h3>
                                 </div>
                             </div>
-                            <div className={`project__list ${(index === 1 || index === -1) ? '--select' : ''}${open ? '' : '--list-close'}`}>
-                                {dummyProject.map(
-                                    (item, index) => <ListItems {...item} key={index} />
-                                )}
-                            </div>
+                            {
+                                project.map((item, index) =>
+                                    <Link key={index} to="/">
+                                        <div className={`project__list ${projectList ? '' : '--listclose'}`}>
+                                            <ListItems {...item} />
+                                        </div>
+                                    </Link>
+                                )
+                            }
                         </div>
                     </div>
                 </div>

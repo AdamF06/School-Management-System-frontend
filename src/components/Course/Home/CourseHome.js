@@ -46,7 +46,13 @@ class CourseHome extends Component {
                         <CourseThirdNav changePage={this.changePage} id={id} />
                         <Route exact path="/course/:id"> <HomePage /> </Route>
                         <Route path="/course/:id/mark"> <Mark /> </Route>
-                        <Route exact path="/course/:id/assignment"> <Assignment /> </Route>
+                        <Route exact path="/course/:id/assignment">
+                            <Assignment
+                                id={id}
+                                assignment={this.props.course.assignment}
+                                project={this.props.course.project}
+                            />
+                        </Route>
                         <Route exact path="/course/:id/module">
                             <Module
                                 id={id}
