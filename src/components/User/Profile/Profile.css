@@ -71,7 +71,6 @@
 
 .profile__avatarContainer label {
   position: relative;
-  z-index: -1;
 }
 
 .profile__avatarContainer label input {
@@ -172,7 +171,6 @@
   margin: 1rem 0;
   position: relative;
   overflow: hidden;
-  z-index: -1;
 }
 
 .profile__mainContainer .main__body__left .item__label {
@@ -234,7 +232,6 @@
   margin: 1.25rem;
   position: relative;
   overflow: hidden;
-  z-index: -1;
 }
 
 .profile__mainContainer .main__body__item .item__label {

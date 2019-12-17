@@ -120,7 +120,7 @@ class Profile extends Component {
         placeHolder: title
       },
     ]
-
+    console.log(this.props.info.course)
     let courseName = course.map((item) => item.course_name)
     let finace = course.map((item) => item.paied).reduce((accumulator, currentValue) => accumulator + currentValue)
     // let { avatar } = this.props.info

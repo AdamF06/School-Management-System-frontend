@@ -18,7 +18,6 @@
 
         label {
             position: relative;
-            z-index: -1;
             input {
                 position: absolute;
                 opacity : 0;
@@ -111,7 +110,6 @@
                         margin  : 1rem 0;
                         position: relative;
                         overflow: hidden;
-                        z-index: -1;
                         &__label {
                             display        : flex;
                             justify-content: flex-start;
@@ -165,7 +163,6 @@
                     margin  : 1.25rem;
                     position: relative;
                     overflow: hidden;
-                    z-index: -1;
 
                     .item__label {
                         display        : flex;

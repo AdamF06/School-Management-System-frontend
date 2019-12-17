@@ -19,10 +19,9 @@ class Loading extends Component {
             }
         });
         new_students.push(student_data)
-        enroll(enrolledCourse, courseList, student_data, enrolledCourse._id)
+        enroll(enrolledCourse, courseList, new_students, enrolledCourse._id)
     }
     componentWillReceiveProps(next) {
-        console.log(next)
         if (next.err.err) {
             if (next.err.err === "success") {
                 setTimeout(() => {
