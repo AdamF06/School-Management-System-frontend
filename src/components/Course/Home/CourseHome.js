@@ -62,7 +62,8 @@ class CourseHome extends Component {
                             />
                         </Route>
                         <Route path="/course/:id/module/:id"> <ModuleDetail /> </Route>
-                        <Route path="/course/:id/assignment/:id"> <AssignmentDetail /> </Route>
+                        <Route path="/course/:id/assignment/:id"> 
+                        <AssignmentDetail id={id}/> </Route>
                     </div>
                 </div>
             </div>

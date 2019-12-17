@@ -27,7 +27,6 @@ class Assignment extends Component {
     render() {
         const { index, assignmentArrow, projectArrow, assignmentList, projectList } = this.state
         const { id, project, assignment } = this.props
-        console.log(id, project, assignment)
         return (
             <div className='assignmentContainer'>
 
