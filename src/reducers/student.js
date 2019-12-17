@@ -17,6 +17,7 @@ const student = (state = initialState, action) => {
                 ...state,
             };
         case 'UPDATE_STUDENT_SUCCEEDED':
+            console.log(action.data.data,"at reducer")
             return {
                 ...state,
                 info: action.data.data,
