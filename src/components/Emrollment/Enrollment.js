@@ -114,7 +114,7 @@ class Enrollment extends Component {
                     <div className="scrolling">
                         <div className='scrolling__list'>
                             <Link to="/detail/COMP002"> <CourseCard/> </Link>
-                            <Link to="/detail/COMP002"> <CourseCard/> </Link>
+                            <Link to="/detail/INFO004"> <CourseCard/> </Link>
                             <Link to="/detail/COMP002"> <CourseCard/> </Link>
                             <Link to="/detail/COMP003"> <CourseCard/> </Link>
                             <Link to="/detail/COMP003"> <CourseCard/> </Link>
