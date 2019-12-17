@@ -3,6 +3,7 @@ import { Bars } from '../../Icon/Icon';
 import { connect } from 'react-redux';
 import { Route } from 'react-router-dom'
 import { getCourse } from '../../../actions'
+
 import CourseThirdNav from '../Nav/CourseThirdNav'
 import './CourseHome.css';
 import HomePage from '../HomePage/HomePage'
@@ -10,6 +11,7 @@ import Assignment from '../Assignment/Assignment'
 import Module from '../Module/Module'
 import Mark from "../Mark/Mark"
 import ModuleDetail from '../Module/ModuleDetail'
+import AssignmentDetail from '../Assignment/AssignmentDetail'
 class CourseHome extends Component {
     constructor() {
         super()
@@ -60,7 +62,7 @@ class CourseHome extends Component {
                             />
                         </Route>
                         <Route path="/course/:id/module/:id"> <ModuleDetail /> </Route>
-
+                        <Route path="/course/:id/assignment/:id"> <AssignmentDetail /> </Route>
                     </div>
                 </div>
             </div>

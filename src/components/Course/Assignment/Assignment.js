@@ -62,7 +62,7 @@ class Assignment extends Component {
                             </div>
                             {
                                 assignment.map((item, index) =>
-                                    <Link key={index} to="/">
+                                    <Link key={index} to={`/course/${id}/assignment/assignment-${item.No}`}>
                                         <div className={`assignments__list ${assignmentList ? '' : '--listclose'}`}>
                                             <ListItems {...item} />
                                         </div>
@@ -93,7 +93,7 @@ class Assignment extends Component {
                             </div>
                             {
                                 project.map((item, index) =>
-                                    <Link key={index} to="/">
+                                    <Link key={index} to={`/course/${id}/assignment/project-${item.No}`}>
                                         <div className={`project__list ${projectList ? '' : '--listclose'}`}>
                                             <ListItems {...item} />
                                         </div>
