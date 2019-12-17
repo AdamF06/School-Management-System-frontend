@@ -1,1 +1,49 @@
 @import '../../../common/commonScss.scss';
+
+.assignment-detail{
+    .header{
+        height: 13rem;
+        width: 100%;
+        background:$navyBlue;
+        padding:2rem;
+        h1 , h2{
+            color: white;
+        }
+        h1{
+            font-size: 2.5rem;
+        }
+    }
+    .description{
+        margin:2rem 0;
+        p{
+            font-size: 1.2rem;
+            line-height: 1.7;
+            color:$fontColorSmaill;
+            text-align: justify;
+        }
+    }
+    .submit{
+        input{
+            display: none;
+        }
+        button{
+            height:2.5rem;
+            width: 6rem;
+            border:1px solid $blue;
+            border-radius: 0.5rem;
+            color:$blue;
+            outline: none;
+            margin:0 2rem 0 0;
+            &:hover{
+                cursor:pointer
+            }
+        }
+        .select-file{
+            margin: 1rem 0;
+            height: 1.5rem;
+            width: 20rem;
+            border:1px dashed $border;
+            color:$fontColorSmaill;
+        }
+    }
+}

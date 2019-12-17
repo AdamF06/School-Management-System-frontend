@@ -42,4 +42,56 @@
   text-decoration: underline;
   color: #98002E;
 }
+
+.assignment-detail .header {
+  height: 13rem;
+  width: 100%;
+  background: #003060;
+  padding: 2rem;
+}
+
+.assignment-detail .header h1, .assignment-detail .header h2 {
+  color: white;
+}
+
+.assignment-detail .header h1 {
+  font-size: 2.5rem;
+}
+
+.assignment-detail .description {
+  margin: 2rem 0;
+}
+
+.assignment-detail .description p {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: #2D3B45;
+  text-align: justify;
+}
+
+.assignment-detail .submit input {
+  display: none;
+}
+
+.assignment-detail .submit button {
+  height: 2.5rem;
+  width: 6rem;
+  border: 1px solid #055C9D;
+  border-radius: 0.5rem;
+  color: #055C9D;
+  outline: none;
+  margin: 0 2rem 0 0;
+}
+
+.assignment-detail .submit button:hover {
+  cursor: pointer;
+}
+
+.assignment-detail .submit .select-file {
+  margin: 1rem 0;
+  height: 1.5rem;
+  width: 20rem;
+  border: 1px dashed #C7CDD1;
+  color: #2D3B45;
+}
 /*# sourceMappingURL=AssignmentDetail.css.map */
