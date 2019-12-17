@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom'
 import { Icon } from 'antd'
+
 import "./AssignmentDetail.css"
+import {uploadStudentAssignment} from '../../../actions'
 class AssignmentDetail extends Component {
     constructor(props) {
         super(props)
@@ -12,14 +14,15 @@ class AssignmentDetail extends Component {
     }
 
     uploadAssignment = () => {
-        const {id,match,student_ID}= this.props
+        const {id,match,student_ID,uploadStudentAssignment}= this.props
         const type = match.params.id.split('-').shift()
         const no = match.params.id.split('-').pop()
         const fd = new FormData()
-        fd.append('path',`${id}/${type}-${no}/${student_ID}` )
-        //console.log(`${id}/${type}-${no}/${student_ID}`)
-        console.log(this.state.selectedFile.name)
-
+        fd.append('path',`${id}/${type}-${no}/${student_ID}`)
+        fd.append('user', this.props.student_ID)
+        fd.append('fileName', this.state.selectedFile.name)
+        fd.append('files',this.state.selectedFile)
+        uploadStudentAssignment(fd,id,type,no)
     }
     selectFile = (e) => {
         this.setState({
@@ -81,4 +84,6 @@ function mapStateToProps(state) {
         student_ID:student.info.student_ID
     };
 }
-export default connect(mapStateToProps)(withRouter(AssignmentDetail))
+export default connect(mapStateToProps,{
+    uploadStudentAssignment
+})(withRouter(AssignmentDetail))

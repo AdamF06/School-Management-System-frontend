@@ -32,6 +32,11 @@ const student = (state = initialState, action) => {
             return {
                 ...state,
             };
+        case 'UPLOAD_STUDENT_FILE__FAILED':
+            console.log('filed')
+            return {
+                ...state,
+            };
         default:
             return state;
     }
