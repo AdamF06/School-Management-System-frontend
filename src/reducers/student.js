@@ -18,7 +18,6 @@ const student = (state = initialState, action) => {
                 ...state,
             };
         case 'UPDATE_STUDENT_SUCCEEDED':
-            console.log(action.data.data, "at reducer")
             return {
                 ...state,
                 info: action.data.data,
@@ -39,12 +38,13 @@ const student = (state = initialState, action) => {
                 ...state,
             };
         case 'ENROLL_SUCCEEDED':
-            console.log(action.data)
             return {
                 ...state,
+                info: action.data.data,
+                err: Object.assign({}, state, { err: "success" })
             };
         case 'ENROLL_FAILED':
-            return Object.assign({},state,{err:action.data});
+            return Object.assign({}, state, { err: action.data });
         default:
             return state;
     }

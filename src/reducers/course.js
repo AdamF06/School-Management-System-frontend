@@ -1,5 +1,5 @@
 export const initialState = {
-    data:{}
+    data: {}
 };
 const course = (state = initialState, action) => {
     switch (action.type) {
@@ -9,6 +9,15 @@ const course = (state = initialState, action) => {
                 data: action.data.data[0]
             };
         case 'FETCH_COURSE_FAILED':
+            return {
+                ...state,
+            };
+        case 'UPDATE_COURSE_SUCCEEDED':
+            return {
+                ...state,
+                data:action.data.data
+            };
+        case 'UPDATE_COURSE_FAILED':
             return {
                 ...state,
             };

@@ -3,6 +3,8 @@ import {
   updateStudentApi
 } from '../apis/students'
 import { uploadAvatar, uploadFiles } from '../apis/tools'
+import { updateCourse } from '../actions'
+import { updateCourseApi } from '../apis/course';
 //fetch student info
 export const getStudent = () => dispatch => {
   dispatch(fetchStudentRequested())
@@ -94,7 +96,7 @@ export const uploadStudentAssignmentFailed = err => ({
 });
 
 //enroll a new course
-export const enroll = (enrolled, courses) => dispatch => {
+export const enroll = (enrolled, courses, student_data, _id) => dispatch => {
   const enrolledID = enrolled.course_ID
   const course = courses.map((item) => item.course_ID)
   let has = false
@@ -102,11 +104,11 @@ export const enroll = (enrolled, courses) => dispatch => {
   if (has) {
     dispatch(enrollFailed("You allready have this course!"))
   } else {
-    const data = courses.push(enrolled)
-    console.log(data)
-    updateStudentApi(courses)
+    courses.push(enrolled)
+    updateStudentApi({ course: courses })
       .then(res => dispatch(enrollSucceeded(res)))
       .catch(err => dispatch(enrollFailed(err)))
+    dispatch(updateCourse(_id, student_data))
   }
 };
 
