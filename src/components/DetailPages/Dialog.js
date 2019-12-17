@@ -3,6 +3,7 @@ import { Icon } from 'antd'
 import Initial from './Initial'
 import Success from './Success'
 import Loading from './Loading'
+import Failure from './Failure';
 class Dialog extends Component {
     state = {
         logState: "initial"
@@ -19,6 +20,7 @@ class Dialog extends Component {
         })
     }
     render() {
+        const { id } = this.props
         const quit = (
             <div className="dialog__button-container">
                 <button onClick={this.props.closeDialog}><Icon type="close-circle" /></button>
@@ -30,7 +32,7 @@ class Dialog extends Component {
             <div className='container'>
                 <div className="dialog">
                     {quit}
-                    <Initial success={() => this.setState({ logState: "loading" })} />
+                    <Initial load={() => this.setState({ logState: "loading" })} />
                 </div>
             </div>
         )
@@ -50,11 +52,19 @@ class Dialog extends Component {
                     <Loading
                         setSuccess={this.setSuccess}
                         setFailure={this.setFailure}
+                        id={id}
                     />
                 </div>
             </div>
         )
-
+        let failureDialog = (
+            <div className='container'>
+                <div className="dialog">
+                    {quit}
+                    <Failure />
+                </div>
+            </div>
+        )
         switch (this.state.logState) {
 
             case "success":
@@ -62,6 +72,9 @@ class Dialog extends Component {
                 break;
             case "loading":
                 dialog = loadingDialog
+                break;
+            case "failure":
+                dialog = failureDialog 
                 break;
             default:
                 dialog = initialDialog

@@ -239,6 +239,20 @@
                         box-shadow: 6px 0 currentColor, 12px 0 currentColor,18px 0 currentColor;
                     }
                 }
+                .failure{
+                    padding:1rem;
+                    display: flex;
+                    text-align: center;
+                    align-items: center;
+                    p{
+                        font-size: 1.5rem;
+                    }
+                    svg{
+                        margin:0.25rem 1rem;
+                        font-size: 1.5rem;
+                        color:orange;
+                    }
+                }
             }
         }
 

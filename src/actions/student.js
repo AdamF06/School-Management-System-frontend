@@ -70,18 +70,15 @@ export const uploadStudentAssignment = (files, id, type, no, old_assignment) => 
   uploadFiles(files)
     .then(res => {
       const name = id + type + no
-      const assignment ={name,key: res.data.key.split("/").pop() }
-      old_assignment.push(assignment)
+      const assignment = { name, key: res.data.key.split("/").pop() }
       let new_assignment = []
-      old_assignment.forEach((item)=>{
-        if(item.name!==name){
+      old_assignment.forEach((item) => {
+        if (item.name !== name) {
           new_assignment.push(item)
         }
       })
       new_assignment.push(assignment)
-
-      console.log(new_assignment,"at action")
-      dispatch(updateStudent({assignment:new_assignment}))
+      dispatch(updateStudent({ assignment: new_assignment }))
     }
     )
     .catch(err => dispatch(uploadStudentAssignmentFailed(err)))
@@ -93,5 +90,32 @@ export const uploadStudentAssignmentRequested = () => ({
 
 export const uploadStudentAssignmentFailed = err => ({
   type: 'UPLOAD_STUDENT_FILE_FAILED',
+  data: { err }
+});
+
+//enroll a new course
+export const enroll = (enrolled, courses) => dispatch => {
+  const enrolledID = enrolled.course_ID
+  const course = courses.map((item) => item.course_ID)
+  let has = false
+  course.forEach((item) => { if (item === enrolledID) { has = true } })
+  if (has) {
+    dispatch(enrollFailed("You allready have this course!"))
+  } else {
+    const data = courses.push(enrolled)
+    console.log(data)
+    updateStudentApi(courses)
+      .then(res => dispatch(enrollSucceeded(res)))
+      .catch(err => dispatch(enrollFailed(err)))
+  }
+};
+
+export const enrollSucceeded = res => ({
+  type: 'ENROLL_SUCCEEDED',
+  data: res
+});
+
+export const enrollFailed = err => ({
+  type: 'ENROLL_FAILED',
   data: { err }
 });

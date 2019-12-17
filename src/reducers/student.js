@@ -1,7 +1,8 @@
 export const initialState = {
     info: {},
     course: [],
-    err: ''
+    err: '',
+
 };
 
 const student = (state = initialState, action) => {
@@ -17,7 +18,7 @@ const student = (state = initialState, action) => {
                 ...state,
             };
         case 'UPDATE_STUDENT_SUCCEEDED':
-            console.log(action.data.data,"at reducer")
+            console.log(action.data.data, "at reducer")
             return {
                 ...state,
                 info: action.data.data,
@@ -27,7 +28,6 @@ const student = (state = initialState, action) => {
             return {
                 ...state,
             };
-
         case 'UPLOAD_STUDENT_AVATAR__FAILED':
             console.log('filed')
             return {
@@ -38,6 +38,13 @@ const student = (state = initialState, action) => {
             return {
                 ...state,
             };
+        case 'ENROLL_SUCCEEDED':
+            console.log(action.data)
+            return {
+                ...state,
+            };
+        case 'ENROLL_FAILED':
+            return Object.assign({},state,{err:action.data});
         default:
             return state;
     }
