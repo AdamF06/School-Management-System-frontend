@@ -1,17 +1,29 @@
-import { auth } from '../apis/auth';
+import {
+  authStudent,
+  authTeacher
+} from '../apis/auth';
 import jwtDecode from 'jwt-decode';
-
 var storage = window.localStorage;
 
-export const authenticate = (login_email,login_password) => dispatch => {
+export const authenticate = (login_email, login_password) => dispatch => {
 
   dispatch(authenticateRequested());
-  auth(login_email,login_password)
+  authStudent(login_email, login_password)
     .then(res => {
       const { token } = res.data;
       const payload = jwtDecode(token);
       storage.token = token
-      storage.userInfo = JSON.stringify(payload) 
+      storage.userInfo = JSON.stringify(payload)
+      dispatch(authenticateSucceeded(payload))
+    })
+    .catch(err => dispatch(authenticateFailed(err)));
+
+  authTeacher(login_email, login_password)
+    .then(res => {
+      const { token } = res.data;
+      const payload = jwtDecode(token);
+      storage.token = token
+      storage.userInfo = JSON.stringify(payload)
       dispatch(authenticateSucceeded(payload))
     })
     .catch(err => dispatch(authenticateFailed(err)));
@@ -31,8 +43,8 @@ const authenticateFailed = err => ({
   data: { err }
 });
 
-export const signOut =()=>{
-  return{
-    type:'SIGN_OUT'
+export const signOut = () => {
+  return {
+    type: 'SIGN_OUT'
   }
 }

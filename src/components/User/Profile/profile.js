@@ -84,7 +84,7 @@ class Profile extends Component {
       school,
       mobile_number
     } = this.props.info
-
+console.log(this.props)
     const infoItems = [
       {
         icon: Port_s,
@@ -120,11 +120,27 @@ class Profile extends Component {
         placeHolder: title
       },
     ]
-    console.log(this.props.info.course)
     let courseName = course.map((item) => item.course_name)
     let finace = course.map((item) => item.paied).reduce((accumulator, currentValue) => accumulator + currentValue)
-    // let { avatar } = this.props.info
-    // avatar = avatar ? avatar : (<Icon type="user" />)
+
+    let right = (<></>)
+    if (this.props.identity === "student") {
+      right = (
+        <div className={`profile__courseContainer`}>
+          <h2>Student ID: {student_ID}</h2>
+          <h2>You have enrolled in: </h2>
+          <ul>
+            {
+              courseName.map((item, index) =>
+                <li key={index}> {item} </li>
+              )
+            }
+          </ul>
+          <h2>Your finance: <span>${finace}</span></h2>
+          <h2>Need to be paied</h2>
+        </div>
+      )
+    }
     const { avatar } = this.state
     return (
       <div className='profile'>
@@ -187,31 +203,25 @@ class Profile extends Component {
             </div>
           </div>
         </div>
-
-        <div className="profile__courseContainer">
-          <h2>Student ID: {student_ID}</h2>
-          <h2>You have enrolled in: </h2>
-          <ul>
-            {
-              courseName.map((item, index) =>
-                <li key={index}> {item} </li>
-              )
-            }
-          </ul>
-          <h2>Your finance: <span>${finace}</span></h2>
-          <h2>Need to be paied</h2>
-          {/* <button>Change Password</button> */}
-        </div>
+        {right}
       </div>
     );
   }
 }
 function mapStateToProps(state) {
-  const { student } = state;
-  return {
-    info: student.info,
-    _id: student._id,
-  };
+
+  const { student, teacher, auth } = state;
+  if (auth.user_identity === "student") {
+    return {
+      info: student.info,
+      identity: auth.user_identity,
+    };
+  } else {
+    return {
+      info: teacher.info,
+      identity: auth.user_identity
+    };
+  }
 }
 export default connect(mapStateToProps, {
   updateStudent,
