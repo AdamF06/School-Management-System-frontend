@@ -30,3 +30,9 @@ const authenticateFailed = err => ({
   type: 'AUTH_FAILED',
   data: { err }
 });
+
+export const signOut =()=>{
+  return{
+    type:'SIGN_OUT'
+  }
+}
