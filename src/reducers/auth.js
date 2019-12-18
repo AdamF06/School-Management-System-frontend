@@ -16,6 +16,12 @@ const auth = (state = initialState, action) => {
       return {
         ...state,
       };
+    case 'SIGN_OUT':
+      window.localStorage.clear()
+      return {
+        user_identity: '',
+        user_status: 'offline'
+      };
     default:
       return state;
   }
