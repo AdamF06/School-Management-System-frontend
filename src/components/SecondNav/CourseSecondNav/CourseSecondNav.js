@@ -6,6 +6,9 @@ import './CourseSecondNav.css'
 
 class CourseSecondNav extends Component {
 
+    state={
+        course:[]
+    }
     render() {
         const { reset } = this.props
         // console.log(this.props.course)
@@ -44,9 +47,17 @@ class CourseSecondNav extends Component {
 }
 
 function mapStateToProps(state) {
-    const { student } = state;
-    return {
-        course: student.course,
-    };
+    const { student,teacher,auth } = state;
+    if (auth.user_identity === "student") {
+        return {
+          course: student.course,
+          identity: auth.user_identity,
+        };
+      } else {
+        return {
+          course: teacher.course,
+          identity: auth.user_identity
+        };
+      }
 }
 export default connect(mapStateToProps)(CourseSecondNav);
