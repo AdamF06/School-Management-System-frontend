@@ -20,7 +20,7 @@ const course = (state = initialState, action) => {
         case 'UPDATE_COURSE_FAILED':
             return {
                 ...state,
-            };
+            };    
         default:
             return state;
     }
