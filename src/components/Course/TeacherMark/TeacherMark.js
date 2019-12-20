@@ -8,16 +8,16 @@ class TeacherMark extends Component {
         super(props)
         this.state = {
             studentArray: [],
-            mark:''
+            mark: ''
         }
     }
-    download= async (ID,index,key)=>{
+    download = (ID, index, key) => {
         const DOWNLOAD = 'http://127.0.0.1:8080/download/'
-        const {course} =this.props
-        const path=`/${course.course_ID}/assignment-${index+1}/${ID}`
-        Axios.get(DOWNLOAD+key,{params:{path}})
-        .then((res)=>{ window.open(res.data.url)})
-        .catch((err)=>{console.log(err)})
+        const { course } = this.props
+        const path = `/${course.course_ID}/assignment-${index + 1}/${ID}`
+        Axios.get(DOWNLOAD + key, { params: { path } })
+            .then((res) => { window.open(res.data.url) })
+            .catch((err) => { console.log(err) })
     }
 
     componentDidMount() {
@@ -31,7 +31,7 @@ class TeacherMark extends Component {
                         console.log(res)
                         console.log(student)
                         let student_data = {
-                            _id:student[index]._id,
+                            _id: student[index]._id,
                             student_ID: student[index].student_ID,
                             student_name: student[index].first_name + " " + student[index].last_name,
                             assignment: res.data[0].assignment,
@@ -47,12 +47,12 @@ class TeacherMark extends Component {
         }
     }
 
-    submit =(_id,assignment,index)=>{
-        const UPDATE = 'http://127.0.0.1:8080/students/'+_id
+    submit = (_id, assignment, index) => {
+        const UPDATE = 'http://127.0.0.1:8080/students/' + _id
         assignment[index].mark = this.state.mark
-        Axios.put(UPDATE,{assignment})
-        .then(res=>{console.log(res)})
-        .catch(err => console.log(err))
+        Axios.put(UPDATE, { assignment })
+            .then(res => { console.log(res) })
+            .catch(err => console.log(err))
     }
     render() {
         const { course } = this.props
@@ -73,18 +73,18 @@ class TeacherMark extends Component {
                                             <div className="left">
                                                 <h3> {item.student_ID}</h3>
                                                 <h3> {item.student_name}</h3>
-                                                <h3 className="key" 
-                                                onClick={()=>{this.download(item.student_ID,index,item.assignment[index].key)}}
+                                                <h3 className="key"
+                                                    onClick={() => { this.download(item.student_ID, index, item.assignment[index].key) }}
                                                 >{item.assignment[index].key}</h3>
                                             </div>
 
                                             <div className="right">
                                                 <h3 className="mark">{item.assignment[index].mark}Pt</h3>
-                                                <input 
-                                                placeholder="assign marks"
-                                                onChange={(e)=>{this.setState({mark:e.target.value})}}
+                                                <input
+                                                    placeholder="assign marks"
+                                                    onChange={(e) => { this.setState({ mark: e.target.value }) }}
                                                 ></input>
-                                                <button onClick={()=>{this.submit(item._id,item.assignment,index)}}>Update</button>
+                                                <button onClick={() => { this.submit(item._id, item.assignment, index) }}>Update</button>
                                             </div>
                                         </div>
                                     )
