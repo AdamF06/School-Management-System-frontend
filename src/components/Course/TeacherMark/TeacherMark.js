@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Axios from 'axios'
 import './TeacherMark.css'
-import { } from '../../../actions'
 
 class TeacherMark extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            studentArray: []
+            studentArray: [],
+            mark:''
         }
     }
     download= async (ID,index,key)=>{
@@ -31,6 +31,7 @@ class TeacherMark extends Component {
                         console.log(res)
                         console.log(student)
                         let student_data = {
+                            _id:student[index]._id,
                             student_ID: student[index].student_ID,
                             student_name: student[index].first_name + " " + student[index].last_name,
                             assignment: res.data[0].assignment,
@@ -44,6 +45,14 @@ class TeacherMark extends Component {
                     .catch(err => console.log(err))
             });
         }
+    }
+
+    submit =(_id,assignment,index)=>{
+        const UPDATE = 'http://127.0.0.1:8080/students/'+_id
+        assignment[index].mark = this.state.mark
+        Axios.put(UPDATE,{assignment})
+        .then(res=>{console.log(res)})
+        .catch(err => console.log(err))
     }
     render() {
         const { course } = this.props
@@ -71,8 +80,11 @@ class TeacherMark extends Component {
 
                                             <div className="right">
                                                 <h3 className="mark">{item.assignment[index].mark}Pt</h3>
-                                                <input placeholder="assign marks"></input>
-                                                <button>Update</button>
+                                                <input 
+                                                placeholder="assign marks"
+                                                onChange={(e)=>{this.setState({mark:e.target.value})}}
+                                                ></input>
+                                                <button onClick={()=>{this.submit(item._id,item.assignment,index)}}>Update</button>
                                             </div>
                                         </div>
                                     )
