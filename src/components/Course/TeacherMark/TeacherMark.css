@@ -1,0 +1,80 @@
+@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+  font-weight: normal;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  border-top: 1px solid #C7CDD1;
+  padding: 1rem 0;
+}
+
+.footer__container {
+  width: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-right: 14rem;
+}
+
+.footer__container a {
+  color: #2D3B45;
+  margin: 0 1.5rem;
+  text-decoration: none;
+}
+
+.footer__container a:hover {
+  text-decoration: underline;
+  color: #98002E;
+}
+
+.teacher-mark {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #C7CDD1;
+}
+
+.teacher-mark .student-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  border: 1px dashed #C7CDD1;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 1rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.teacher-mark .student-list h1 {
+  font-size: 1rem;
+}
+
+.teacher-mark .student-list .left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.teacher-mark .student-list .left h1 {
+  margin-right: 1rem;
+}
+/*# sourceMappingURL=TeacherMark.css.map */

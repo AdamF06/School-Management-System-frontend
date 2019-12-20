@@ -10,6 +10,7 @@ import HomePage from '../HomePage/HomePage'
 import Assignment from '../Assignment/Assignment'
 import Module from '../Module/Module'
 import Mark from "../Mark/Mark"
+import TeacherMark from '../TeacherMark/TeacherMark'
 import ModuleDetail from '../Module/ModuleDetail'
 import AssignmentDetail from '../Assignment/AssignmentDetail'
 class CourseHome extends Component {
@@ -35,6 +36,16 @@ class CourseHome extends Component {
         const { displayPage } = this.state
         const id = this.props.id
         console.log(this.props.course)
+        let mark=(<></>)
+        if(this.props.identity==="teacher"){
+            mark=(
+                <Route path="/course/:id/mark"> <TeacherMark /> </Route>
+            )
+        }else{
+            mark=(
+                <Route path="/course/:id/mark"> <Mark /> </Route>
+            )
+        }
         return (
             <div className="courseHomePageContainer">
                 <div className="courseHomePage">
@@ -47,7 +58,7 @@ class CourseHome extends Component {
                     <div className="courseHomePage__body">
                         <CourseThirdNav changePage={this.changePage} id={id} />
                         <Route exact path="/course/:id"> <HomePage /> </Route>
-                        <Route path="/course/:id/mark"> <Mark /> </Route>
+                        {mark}
                         <Route exact path="/course/:id/assignment">
                             <Assignment
                                 id={id}
@@ -71,10 +82,11 @@ class CourseHome extends Component {
     }
 }
 function mapStateToProps(state) {
-    const { courseid, course } = state;
+    const { courseid, course,auth } = state;
     return {
         id: courseid.id,
-        course: course.data
+        course: course.data,
+        identity:auth.user_identity
     };
 }
 export default connect(mapStateToProps, {
