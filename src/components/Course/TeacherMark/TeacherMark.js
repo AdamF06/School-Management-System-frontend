@@ -11,11 +11,17 @@ class TeacherMark extends Component {
             studentArray: []
         }
     }
-    //res.data[0].assignment.key(.name._id)
-    //res.data[0].project
+    download= async (ID,index,key)=>{
+        const DOWNLOAD = 'http://127.0.0.1:8080/download/'
+        const {course} =this.props
+        const path=`/${course.course_ID}/assignment-${index+1}/${ID}`
+        Axios.get(DOWNLOAD+key,{params:{path}})
+        .then((res)=>{ window.open(res.data.url)})
+        .catch((err)=>{console.log(err)})
+    }
 
     componentDidMount() {
-        const { student, course } = this.props
+        const { student } = this.props
         const STUDENTS = 'http://127.0.0.1:8080/students/ID/'
 
         if (student) {
@@ -40,7 +46,7 @@ class TeacherMark extends Component {
         }
     }
     render() {
-        const { student, course } = this.props
+        const { course } = this.props
         const { studentArray } = this.state
         return (
             <div className="teacher-mark">
@@ -58,7 +64,9 @@ class TeacherMark extends Component {
                                             <div className="left">
                                                 <h3> {item.student_ID}</h3>
                                                 <h3> {item.student_name}</h3>
-                                                <h3 className="key">{item.assignment[index].key}</h3>
+                                                <h3 className="key" 
+                                                onClick={()=>{this.download(item.student_ID,index,item.assignment[index].key)}}
+                                                >{item.assignment[index].key}</h3>
                                             </div>
 
                                             <div className="right">
@@ -83,22 +91,6 @@ class TeacherMark extends Component {
                             </div>)
                     }
                 </div>
-                {/* {
-                    student.map((item, index) =>
-                        <div className="student-list" key={index}>
-                            <div className="left">
-                                <h1>{item.student_ID}</h1>
-                                <h1>{item.first_name}</h1>
-                                <h1>{item.last_name}</h1>
-                            </div>
-                            <div className="right">
-                                <h1>-/-Pts</h1>
-                                <input placeholder="assign marks"></input>
-                                <button>update</button>
-                            </div>
-                        </div>
-                    )
-                } */}
             </div>
         );
     }
