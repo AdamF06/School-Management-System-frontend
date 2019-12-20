@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter } from "react-router";
+import { connect } from 'react-redux';
 import './PrimaryNav.css';
 import {
     Dashboard,
@@ -16,7 +17,7 @@ import {
 import PrimaryNavItems from "./PrimaryNavItems"
 import SecondNav from '../SecondNav/SecondNav';
 
-const userItems = [
+let userItems = [
     {
         icon: Dashboard,
         iconName: "Dashboard"
@@ -32,6 +33,24 @@ const userItems = [
     {
         icon: Sales,
         iconName: "Sales"
+    },
+    {
+        icon: Email,
+        iconName: "Emails"
+    },
+    {
+        icon: Course,
+        iconName: "Courses"
+    },
+]
+const teacherItems = [
+    {
+        icon: Dashboard,
+        iconName: "Dashboard"
+    },
+    {
+        icon: Group,
+        iconName: "Users"
     },
     {
         icon: Email,
@@ -135,6 +154,10 @@ class PrimaryNav extends Component {
 
     render() {
         const { showSecondNav, selectedSecondNav } = this.state
+        const { identity } = this.props
+        if (identity === 'teacher') {
+            userItems = teacherItems
+        }
         return (
             <div className="navConatiner">
                 <div className="primaryNav">
@@ -188,5 +211,10 @@ class PrimaryNav extends Component {
         );
     }
 }
-
-export default (withRouter(PrimaryNav))
+function mapStateToProps(state) {
+    const { auth } = state;
+    return {
+        identity: auth.user_identity
+    };
+}
+export default connect(mapStateToProps, {})(withRouter(PrimaryNav));

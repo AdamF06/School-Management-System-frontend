@@ -1,7 +1,6 @@
 export const initialState = {
   user_identity: '',
   user_status: 'offline'
-
 };
 
 const auth = (state = initialState, action) => {
