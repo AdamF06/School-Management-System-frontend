@@ -72,7 +72,7 @@ class Form extends Component {
         return (
             <div className={`login__form ${panel === "left" ? "" : "right-panel-active"}`} >
                 <div className="login__form__signup formContainer signupContainer">
-                    <form action="#">
+                    <form >
                         <h1>Create Account</h1>
                         <ul className="login__form__register__social socialContainer">
                             <li><button className="social">{Facebook} </button></li>
@@ -88,7 +88,7 @@ class Form extends Component {
                 </div>
 
                 <div className="login__form__signin formContainer signinContainer">
-                    <form action="#">
+                    <form>
                         <h1>Sign in</h1>
                         <ul className="login__form__signin__social socialContainer">
                             <li><button className="social">{Facebook} </button></li>
